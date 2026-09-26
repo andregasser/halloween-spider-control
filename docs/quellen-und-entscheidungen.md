@@ -23,6 +23,8 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 
 ## Festlegungen aus dem Gespräch
 
+- 26.09.2026: Lötkolben, Elektroniklot und Flussmittel laut Nutzer bereits vorhanden. T01 und V01 als Bestand führen, nicht als Bestellpositionen.
+
 - 26.09.2026: Nutzer bestätigt E08 Patchkabel und E28 CH-Mehrfachsteckdose zusätzlich als vorhanden. Beide bleiben in der Materialliste, entfallen aber als Bestellposition. Arbeitsumfang und Beschaffungslisten werden auf Elektronik und zugehöriges elektrisches Zubehör begrenzt; Konstruktion, Mechanikteile und Kabelbinder entfallen. Keine zusätzliche Lochrasterplatine am PIR nötig; die Steuer-Lochrasterplatine E18 bleibt erforderlich.
 
 - 26.09.2026: Nutzer entfernt S1 und Feld F aus dem Aufbau. S1/R7/J4 sowie C3/C4 und die zusätzliche Sensor-Lochrasterplatine entfallen. Der PIR wird direkt an J2 angeschlossen; Betrieb ohne Zusatzkondensatoren am endgültigen Kabel bei Motorstarts/-stopps prüfen. C1/C2/C5 bleiben auf der Steuerplatine. Nach Einschalten/Reset 60 s Anlaufzeit, danach mindestens 500 ms PIR-LOW und neue Bewegung; automatische Bereitschaft ohne manuelle Freigabe. J0.5 und D4 bleiben frei, übrige Anschlussnummern unverändert.

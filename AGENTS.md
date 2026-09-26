@@ -15,7 +15,7 @@
 - Referenzmotor 34HS46-6004S1; Referenztreiber DM860T V3.0; 48-V-Versorgung LRS-350-48.
 - Auswahlpriorität des Nutzers: Preis vor Kompaktheit. Bei technisch geeigneten Alternativen die Gesamtkosten für die Schweiz vergleichen. DM860T bleibt vorgesehen; kein Wechsel zum DM870 allein wegen des kleineren Gehäuses.
 - PIR HC-SR501-Bauform, bis 3 m RJ45-Patchkabel, kein Ethernet/PoE.
-- Uno (E01), PIR (E02), Patchkabel (E08) und CH-Mehrfachsteckdose (E28) sind vorhanden; weitere Elektronik noch nicht als bestellt bestätigt. Statusänderungen nur aufgrund einer tatsächlichen Bestätigung.
+- Uno (E01), PIR (E02), Patchkabel (E08) und CH-Mehrfachsteckdose (E28) sind vorhanden; weitere Elektronik noch nicht als bestellt bestätigt. Lötkolben (T01), Elektroniklot und Flussmittel (V01) sind ebenfalls vorhanden und nicht zu bestellen. Statusänderungen nur aufgrund einer tatsächlichen Bestätigung.
 - S1/R7/J4 und die zusätzlichen Sensorkondensatoren C3/C4 samt Sensor-Lochrasterplatine entfallen auf Nutzerwunsch. C1/C2/C5 auf der Steuerplatine bleiben. Bedienung über S0; PIR ohne Zusatzkondensatoren am endgültigen Kabel bei Motorbetrieb prüfen.
 - Kein Hall-/Home-Sensor im Basisaufbau. Nach Neustart ist die mechanische Position nicht bekannt.
 

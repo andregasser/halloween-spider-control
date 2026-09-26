@@ -59,7 +59,7 @@ order = f"""# Bestellliste · Elektronik
 
 Stand: **26.09.2026 · Revision A**. Noch keine Bestellung ausgelöst.
 
-**Nicht bestellen, bereits vorhanden:** {inventory}. Die Liste enthält nur fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial. Elektronikwerkzeuge, Lötmaterial und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
+**Nicht bestellen, bereits vorhanden:** {inventory}. Die Liste enthält nur fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
 
 Ein Link zu einer Produktseite belegt die gefundene Produktfamilie, nicht jede auswählbare Variante. Mit **Bezugsquelle** gekennzeichnete Einträge nennen einen vorgeschlagenen Lieferanten, aber noch keine einzeln geprüfte Artikelnummer. Keine Lieferbarkeit oder Schweizer Versandkosten zugesichert. Bei Anfragepositionen erst Maße/Kompatibilität klären, dann bestellen. Bei Elektrogehäusen und Kabeldurchführungen die Abmessungen der Elektronik und Leitungen abgleichen.
 
