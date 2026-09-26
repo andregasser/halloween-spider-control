@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1500" viewBox="0 0 1800 1500">
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1850" viewBox="0 0 1800 1850">
 <style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#152536} .wire{fill:none;stroke:#253b50;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}</style>
-<rect width="1800" height="1500" fill="white"/>
+<rect width="1800" height="1850" fill="white"/>
 <text x="35" y="46" font-size="29" font-weight="bold">Blatt 2 / 2 — Steuerung, STEP/DIR und PIR-Sensor</text>
 <text x="35" y="79" font-size="18">Halloween-Spinne · Revision A · 26.09.2026 · Entwurf, noch nicht aufgebaut oder geprüft</text>
 <text x="35" y="108" font-size="17">Gleiche Netznamen sind verbunden. Punkte = Verbindung. Kreuzungen ohne Punkt = keine Verbindung.</text>
@@ -139,6 +139,7 @@
 <text x="515" y="727" font-size="20" font-weight="bold">+5V</text>
 <text x="613" y="704" font-size="16">J3.1</text>
 <text x="705" y="727" font-size="20" font-weight="bold">PUL+</text>
+<text x="470" y="812" font-size="17">+5V von U1 5V / J0.1 → Detail G</text>
 <text x="55" y="853" font-size="16">HIGH am Uno aktiviert den Optokoppler. GND bleibt auf der Steuerungsseite.</text>
 <rect x="915" y="520" width="855" height="360" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="931" y="550" font-size="21" font-weight="bold">C · Richtung, Common-Anode</text>
@@ -185,6 +186,7 @@
 <text x="1400" y="727" font-size="20" font-weight="bold">+5V</text>
 <text x="1498" y="704" font-size="16">J3.3</text>
 <text x="1590" y="727" font-size="20" font-weight="bold">DIR+</text>
+<text x="1355" y="812" font-size="17">+5V von U1 5V / J0.1 → Detail G</text>
 <text x="940" y="853" font-size="16">HIGH am Uno aktiviert den Optokoppler. GND bleibt auf der Steuerungsseite.</text>
 <rect x="30" y="910" width="410" height="390" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="46" y="940" font-size="21" font-weight="bold">D · U1 · Arduino Uno R3</text>
@@ -284,10 +286,40 @@
 <text x="1340" y="1200" font-size="17">C2/C4: 16 V oder höher, Polarität!</text>
 <text x="1340" y="1230" font-size="17">C1/C3/C5: 25 V oder höher.</text>
 <text x="1340" y="1260" font-size="17">RJ45.3/.6/.7/.8: beidseitig frei.</text>
-<text x="35" y="1334" font-size="18" font-weight="bold">W4 · STEP/DIR-Kabel: J3 → U3, 2 geschirmte Paare. ENA±/ALM±/BRK± offen. GND, M48− und PE getrennt.</text>
-<text x="35" y="1370" font-size="18">J0 · Arduino-Anschlussleiste   |   J3 · STEP/DIR-Klemmenleiste   |   J4 · Freigabeschalter-Klemmenleiste</text>
-<text x="35" y="1400" font-size="17">Kennzeichen · Bauteilbezeichnung; z. B. U3 · DM860T V3.0. J3.2 bedeutet Anschluss 2 der Klemmenleiste J3.</text>
-<polyline class="wire" points="35,1430 1765,1430"/>
-<text x="35" y="1458" font-size="18">Verbindliche Verbindungstabellen, Bauteilwerte und Aufbauhinweise: docs/elektronik.md</text>
-<text x="35" y="1484" font-size="17">Kein Verdrahten unter Spannung. 230-V-Baugruppe durch Elektrofachperson aufbauen und prüfen.</text>
+<rect x="30" y="1320" width="1740" height="330" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="46" y="1350" font-size="21" font-weight="bold">G · J3.1 und J3.3: gemeinsame 5-V-Zuleitung, hier ausdrücklich verbunden dargestellt</text>
+<rect x="60" y="1375" width="380" height="215" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="76" y="1405" font-size="21" font-weight="bold">U1 · Arduino Uno R3</text>
+<text x="300" y="1440" font-size="20" font-weight="bold">5V-Pin</text>
+<text x="80" y="1505" font-size="17">Versorgung über USB von PS2</text>
+<text x="80" y="1535" font-size="17">Abgriff am 5V-Pin, nicht VIN.</text>
+<polyline class="wire" points="440,1450 720,1450"/>
+<text x="465" y="1427" font-size="18" font-weight="bold">über J0.1</text>
+<circle cx="600" cy="1450" r="4" fill="#253b50"/>
+<polyline class="wire" points="600,1450 600,1530 720,1530"/>
+<text x="460" y="1570" font-size="17">+5V-Verzweigung</text>
+<rect x="720" y="1375" width="340" height="215" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="736" y="1405" font-size="18" font-weight="bold">J3 · STEP/DIR-Klemmenleiste</text>
+<polyline class="wire" points="720,1450 1060,1450"/>
+<circle cx="875" cy="1450" r="4" fill="#253b50"/>
+<text x="827" y="1434" font-size="20" font-weight="bold">J3.1</text>
+<polyline class="wire" points="1060,1450 1320,1450"/>
+<text x="1090" y="1434" font-size="17">W4 · Paar 1 (+)</text>
+<polyline class="wire" points="720,1530 1060,1530"/>
+<circle cx="875" cy="1530" r="4" fill="#253b50"/>
+<text x="827" y="1514" font-size="20" font-weight="bold">J3.3</text>
+<polyline class="wire" points="1060,1530 1320,1530"/>
+<text x="1090" y="1514" font-size="17">W4 · Paar 2 (+)</text>
+<rect x="1320" y="1375" width="420" height="215" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="1336" y="1405" font-size="21" font-weight="bold">U3 · DM860T V3.0</text>
+<text x="1340" y="1457" font-size="20" font-weight="bold">PUL+</text>
+<text x="1340" y="1537" font-size="20" font-weight="bold">DIR+</text>
+<text x="1460" y="1498" font-size="19" font-weight="bold">S2 auf 5 V</text>
+<text x="50" y="1622" font-size="18">Detail zeigt nur die Plusleitungen. J3.2 kommt von Q1, J3.4 von Q2 (Felder B/C). Kein Anschluss an +48 V.</text>
+<text x="35" y="1684" font-size="18" font-weight="bold">W4 · STEP/DIR-Kabel: J3 → U3, 2 geschirmte Paare. ENA±/ALM±/BRK± offen. GND, M48− und PE getrennt.</text>
+<text x="35" y="1720" font-size="18">J0 · Arduino-Anschlussleiste   |   J3 · STEP/DIR-Klemmenleiste   |   J4 · Freigabeschalter-Klemmenleiste</text>
+<text x="35" y="1750" font-size="17">Kennzeichen · Bauteilbezeichnung; z. B. U3 · DM860T V3.0. J3.2 bedeutet Anschluss 2 der Klemmenleiste J3.</text>
+<polyline class="wire" points="35,1780 1765,1780"/>
+<text x="35" y="1808" font-size="18">Verbindliche Verbindungstabellen, Bauteilwerte und Aufbauhinweise: docs/elektronik.md</text>
+<text x="35" y="1834" font-size="17">Kein Verdrahten unter Spannung. 230-V-Baugruppe durch Elektrofachperson aufbauen und prüfen.</text>
 </svg>
