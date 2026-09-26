@@ -1,6 +1,6 @@
 # Quellen und Entscheidungen
 
-Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Beschaffungsquellen, keine Garantie für Lagerbestand, Liefertermin oder die tatsächlich gelieferte Revision. Die unten genannten technischen Primärquellen wurden für Rev. A eingesehen. Händlerlinks für Standardmaterial in der Bestellliste sind teilweise nur Bezugsquellen; dies wird dort ausdrücklich unterschieden.
+Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Beschaffungsquellen, keine Garantie für Lagerbestand, Liefertermin oder die tatsächlich gelieferte Revision. Die unten genannten technischen Primärquellen wurden für Rev. A eingesehen. Beschaffungslinks unterscheiden konkrete Produkte, Sortimente und offene Auswahlpositionen. Die Dokumentprüfung prüft lokal das Format und die Konsistenz; sie ist keine Live-Verfügbarkeitsprüfung.
 
 ## Primärquellen
 
@@ -22,6 +22,9 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 | [ConCar, Gates HTD-5M-Riemen](https://www.concar-shop.de/shop/en/belts/timing-belts/timing-belts/gates-synchronous-belts-powergrip-htd/gates-synchronous-belts-powergrip-htd-dimension-5m.html) | Riemen 450-5M-15, Artikel GT045005015 |
 
 ## Festlegungen aus dem Gespräch
+
+- 26.09.2026: Nutzer möchte nicht bevorzugt bei Reichelt bestellen und meldet unbrauchbare Links. Allgemeine Shop-Startseiten durch recherchierte Produktseiten bei BerryBase Schweiz, Bastelgarage, DigiKey und Conrad ersetzt. Kategorieverweise sind als Sortiment markiert; unbestätigte Artikel bleiben ohne vermeintlichen Kauflink offen. Artikel-/Packungshinweise ergänzen die Einbaumengen. F1 0001.2532 wird auf der recherchierten DigiKey-Seite als nicht lagernd geführt; keine ungeprüfte Sicherungsalternative übernommen.
+- Beschaffungskonkretisierung ohne Änderung der Netze: J0 aus drei, J3 aus zwei anreihbaren 2-poligen Klemmen; Steuerplatine 120×80 mm statt ungefährem Planmaß 100×80 mm. PIR-/Uno-Leitungen aus fertigen Dupont-Leitungen mit je einem abgetrennten Stecker. Basis sind die in der CSV verlinkten Anbieterbeschreibungen; die Tabellen in `elektronik.md` bleiben maßgeblich.
 
 - 26.09.2026: Logikanalysator (T04) laut Nutzer vorhanden; aus den Bestellpositionen entfernt.
 

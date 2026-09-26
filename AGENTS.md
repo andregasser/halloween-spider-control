@@ -25,6 +25,7 @@
 
 - `docs/elektronik.md` ist die maßgebliche Verbindungs- und Pinliste. Grafiken: `docs/schaltplan-steuerung.svg` und `docs/schaltplan-versorgung.svg`.
 - Material- und Bestellliste ausschließlich auf Elektronik beschränken: Motor, Treiber, Versorgung, Schaltung, elektrische Leitungen/Anschlüsse und Elektrogehäuse-/Isolationsmaterial. Keine Mechanikteile, Rohre, Holzplatten, Kabelbinder oder Konstruktionswerkzeuge aufnehmen. Bestehende Mechanikdokumente dienen nur als Projektkontext; aktueller Arbeitsumfang ist Elektronik.
+- Beschaffung: Alternativen zu Reichelt bevorzugen; keine allgemeinen Shop-Startseiten als Bestelllinks. Konkrete Artikel mit Nummer und Packungsmenge verlinken. `Linkart` unterscheidet Produkt, Sortiment, Offen und Bestand. Ungeklärte Ausführungen ehrlich als offen führen, keine Links oder Kompatibilität erfinden.
 - `bom/teile.csv` ist die Datenquelle für Stück- und Bestellliste. Generierung: `python3 tools/dokumente_generieren.py`.
 - Grafiken werden durch `python3 tools/schaltplaene_generieren.py` erzeugt. Änderungen an der Schaltung in Generator, Verbindungstabelle und Stückliste gemeinsam durchführen.
 - `docs/firmware.md` beschreibt die nächste Implementierung; im aktuellen Stand gibt es noch keine Firmware, keine Build-Konfiguration und keinen Hardwaretest.

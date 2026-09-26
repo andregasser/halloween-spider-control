@@ -9,7 +9,7 @@ import subprocess
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from urllib.parse import unquote
+from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 errors = []
@@ -37,8 +37,17 @@ orders = (ROOT / "bom/bestellliste.md").read_text(encoding="utf-8")
 for r in rows:
     if None in r or any(v is None for v in r.values()): errors.append(f"Ungültige CSV-Zeile: {r.get('ID')}")
     if r["Status"] != "vorhanden":
-        if not r["Lieferant"] or not r["Link"].startswith("https://"):
-            errors.append(f"Lieferant/Link fehlt: {r['ID']}")
+        if not r["Lieferant"]:
+            errors.append(f"Lieferant fehlt: {r['ID']}")
+        if r["Linkart"] == "Offen":
+            if r["Link"] or r["Status"] == "bestellen":
+                errors.append(f"Offene Beschaffung fälschlich als bestellbar/verlinkt: {r['ID']}")
+        elif r["Linkart"] in ("Produkt", "Sortiment"):
+            url = urlparse(r["Link"])
+            if url.scheme != "https" or not url.netloc or url.path in ("", "/"):
+                errors.append(f"Konkreter HTTPS-Link fehlt (keine Shop-Startseite): {r['ID']}")
+        else:
+            errors.append(f"Ungültige Linkart: {r['ID']}")
         if f"| {r['ID']} |" not in orders: errors.append(f"Bestellposition fehlt: {r['ID']}")
     elif f"| {r['ID']} |" in orders: errors.append(f"Vorhandenes Teil auf Bestellliste: {r['ID']}")
 
