@@ -102,8 +102,8 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 | M03 | 1 Stück | Hauptachsen-Riemenscheibe — HTD-5M, 40T, für 15-mm-Riemen, Bohrung 20 mm mit passender Nut | Große Scheibe der 2:1-Untersetzung | Noch beschaffen, Variante klären |
 | M04 | 1 Stück | Zahnriemen — Geschlossen HTD 450-5M-15, 90 Zähne, 15 mm breit | Überträgt Motorbewegung zur Hauptachse | Noch bestellen |
 | M05 | 1 Stück | Hauptachse — Stahl 20 mm, ca. 200 mm, bearbeitbar, Passfedernut zur 40T-Scheibe | Trägt Armaufnahme und überträgt Drehmoment | Noch beschaffen, Aufmaß nötig |
-| M06 | 2 Stück | Flanschlager — UCFL204, 20-mm-Bohrung, DOLD Artikel 35334 | Separate Lagerung der Hauptachse | Noch bestellen |
-| M07 | 2 Stück | Geteilte Wellen-Klemmringe — 20-mm-Bohrung, zur Lageranordnung passend | Axiale Sicherung der Hauptachse | Noch bestellen |
+| M06 | 2 Stück | Flanschlager — UCFL204, 20-mm-Bohrung, DOLD Artikel 35334 | Separate Lagerung der Hauptachse | Noch beschaffen, Variante klären |
+| M07 | 2 Stück | Geteilte Wellen-Klemmringe — 20-mm-Bohrung, zur Lageranordnung passend | Axiale Sicherung der Hauptachse | Noch beschaffen, Variante klären |
 | M08 | 1 Stück | Flansch-Klemmnabe — 20-mm-Bohrung, geschlitzte Klemmung, dokumentiertes Moment mindestens 20 Nm | Verbindet Welle drehfest mit Armplatte | Noch beschaffen, Variante klären |
 | M09 | 1 Stück | Passfeder Motor — Zur 14-mm-Motorwelle und M02 passend | Formschlüssige Drehmomentübertragung auf 20T-Scheibe | Noch beschaffen, Variante klären |
 | M10 | 1 Stück | Passfeder Hauptachse — Zur 20-mm-Welle und M03 passend | Formschlüssige Drehmomentübertragung auf 40T-Scheibe | Noch beschaffen, Aufmaß nötig |

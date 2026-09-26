@@ -18,6 +18,7 @@ Die Grundarchitektur steht fest. Diese Dokumentation konkretisiert die Elektroni
 | [Material-Stückliste](bom/material-stueckliste.md) | Alle vorgesehenen Einbauteile, Mengen, Begründung und Bestand |
 | [Bestellliste](bom/bestellliste.md) | Fehlende Teile mit Lieferanten und konkreten Auswahlmerkmalen |
 | [Mechanik](docs/mechanik.md) | Riemenantrieb, Lagerung, Befestigung und noch zu messende Maße |
+| [Hauptwelle: 15 oder 20 mm](docs/hauptwelle-auslegung.md) | Rechnerische Vorprüfung, Einfluss des Riemenüberhangs und offene Maße |
 | [Firmware-Anforderungen](docs/firmware.md) | Pinbelegung, Zustände und Bewegungsparameter; noch keine Implementierung |
 | [Inbetriebnahme](docs/inbetriebnahme.md) | Prüfungen vom spannungslosen Aufbau bis zum Wagen |
 | [Quellen und Entscheidungen](docs/quellen-und-entscheidungen.md) | Datenblätter und Abweichungen vom frühen Handover |
@@ -47,7 +48,7 @@ Das Gewicht liegt auf den Rollen. Der Motor muss Rollwiderstand und Beschleunigu
 - Treiber: **DM860T**, dieser Plan bezieht sich ausdrücklich auf **V3.0**.
 - Motorversorgung: **Mean Well LRS-350-48**, 48 V; Uno separat über USB.
 - Mechanik: **20T : 40T**, **HTD-5M**, **15 mm** Riemenbreite, vorläufig **450-5M-15**.
-- Hauptachse: Stahl, etwa 20 mm Durchmesser, zwei Lager.
+- Hauptachse: Stahl, zwei Lager; 20 mm als vorläufige Referenz, 15 mm als noch zu dimensionierende Alternative.
 - Trigger: vorhandener PIR, vier Adern in zwei Paaren eines RJ45-Patchkabels bis 3 m; drei elektrische Netze: 5 V, GND, OUT.
 - Kein Hall-Sensor und keine automatische Referenzfahrt in der ersten Version.
 

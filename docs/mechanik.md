@@ -1,5 +1,7 @@
 # Mechanischer Aufbau
 
+**Wellendurchmesser vorläufig:** Die bisher vorgesehenen 20 mm sind kein nachgewiesenes Mindestmaß. [Vorprüfung 15 mm gegenüber 20 mm](hauptwelle-auslegung.md): 15 mm sind bei kompakter Anordnung plausibel, aber erst mit Einbaumaßen und Lasten endgültig auszuwählen. Die folgende Beschreibung bleibt die zusammenpassende 20-mm-Referenzausführung.
+
 ## Kraftfluss und Abmessungen
 
 NEMA-34-Motor → 20T-Riemenscheibe → HTD-5M-Riemen → 40T-Riemenscheibe → 20-mm-Hauptachse → Flansch-Klemmnabe → Armplatte → Kunststoffrohr → Wagen.

@@ -28,6 +28,7 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 - Sensorleitung: RJ45-Patchkabel, bis 3 m, zwei verdrillte Paare für OUT/GND und 5V/GND.
 - Nutzer bestätigt: **Nur Uno und PIR vorhanden, alles Weitere noch zu bestellen.** Dies ist der aktuelle Bestand, auch wenn das Handover bereits einen Wagen beschreibt. Für Wagen/Spinne ist vor Neukauf ein Bestandsabgleich sinnvoll.
 - Auftrag dieser Revision: deutsche Projektdokumente, Schaltplan, vollständige Material- und Bestellliste sowie Einchecken ins Repository. Keine Teile bestellen und noch keine Firmware implementieren.
+- 26.09.2026: Auf Nutzeranfrage [15-mm-Hauptwelle gegenüber 20 mm rechnerisch vorgeprüft](hauptwelle-auslegung.md). 20 mm sind kein nachgewiesenes Mindestmaß; 15 mm sind eine plausible Alternative, abhängig von Riemenüberhang, Lasten und Nut-/Nabenausführung. Rechnung und zusätzliche Primärquellen stehen im Prüfdokument. Keine endgültige Durchmesseränderung beschlossen; davon abhängige Bestellpositionen bleiben bis zur Maßzeichnung offen.
 
 ## Technische Konkretisierungen dieser Revision
 
