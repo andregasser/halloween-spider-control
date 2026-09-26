@@ -23,6 +23,8 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 
 ## Festlegungen aus dem Gespräch
 
+- 26.09.2026: Multimeter (T03) laut Nutzer ebenfalls vorhanden; aus den Bestellpositionen entfernt.
+
 - 26.09.2026: Lötkolben, Elektroniklot und Flussmittel laut Nutzer bereits vorhanden. T01 und V01 als Bestand führen, nicht als Bestellpositionen.
 
 - 26.09.2026: Nutzer bestätigt E08 Patchkabel und E28 CH-Mehrfachsteckdose zusätzlich als vorhanden. Beide bleiben in der Materialliste, entfallen aber als Bestellposition. Arbeitsumfang und Beschaffungslisten werden auf Elektronik und zugehöriges elektrisches Zubehör begrenzt; Konstruktion, Mechanikteile und Kabelbinder entfallen. Keine zusätzliche Lochrasterplatine am PIR nötig; die Steuer-Lochrasterplatine E18 bleibt erforderlich.
