@@ -8,6 +8,24 @@ Der Plan gilt für **U1 Arduino Uno R3**, **B1 HC-SR501-kompatiblen PIR**, STEPP
 
 Die beiden Blätter bilden gemeinsam den vollständigen elektrischen Entwurf. Gleich benannte Netze sind elektrisch verbunden. Steckverbinderbezeichnungen beziehen sich auf diesen Projektplan, nicht auf die Steckerbezeichnungen im Treiberhandbuch.
 
+Geräte werden auf beiden Blättern als **Kennzeichen · Bauteilbezeichnung** beschriftet. Die Kennzeichen bleiben beim Wechsel zwischen den Blättern gleich:
+
+| Kennzeichen | Bauteilbezeichnung |
+|---|---|
+| U1 | Arduino Uno R3 |
+| U2 | SN74HCT14N |
+| U3 | DM860T V3.0 |
+| B1 | HC-SR501-Bauform, vorhandener PIR-Sensor |
+| M1 | 34HS46-6004S1, NEMA-34-Motor |
+| PS1 | LRS-350-48, 48-V-Netzteil |
+| PS2 | USB-Netzteil, 5 V |
+| J0 | Arduino-Anschlussleiste |
+| J1 / J2 | RJ45-Klemmenadapter an Steuerung / Sensor |
+| J3 | STEP/DIR-Klemmenleiste |
+| J4 | Freigabeschalter-Klemmenleiste |
+
+**U2A und U2B gehören zum selben Bauteil U2**, dem SN74HCT14N; die Buchstaben bezeichnen zwei seiner internen Schaltstufen. Anschlussverweise dürfen verkürzt erscheinen: `U1 D2` bedeutet Pin D2 des Arduino Uno R3, `J3.2` bedeutet Anschluss 2 der Klemmenleiste J3. Feldbuchstaben A–F gliedern das Blatt und sind keine Bauteilkennzeichen.
+
 ### Blatt 1: Versorgung und Motor
 
 ![Versorgung und Motor](schaltplan-versorgung.svg)

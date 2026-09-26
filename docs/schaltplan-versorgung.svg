@@ -63,7 +63,7 @@
 <text x="1228" y="453" font-size="17">Andere Version:</text>
 <text x="1228" y="482" font-size="17">Belegung neu prüfen!</text>
 <rect x="1580" y="195" width="170" height="365" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="1596" y="225" font-size="21" font-weight="bold">M1 · Motor</text>
+<text x="1593" y="220" font-size="13" font-weight="bold">M1 · 34HS46-6004S1</text>
 <text x="1594" y="545" font-size="17">NEMA 34</text>
 <polyline class="wire" points="1490,250 1580,250" style="stroke:#253b50"/>
 <text x="1500" y="237" font-size="14">A+ schwarz</text>
@@ -97,7 +97,7 @@
 <polyline class="wire" points="895,790 1160,790"/>
 <text x="936" y="765" font-size="19" font-weight="bold">W2 · USB-A/B</text>
 <rect x="1160" y="708" width="265" height="170" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="1176" y="738" font-size="21" font-weight="bold">U1 · Arduino Uno</text>
+<text x="1176" y="738" font-size="21" font-weight="bold">U1 · Arduino Uno R3</text>
 <text x="1176" y="799" font-size="20" font-weight="bold">USB-B</text>
 <polyline class="wire" points="1425,752 1705,752"/>
 <text x="1475" y="731" font-size="18" font-weight="bold">5V → +5V (Blatt 2)</text>
