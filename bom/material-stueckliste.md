@@ -2,7 +2,7 @@
 
 Stand: **26.09.2026 · Revision A**. Diese Liste umfasst ausschließlich die Elektronik einschließlich Motor, Versorgung, elektrischer Leitungen, Anschlüsse und zugehörigem Elektrogehäuse-/Isolationsmaterial. Konstruktionsmaterial wie Rohre, Holzplatten, Riemenantrieb und Kabelbinder gehört nicht zum Umfang. Elektronikwerkzeuge und Lötmaterial stehen separat am Ende. Mengen von Leitungen und Zubehör sind Planmengen.
 
-**Bestätigt vorhanden: E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator.** Noch keine Bestellung ausgelöst.
+**Bestätigt vorhanden: E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E44 Schrumpfschlauch, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator.** Noch keine Bestellung ausgelöst.
 
 Die [Bestellliste](bestellliste.md) ergänzt Lieferant und Auswahlhinweise. Die IDs bleiben über beide Listen gleich. Alle eingebauten elektronischen Referenzen gehören zum [Schaltplan](../docs/elektronik.md). Preise sind bewusst nicht aus alten Schätzungen übernommen.
 
@@ -82,7 +82,8 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
 | E43 | 1 Satz | Aderendhülsen, Ringkabelschuhe und PE-Schrauben — Zu 0,25–1,5 mm² und jeweiligen Klemmen, Ringösen für PE | Dauerhafte elektrische und mechanische Anschlüsse | Noch beschaffen, Variante klären |
-| E44 | 1 Satz | Schrumpfschlauch und elektrische Beschriftung — Schrumpfschlauch in passenden Durchmessern, Leitungsetiketten | Isoliert elektrische Verbindungen und kennzeichnet Anschlüsse | Noch bestellen |
+| E44 | 1 Satz | Schrumpfschlauch — Schrumpfschlauch in passenden Durchmessern | Isoliert elektrische Verbindungen | Vorhanden |
+| E46 | 1 Satz | Elektrische Beschriftung — Leitungsetiketten für PIR 5V KEIN LAN/PoE, 48V, PE und S0 | Kennzeichnet Leitungen und Anschlüsse eindeutig | Bestand/Bedarf prüfen |
 
 ## Verbrauchsmaterial
 

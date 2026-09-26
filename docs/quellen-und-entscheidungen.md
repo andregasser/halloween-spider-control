@@ -23,6 +23,8 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 
 ## Festlegungen aus dem Gespräch
 
+- 26.09.2026: Schrumpfschläuche (E44) sind laut Nutzer ausreichend vorhanden und nicht zu bestellen. Elektrische Beschriftung als E46 getrennt; deren Bestand ist noch nicht bestätigt.
+
 - 26.09.2026: Nutzer möchte nicht bevorzugt bei Reichelt bestellen und meldet unbrauchbare Links. Allgemeine Shop-Startseiten durch recherchierte Produktseiten bei BerryBase Schweiz, Bastelgarage, DigiKey und Conrad ersetzt. Kategorieverweise sind als Sortiment markiert; unbestätigte Artikel bleiben ohne vermeintlichen Kauflink offen. Artikel-/Packungshinweise ergänzen die Einbaumengen. F1 0001.2532 wird auf der recherchierten DigiKey-Seite als nicht lagernd geführt; keine ungeprüfte Sicherungsalternative übernommen.
 - Beschaffungskonkretisierung ohne Änderung der Netze: J0 aus drei, J3 aus zwei anreihbaren 2-poligen Klemmen; Steuerplatine 120×80 mm statt ungefährem Planmaß 100×80 mm. PIR-/Uno-Leitungen aus fertigen Dupont-Leitungen mit je einem abgetrennten Stecker. Basis sind die in der CSV verlinkten Anbieterbeschreibungen; die Tabellen in `elektronik.md` bleiben maßgeblich.
 

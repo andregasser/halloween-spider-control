@@ -2,7 +2,7 @@
 
 Stand: **26.09.2026 · Revision A**. Noch keine Bestellung ausgelöst.
 
-**Nicht bestellen, bereits vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator. Die Liste enthält nur fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
+**Nicht bestellen, bereits vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E44 Schrumpfschlauch, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator. Die Liste enthält nur fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
 
 **Lieferantenlinks überarbeitet am 26.09.2026, ohne Reichelt:** **Produkt** führt zum konkreten Artikel; Artikelnummern, Varianten und Packungsmengen stehen im Hinweis. **Sortiment** führt zu einer passenden Kategorie, die genaue Ausführung ist noch offen. **Produkt noch offen** enthält bewusst keinen unbestätigten Link; diese Position ist erst nach Auswahl bestellbar. Eine recherchierte Produktseite ist keine Lager- oder Lieferzusage.
 
@@ -39,7 +39,6 @@ Automatisch erzeugt aus [teile.csv](teile.csv). Die [Material-Stückliste](mater
 | ☐ | E31 | 1 Stück | F2 DC-Sicherung — SCHURTER SPT 0001.2533, T8 A, 6,3×32 mm, 63 VDC | [DigiKey Schweiz · Produkt](https://www.digikey.ch/en/products/detail/schurter-inc/0001-2533/640670) | 0001.2533, T8 A, 6,3×32 mm, 63 VDC. Produktseite statt bisherigem Datenblattlink. |
 | ☐ | E34 | 3 m | Schutzleiterlitze — 1,5 mm², grün-gelb | [Conrad Schweiz · Produkt](https://www.conrad.ch/de/p/helu-200200gnge-litze-h07v-k-1-x-1-50-mm-gelb-gruen-meterware-1428446.html) | Art. 1428446, HELU 200200gnge, H07V-K 1,5 mm² grün/gelb, 3 m. Mindestabnahme beachten. |
 | ☐ | E42 | 8 Stück | Platinen-Abstandshalter — M3, isolierend, passende Schrauben/Muttern | [Bastelgarage · Produkt](https://www.bastelgarage.ch/m3x10mm-nylon-distanzbolzen-abstandhalter-set-10-stuck) | Art. 421578: ein 10er-Set M3×10 mm inkl. Schrauben/Muttern, davon acht verwenden; Lochbild und Abstand prüfen. |
-| ☐ | E44 | 1 Satz | Schrumpfschlauch und elektrische Beschriftung — Schrumpfschlauch in passenden Durchmessern, Leitungsetiketten | [BerryBase Schweiz · Produkt](https://www.berrybase.ch/schrumpfschlauch-sortiment-100-teilig-schwarz-in-kunststoffbox) | 100er-Sortiment Schrumpfschlauch. Der Link deckt den Schlauch ab; Leitungsetiketten für PIR 5V KEIN LAN/PoE, 48V, PE und S0 separat nach Bedarf. |
 
 ## Fehlende Teile mit noch zu bestätigender Ausführung
 
@@ -68,6 +67,7 @@ Automatisch erzeugt aus [teile.csv](teile.csv). Die [Material-Stückliste](mater
 | Erledigt | ID | Menge | Teil / genaue Auswahl | Lieferant / Link | Vor Bestellung beachten |
 |---|---|---|---|---|---|
 | ☐ | E45 | 1 Stück | RCD-Zwischenstecker bei fehlendem geeignetem RCD — 30 mA, CH-tauglich, zum Aufstellort passend | Schweizer Elektrofachbetrieb — Produkt noch offen | Nur bei fehlendem geeignetem vorgeschaltetem RCD erforderlich. CH-Ausführung und Einsatzort prüfen; Modell erst bei tatsächlichem Bedarf auswählen. |
+| ☐ | E46 | 1 Satz | Elektrische Beschriftung — Leitungsetiketten für PIR 5V KEIN LAN/PoE, 48V, PE und S0 | Elektrofachbetrieb — Produkt noch offen | Aus E44 getrennt. Vorhandenes Beschriftungsmaterial verwenden; nur bei fehlendem Bestand beschaffen. |
 | ☐ | T02 | 1 Stück | Crimpzange für Aderendhülsen — Für Aderendhülsen 0,25–2,5 mm² | [BerryBase Schweiz · Produkt](https://www.berrybase.ch/crimpzange-fuer-aderendhuelsen-0-25-2-5mm2) | Nur bei fehlendem Werkzeug: Zange für Aderendhülsen 0,25–2,5 mm². Nicht für Ringkabelschuhe; deren Werkzeug stellt der Elektrofachbetrieb. |
 
 ## Zusätzlich einplanen: Netzaufbau und Prüfung
