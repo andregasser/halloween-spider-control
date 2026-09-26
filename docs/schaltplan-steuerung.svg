@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1850" viewBox="0 0 1800 1850">
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2500" viewBox="0 0 1800 2500">
 <style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#152536} .wire{fill:none;stroke:#253b50;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}</style>
-<rect width="1800" height="1850" fill="white"/>
+<rect width="1800" height="2500" fill="white"/>
 <text x="35" y="46" font-size="29" font-weight="bold">Blatt 2 / 2 — Steuerung, STEP/DIR und PIR-Sensor</text>
 <text x="35" y="79" font-size="18">Halloween-Spinne · Revision A · 26.09.2026 · Entwurf, noch nicht aufgebaut oder geprüft</text>
 <text x="35" y="108" font-size="17">Gleiche Netznamen sind verbunden. Punkte = Verbindung. Kreuzungen ohne Punkt = keine Verbindung.</text>
@@ -227,69 +227,123 @@
 <text x="562" y="1207" font-size="17">J4.2</text>
 <text x="570" y="1249" font-size="16">EIN = geschlossen</text>
 <text x="478" y="1280" font-size="16">Freigabeschalter, kein Not-Halt.</text>
-<rect x="845" y="910" width="455" height="390" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="861" y="940" font-size="21" font-weight="bold">E · U2 · SN74HCT14N</text>
-<text x="865" y="970" font-size="18" font-weight="bold">+5V → U2.14    GND → U2.7</text>
-<polyline class="wire" points="890,1000 1135,1000"/>
-<text x="865" y="992" font-size="16">+5V</text>
-<polyline class="wire" points="890,1020 890,1042"/>
-<polyline class="wire" points="875,1042 905,1042"/>
-<polyline class="wire" points="875,1052 905,1052"/>
-<polyline class="wire" points="890,1052 890,1080"/>
-<text x="912" y="1053" font-size="16">C1 · 100 nF</text>
-<polyline class="wire" points="890,1000 890,1020"/>
-<polyline class="wire" points="890,1080 890,1090"/>
-<polyline class="wire" points="874,1090 906,1090"/>
-<polyline class="wire" points="880,1097 900,1097"/>
-<polyline class="wire" points="886,1104 894,1104"/>
-<text x="869" y="1127" font-size="16">GND</text>
-<polyline class="wire" points="1135,1020 1135,1042"/>
-<polyline class="wire" points="1120,1042 1150,1042"/>
-<polyline class="wire" points="1120,1052 1150,1052"/>
-<polyline class="wire" points="1135,1052 1135,1080"/>
-<text x="1157" y="1053" font-size="16">C2 · 10 µF</text>
-<text x="1107" y="1036" font-size="18">+</text>
-<polyline class="wire" points="1135,1000 1135,1020"/>
-<polyline class="wire" points="1135,1080 1135,1090"/>
-<polyline class="wire" points="1119,1090 1151,1090"/>
-<polyline class="wire" points="1125,1097 1145,1097"/>
-<polyline class="wire" points="1131,1104 1139,1104"/>
-<text x="1114" y="1127" font-size="16">GND</text>
-<text x="865" y="1170" font-size="17">C1 direkt an U2.14 / U2.7.</text>
-<text x="865" y="1200" font-size="17">U2.5 / .9 / .11 / .13 → GND</text>
-<text x="865" y="1230" font-size="17">U2.6 / .8 / .10 / .12 → offen</text>
-<text x="865" y="1260" font-size="17">U2.2 mit U2.3 verbinden.</text>
-<rect x="1320" y="910" width="450" height="390" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="1336" y="940" font-size="21" font-weight="bold">F · B1 · HC-SR501-Bauform</text>
-<polyline class="wire" points="1370,1000 1600,1000"/>
-<text x="1342" y="980" font-size="18" font-weight="bold">B1 VCC / J2.5</text>
-<polyline class="wire" points="1370,1020 1370,1042"/>
-<polyline class="wire" points="1355,1042 1385,1042"/>
-<polyline class="wire" points="1355,1052 1385,1052"/>
-<polyline class="wire" points="1370,1052 1370,1080"/>
-<text x="1392" y="1053" font-size="16">C3 · 100 nF</text>
-<polyline class="wire" points="1370,1000 1370,1020"/>
-<polyline class="wire" points="1370,1080 1370,1090"/>
-<polyline class="wire" points="1354,1090 1386,1090"/>
-<polyline class="wire" points="1360,1097 1380,1097"/>
-<polyline class="wire" points="1366,1104 1374,1104"/>
-<text x="1349" y="1127" font-size="16">GND</text>
-<polyline class="wire" points="1600,1020 1600,1042"/>
-<polyline class="wire" points="1585,1042 1615,1042"/>
-<polyline class="wire" points="1585,1052 1615,1052"/>
-<polyline class="wire" points="1600,1052 1600,1080"/>
-<text x="1622" y="1053" font-size="16">C4 · 10 µF</text>
-<text x="1572" y="1036" font-size="18">+</text>
-<polyline class="wire" points="1600,1000 1600,1020"/>
-<polyline class="wire" points="1600,1080 1600,1090"/>
-<polyline class="wire" points="1584,1090 1616,1090"/>
-<polyline class="wire" points="1590,1097 1610,1097"/>
-<polyline class="wire" points="1596,1104 1604,1104"/>
-<text x="1579" y="1127" font-size="16">GND</text>
-<text x="1340" y="1170" font-size="17">GND = B1 GND / J2.2 + J2.4</text>
-<text x="1340" y="1200" font-size="17">C2/C4: 16 V oder höher, Polarität!</text>
-<text x="1340" y="1230" font-size="17">C1/C3/C5: 25 V oder höher.</text>
-<text x="1340" y="1260" font-size="17">RJ45.3/.6/.7/.8: beidseitig frei.</text>
+<rect x="845" y="910" width="925" height="390" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="861" y="940" font-size="21" font-weight="bold">F · B1 · HC-SR501-Bauform</text>
+<polyline class="wire" points="1095,1000 1435,1000"/>
+<text x="1070" y="980" font-size="18" font-weight="bold">B1 VCC / J2.5</text>
+<polyline class="wire" points="1095,1020 1095,1042"/>
+<polyline class="wire" points="1080,1042 1110,1042"/>
+<polyline class="wire" points="1080,1052 1110,1052"/>
+<polyline class="wire" points="1095,1052 1095,1080"/>
+<text x="1117" y="1053" font-size="16">C3 · 100 nF</text>
+<polyline class="wire" points="1095,1000 1095,1020"/>
+<polyline class="wire" points="1095,1080 1095,1090"/>
+<polyline class="wire" points="1079,1090 1111,1090"/>
+<polyline class="wire" points="1085,1097 1105,1097"/>
+<polyline class="wire" points="1091,1104 1099,1104"/>
+<text x="1074" y="1127" font-size="16">GND</text>
+<polyline class="wire" points="1435,1020 1435,1042"/>
+<polyline class="wire" points="1420,1042 1450,1042"/>
+<polyline class="wire" points="1420,1052 1450,1052"/>
+<polyline class="wire" points="1435,1052 1435,1080"/>
+<text x="1457" y="1053" font-size="16">C4 · 10 µF</text>
+<text x="1407" y="1036" font-size="18">+</text>
+<polyline class="wire" points="1435,1000 1435,1020"/>
+<polyline class="wire" points="1435,1080 1435,1090"/>
+<polyline class="wire" points="1419,1090 1451,1090"/>
+<polyline class="wire" points="1425,1097 1445,1097"/>
+<polyline class="wire" points="1431,1104 1439,1104"/>
+<text x="1414" y="1127" font-size="16">GND</text>
+<text x="1070" y="1170" font-size="17">GND = B1 GND / J2.2 + J2.4</text>
+<text x="1070" y="1200" font-size="17">C2/C4: 16 V oder höher, Polarität!</text>
+<text x="1070" y="1230" font-size="17">C1/C3/C5: 25 V oder höher.</text>
+<text x="1070" y="1260" font-size="17">RJ45.3/.6/.7/.8: beidseitig frei.</text>
+<rect x="30" y="1320" width="1740" height="630" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="46" y="1350" font-size="21" font-weight="bold">E · U2 · SN74HCT14N · Anschlüsse am Chip</text>
+<text x="55" y="1384" font-size="19" font-weight="bold">Ansicht von oben auf die Beschriftung · Kerbe oben · Lötseite der Platine ist spiegelverkehrt.</text>
+<rect x="680" y="1445" width="300" height="370" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
+<path d="M805,1445 A25,25 0 0 0 855,1445" fill="none" stroke="#253b50" stroke-width="2.5"/>
+<text x="798" y="1433" font-size="17">Kerbe</text>
+<text x="770" y="1610" font-size="27" font-weight="bold">U2</text>
+<text x="726" y="1650" font-size="21" font-weight="bold">SN74HCT14N</text>
+<text x="774" y="1682" font-size="18">DIP-14</text>
+<polyline class="wire" points="620,1480 680,1480"/>
+<text x="692" y="1487" font-size="20" font-weight="bold">1</text>
+<polyline class="wire" points="980,1480 1040,1480"/>
+<text x="946" y="1487" font-size="20" font-weight="bold">14</text>
+<polyline class="wire" points="620,1530 680,1530"/>
+<text x="692" y="1537" font-size="20" font-weight="bold">2</text>
+<polyline class="wire" points="980,1530 1040,1530"/>
+<text x="946" y="1537" font-size="20" font-weight="bold">13</text>
+<polyline class="wire" points="620,1580 680,1580"/>
+<text x="692" y="1587" font-size="20" font-weight="bold">3</text>
+<polyline class="wire" points="980,1580 1040,1580"/>
+<text x="946" y="1587" font-size="20" font-weight="bold">12</text>
+<polyline class="wire" points="620,1630 680,1630"/>
+<text x="692" y="1637" font-size="20" font-weight="bold">4</text>
+<polyline class="wire" points="980,1630 1040,1630"/>
+<text x="946" y="1637" font-size="20" font-weight="bold">11</text>
+<polyline class="wire" points="620,1680 680,1680"/>
+<text x="692" y="1687" font-size="20" font-weight="bold">5</text>
+<polyline class="wire" points="980,1680 1040,1680"/>
+<text x="946" y="1687" font-size="20" font-weight="bold">10</text>
+<polyline class="wire" points="620,1730 680,1730"/>
+<text x="692" y="1737" font-size="20" font-weight="bold">6</text>
+<polyline class="wire" points="980,1730 1040,1730"/>
+<text x="946" y="1737" font-size="20" font-weight="bold">9</text>
+<polyline class="wire" points="620,1780 680,1780"/>
+<text x="692" y="1787" font-size="20" font-weight="bold">7</text>
+<polyline class="wire" points="980,1780 1040,1780"/>
+<text x="946" y="1787" font-size="20" font-weight="bold">8</text>
+<polyline class="wire" points="360,1480 620,1480"/>
+<text x="70" y="1450" font-size="18">Von R5 / R6 / C5 (Feld A)</text>
+<text x="70" y="1486" font-size="19" font-weight="bold">PIR_FILTER → Pin 1</text>
+<polyline class="wire" points="620,1530 620,1580"/>
+<text x="335" y="1562" font-size="19" font-weight="bold">Pin 2 mit Pin 3 verbinden</text>
+<polyline class="wire" points="360,1630 620,1630"/>
+<text x="70" y="1636" font-size="19" font-weight="bold">Pin 4 → J0.6 → U1 D7</text>
+<text x="540" y="1687" font-size="19" font-weight="bold">GND</text>
+<text x="410" y="1737" font-size="19">frei lassen</text>
+<text x="1055" y="1537" font-size="19" font-weight="bold">GND</text>
+<text x="1055" y="1587" font-size="19">frei lassen</text>
+<text x="1055" y="1637" font-size="19" font-weight="bold">GND</text>
+<text x="1055" y="1687" font-size="19">frei lassen</text>
+<text x="1055" y="1737" font-size="19" font-weight="bold">GND</text>
+<text x="1055" y="1787" font-size="19">frei lassen</text>
+<polyline class="wire" points="1040,1480 1500,1480"/>
+<text x="1110" y="1454" font-size="19" font-weight="bold">+5V von U1 5V / J0.1 → Pin 14</text>
+<circle cx="1250" cy="1480" r="4" fill="#253b50"/>
+<polyline class="wire" points="1250,1480 1250,1540"/>
+<polyline class="wire" points="1250,1540 1250,1562"/>
+<polyline class="wire" points="1235,1562 1265,1562"/>
+<polyline class="wire" points="1235,1572 1265,1572"/>
+<polyline class="wire" points="1250,1572 1250,1600"/>
+<text x="1272" y="1573" font-size="16">C1 · 100 nF</text>
+<polyline class="wire" points="1250,1600 1250,1640"/>
+<circle cx="1250" cy="1640" r="4" fill="#253b50"/>
+<circle cx="1500" cy="1480" r="4" fill="#253b50"/>
+<polyline class="wire" points="1500,1480 1500,1540"/>
+<polyline class="wire" points="1500,1540 1500,1562"/>
+<polyline class="wire" points="1485,1562 1515,1562"/>
+<polyline class="wire" points="1485,1572 1515,1572"/>
+<polyline class="wire" points="1500,1572 1500,1600"/>
+<text x="1522" y="1573" font-size="16">C2 · 10 µF</text>
+<text x="1472" y="1556" font-size="18">+</text>
+<polyline class="wire" points="1500,1600 1500,1640"/>
+<circle cx="1500" cy="1640" r="4" fill="#253b50"/>
+<polyline class="wire" points="1190,1640 1620,1640"/>
+<polyline class="wire" points="1620,1640 1620,1650"/>
+<polyline class="wire" points="1604,1650 1636,1650"/>
+<polyline class="wire" points="1610,1657 1630,1657"/>
+<polyline class="wire" points="1616,1664 1624,1664"/>
+<text x="1599" y="1687" font-size="16">GND</text>
+<polyline class="wire" points="1190,1640 1190,1840 620,1840 620,1780"/>
+<text x="1230" y="1750" font-size="18">C1 direkt zwischen Pin 14 und Pin 7.</text>
+<text x="1230" y="1780" font-size="18">C2: Plus an +5V, Minus an GND.</text>
+<text x="1230" y="1810" font-size="18">C2 nahe dem Versorgungseingang.</text>
+<text x="55" y="1885" font-size="19">Alle GND-Anschlüsse hier verbinden: Pins 5, 7, 9, 11, 13 und C1/C2 → U1 GND / J0.2.</text>
+<text x="55" y="1917" font-size="19">U2 ist derselbe Chip wie U2A/U2B in Feld A. Bei IC-Sockel an dessen passenden Lötanschlüssen verdrahten.</text>
+<g transform="translate(0,650)">
 <rect x="30" y="1320" width="1740" height="330" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="46" y="1350" font-size="21" font-weight="bold">G · 5-V-Zuleitung für J3.1 und J3.3</text>
 <rect x="60" y="1375" width="380" height="215" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
@@ -323,7 +377,8 @@
 <text x="35" y="1684" font-size="18" font-weight="bold">W4 · STEP/DIR-Kabel: J3 → U3, 2 geschirmte Paare. ENA±/ALM±/BRK± offen. GND, M48− und PE getrennt.</text>
 <text x="35" y="1720" font-size="18">J0 · Arduino-Anschlussleiste   |   J3 · STEP/DIR-Klemmenleiste   |   J4 · Freigabeschalter-Klemmenleiste</text>
 <text x="35" y="1750" font-size="17">J3.2 = Anschluss 2 der Klemmenleiste J3. Alle GND-Symbole auf diesem Blatt mit U1 GND / J0.2 verbinden.</text>
-<polyline class="wire" points="35,1780 1765,1780"/>
-<text x="35" y="1808" font-size="18">Verbindliche Verbindungstabellen, Bauteilwerte und Aufbauhinweise: docs/elektronik.md</text>
-<text x="35" y="1834" font-size="17">Kein Verdrahten unter Spannung. 230-V-Baugruppe durch Elektrofachperson aufbauen und prüfen.</text>
+</g>
+<polyline class="wire" points="35,2430 1765,2430"/>
+<text x="35" y="2458" font-size="18">Verbindliche Verbindungstabellen, Bauteilwerte und Aufbauhinweise: docs/elektronik.md</text>
+<text x="35" y="2484" font-size="17">Kein Verdrahten unter Spannung. 230-V-Baugruppe durch Elektrofachperson aufbauen und prüfen.</text>
 </svg>

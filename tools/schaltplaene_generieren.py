@@ -75,7 +75,7 @@ class Plan:
         self.text(35,self.h-16,'Kein Verdrahten unter Spannung. 230-V-Baugruppe durch Elektrofachperson aufbauen und prüfen.',17)
         (ROOT/'docs'/name).write_text('\n'.join(self.parts+['</svg>'])+'\n',encoding='utf-8')
 
-p=Plan('Blatt 2 / 2 — Steuerung, STEP/DIR und PIR-Sensor',1850)
+p=Plan('Blatt 2 / 2 — Steuerung, STEP/DIR und PIR-Sensor',2500)
 p.box(30,130,1740,365,f'A · PIR über RJ45, bis 3 m; {device("U2")} (DIP-14), nicht 74HC14')
 p.box(55,190,190,240,fill='white');p.text(55,188,device('B1'),16,True)
 for y, label in [(235,'VCC'),(310,'OUT'),(400,'GND')]:
@@ -140,18 +140,49 @@ p.text(562,1147,'J4.1',17);p.text(562,1207,'J4.2',17)
 p.text(570,1249,'EIN = geschlossen',16)
 p.text(478,1280,'Freigabeschalter, kein Not-Halt.',16)
 
-p.box(845,910,455,390,f'E · {device("U2")}')
-p.text(865,970,'+5V → U2.14    GND → U2.7',18,True)
-p.wire((890,1000),(1135,1000));p.text(865,992,'+5V',16)
-p.cap(890,1020,'C1 · 100 nF');p.wire((890,1000),(890,1020));p.gnd(890,1080)
-p.cap(1135,1020,'C2 · 10 µF',True);p.wire((1135,1000),(1135,1020));p.gnd(1135,1080)
-p.lines(865,1170,['C1 direkt an U2.14 / U2.7.','U2.5 / .9 / .11 / .13 → GND','U2.6 / .8 / .10 / .12 → offen','U2.2 mit U2.3 verbinden.'],17,30)
-
-p.box(1320,910,450,390,f'F · {device("B1")}')
-p.wire((1370,1000),(1600,1000));p.text(1342,980,'B1 VCC / J2.5',18,True)
-p.cap(1370,1020,'C3 · 100 nF');p.wire((1370,1000),(1370,1020));p.gnd(1370,1080)
-p.cap(1600,1020,'C4 · 10 µF',True);p.wire((1600,1000),(1600,1020));p.gnd(1600,1080)
-p.lines(1340,1170,['GND = B1 GND / J2.2 + J2.4','C2/C4: 16 V oder höher, Polarität!','C1/C3/C5: 25 V oder höher.','RJ45.3/.6/.7/.8: beidseitig frei.'],17,30)
+p.box(845,910,925,390,f'F · {device("B1")}')
+p.wire((1095,1000),(1435,1000));p.text(1070,980,'B1 VCC / J2.5',18,True)
+p.cap(1095,1020,'C3 · 100 nF');p.wire((1095,1000),(1095,1020));p.gnd(1095,1080)
+p.cap(1435,1020,'C4 · 10 µF',True);p.wire((1435,1000),(1435,1020));p.gnd(1435,1080)
+p.lines(1070,1170,['GND = B1 GND / J2.2 + J2.4','C2/C4: 16 V oder höher, Polarität!','C1/C3/C5: 25 V oder höher.','RJ45.3/.6/.7/.8: beidseitig frei.'],17,30)
+# U2 als reales DIP-14-Gehäuse, von oben gesehen; Pinbelegung laut TI.
+p.box(30,1320,1740,630,f'E · {device("U2")} · Anschlüsse am Chip')
+p.text(55,1384,'Ansicht von oben auf die Beschriftung · Kerbe oben · Lötseite der Platine ist spiegelverkehrt.',19,True)
+p.box(680,1445,300,370,fill='white')
+p.parts.append('<path d="M805,1445 A25,25 0 0 0 855,1445" fill="none" stroke="#253b50" stroke-width="2.5"/>')
+p.text(798,1433,'Kerbe',17)
+p.text(770,1610,'U2',27,True)
+p.text(726,1650,DEVICES['U2'],21,True)
+p.text(774,1682,'DIP-14',18)
+for row in range(7):
+    y=1480+row*50
+    p.wire((620,y),(680,y));p.text(692,y+7,str(row+1),20,True)
+    p.wire((980,y),(1040,y));p.text(946,y+7,str(14-row),20,True)
+p.wire((360,1480),(620,1480))
+p.text(70,1450,'Von R5 / R6 / C5 (Feld A)',18)
+p.text(70,1486,'PIR_FILTER → Pin 1',19,True)
+p.wire((620,1530),(620,1580))
+p.text(335,1562,'Pin 2 mit Pin 3 verbinden',19,True)
+p.wire((360,1630),(620,1630))
+p.text(70,1636,'Pin 4 → J0.6 → U1 D7',19,True)
+p.text(540,1687,'GND',19,True)
+p.text(410,1737,'frei lassen',19)
+# Pin 7 direkt zur gemeinsamen Minusleitung von C1/C2 führen.
+for pin,y in [(13,1530),(12,1580),(11,1630),(10,1680),(9,1730),(8,1780)]:
+    p.text(1055,y+7,'GND' if pin in (13,11,9) else 'frei lassen',19,pin in (13,11,9))
+p.wire((1040,1480),(1500,1480))
+p.text(1110,1454,'+5V von U1 5V / J0.1 → Pin 14',19,True)
+for x,label,polar in [(1250,'C1 · 100 nF',False),(1500,'C2 · 10 µF',True)]:
+    p.dot(x,1480);p.wire((x,1480),(x,1540));p.cap(x,1540,label,polar)
+    p.wire((x,1600),(x,1640));p.dot(x,1640)
+p.wire((1190,1640),(1620,1640));p.gnd(1620,1640)
+p.wire((1190,1640),(1190,1840),(620,1840),(620,1780))
+p.lines(1230,1750,['C1 direkt zwischen Pin 14 und Pin 7.',
+    'C2: Plus an +5V, Minus an GND.',
+    'C2 nahe dem Versorgungseingang.'],18,30)
+p.lines(55,1885,['Alle GND-Anschlüsse hier verbinden: Pins 5, 7, 9, 11, 13 und C1/C2 → U1 GND / J0.2.',
+    'U2 ist derselbe Chip wie U2A/U2B in Feld A. Bei IC-Sockel an dessen passenden Lötanschlüssen verdrahten.'],19,32)
+p.parts.append('<g transform="translate(0,650)">')
 p.box(30,1320,1740,330,'G · 5-V-Zuleitung für J3.1 und J3.3')
 p.box(60,1375,380,215,device('U1'),'white')
 p.text(300,1440,'5V-Pin',20,True)
@@ -170,6 +201,7 @@ p.text(50,1622,'J3.2 → Q1 (Feld B), J3.4 → Q2 (Feld C). J3 niemals mit +48 V
 p.text(35,1684,'W4 · STEP/DIR-Kabel: J3 → U3, 2 geschirmte Paare. ENA±/ALM±/BRK± offen. GND, M48− und PE getrennt.',18,True)
 p.text(35,1720,'J0 · Arduino-Anschlussleiste   |   J3 · STEP/DIR-Klemmenleiste   |   J4 · Freigabeschalter-Klemmenleiste',18)
 p.text(35,1750,'J3.2 = Anschluss 2 der Klemmenleiste J3. Alle GND-Symbole auf diesem Blatt mit U1 GND / J0.2 verbinden.',17)
+p.parts.append('</g>')
 p.save('schaltplan-steuerung.svg')
 
 p=Plan('Blatt 1 / 2 — Netzversorgung, 48-V-Motorversorgung und Schutzleiter',1540)
