@@ -107,6 +107,10 @@ C3/C4 sind ausschließlich am PIR; ihre Masse erreicht J0.2 über J2/J1. Alle Ko
 
 ### STEP/DIR-Ausgänge: zwei identische Transistorstufen
 
+**J3.1 und J3.3 erhalten beide +5 V vom 5V-Pin des Arduino U1, über J0.1.** Auf der Steuerplatine die +5-V-Leitung von J0.1 verzweigen und mit den Platinenanschlüssen von J3.1 und J3.3 verbinden. Dazu isolierte Drahtbrücken auf der Lochrasterplatine verwenden. J3 ist eine vierpolige Klemmenleiste auf dieser Platine, kein Anschluss am Arduino selbst. Blatt 2, Feld G zeigt diese Verzweigung ausdrücklich.
+
+An den Schraubanschluss **J3.1** kommt die Leitung zu **U3 PUL+**, an **J3.3** die Leitung zu **U3 DIR+**. Beide bekommen dauerhaft +5 V; die Transistoren schalten die jeweiligen Minusleitungen. **Nicht an VIN oder an das 48-V-Motornetzteil anschließen.** Die 5 V stammen im Betrieb vom USB-Netzteil PS2 über den Uno. Die Nummern 1 und 3 bezeichnen die Kontakte von J3; vor dem Verdrahten die Klemmen entsprechend beschriften.
+
 | Bauteil / Anschluss | Verbindung |
 |---|---|
 | R1, 1 kΩ | J0.3 / Uno D2 → Q1 Basis |
@@ -115,9 +119,9 @@ C3/C4 sind ausschließlich am PIR; ihre Masse erreicht J0.2 über J2/J1. Alle Ko
 | R2, 1 kΩ | J0.4 / Uno D3 → Q2 Basis |
 | R4, 100 kΩ | Q2 Basis → GND |
 | Q2, 2N3904 | Emitter → GND; Kollektor → J3.4 / U3 DIR− |
-| J3.1 | +5V → U3 PUL+ |
+| J3.1 | U1 5V → J0.1 → +5V-Verzweigung auf der Platine → J3.1 → W4 → U3 PUL+ |
 | J3.2 | Q1 Kollektor → U3 PUL− |
-| J3.3 | +5V → U3 DIR+ |
+| J3.3 | Dieselbe +5V-Verzweigung von J0.1 → J3.3 → W4 → U3 DIR+ |
 | J3.4 | Q2 Kollektor → U3 DIR− |
 | U3 ENA+, ENA− | Beide offen, kein Draht / keine Brücke |
 | U3 ALM+, ALM−, BRK+, BRK− | Alle offen; optionale Treiberausgänge nicht genutzt |

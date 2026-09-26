@@ -43,9 +43,8 @@
 <text x="72" y="300" font-size="16">W1 eingesteckt:</text>
 <text x="72" y="330" font-size="16">CH-Typ-12-Stecker</text>
 <text x="72" y="360" font-size="16">L / N / PE</text>
-<text x="72" y="429" font-size="16">Detail zur Übersicht</text>
-<text x="72" y="458" font-size="16">Keine Leiste öffnen</text>
-<text x="72" y="487" font-size="16">PE durchverbunden</text>
+<text x="72" y="429" font-size="16">Leiste nicht öffnen</text>
+<text x="72" y="458" font-size="16">PE durchverbunden</text>
 <polyline class="wire" points="280,250 375,250"/>
 <text x="289" y="238" font-size="17" font-weight="bold">L_SW</text>
 <polyline class="wire" points="280,330 375,330"/>
@@ -90,9 +89,8 @@
 <text x="1228" y="257" font-size="19" font-weight="bold">AC (1)</text>
 <text x="1228" y="337" font-size="19" font-weight="bold">AC (2)</text>
 <text x="1228" y="395" font-size="17">48 VDC an AC/AC</text>
-<text x="1228" y="424" font-size="17">Bei V3.0 zulässig.</text>
-<text x="1228" y="453" font-size="17">Andere Version:</text>
-<text x="1228" y="482" font-size="17">Belegung neu prüfen!</text>
+<text x="1228" y="424" font-size="17">Nur für DM860T V3.0.</text>
+<text x="1228" y="453" font-size="17">Typenschild prüfen.</text>
 <rect x="1580" y="195" width="170" height="365" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="1593" y="220" font-size="13" font-weight="bold">M1 · 34HS46-6004S1</text>
 <text x="1594" y="545" font-size="17">NEMA 34</text>
@@ -136,10 +134,10 @@
 <text x="1475" y="821" font-size="18" font-weight="bold">GND → GND (Blatt 2)</text>
 <text x="620" y="925" font-size="18">Beim Programmieren: Motor aus, USB-Kabel von PS2 auf Rechner umstecken. VIN bleibt frei.</text>
 <rect x="30" y="990" width="1740" height="130" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="46" y="1020" font-size="21" font-weight="bold">Betriebsgrenzen und Zuordnung</text>
-<text x="50" y="1050" font-size="18">M48−, Steuer-GND und PE nicht miteinander brücken. Die Treibereingänge bleiben optisch getrennt.</text>
-<text x="50" y="1077" font-size="18">U3-Signale PUL± / DIR±: Blatt 2. ENA± / ALM± / BRK± offen. S0 ist Netzabschaltung, kein nachgewiesener Not-Halt.</text>
-<text x="50" y="1104" font-size="18">Schwenkbereich abgrenzen. Nachlauf und Verlust des Haltemoments nach Abschaltung berücksichtigen.</text>
+<text x="46" y="1020" font-size="21" font-weight="bold">Anschlüsse und Montage</text>
+<text x="50" y="1050" font-size="18">M48−, Arduino-GND und PE nicht miteinander verbinden.</text>
+<text x="50" y="1077" font-size="18">U3 PUL± / DIR±: siehe Blatt 2. ENA± / ALM± / BRK± bleiben frei. S0 ist der Hauptschalter, kein Not-Halt.</text>
+<text x="50" y="1104" font-size="18">230-V-Anschlüsse abdecken. W1 am Gehäuse zugentlasten. Lüftungsöffnungen von PS1 und U3 freihalten.</text>
 </g>
 <polyline class="wire" points="35,1470 1765,1470"/>
 <text x="35" y="1498" font-size="18">Verbindliche Verbindungstabellen, Bauteilwerte und Aufbauhinweise: docs/elektronik.md</text>

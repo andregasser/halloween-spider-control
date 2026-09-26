@@ -13,11 +13,14 @@
 - Uno R3 → STEP/DIR → DM860T → NEMA 34 → Zahnriemen → separat gelagerte Hauptachse.
 - Kein Direktantrieb des Arms über die Motorwelle. 20T/40T, HTD-5M, 15 mm Riemenbreite, 2:1-Untersetzung.
 - Referenzmotor 34HS46-6004S1; Referenztreiber DM860T V3.0; 48-V-Versorgung LRS-350-48.
+- Auswahlpriorität des Nutzers: Preis vor Kompaktheit. Bei technisch geeigneten Alternativen die Gesamtkosten für die Schweiz vergleichen. DM860T bleibt vorgesehen; kein Wechsel zum DM870 allein wegen des kleineren Gehäuses.
 - PIR HC-SR501-Bauform, bis 3 m RJ45-Patchkabel, kein Ethernet/PoE.
 - Uno und PIR sind vorhanden; sonstige Teile noch nicht bestellt. Statusänderungen nur aufgrund einer tatsächlichen Bestätigung.
 - Kein Hall-/Home-Sensor im Basisaufbau. Nach Neustart ist die mechanische Position nicht bekannt.
 
 ## Dokumentationsstruktur und Konsistenz
+
+- Schaltplanblätter auf den praktischen Aufbau beschränken: Geräteboxen, Bauteilwerte, Pins, Leitungen, Versorgung, nötige Einstellungen und konkrete Montage-/Sicherheitshinweise. Keine Erklärungen zur internen Funktionsweise fertiger Geräte (z. B. Optokoppler) oder Fachbegriffe wie Common-Anode in den Zeichnungen. Technische Begründungen gehören in den Begleittext. Nutzer benötigt klar erkennbare reale Anschlüsse.
 
 - `docs/elektronik.md` ist die maßgebliche Verbindungs- und Pinliste. Grafiken: `docs/schaltplan-steuerung.svg` und `docs/schaltplan-versorgung.svg`.
 - `bom/teile.csv` ist die Datenquelle für Stück- und Bestellliste. Generierung: `python3 tools/dokumente_generieren.py`.
