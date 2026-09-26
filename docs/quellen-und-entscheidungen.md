@@ -23,6 +23,8 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 
 ## Festlegungen aus dem Gespräch
 
+- 26.09.2026: Nutzer bestätigt Einsatz in der Schweiz und gemeinsame Mehrfachsteckdose für beide Netzteile. S0 konkretisiert als fertige CH-Leiste mit Typ-13-Buchsen und gemeinsamem zweipoligem Schalter. Blatt 1 zeigt beide Steckplätze: W1 mit Typ-12-Stecker zu PS1, PS2 direkt eingesteckt. Die interne Netzverdrahtung von PS1 bleibt im geschützten Gehäuse. [ESTI: Schweizer Stecksystem](https://www.esti.admin.ch/inhalte/Info_SN_441011_de-fr-it-en.pdf); Anschlussklemmen siehe oben verlinktes Mean-Well-Datenblatt. Kein bestimmtes Leistenmodell damit für den Einschaltstrom freigegeben.
+
 - 26.09.2026: Handover gelesen; Architektur mit Zahnriemen und separater Hauptachse bleibt Grundlage.
 - Vorhandenes PIR-Modul optisch als HC-SR501-Bauform eingeordnet, Hersteller nicht feststellbar. Nutzer will es verwenden.
 - Sensorleitung: RJ45-Patchkabel, bis 3 m, zwei verdrillte Paare für OUT/GND und 5V/GND.

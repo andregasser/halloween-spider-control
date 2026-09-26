@@ -47,6 +47,7 @@ Das Gewicht liegt auf den Rollen. Der Motor muss Rollwiderstand und Beschleunigu
 - Motor: STEPPERONLINE **34HS46-6004S1**, NEMA 34, 14-mm-Welle.
 - Treiber: **DM860T**, dieser Plan bezieht sich ausdrücklich auf **V3.0**.
 - Motorversorgung: **Mean Well LRS-350-48**, 48 V; Uno separat über USB.
+- Netzanschluss Schweiz: beide Netzteile an derselben geschalteten **CH-Mehrfachsteckdose S0**; Motornetzteil über W1 mit Typ-12-Stecker, USB-Netzteil direkt eingesteckt.
 - Mechanik: **20T : 40T**, **HTD-5M**, **15 mm** Riemenbreite, vorläufig **450-5M-15**.
 - Hauptachse: Stahl, zwei Lager; 20 mm als vorläufige Referenz, 15 mm als noch zu dimensionierende Alternative.
 - Trigger: vorhandener PIR, vier Adern in zwei Paaren eines RJ45-Patchkabels bis 3 m; drei elektrische Netze: 5 V, GND, OUT.
