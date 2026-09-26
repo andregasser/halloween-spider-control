@@ -68,7 +68,7 @@ Stand: **26.09.2026 · Revision A**. Noch keine Bestellung ausgelöst.
 
 **Lieferantenlinks überarbeitet am 26.09.2026, ohne Reichelt:** **Produkt** führt zum konkreten Artikel; Artikelnummern, Varianten und Packungsmengen stehen im Hinweis. **Sortiment** führt zu einer passenden Kategorie, die genaue Ausführung ist noch offen. **Produkt noch offen** enthält bewusst keinen unbestätigten Link; diese Position ist erst nach Auswahl bestellbar. Eine recherchierte Produktseite ist keine Lager- oder Lieferzusage.
 
-Die Spalte Menge beschreibt den Bedarf im Aufbau. Bei Mehrfachpackungen die Bestellmenge aus dem Hinweis verwenden: für E20/E21 zusammen fünf 2-polige Klemmen, bei E23/E24 jeweils ein Kabelpack, bei E42 ein 10er-Set.
+Die Spalte Menge beschreibt den Bedarf im Aufbau. Bei Mehrfachpackungen die Bestellmenge aus dem Hinweis verwenden: für E20/E21 zusammen fünf 2-polige Klemmen. Header-Kabel (E23/E24) und Abstandshalter (E42) aus dem vorhandenen Bestand verwenden.
 
 Die ursprünglichen Budgetwerte aus dem Handover sind keine aktuellen Angebote. Vor Zahlung Endpreis in CHF einschließlich Versand/Einfuhr und Lieferdatum bis Halloween kontrollieren.
 
@@ -101,7 +101,7 @@ Noch kein konkreter regionaler Betrieb ausgewählt. Die Anbieterangabe ist eine 
 
 1. STEPPERONLINE: Motor, Motorhalterung ST-M7 (E47), Treiber und Motornetzteil. Treiberrevision und Lieferung in die Schweiz vorher bestätigen.
 2. BerryBase Schweiz: Widerstände, Kondensatoren, Sockel, Platinenklemmen, USB-Versorgung und weiteres Kleinzubehör.
-3. Bastelgarage: RJ45-Adapter, Steuerplatine, Anschlussleitungen und isolierende Abstandshalter.
+3. Bastelgarage: RJ45-Adapter und Steuerplatine.
 4. DigiKey Schweiz: exakter HCT-Chip, Transistoren und Sicherungen. E30 ist bei der Recherche nicht lagernd; Termin klären.
 5. Conrad Schweiz / Elektrofachbetrieb: Steuerkabel, PE-Litze und die noch auszuwählenden Netz-/Gehäuseteile.
 

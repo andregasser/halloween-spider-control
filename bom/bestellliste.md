@@ -2,11 +2,11 @@
 
 Stand: **26.09.2026 · Revision A**. Noch keine Bestellung ausgelöst.
 
-**Nicht bestellen, bereits vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E44 Schrumpfschlauch, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator. Die Liste enthält fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial sowie die ausdrücklich ergänzte Motorhalterung E47. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
+**Nicht bestellen, bereits vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E23 PIR-Anschlussleitung, E24 Uno-Verbindungsleitungen, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E42 Platinen-Abstandshalter, E44 Schrumpfschlauch, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator. Die Liste enthält fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial sowie die ausdrücklich ergänzte Motorhalterung E47. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
 
 **Lieferantenlinks überarbeitet am 26.09.2026, ohne Reichelt:** **Produkt** führt zum konkreten Artikel; Artikelnummern, Varianten und Packungsmengen stehen im Hinweis. **Sortiment** führt zu einer passenden Kategorie, die genaue Ausführung ist noch offen. **Produkt noch offen** enthält bewusst keinen unbestätigten Link; diese Position ist erst nach Auswahl bestellbar. Eine recherchierte Produktseite ist keine Lager- oder Lieferzusage.
 
-Die Spalte Menge beschreibt den Bedarf im Aufbau. Bei Mehrfachpackungen die Bestellmenge aus dem Hinweis verwenden: für E20/E21 zusammen fünf 2-polige Klemmen, bei E23/E24 jeweils ein Kabelpack, bei E42 ein 10er-Set.
+Die Spalte Menge beschreibt den Bedarf im Aufbau. Bei Mehrfachpackungen die Bestellmenge aus dem Hinweis verwenden: für E20/E21 zusammen fünf 2-polige Klemmen. Header-Kabel (E23/E24) und Abstandshalter (E42) aus dem vorhandenen Bestand verwenden.
 
 Die ursprünglichen Budgetwerte aus dem Handover sind keine aktuellen Angebote. Vor Zahlung Endpreis in CHF einschließlich Versand/Einfuhr und Lieferdatum bis Halloween kontrollieren.
 
@@ -33,13 +33,10 @@ Automatisch erzeugt aus [teile.csv](teile.csv). Die [Material-Stückliste](mater
 | ☐ | E18 | 1 Stück | Steuer-Lochrasterplatine — Einzelpads 2,54 mm, 120×80 mm, doppelseitig | [Bastelgarage · Produkt](https://www.bastelgarage.ch/120x80mm-prototyp-pcb-platine) | Art. 420360, 120×80-mm-Prototypplatine; etwas größer als das bisherige Planmaß 100×80 mm. Nur Kleinspannung. |
 | ☐ | E20 | 1 Stück | J0 Anschlussklemme — 6-polig aus drei anreihbaren 2-poligen Platinenklemmen, Raster 5,08 mm | [BerryBase Schweiz · Produkt](https://www.berrybase.ch/anschlussklemme-schraubbar-900-gewinkelt-1-25mm2-rm-5-08mm-2-polig) | AKSW125-2P: drei 2-polige, anreihbare Klemmen ergeben J0 mit sechs Anschlüssen. Zusammen mit E21 insgesamt fünf Stück bestellen. |
 | ☐ | E21 | 1 Stück | J3 Anschlussklemme — 4-polig aus zwei anreihbaren 2-poligen Platinenklemmen, Raster 5,08 mm | [BerryBase Schweiz · Produkt](https://www.berrybase.ch/anschlussklemme-schraubbar-900-gewinkelt-1-25mm2-rm-5-08mm-2-polig) | AKSW125-2P: zwei 2-polige, anreihbare Klemmen ergeben J3 mit vier Anschlüssen. Zusammen mit E20 insgesamt fünf Stück bestellen. |
-| ☐ | E23 | 1 Satz | PIR-Anschlussleitung — Drei einzelne 2,54-mm-Buchsenleitungen mit freiem Ende, etwa 20 cm | [Bastelgarage · Produkt](https://www.bastelgarage.ch/dupont-kabel-f-f-20cm-20-stuck) | 20er-Pack F–F: drei Leitungen verwenden, jeweils einen Stecker abschneiden und das freie Ende für J2 abisolieren. Buchsen einzeln auf B1; VCC/OUT/GND am Sensor prüfen. |
-| ☐ | E24 | 1 Satz | Uno-Verbindungsleitungen — 5 einzelne passende Header-Steckleitungen, etwa 20 cm | [Bastelgarage · Produkt](https://www.bastelgarage.ch/dupont-kabel-m-m-20cm-20-stuck) | 20er-Pack M–M: fünf Leitungen verwenden, jeweils einen Stecker abschneiden und das freie Ende für J0 abisolieren. Verbleibender Stecker zum Uno; J0.5 frei. |
 | ☐ | E26 | 0,5 m | W4 Steuerkabel — 2 geschirmte verdrillte Paare, etwa 0,25 mm² | [Conrad Schweiz · Produkt](https://www.conrad.ch/de/p/lapp-35800-1-datenleitung-unitronic-liycy-tp-2-x-2-x-0-25-mm-grau-1-m-601980.html) | Art. 601980, LAPP 35800/1: 2×2×0,25 mm², paarverseilt und geschirmt. 1 m kaufen, ca. 0,5 m verwenden. |
 | ☐ | E27 | 5 m | Kleinspannungslitze — 0,25–0,5 mm², mehrere Farben, Gesamtmenge | [BerryBase Schweiz · Produkt](https://www.berrybase.ch/vierlingslitze-isoliert-4x0-25mm-fuer-rgb-led-stripes-5m) | E419-005, vieradrig 0,25 mm², 5-m-Rolle. Für kurze Kleinspannungsverbindungen passend ablängen und Adern trennen; keine Netzverdrahtung. |
 | ☐ | E31 | 1 Stück | F2 DC-Sicherung — SCHURTER SPT 0001.2533, T8 A, 6,3×32 mm, 63 VDC | [DigiKey Schweiz · Produkt](https://www.digikey.ch/en/products/detail/schurter-inc/0001-2533/640670) | 0001.2533, T8 A, 6,3×32 mm, 63 VDC. Produktseite statt bisherigem Datenblattlink. |
 | ☐ | E34 | 3 m | Schutzleiterlitze — 1,5 mm², grün-gelb | [Conrad Schweiz · Produkt](https://www.conrad.ch/de/p/helu-200200gnge-litze-h07v-k-1-x-1-50-mm-gelb-gruen-meterware-1428446.html) | Art. 1428446, HELU 200200gnge, H07V-K 1,5 mm² grün/gelb, 3 m. Mindestabnahme beachten. |
-| ☐ | E42 | 8 Stück | Platinen-Abstandshalter — M3, isolierend, passende Schrauben/Muttern | [Bastelgarage · Produkt](https://www.bastelgarage.ch/m3x10mm-nylon-distanzbolzen-abstandhalter-set-10-stuck) | Art. 421578: ein 10er-Set M3×10 mm inkl. Schrauben/Muttern, davon acht verwenden; Lochbild und Abstand prüfen. |
 
 ## Fehlende Teile mit noch zu bestätigender Ausführung
 
@@ -83,7 +80,7 @@ Noch kein konkreter regionaler Betrieb ausgewählt. Die Anbieterangabe ist eine 
 
 1. STEPPERONLINE: Motor, Motorhalterung ST-M7 (E47), Treiber und Motornetzteil. Treiberrevision und Lieferung in die Schweiz vorher bestätigen.
 2. BerryBase Schweiz: Widerstände, Kondensatoren, Sockel, Platinenklemmen, USB-Versorgung und weiteres Kleinzubehör.
-3. Bastelgarage: RJ45-Adapter, Steuerplatine, Anschlussleitungen und isolierende Abstandshalter.
+3. Bastelgarage: RJ45-Adapter und Steuerplatine.
 4. DigiKey Schweiz: exakter HCT-Chip, Transistoren und Sicherungen. E30 ist bei der Recherche nicht lagernd; Termin klären.
 5. Conrad Schweiz / Elektrofachbetrieb: Steuerkabel, PE-Litze und die noch auszuwählenden Netz-/Gehäuseteile.
 

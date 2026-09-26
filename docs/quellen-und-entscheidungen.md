@@ -23,6 +23,8 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 
 ## Festlegungen aus dem Gespräch
 
+- 26.09.2026: Platinen-Abstandshalter E42 und Header-Kabel sind laut Nutzer bereits ausreichend vorhanden. E23 (PIR) und E24 (Uno) verwenden diesen Kabelbestand. Alle drei Positionen bleiben als benötigte Teile in der Materialliste, entfallen aber als Bestellpositionen.
+
 - 26.09.2026: Auf ausdrücklichen Nutzerwunsch Motorhalterung als Ausnahme zum Elektronikumfang aufgenommen: E47, ein [STEPPERONLINE ST-M7](https://www.omc-stepperonline.com/nema-34-bracket-for-stepper-motor-alloy-steel-bracket-st-m7). Produktseite und [Hersteller-Kompatibilitätsübersicht](https://help.omc-stepperonline.com/hc/s/articles/motor-types-that-the-brackets-on-sale-can-match) nennen NEMA-34-Schrittmotoren; M1 hat einen 86×86-mm-Rahmen. Die Maßzeichnungsdownloads waren beim Abruf blockiert, daher kein behaupteter vollständiger Maßabgleich. Lochbild, Zentrierbund und Schraubenlieferumfang vor Montage prüfen; Einbau mit senkrechter Motorwelle und Einstellweg für Riemenspannung berücksichtigen. Übrige Mechanik bleibt außerhalb der Beschaffungsliste.
 
 - 26.09.2026: Distrelec Schweiz auf Nutzerwunsch als weitere Bezugsquelle geprüft. Passende Produktdaten für E07 (L-Com U2A00002-1M, Distrelec 305-04-706) und E17 (Panasonic ECA1HHG100I, 167-25-806) gefunden; konkrete Links stehen in `teile.csv` und der Bestellliste. Die indexierten Händlerseiten bestätigen A–B/1 m beziehungsweise 10 µF/50 V/radial/2,5-mm-Raster. Direkte Seitenabrufe wurden blockiert; Preise, Bestelleinheiten und aktuelle Lieferbarkeit sind nicht bestätigt. Bestehende Bezugsquellen bleiben erhalten.
