@@ -26,17 +26,13 @@ Automatisch erzeugt aus [teile.csv](teile.csv). Die [Material-Stückliste](mater
 | ☐ | E12 | 2 Stück | Q1/Q2 NPN-Transistor — onsemi 2N3904, TO-92, E/B/C nach Datenblatt | [DigiKey Schweiz](https://www.digikey.ch/) | Herstellernummer und Pinbelegung prüfen |
 | ☐ | E13 | 3 Stück | R1/R2/R5 Widerstände — 1 kΩ, 0,25 W, Metallfilm, bedrahtet | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, günstige Packung möglich |
 | ☐ | E14 | 3 Stück | R3/R4/R6 Widerstände — 100 kΩ, 0,25 W, bedrahtet | [Reichelt](https://www.reichelt.com/) | Bezugsquelle |
-| ☐ | E15 | 1 Stück | R7 Widerstand — 10 kΩ, 0,25 W, bedrahtet | [Reichelt](https://www.reichelt.com/) | Bezugsquelle |
-| ☐ | E16 | 3 Stück | C1/C3/C5 Keramikkondensatoren — 100 nF, mindestens 25 V, bedrahtet | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, C3 am Sensor montieren |
-| ☐ | E17 | 2 Stück | C2/C4 Elektrolytkondensatoren — 10 µF, 16 V oder höher, radial | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, Polarität beachten |
+| ☐ | E16 | 2 Stück | C1/C5 Keramikkondensatoren — 100 nF, mindestens 25 V, bedrahtet | [Reichelt](https://www.reichelt.com/) | Bezugsquelle |
+| ☐ | E17 | 1 Stück | C2 Elektrolytkondensator — 10 µF, 16 V oder höher, radial | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, Polarität beachten |
 | ☐ | E18 | 1 Stück | Steuer-Lochrasterplatine — Einzelpads 2,54 mm, etwa 100×80 mm | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, keine Netzspannung auf dieser Platine |
-| ☐ | E19 | 1 Stück | Sensor-Lochrasterplatine — Einzelpads 2,54 mm, etwa 30×30 mm | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, an Sensorgehäuse anpassen |
 | ☐ | E20 | 1 Stück | J0 Anschlussklemme — 6-polig, Platinenklemme mit passendem Raster | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, 5,08-mm-Raster passt auf 2,54-mm-Lochraster |
 | ☐ | E21 | 1 Stück | J3 Anschlussklemme — 4-polig, Raster 5,08 mm | [Reichelt](https://www.reichelt.com/) | Bezugsquelle |
-| ☐ | E22 | 1 Stück | J4 Anschlussklemme — 2-polig, Raster 5,08 mm | [Reichelt](https://www.reichelt.com/) | Bezugsquelle |
 | ☐ | E23 | 1 Satz | PIR-Anschlussleitung — 3-polige 2,54-mm-Buchse mit Litzen, etwa 20 cm | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, Reihenfolge nach tatsächlicher B1-Beschriftung |
-| ☐ | E24 | 1 Satz | Uno-Verbindungsleitungen — 6 einzelne passende Header-Steckleitungen, etwa 20 cm | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, zugentlasten und mechanisch sichern |
-| ☐ | E25 | 1 Stück | S1 Freigabeschalter — Rastender EIN/AUS-Schalter, 1 Schließer, kleinspannungstauglich | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, Beschriftung FREIGABE, keine Not-Halt-Funktion behaupten |
+| ☐ | E24 | 1 Satz | Uno-Verbindungsleitungen — 5 einzelne passende Header-Steckleitungen, etwa 20 cm | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, zugentlasten und mechanisch sichern |
 | ☐ | E26 | 0,5 m | W4 Steuerkabel — 2 geschirmte verdrillte Paare, etwa 0,25 mm² | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, Schirm einseitig an PE |
 | ☐ | E27 | 5 m | Kleinspannungslitze — 0,25–0,5 mm², mehrere Farben, Gesamtmenge | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, Menge mit Reserve |
 | ☐ | E29 | 1 Stück | W1 Netzanschlussleitung — Ca. 2 m, angespritzter CH-Typ-12-Stecker mit Schutzleiter, offene Geräteenden, 3G1,5 mm², für Aufstellort geeignet | [Elektrofachhandel / Reichelt](https://www.reichelt.com/) | Passt in Typ-13-Buchse, Anschluss an PS1 über F1 und XPE durch Elektrofachperson, Zugentlastung im Gehäuse |
@@ -49,7 +45,7 @@ Automatisch erzeugt aus [teile.csv](teile.csv). Die [Material-Stückliste](mater
 | ☐ | E36 | 1 m | Netz-Installationslitze — 1,5 mm², braun und blau, zusammen 1 m | [Elektrofachhandel / Reichelt](https://www.reichelt.com/) | Bezugsquelle, nur im abgetrennten Netzbereich |
 | ☐ | E42 | 12 Stück | Platinen-Abstandshalter — M3, isolierend, passende Schrauben/Muttern | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, Uno-Lochabstände und Bauteilunterseite prüfen |
 | ☐ | E43 | 1 Satz | Aderendhülsen, Ringkabelschuhe und PE-Schrauben — Zu 0,25–1,5 mm² und jeweiligen Klemmen, Ringösen für PE | [Reichelt](https://www.reichelt.com/) | Bezugsquelle, PE mit geeigneten Zahnscheiben/Sicherung befestigen |
-| ☐ | E44 | 1 Satz | Schrumpfschlauch, Kabelbinder und Beschriftung — Verschiedene Durchmesser, Kabelhalter, Etiketten | [Reichelt](https://www.reichelt.com/) | Beschriftungen PIR 5V KEIN LAN/PoE, 48V, PE, S0 und S1 vorsehen |
+| ☐ | E44 | 1 Satz | Schrumpfschlauch, Kabelbinder und Beschriftung — Verschiedene Durchmesser, Kabelhalter, Etiketten | [Reichelt](https://www.reichelt.com/) | Beschriftungen PIR 5V KEIN LAN/PoE, 48V, PE und S0 vorsehen |
 | ☐ | M01 | 1 Stück | Motorhalter — STEPPERONLINE ST-M7 für NEMA 34 | [STEPPERONLINE](https://www.omc-stepperonline.com/de/nema-34-halterung-fuer-schrittmotor-halterung-aus-legiertem-stahl-st-m7) | Produktseite geprüft, erforderliche Einbaulage überprüfen |
 | ☐ | M04 | 1 Stück | Zahnriemen — Geschlossen HTD 450-5M-15, 90 Zähne, 15 mm breit | [ConCar](https://www.concar-shop.de/shop/en/belts/timing-belts/timing-belts/gates-synchronous-belts-powergrip-htd/gates-synchronous-belts-powergrip-htd-dimension-5m.html) | Geprüfte Variante GT045005015, Preis/CH-Versand prüfen, frühere CHF-20–30-Gesamtschätzung nicht bestätigt |
 | ☐ | M15 | 1 Streifen | Gummieinlage — Etwa 2–3 mm, zwischen Rohr und Schellen | [Hornbach Schweiz](https://www.hornbach.ch/) | Bezugsquelle, Auflageflächen anpassen |
@@ -73,7 +69,7 @@ Automatisch erzeugt aus [teile.csv](teile.csv). Die [Material-Stückliste](mater
 |---|---|---|---|---|---|
 | ☐ | E37 | 1 Stück | Steuergehäuse mit Montageplatte — Metall, abschließbar/verschraubt, Planmaß ca. 400×300×180 mm, Lüftung und Trennbereich | [Reichelt / Elektrogehäuse-Fachhandel](https://www.reichelt.com/) | Maß anhand PS1/U3 und Biegeradien bestätigen, nicht einfach luftdicht verschließen |
 | ☐ | E38 | 1 Satz | Lüftungselemente und Wetterschutz — Geschützte Zu-/Abluftöffnungen, Regenhaube bei Außenbetrieb | [Elektrogehäuse-Fachhandel / Reichelt](https://www.reichelt.com/) | Gehäuseausführung und Wärmetest bestimmen Größe, kein unbelegter IP-Wert |
-| ☐ | E39 | 1 Stück | Sensorgehäuse mit Halter — Platz für PIR, J2 und C3/C4, Linse frei, Spritzwasserschutz | [Hornbach Schweiz](https://www.hornbach.ch/) | Bezugsquelle, kein normales Glas vor der PIR-Linse |
+| ☐ | E39 | 1 Stück | Sensorgehäuse mit Halter — Platz für PIR und J2, Linse frei, Spritzwasserschutz | [Hornbach Schweiz](https://www.hornbach.ch/) | Bezugsquelle, kein normales Glas vor der PIR-Linse |
 | ☐ | E40 | 1 Satz | Kabelverschraubungen/Zugentlastungen — Mindestens 5 passende Durchführungen für Netz, Motor, USB, Sensor und Motor-PE | [Reichelt](https://www.reichelt.com/) | Klemmbereich passend zu realen Kabeldurchmessern wählen |
 | ☐ | E41 | 1 Satz | Klemmenabdeckungen und Trennwand — Isolierend, flammhemmend, zwischen Netz- und Steuerbereich | [Elektrofachhandel / Reichelt](https://www.reichelt.com/) | Mit Gehäuse und Klemmenanordnung abstimmen |
 | ☐ | M05 | 1 Stück | Hauptachse — Stahl 20 mm, ca. 200 mm, bearbeitbar, Passfedernut zur 40T-Scheibe | [DOLD Mechatronik / mechanische Werkstatt](https://www.dold-mechatronik.de/) | Fertigbearbeitung anfragen, Nabenmaße festlegen, keine gehärtete Linearwelle ohne Bearbeitung kaufen; 20 mm vorläufig: Durchmesserentscheidung nach docs/hauptwelle-auslegung.md vor Bestellung abschließen |

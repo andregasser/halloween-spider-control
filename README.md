@@ -57,12 +57,12 @@ Modellwerte und Quellen stehen in [Elektronik](docs/elektronik.md) und [Quellen]
 
 ## Geplanter Ablauf
 
-Einschalten → Sensor stabilisieren lassen → manuell freigeben → auf neue Bewegung warten → langsam vorfahren → Pause → zurückfahren → Cooldown → erneut scharf werden, wenn der PIR wieder LOW war.
+Einschalten → 60 s Sensor-Anlaufzeit → PIR-LOW abwarten → auf neue Bewegung warten → langsam vorfahren → Pause → zurückfahren → Cooldown → erneut scharf werden, wenn der PIR wieder LOW war.
 
-Die Ausgangsposition wird vor der Freigabe manuell festgelegt. Nach Stromausfall, Blockade oder Schrittverlust ist sie unbekannt und muss neu eingerichtet werden. Die ersten Versuche erfolgen ohne Arm und Wagen.
+Die Ausgangsposition wird vor dem Einschalten bei ausgeschalteter Motorversorgung manuell festgelegt. Nach jedem Einschalten oder Arduino-Reset wird die Steuerung automatisch wieder bereit; es gibt keinen Freigabeschalter. Nach Stromausfall, Blockade oder Schrittverlust ist sie unbekannt und muss neu eingerichtet werden. Die ersten Versuche erfolgen ohne Arm und Wagen.
 
 ## Grenzen des Entwurfs
 
-Der 230-V-Teil wird geklemmt/gecrimpt und durch eine Elektrofachperson aufgebaut und geprüft. Die Lötanleitung betrifft die Kleinspannungsplatinen. Schwenkbereich und Riemenantrieb müssen gegen Zugriff geschützt sein. Der vorgesehene Hauptschalter ist eine Netzabschaltung, kein nachgewiesener Not-Halt; der Freigabeschalter ist eine Software-Bedienfunktion. Eine sofortige mechanische Stillsetzung ist damit nicht zugesichert.
+Der 230-V-Teil wird geklemmt/gecrimpt und durch eine Elektrofachperson aufgebaut und geprüft. Die Lötanleitung betrifft die Kleinspannungsplatinen. Schwenkbereich und Riemenantrieb müssen gegen Zugriff geschützt sein. Der vorgesehene Hauptschalter ist eine Netzabschaltung, kein nachgewiesener Not-Halt. Eine sofortige mechanische Stillsetzung ist damit nicht zugesichert.
 
 Vor der Bestellung der gekennzeichneten Mechanikteile fehlen insbesondere Rohrdurchmesser, Plattenmaße und die Ausführung der Welle-Nabe-Verbindungen. Diese Punkte sind in der Bestellliste vollständig aufgeführt, aber noch nicht als fertige Einkaufsposition freigegeben.

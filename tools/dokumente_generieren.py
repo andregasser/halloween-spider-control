@@ -47,7 +47,7 @@ bom += """## Enthaltene und nicht benötigte Teile
 
 - Das Motorkabel zählt zum Motorlieferumfang und wird nicht noch einmal bestellt. Montage der Steuerbox in Reichweite des 1-m-Kabels einplanen.
 - Schraubklemmen des DM860T und Befestigungsschrauben der Klemmnaben/Lager sind auf Vollständigkeit bei Lieferung zu prüfen. Fehlende Befestiger aus M22 ergänzen.
-- Kein 48→5-V-Wandler, Ethernet-Modul, PoE-Injector, separater PIR, Hall-Sensor, Endschalter, Soundmodul oder externe Status-LED erforderlich. S0/S1 sind vollständig vorgesehen, eine sicherheitsgerichtete Not-Halt-Baugruppe ist nicht Bestandteil von Rev. A.
+- Kein 48→5-V-Wandler, Ethernet-Modul, PoE-Injector, separater PIR, Hall-Sensor, Endschalter, Soundmodul oder externe Status-LED erforderlich. S0 ist vorgesehen, eine sicherheitsgerichtete Not-Halt-Baugruppe ist nicht Bestandteil von Rev. A.
 - 230-V-Aufbau/Prüfung sowie nötige Wellen-/Plattenbearbeitung sind zusätzliche Leistungen, keine Bauteile. In der Bestellliste gesondert aufgeführt.
 """
 (ROOT / "bom/material-stueckliste.md").write_text(bom, encoding="utf-8")

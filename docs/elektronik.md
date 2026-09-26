@@ -22,9 +22,8 @@ Geräte werden auf beiden Blättern als **Kennzeichen · Bauteilbezeichnung** be
 | J0 | Arduino-Anschlussleiste |
 | J1 / J2 | RJ45-Klemmenadapter an Steuerung / Sensor |
 | J3 | STEP/DIR-Klemmenleiste |
-| J4 | Freigabeschalter-Klemmenleiste |
 
-**U2A und U2B gehören zum selben Bauteil U2**, dem SN74HCT14N; die Buchstaben bezeichnen zwei seiner internen Schaltstufen. Anschlussverweise dürfen verkürzt erscheinen: `U1 D2` bedeutet Pin D2 des Arduino Uno R3, `J3.2` bedeutet Anschluss 2 der Klemmenleiste J3. Feldbuchstaben A–F gliedern das Blatt und sind keine Bauteilkennzeichen.
+**U2A und U2B gehören zum selben Bauteil U2**, dem SN74HCT14N; die Buchstaben bezeichnen zwei seiner internen Schaltstufen. Anschlussverweise dürfen verkürzt erscheinen: `U1 D2` bedeutet Pin D2 des Arduino Uno R3, `J3.2` bedeutet Anschluss 2 der Klemmenleiste J3. Feldbuchstaben A–E und G gliedern das Blatt und sind keine Bauteilkennzeichen.
 
 ### Blatt 1: Versorgung und Motor
 
@@ -88,7 +87,7 @@ Die beiden **AC**-Klemmen des geprüften DM860T V3.0 dürfen mit 48 VDC gespeist
 
 ## 3. Steuerplatine: vollständige Lötverbindungen
 
-Auf einer isoliert befestigten Lochrasterplatine werden U2, Q1/Q2, R1–R7 und C1/C2 aufgebaut. C3/C4 sitzen am entfernten Sensor. Ausschließlich diese Kleinspannungsbaugruppen löten; 230 V und Motorstrom gehören nicht auf diese Platine.
+Auf einer isoliert befestigten Lochrasterplatine werden U2, Q1/Q2, R1–R6 und C1/C2/C5 aufgebaut. Ausschließlich diese Kleinspannungsbaugruppen löten; 230 V und Motorstrom gehören nicht auf diese Platine.
 
 ### Steckverbinder J0 zum Arduino
 
@@ -96,14 +95,14 @@ J0 ist eine sechspolige beschriftete Kleinspannungsklemme. Eine zugentlastete Bu
 
 | J0-Pin | Uno | Netz / weitere Verbindung |
 |---|---|---|
-| 1 | 5V | +5V: U2.14, C1, C2+, R7, J1.5, J3.1, J3.3 |
-| 2 | GND | GND: U2.7, R3/R4/R6, C1/C2−/C5, Q1.E/Q2.E, J1.2/J1.4, J4.2 |
+| 1 | 5V | +5V: U2.14, C1, C2+, J1.5, J3.1, J3.3 |
+| 2 | GND | GND: U2.7, R3/R4/R6, C1/C2−/C5, Q1.E/Q2.E, J1.2/J1.4 |
 | 3 | D2 | R1 Eingang, STEP |
 | 4 | D3 | R2 Eingang, DIR |
-| 5 | D4 | J4.1 und R7, Freigabe |
+| 5 | — | Frei lassen; keine Leitung zum Uno |
 | 6 | D7 | U2.4, PIR aufbereitet |
 
-C3/C4 sind ausschließlich am PIR; ihre Masse erreicht J0.2 über J2/J1. Alle Kondensatoren sind unten einzeln aufgeführt.
+J0.5 und Uno D4 bleiben unbeschaltet. Die übrigen Anschlussnummern bleiben unverändert. Der PIR wird direkt mit J2 verbunden, ohne zusätzliche Sensor-Lochrasterplatine.
 
 ### STEP/DIR-Ausgänge: zwei identische Transistorstufen
 
@@ -149,14 +148,13 @@ J3→Treiber mit W4: zwei geschirmte verdrillte Paare, je PUL+/PUL− und DIR+/D
 | U2.6, .8, .10, .12 | Offen; ungenutzte Ausgänge |
 | C1, 100 nF | U2.14 → U2.7, unmittelbar am IC |
 | C2, 10 µF / 16 V | Plus → +5V, Minus → GND, lokal auf Steuerplatine |
-| C3, 100 nF | Am PIR direkt zwischen VCC und GND |
-| C4, 10 µF / 16 V | Am PIR: Plus → VCC, Minus → GND |
+| C5, 100 nF | PIR_FILTER / U2.1 → GND, am Eingang von U2 |
 
 U2 ist ausdrücklich **SN74HCT14N, DIP-14**, nicht 74HC14. Zwei invertierende Schmitt-Trigger hintereinander erhalten die Polarität: PIR HIGH → Uno HIGH. Die HCT-Eingänge akzeptieren den ungefähr 3,3-V-Pegel des PIR bei 5-V-Versorgung; am Uno kommen wieder 5-V-Logikpegel an. R5/C5 ergeben nominell 0,1 ms Filterzeit; das ersetzt keine saubere Kabelverlegung. [TI-Datenblatt und Pinbelegung](https://www.ti.com/lit/gpn/SN74HCT14)
 
-### Freigabeschalter S1
+### Bedienung
 
-R7 = 10 kΩ von +5V an J0.5 / Uno D4 / J4.1. S1 verbindet in Stellung EIN J4.1 mit J4.2 (GND). Zusätzlich `INPUT_PULLUP` verwenden. Leitungsbruch führt zum gesperrten Zustand, ein Kurzschluss nach Masse kann hingegen wie EIN wirken: **keine Sicherheitsfunktion**. S1 AUS sperrt neue Bewegungen und fordert kontrolliertes Abbremsen an. Nach Einschalten/Reset ist ein bewusster AUS→EIN-Zyklus erforderlich; siehe [Firmware-Vertrag](firmware.md).
+Ein- und Ausschalten erfolgt über die Mehrfachsteckdose S0. Nach Einschalten oder Arduino-Reset wartet die Steuerung 60 s und anschließend auf PIR-LOW sowie eine neue Bewegung; siehe [Firmware-Vertrag](firmware.md). Es gibt keinen separaten Freigabeschalter und keinen kontrollierten Softwarestopp per Schalter.
 
 ## 4. RJ45 zum Sensor
 
@@ -200,8 +198,8 @@ ENA bleibt offen, der Treiber ist damit freigegeben und kann den Motor auch im S
 
 1. IC-Sockel, Widerstände und Transistoren auf Lochraster montieren; mit kurzen isolierten Drähten nach obigen Tabellen verbinden. Keine Netzspannung auf der Platine.
 2. C1 direkt am IC-Sockel, C2 nahe Versorgungseingang, C5 am U2-Eingang montieren. Elko-Polarität beachten.
-3. J0, J3 und J4 beschriften; J1 über kurze Leitungen an die Platine anschließen. Alle Leitungen zugentlasten.
-4. Kleine Sensor-Lochrasterplatine für C3/C4 und den dreipoligen PIR-Anschluss bauen. J2 gemäß RJ45-Tabelle verbinden.
+3. J0 und J3 beschriften; J1 über kurze Leitungen an die Platine anschließen. Alle Leitungen zugentlasten.
+4. PIR über die dreipolige Buchsenleitung direkt mit J2 gemäß RJ45-Tabelle verbinden; keine Zusatzkondensatoren am Sensor. Funktion mit endgültiger Kabellänge und laufendem Motor prüfen.
 5. Vor Einsetzen von U2 Kurzschlüsse und alle Verbindungen messen; dann U2 mit richtiger Pin-1-Ausrichtung einsetzen.
 6. Nur PS2 anschließen, 5 V und PIR-Signal prüfen. Erst nach erfolgreich geprüftem Netzteilaufbau PS1/U3/M1 in Betrieb nehmen.
 

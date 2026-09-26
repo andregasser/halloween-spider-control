@@ -46,7 +46,7 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 |---|---|---|---|---|
 | E08 | 1 Stück | W3 Patchkabel — Cat5e/Cat6 Vollkupfer, 1:1 T568B, bis 3 m | Überträgt 5 V, Masse und PIR-Signal | Noch bestellen |
 | E09 | 2 Stück | J1/J2 RJ45-Klemmenadapter — 8P8C-Buchse auf nummerierte Schraubklemmen, passiv ohne Magnetics | Trennbare Sensorverbindung ohne Crimpen eigener RJ45-Stecker | Noch bestellen |
-| E23 | 1 Satz | PIR-Anschlussleitung — 3-polige 2,54-mm-Buchse mit Litzen, etwa 20 cm | Verbindung B1 zu Sensorplatine/J2 | Noch bestellen |
+| E23 | 1 Satz | PIR-Anschlussleitung — 3-polige 2,54-mm-Buchse mit Litzen, etwa 20 cm | Direkte Verbindung B1 zu J2 | Noch bestellen |
 
 ## Steuerplatine
 
@@ -57,23 +57,14 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 | E12 | 2 Stück | Q1/Q2 NPN-Transistor — onsemi 2N3904, TO-92, E/B/C nach Datenblatt | Schaltet STEP-/DIR-Optokoppler ohne starke GPIO-Belastung | Noch bestellen |
 | E13 | 3 Stück | R1/R2/R5 Widerstände — 1 kΩ, 0,25 W, Metallfilm, bedrahtet | Zwei Basiswiderstände und ein PIR-Filterwiderstand | Noch bestellen |
 | E14 | 3 Stück | R3/R4/R6 Widerstände — 100 kΩ, 0,25 W, bedrahtet | Definierte ausgeschaltete Transistoren und PIR-LOW bei Kabeltrennung | Noch bestellen |
-| E15 | 1 Stück | R7 Widerstand — 10 kΩ, 0,25 W, bedrahtet | Externer Pull-up am Freigabeschalter | Noch bestellen |
-| E16 | 3 Stück | C1/C3/C5 Keramikkondensatoren — 100 nF, mindestens 25 V, bedrahtet | IC-Entkopplung, PIR-Entkopplung, Signalfilter | Noch bestellen |
-| E17 | 2 Stück | C2/C4 Elektrolytkondensatoren — 10 µF, 16 V oder höher, radial | Stützt 5 V lokal an Steuerung und entferntem Sensor | Noch bestellen |
+| E16 | 2 Stück | C1/C5 Keramikkondensatoren — 100 nF, mindestens 25 V, bedrahtet | IC-Entkopplung und Signalfilter | Noch bestellen |
+| E17 | 1 Stück | C2 Elektrolytkondensator — 10 µF, 16 V oder höher, radial | Stützt 5 V lokal an der Steuerplatine | Noch bestellen |
 | E18 | 1 Stück | Steuer-Lochrasterplatine — Einzelpads 2,54 mm, etwa 100×80 mm | Träger für U2, Q1/Q2 und passive Teile | Noch bestellen |
-| E19 | 1 Stück | Sensor-Lochrasterplatine — Einzelpads 2,54 mm, etwa 30×30 mm | Träger für C3/C4 und Sensoranschluss | Noch bestellen |
 | E20 | 1 Stück | J0 Anschlussklemme — 6-polig, Platinenklemme mit passendem Raster | Beschrifteter Anschluss zum Uno | Noch bestellen |
 | E21 | 1 Stück | J3 Anschlussklemme — 4-polig, Raster 5,08 mm | Trennbare STEP/DIR-Verbindung | Noch bestellen |
-| E22 | 1 Stück | J4 Anschlussklemme — 2-polig, Raster 5,08 mm | Anschluss des Freigabeschalters | Noch bestellen |
-| E24 | 1 Satz | Uno-Verbindungsleitungen — 6 einzelne passende Header-Steckleitungen, etwa 20 cm | Verbindet Uno 5V/GND/D2/D3/D4/D7 mit J0 | Noch bestellen |
+| E24 | 1 Satz | Uno-Verbindungsleitungen — 5 einzelne passende Header-Steckleitungen, etwa 20 cm | Verbindet Uno 5V/GND/D2/D3/D7 mit J0, J0.5 bleibt frei | Noch bestellen |
 | E26 | 0,5 m | W4 Steuerkabel — 2 geschirmte verdrillte Paare, etwa 0,25 mm² | Störarme STEP/DIR-Verbindung zum Treiber | Noch bestellen |
 | E27 | 5 m | Kleinspannungslitze — 0,25–0,5 mm², mehrere Farben, Gesamtmenge | Interne 5-V-, Sensor- und Schalterverdrahtung | Noch bestellen |
-
-## Bedienung
-
-| ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
-|---|---|---|---|---|
-| E25 | 1 Stück | S1 Freigabeschalter — Rastender EIN/AUS-Schalter, 1 Schließer, kleinspannungstauglich | Bewusste Betriebsfreigabe und kontrollierter Softwarestopp | Noch bestellen |
 
 ## Gehäuse
 
@@ -81,7 +72,7 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 |---|---|---|---|---|
 | E37 | 1 Stück | Steuergehäuse mit Montageplatte — Metall, abschließbar/verschraubt, Planmaß ca. 400×300×180 mm, Lüftung und Trennbereich | Berührungsschutz, Befestigung und Wärmeabfuhr | Noch beschaffen, Aufmaß nötig |
 | E38 | 1 Satz | Lüftungselemente und Wetterschutz — Geschützte Zu-/Abluftöffnungen, Regenhaube bei Außenbetrieb | Verhindert Wärmestau und direkten Wassereintritt | Noch beschaffen, Aufmaß nötig |
-| E39 | 1 Stück | Sensorgehäuse mit Halter — Platz für PIR, J2 und C3/C4, Linse frei, Spritzwasserschutz | Schützt Sensorplatine und ermöglicht feste Ausrichtung | Noch beschaffen, Aufmaß nötig |
+| E39 | 1 Stück | Sensorgehäuse mit Halter — Platz für PIR und J2, Linse frei, Spritzwasserschutz | Schützt PIR-Modul und ermöglicht feste Ausrichtung | Noch beschaffen, Aufmaß nötig |
 | E40 | 1 Satz | Kabelverschraubungen/Zugentlastungen — Mindestens 5 passende Durchführungen für Netz, Motor, USB, Sensor und Motor-PE | Verhindert Zug auf Klemmen und scharfe Blechkanten | Noch beschaffen, Aufmaß nötig |
 | E41 | 1 Satz | Klemmenabdeckungen und Trennwand — Isolierend, flammhemmend, zwischen Netz- und Steuerbereich | Verhindert versehentlichen Kontakt mit 230 V | Noch beschaffen, Aufmaß nötig |
 | E42 | 12 Stück | Platinen-Abstandshalter — M3, isolierend, passende Schrauben/Muttern | Befestigt Uno und beide Lochrasterplatinen | Noch bestellen |
@@ -149,5 +140,5 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 
 - Das Motorkabel zählt zum Motorlieferumfang und wird nicht noch einmal bestellt. Montage der Steuerbox in Reichweite des 1-m-Kabels einplanen.
 - Schraubklemmen des DM860T und Befestigungsschrauben der Klemmnaben/Lager sind auf Vollständigkeit bei Lieferung zu prüfen. Fehlende Befestiger aus M22 ergänzen.
-- Kein 48→5-V-Wandler, Ethernet-Modul, PoE-Injector, separater PIR, Hall-Sensor, Endschalter, Soundmodul oder externe Status-LED erforderlich. S0/S1 sind vollständig vorgesehen, eine sicherheitsgerichtete Not-Halt-Baugruppe ist nicht Bestandteil von Rev. A.
+- Kein 48→5-V-Wandler, Ethernet-Modul, PoE-Injector, separater PIR, Hall-Sensor, Endschalter, Soundmodul oder externe Status-LED erforderlich. S0 ist vorgesehen, eine sicherheitsgerichtete Not-Halt-Baugruppe ist nicht Bestandteil von Rev. A.
 - 230-V-Aufbau/Prüfung sowie nötige Wellen-/Plattenbearbeitung sind zusätzliche Leistungen, keine Bauteile. In der Bestellliste gesondert aufgeführt.

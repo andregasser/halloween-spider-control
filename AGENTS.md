@@ -16,6 +16,7 @@
 - Auswahlpriorität des Nutzers: Preis vor Kompaktheit. Bei technisch geeigneten Alternativen die Gesamtkosten für die Schweiz vergleichen. DM860T bleibt vorgesehen; kein Wechsel zum DM870 allein wegen des kleineren Gehäuses.
 - PIR HC-SR501-Bauform, bis 3 m RJ45-Patchkabel, kein Ethernet/PoE.
 - Uno und PIR sind vorhanden; sonstige Teile noch nicht bestellt. Statusänderungen nur aufgrund einer tatsächlichen Bestätigung.
+- S1/R7/J4 und die zusätzlichen Sensorkondensatoren C3/C4 samt Sensor-Lochrasterplatine entfallen auf Nutzerwunsch. C1/C2/C5 auf der Steuerplatine bleiben. Bedienung über S0; PIR ohne Zusatzkondensatoren am endgültigen Kabel bei Motorbetrieb prüfen.
 - Kein Hall-/Home-Sensor im Basisaufbau. Nach Neustart ist die mechanische Position nicht bekannt.
 
 ## Dokumentationsstruktur und Konsistenz
@@ -32,13 +33,13 @@
 
 ## Firmware-Vertrag
 
-- Pins: D2 STEP, D3 DIR, D4 Freigabeschalter aktiv LOW, D7 aufbereitetes PIR-Signal aktiv HIGH. D8 zunächst frei, ENA unbeschaltet.
+- Pins: D2 STEP, D3 DIR, D4 und J0.5 unbeschaltet, D7 aufbereitetes PIR-Signal aktiv HIGH. D8 zunächst frei, ENA unbeschaltet.
 - STEP/DIR schalten NPN-Stufen; HIGH am Arduino aktiviert den jeweiligen Optokoppler. Elektrische Pinbelegung vor Änderung der Software prüfen.
 - 200 Vollschritte × 8 Mikroschritte × 2 = 3200 Pulse/Hauptachsenumdrehung.
 - Beschleunigung, Pulsdauer und DIR-Vorlauf beachten. Keine blockierenden `delay()`/`runToPosition()` in der späteren Ablaufsteuerung.
-- Start immer ohne Bewegungsfreigabe, 60 s PIR-Anlaufzeit, bewusste AUS→EIN-Freigabe und PIR-LOW vor neuer Auslösung.
+- Nach Einschalten/Reset 60 s PIR-Anlaufzeit ohne Motorpulse, anschließend mindestens 500 ms PIR-LOW und neue Bewegung abwarten. Automatische Bereitschaft ohne Freigabeschalter.
 - Versorgungsausfall des Treibers bei weiterlaufendem Uno wird im Basisaufbau nicht automatisch erkannt. Nach solchem Ereignis anhalten und manuell neu referenzieren.
-- Firmware ist keine Sicherheitssteuerung. Kein automatisches Anfahren nach Reset, Fehler oder Wiederkehr der Versorgung.
+- Firmware ist keine Sicherheitssteuerung. Nach Reset oder Wiederkehr der Versorgung keine alte Fahrt fortsetzen; nach Anlaufzeit und neuer PIR-Flanke ist eine neue Fahrt möglich. Startposition vor dem Einschalten manuell einrichten.
 
 ## Verifikation und Git
 

@@ -8,23 +8,26 @@ Stand: 26.09.2026. **Spezifikation, noch keine implementierte oder getestete Fir
 |---|---|---|
 | D2 | STEP über R1/Q1 | LOW = Optokoppler aus, HIGH = aktiv; Ruhezustand LOW |
 | D3 | DIR über R2/Q2 | Richtung durch realen Drehtest zuordnen |
-| D4 | Freigabe S1 | `INPUT_PULLUP`; Schalter geschlossen nach GND = LOW |
+| D4 | unbenutzt | Nicht anschließen; J0.5 bleibt frei |
 | D7 | PIR über U2 | `INPUT`; HIGH = Bewegung; kein Pull-up nötig |
 | D13 | eingebaute LED | Bereitschaft/Status; keine externe LED erforderlich |
 | D8 | reserviert | ENA wird in Rev. A nicht angeschlossen |
 
 ## Zustände
 
-1. **START/GESPERRT:** D2/D3 zuerst LOW initialisieren; keine Pulse. Sensor 60 s stabilisieren lassen. Bereits geschlossener S1 darf keine Freigabe bewirken.
-2. **FREIGABE:** Nach der Anlaufzeit erst S1 offen, dann geschlossen erkennen (jeweils 30 ms entprellt). Bedienperson stellt zuvor die mechanische Startposition bei ausgeschaltetem Motor her.
-3. **BEREIT:** PIR muss vor dem ersten Trigger und nach jeder Sequenz mindestens 500 ms LOW gewesen sein. Eine neue steigende Flanke, mindestens 50 ms bestätigt, startet die Sequenz.
+Die mechanische Startposition vor dem Einschalten bei ausgeschalteter Motorversorgung einrichten. Beim Start wird die aktuelle Position als relativer Nullpunkt angenommen; eine automatische Positionsprüfung gibt es nicht.
+
+1. **START/ANLAUF:** D2/D3 zuerst LOW initialisieren; keine Pulse. Sensor nach jedem Einschalten oder Reset 60 s stabilisieren lassen. Währenddessen erkannte PIR-Ereignisse verwerfen.
+2. **WARTEN AUF LOW:** Erst nach der Anlaufzeit mindestens 500 ms durchgehend PIR-LOW erkennen. Ein bereits anliegendes HIGH löst keine Fahrt aus.
+3. **BEREIT:** Eine neue steigende Flanke, mindestens 50 ms bestätigt, startet die Sequenz. Keine manuelle Freigabe erforderlich.
 4. **VORFAHRT:** relativer Zielweg mit Geschwindigkeits- und Beschleunigungsbegrenzung.
 5. **PAUSE:** zeitgesteuert mit `millis()`, ohne blockierendes Warten.
 6. **RÜCKFAHRT:** zum gespeicherten Startwert; Beschleunigung und Bremsung.
-7. **COOLDOWN:** mindestens 5 s, danach erneut LOW-Phase abwarten. PIR-Ereignisse während der Sequenz nicht aufstauen.
-8. **S1 AUS:** neue Trigger sperren; laufende Fahrt kontrolliert abbremsen, dann gesperrt bleiben. Ein erneutes EIN während des Bremsens bewirkt keinen Neustart. Neue Freigabe erst nach Stillstand und vollständigem AUS→EIN-Zyklus.
+7. **COOLDOWN:** mindestens 5 s, danach wieder WARTEN AUF LOW. PIR-Ereignisse während der Sequenz nicht aufstauen.
 
-`motor.run()` muss im Hauptloop häufig aufgerufen werden. Zustandswechsel, Sensor und Schalter werden auch während der Fahrt ausgewertet. Die gemeinsame Netzabschaltung S0 bleibt unabhängig von diesem Ablauf; weder S1 noch die Software sind ein Not-Halt.
+`motor.run()` muss im Hauptloop häufig aufgerufen werden. Zustandswechsel und Sensor werden auch während der Fahrt ausgewertet. Ausschalten erfolgt über S0; ein kontrollierter Softwarestopp per Schalter ist nicht vorgesehen. S0 ist kein Not-Halt.
+
+Nach Reset oder Stromwiederkehr wird eine unterbrochene Fahrt verworfen. Die Steuerung wird nach dem beschriebenen Startablauf automatisch wieder bereit und kann auf eine neue Bewegung reagieren. Sie erkennt eine verschobene mechanische Ausgangsposition nicht.
 
 ## Parameter
 
@@ -50,5 +53,5 @@ Bei 1 m Radius ergeben 400 Pulse/s etwa **0,79 m/s** am Wagen. Die im Handover g
 
 - Kein automatisches Homing gegen einen Anschlag. Ohne Sensor existiert nur eine relative Softwareposition.
 - Nach Schrittverlust, Riemenschlupf oder Treiberabschaltung manuell neu ausrichten und Steuerung zurücksetzen.
-- Tests der späteren Firmware: Start mit PIR HIGH; Start mit S1 geschlossen; dauerhaftes HIGH; Trigger während Fahrt/Cooldown; S1 AUS während Beschleunigung/Rückfahrt; erneutes EIN während Bremsung; `millis()`-Überlauf; Reset; fehlender Sensor.
+- Tests der späteren Firmware: Start mit PIR HIGH und LOW; keine Pulse während 60 s Anlauf; mindestens 500 ms LOW erst nach Anlauf; neue Flanke mindestens 50 ms; dauerhaftes HIGH; Trigger während Fahrt/Cooldown; `millis()`-Überlauf; Reset während Fahrt verwirft die alte Sequenz; erneute automatische Bereitschaft; fehlender Sensor.
 - Motor nur am Prüfstand ansteuern, bevor Arm/Wagen montiert werden. Die detaillierte Prüfreihenfolge steht in [Inbetriebnahme](inbetriebnahme.md).
