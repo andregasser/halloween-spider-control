@@ -20,6 +20,8 @@
 
 ## Dokumentationsstruktur und Konsistenz
 
+- Schaltplanblätter auf den praktischen Aufbau beschränken: Geräteboxen, Bauteilwerte, Pins, Leitungen, Versorgung, nötige Einstellungen und konkrete Montage-/Sicherheitshinweise. Keine Erklärungen zur internen Funktionsweise fertiger Geräte (z. B. Optokoppler) oder Fachbegriffe wie Common-Anode in den Zeichnungen. Technische Begründungen gehören in den Begleittext. Nutzer benötigt klar erkennbare reale Anschlüsse.
+
 - `docs/elektronik.md` ist die maßgebliche Verbindungs- und Pinliste. Grafiken: `docs/schaltplan-steuerung.svg` und `docs/schaltplan-versorgung.svg`.
 - `bom/teile.csv` ist die Datenquelle für Stück- und Bestellliste. Generierung: `python3 tools/dokumente_generieren.py`.
 - Grafiken werden durch `python3 tools/schaltplaene_generieren.py` erzeugt. Änderungen an der Schaltung in Generator, Verbindungstabelle und Stückliste gemeinsam durchführen.

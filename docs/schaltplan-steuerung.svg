@@ -15,7 +15,6 @@
 <text x="175" y="391" font-size="17">GND</text>
 <polyline class="wire" points="245,400 340,400"/>
 <text x="70" y="273" font-size="17">PIR-Sensor</text>
-<text x="70" y="299" font-size="17">Bewegung</text>
 <text x="65" y="457" font-size="16">B1-Pinreihenfolge am eigenen Modul prüfen!</text>
 <rect x="340" y="200" width="105" height="225" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
 <rect x="640" y="200" width="105" height="225" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
@@ -90,12 +89,10 @@
 <text x="1346" y="300" font-size="16">4</text>
 <polyline class="wire" points="1344,310 1695,310"/>
 <text x="1400" y="285" font-size="20" font-weight="bold">PIR_5V → J0.6 → U1 D7</text>
-<text x="1400" y="355" font-size="17">HIGH = Bewegung</text>
-<text x="1400" y="382" font-size="17">LOW bei abgezogenem Kabel</text>
-<text x="1400" y="409" font-size="17">U2A/U2B: Teile desselben U2</text>
-<text x="1400" y="436" font-size="17">Versorgung/übrige Pins: Feld E</text>
+<text x="1400" y="355" font-size="17">U2A/U2B: ein gemeinsamer Chip</text>
+<text x="1400" y="382" font-size="17">Weitere U2-Anschlüsse: Feld E</text>
 <rect x="30" y="520" width="855" height="360" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="46" y="550" font-size="21" font-weight="bold">B · Schrittimpulse, Common-Anode</text>
+<text x="46" y="550" font-size="21" font-weight="bold">B · Schrittimpulse: Arduino → Motortreiber</text>
 <rect x="50" y="575" width="235" height="205" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="65" y="605" font-size="17" font-weight="bold">U1 · Arduino Uno R3</text>
 <text x="65" y="642" font-size="18" font-weight="bold">Digital-Pin 2 (D2)</text>
@@ -145,9 +142,8 @@
 <text x="613" y="704" font-size="16">J3.1</text>
 <text x="705" y="727" font-size="20" font-weight="bold">PUL+</text>
 <text x="55" y="812" font-size="17">+5V von U1 5V / J0.1 → Detail G</text>
-<text x="55" y="853" font-size="16">HIGH am Uno aktiviert den Optokoppler. GND bleibt auf der Steuerungsseite.</text>
 <rect x="915" y="520" width="855" height="360" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="931" y="550" font-size="21" font-weight="bold">C · Richtung, Common-Anode</text>
+<text x="931" y="550" font-size="21" font-weight="bold">C · Drehrichtung: Arduino → Motortreiber</text>
 <rect x="935" y="575" width="235" height="205" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="950" y="605" font-size="17" font-weight="bold">U1 · Arduino Uno R3</text>
 <text x="950" y="642" font-size="18" font-weight="bold">Digital-Pin 3 (D3)</text>
@@ -197,7 +193,6 @@
 <text x="1498" y="704" font-size="16">J3.3</text>
 <text x="1590" y="727" font-size="20" font-weight="bold">DIR+</text>
 <text x="940" y="812" font-size="17">+5V von U1 5V / J0.1 → Detail G</text>
-<text x="940" y="853" font-size="16">HIGH am Uno aktiviert den Optokoppler. GND bleibt auf der Steuerungsseite.</text>
 <rect x="30" y="910" width="410" height="390" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="46" y="940" font-size="21" font-weight="bold">D · U1 · Arduino Uno R3</text>
 <text x="48" y="973" font-size="18">USB-B ← W2 / PS2 (Blatt 1)</text>
@@ -207,8 +202,7 @@
 <text x="48" y="1101" font-size="18">J0.4 ↔ D3 → R2 (Feld C)</text>
 <text x="48" y="1133" font-size="18">J0.5 ↔ D4 → S1 / R7</text>
 <text x="48" y="1165" font-size="18">J0.6 ↔ D7 ← U2.4 (Feld A)</text>
-<text x="48" y="1197" font-size="18">D8, VIN, Hohlbuchse: frei</text>
-<text x="48" y="1229" font-size="18">D13: eingebaute Status-LED</text>
+<text x="48" y="1197" font-size="18">VIN und Hohlbuchse: frei</text>
 <rect x="460" y="910" width="365" height="390" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="476" y="940" font-size="21" font-weight="bold">S1 · Freigabe EIN/AUS</text>
 <text x="495" y="975" font-size="19" font-weight="bold">+5V</text>
@@ -232,7 +226,7 @@
 <text x="562" y="1147" font-size="17">J4.1</text>
 <text x="562" y="1207" font-size="17">J4.2</text>
 <text x="570" y="1249" font-size="16">EIN = geschlossen</text>
-<text x="478" y="1280" font-size="16">Softwarefunktion, kein Not-Halt.</text>
+<text x="478" y="1280" font-size="16">Freigabeschalter, kein Not-Halt.</text>
 <rect x="845" y="910" width="455" height="390" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="861" y="940" font-size="21" font-weight="bold">E · U2 · SN74HCT14N</text>
 <text x="865" y="970" font-size="18" font-weight="bold">+5V → U2.14    GND → U2.7</text>
@@ -297,7 +291,7 @@
 <text x="1340" y="1230" font-size="17">C1/C3/C5: 25 V oder höher.</text>
 <text x="1340" y="1260" font-size="17">RJ45.3/.6/.7/.8: beidseitig frei.</text>
 <rect x="30" y="1320" width="1740" height="330" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="46" y="1350" font-size="21" font-weight="bold">G · J3.1 und J3.3: gemeinsame 5-V-Zuleitung, hier ausdrücklich verbunden dargestellt</text>
+<text x="46" y="1350" font-size="21" font-weight="bold">G · 5-V-Zuleitung für J3.1 und J3.3</text>
 <rect x="60" y="1375" width="380" height="215" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="76" y="1405" font-size="21" font-weight="bold">U1 · Arduino Uno R3</text>
 <text x="300" y="1440" font-size="20" font-weight="bold">5V-Pin</text>
@@ -325,10 +319,10 @@
 <text x="1340" y="1457" font-size="20" font-weight="bold">PUL+</text>
 <text x="1340" y="1537" font-size="20" font-weight="bold">DIR+</text>
 <text x="1460" y="1498" font-size="19" font-weight="bold">S2 auf 5 V</text>
-<text x="50" y="1622" font-size="18">Detail zeigt nur die Plusleitungen. J3.2 kommt von Q1, J3.4 von Q2 (Felder B/C). Kein Anschluss an +48 V.</text>
+<text x="50" y="1622" font-size="18">J3.2 → Q1 (Feld B), J3.4 → Q2 (Feld C). J3 niemals mit +48 V verbinden.</text>
 <text x="35" y="1684" font-size="18" font-weight="bold">W4 · STEP/DIR-Kabel: J3 → U3, 2 geschirmte Paare. ENA±/ALM±/BRK± offen. GND, M48− und PE getrennt.</text>
 <text x="35" y="1720" font-size="18">J0 · Arduino-Anschlussleiste   |   J3 · STEP/DIR-Klemmenleiste   |   J4 · Freigabeschalter-Klemmenleiste</text>
-<text x="35" y="1750" font-size="17">Kennzeichen · Bauteilbezeichnung; z. B. U3 · DM860T V3.0. J3.2 bedeutet Anschluss 2 der Klemmenleiste J3.</text>
+<text x="35" y="1750" font-size="17">J3.2 = Anschluss 2 der Klemmenleiste J3. Alle GND-Symbole auf diesem Blatt mit U1 GND / J0.2 verbinden.</text>
 <polyline class="wire" points="35,1780 1765,1780"/>
 <text x="35" y="1808" font-size="18">Verbindliche Verbindungstabellen, Bauteilwerte und Aufbauhinweise: docs/elektronik.md</text>
 <text x="35" y="1834" font-size="17">Kein Verdrahten unter Spannung. 230-V-Baugruppe durch Elektrofachperson aufbauen und prüfen.</text>
