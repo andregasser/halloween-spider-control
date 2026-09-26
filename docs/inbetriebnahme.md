@@ -28,7 +28,7 @@ Durch eine Elektrofachperson: Schutzleiterdurchgängigkeit, Isolation, Berührun
 - [ ] U2.14 = +5V, U2.7 = GND; freie Eingänge auf GND.
 - [ ] Nach 60 s stabiler PIR-Anlaufzeit reagiert PIR_RAW ungefähr mit 0/3,3 V.
 - [ ] D7 zeigt gleiche Polarität, ungefähr 0/5 V; abgezogenes PIR-Kabel ergibt LOW.
-- [ ] S1 AUS ergibt D4 HIGH, S1 EIN ergibt LOW.
+- [ ] J0.5 und Uno D4 bleiben frei; PIR direkt an J2 ohne zusätzliche Sensorplatine angeschlossen.
 - [ ] Reset erzeugt keine STEP-Pulse; R3/R4 halten Q1/Q2 aus.
 
 ## Treiber und Motor ohne Riemen/Arm
@@ -38,8 +38,8 @@ Durch eine Elektrofachperson: Schutzleiterdurchgängigkeit, Isolation, Berührun
 - [ ] STEP/DIR-Spannung **differenziell zwischen + und −** am Treiber geprüft. D2 HIGH muss PUL-Optokoppler aktivieren.
 - [ ] Oszilloskop/Logikanalysator: mindestens 5 µs HIGH/LOW und mindestens 10 µs DIR-Vorlauf nachgewiesen. Messgerät-Masse nur auf GND der Steuerung, nicht auf beliebige Leistungsklemmen legen.
 - [ ] Je 1600 Pulse ergeben eine Motorumdrehung; Richtung und Rückfahrt stimmen.
-- [ ] S1 AUS bremst und sperrt; erneutes Freigeben startet nicht unerwartet.
-- [ ] Nach Reset mit S1 EIN und/oder PIR HIGH erfolgt keine Fahrt.
+- [ ] Nach Einschalten/Reset 60 s keine Fahrt; erst danach mindestens 500 ms PIR-LOW und eine neue, mindestens 50 ms bestätigte HIGH-Flanke zulassen.
+- [ ] Dauerhaftes PIR-HIGH löst nach Reset keine Fahrt aus. Reset während Fahrt verwirft die alte Sequenz; anschließend gilt erneut der vollständige Startablauf.
 
 ## Mechanik schrittweise hinzufügen
 
@@ -47,10 +47,10 @@ Durch eine Elektrofachperson: Schutzleiterdurchgängigkeit, Isolation, Berührun
 2. Rohr ohne Wagen: zunächst kleiner Winkel, niedrige Geschwindigkeit, Freiraum beobachten.
 3. Wagen ohne Spinne: Boden, Rollwiderstand und Verbindung prüfen; erforderliche Zugkraft messen.
 4. Vollständiger Wagen: Geschwindigkeit und Beschleunigung schrittweise anpassen; keine Personen im Bewegungsraum.
-5. PIR am endgültigen Ort mit endgültigem 3-m-Kabel testen, auch bei laufendem Motor und Netzteillüfter. Keine Phantomtrigger/Resets akzeptieren.
+5. PIR am endgültigen Ort mit endgültigem 3-m-Kabel testen, insbesondere ohne zusätzliche Sensorkondensatoren bei wiederholten Motorstarts/-stopps und laufendem Netzteillüfter. Keine Phantomtrigger/Resets akzeptieren.
 6. Wiederholte Zyklen mindestens 30 Minuten unter Aufsicht, Temperatur und Positionsmarkierung beobachten. Bei Drift, Schlupf, Klemmen oder starker Erwärmung abbrechen.
 
-S0 abschalten und Nachlauf erfassen. Eine Netzabschaltung nimmt dem Motor anschließend das Haltemoment. Die Anlage darf nicht auf einer Neigung selbständig wegrollen. Nach Stromausfall oder Treiberfehler nicht automatisch weiterfahren; Startposition neu einrichten.
+S0 abschalten und Nachlauf erfassen. Eine Netzabschaltung nimmt dem Motor anschließend das Haltemoment. Die Anlage darf nicht auf einer Neigung selbständig wegrollen. Nach Stromausfall oder Treiberfehler S0 ausschalten und die Startposition vor erneutem Einschalten neu einrichten. Nach Einschalten/Reset wird die Steuerung nach Anlaufzeit und neuer PIR-Flanke automatisch wieder aktiv; eine falsche Position wird nicht erkannt.
 
 ## Messprotokoll
 

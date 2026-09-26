@@ -8,7 +8,7 @@ Stand: 26. September 2026. **Rechnerische Vorprüfung, kein abgeschlossener Fest
 
 Für den nächsten Konstruktionsschritt 15 mm als Alternative untersuchen: zwei Lager, kurzer Abstand zwischen Riemenmitte und nächster Lagermitte, kurze Armnabe oberhalb des oberen Lagers. Ein Überhang von 20 mm ist unten ein günstiges Rechenbeispiel, keine pauschale Freigabegrenze. Ob er mit den Lager- und Nabenbreiten erreichbar ist, muss die Maßzeichnung zeigen. Eine Scheibe zwischen den Lagern kann ebenfalls sinnvoll sein; sie benötigt eine eigene Berechnung mit ihrer tatsächlichen Position.
 
-Die Stückliste behält die zusammenpassende 20-mm-Referenzausführung, kennzeichnet deren Durchmesser aber als vorläufig. Noch keine isolierten 15-mm-Teile bestellen. Eine Umstellung betrifft mindestens M03, M05, M06, M07, M08 und M10: Riemenscheibe, Welle, Lager, Klemmringe, Armnabe und Passfeder.
+Die bisher betrachtete 20-mm-Referenzausführung bleibt vorläufiger Projektkontext. Die aktuelle Stück- und Bestellliste umfasst ausschließlich Elektronik; die früheren Mechanikpositionen M03, M05, M06, M07, M08 und M10 sind dort nicht mehr enthalten. Eine spätere Durchmesseränderung betrifft gemeinsam Riemenscheibe, Welle, Lager, Klemmringe, Armnabe und Passfeder.
 
 ## Gesicherte Ausgangsdaten und offene Lasten
 

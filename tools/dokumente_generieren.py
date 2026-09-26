@@ -26,11 +26,13 @@ def table(headers, entries):
 def qty(row):
     return row["Menge"] + " " + row["Einheit"]
 
-bom = """# Material-Stückliste
+inventory = ", ".join(f"{r['ID']} {r['Teil']}" for r in rows if r["Status"] == "vorhanden")
 
-Stand: **26.09.2026 · Revision A**. Diese Liste umfasst den beschriebenen Basisaufbau einschließlich Elektronik-Kleinteilen, Versorgung, Leitungen, Mechanik, Gehäusen und Montagezubehör. Werkzeuge und Verbrauchsmaterial stehen separat am Ende. Mengen von Kabeln/Zubehör sind Planmengen; maßabhängige Teile sind ausdrücklich gekennzeichnet.
+bom = f"""# Material-Stückliste · Elektronik
 
-**Bestätigt vorhanden: Arduino Uno R3 und PIR. Sonst nichts als bestellt verbucht.** Bei den im Handover beschriebenen Wagen-/Dekorationsteilen vor einem Neukauf dennoch den realen Bestand abgleichen.
+Stand: **26.09.2026 · Revision A**. Diese Liste umfasst ausschließlich die Elektronik einschließlich Motor, Versorgung, elektrischer Leitungen, Anschlüsse und zugehörigem Elektrogehäuse-/Isolationsmaterial. Konstruktionsmaterial wie Rohre, Holzplatten, Riemenantrieb und Kabelbinder gehört nicht zum Umfang. Elektronikwerkzeuge und Lötmaterial stehen separat am Ende. Mengen von Leitungen und Zubehör sind Planmengen.
+
+**Bestätigt vorhanden: {inventory}.** Noch keine Bestellung ausgelöst.
 
 Die [Bestellliste](bestellliste.md) ergänzt Lieferant und Auswahlhinweise. Die IDs bleiben über beide Listen gleich. Alle eingebauten elektronischen Referenzen gehören zum [Schaltplan](../docs/elektronik.md). Preise sind bewusst nicht aus alten Schätzungen übernommen.
 
@@ -46,19 +48,20 @@ for group in dict.fromkeys(r["Gruppe"] for r in rows):
 bom += """## Enthaltene und nicht benötigte Teile
 
 - Das Motorkabel zählt zum Motorlieferumfang und wird nicht noch einmal bestellt. Montage der Steuerbox in Reichweite des 1-m-Kabels einplanen.
-- Schraubklemmen des DM860T und Befestigungsschrauben der Klemmnaben/Lager sind auf Vollständigkeit bei Lieferung zu prüfen. Fehlende Befestiger aus M22 ergänzen.
-- Kein 48→5-V-Wandler, Ethernet-Modul, PoE-Injector, separater PIR, Hall-Sensor, Endschalter, Soundmodul oder externe Status-LED erforderlich. S0/S1 sind vollständig vorgesehen, eine sicherheitsgerichtete Not-Halt-Baugruppe ist nicht Bestandteil von Rev. A.
-- 230-V-Aufbau/Prüfung sowie nötige Wellen-/Plattenbearbeitung sind zusätzliche Leistungen, keine Bauteile. In der Bestellliste gesondert aufgeführt.
+- Schraubklemmen des DM860T bei Lieferung auf Vollständigkeit prüfen.
+- Keine zusätzliche Lochrasterplatine am PIR erforderlich: Die Sensorleitung verbindet B1 direkt mit J2. E18 ist die weiterhin benötigte Steuer-Lochrasterplatine für U2 und die übrige Schaltung.
+- Kein 48→5-V-Wandler, Ethernet-Modul, PoE-Injector, separater PIR, Hall-Sensor, Endschalter, Soundmodul oder externe Status-LED erforderlich. S0 ist vorgesehen, eine sicherheitsgerichtete Not-Halt-Baugruppe ist nicht Bestandteil von Rev. A.
+- Aufbau und Prüfung der Netzbaugruppe sind eine zusätzliche Leistung, kein Bauteil; in der Bestellliste gesondert aufgeführt.
 """
 (ROOT / "bom/material-stueckliste.md").write_text(bom, encoding="utf-8")
 
-order = """# Bestellliste
+order = f"""# Bestellliste · Elektronik
 
 Stand: **26.09.2026 · Revision A**. Noch keine Bestellung ausgelöst.
 
-**Nicht bestellen:** E01 Arduino Uno R3 und E02 PIR, beide vorhanden. Alle übrigen Einbauteile sind unten aufgeführt. Werkzeuge, Verbrauchsmaterial und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
+**Nicht bestellen, bereits vorhanden:** {inventory}. Die Liste enthält nur fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
 
-Ein Link zu einer Produktseite belegt die gefundene Produktfamilie, nicht jede auswählbare Variante. Mit **Bezugsquelle** gekennzeichnete Einträge nennen einen vorgeschlagenen Lieferanten, aber noch keine einzeln geprüfte Artikelnummer. Keine Lieferbarkeit oder Schweizer Versandkosten zugesichert. Bei Anfragepositionen erst Maße/Kompatibilität klären, dann bestellen. Das verhindert insbesondere Fehlkäufe bei Welle, Schellen, Gehäuse und Riemennaben.
+Ein Link zu einer Produktseite belegt die gefundene Produktfamilie, nicht jede auswählbare Variante. Mit **Bezugsquelle** gekennzeichnete Einträge nennen einen vorgeschlagenen Lieferanten, aber noch keine einzeln geprüfte Artikelnummer. Keine Lieferbarkeit oder Schweizer Versandkosten zugesichert. Bei Anfragepositionen erst Maße/Kompatibilität klären, dann bestellen. Bei Elektrogehäusen und Kabeldurchführungen die Abmessungen der Elektronik und Leitungen abgleichen.
 
 Die ursprünglichen Budgetwerte aus dem Handover sind keine aktuellen Angebote. Vor Zahlung Endpreis in CHF einschließlich Versand/Einfuhr und Lieferdatum bis Halloween kontrollieren.
 
@@ -66,33 +69,32 @@ Automatisch erzeugt aus [teile.csv](teile.csv). Die [Material-Stückliste](mater
 
 """
 for status, title in [
-    ("bestellen", "1. Fehlende Standardteile und festgelegte Modelle"),
-    ("abklaeren", "2. Fehlende Teile mit noch zu bestätigender Ausführung"),
-    ("aufmass", "3. Fehlende Teile nach Aufmaß/Zuschnitt"),
-    ("bestand_pruefen", "4. Werkstattbestand und bedingter Bedarf"),
+    ("bestellen", "Fehlende Standardteile und festgelegte Modelle"),
+    ("abklaeren", "Fehlende Teile mit noch zu bestätigender Ausführung"),
+    ("aufmass", "Elektrogehäuse und Anschlussteile nach Aufmaß"),
+    ("bestand_pruefen", "Elektronikwerkzeug und bedingter Bedarf"),
 ]:
+    if not any(r["Status"] == status for r in rows):
+        continue
     order += f"## {title}\n\n"
     order += table(["Erledigt", "ID", "Menge", "Teil / genaue Auswahl", "Lieferant / Link", "Vor Bestellung beachten"], [
         ["☐", r["ID"], qty(r), r["Teil"] + " — " + r["Spezifikation"],
          f'[{r["Lieferant"]}]({r["Link"]})', r["Bestellhinweis"]]
         for r in rows if r["Status"] == status
     ]) + "\n"
-order += """## 5. Zusätzlich einplanen: Leistungen
+order += """## Zusätzlich einplanen: Netzaufbau und Prüfung
 
 | Leistung | Anbieter | Umfang |
 |---|---|---|
 | Netzbaugruppe aufbauen und prüfen | Lokaler Elektroinstallateur / Elektrofachbetrieb | S0-Eignung, W1/F1/PS1/XPE, Gehäuse/PE, Trennung, RCD und Prüfung nach Einsatzort |
-| Welle und Platten fertigen | Lokale mechanische Werkstatt, alternativ DOLD-Anfrage | Hauptachse ablängen/entgraten und Nut passend zur 40T-Scheibe fertigen, Platten bohren/Langlöcher herstellen |
 
-Noch kein konkreter regionaler Betrieb ausgewählt. Für diese Leistungen fehlen Ort und endgültige Mechanikmaße; die Anbieterangabe ist eine Beschaffungsroute, kein eingeholtes Angebot.
+Noch kein konkreter regionaler Betrieb ausgewählt. Die Anbieterangabe ist eine Beschaffungsroute, kein eingeholtes Angebot.
 
 ## Empfohlene Bündelung
 
-1. STEPPERONLINE: Motor, Treiber, Motornetzteil und Halter. Treiberrevision und Lieferung in die Schweiz vorher bestätigen.
+1. STEPPERONLINE: Motor, Treiber und Motornetzteil. Treiberrevision und Lieferung in die Schweiz vorher bestätigen.
 2. Elektronikdistributor: U2, Transistoren, Widerstände/Kondensatoren, Sicherungen und Halter. Weitere Kleinteile bei Reichelt bündeln.
-3. Riemenscheiben: zwei passende Varianten beim genannten eBay-Händler, keine ähnlich benannte GT2-/3M-/T5-Ausführung.
-4. Mechanik: Lager und Klemmringe; danach Welle, Nabe und Platten anhand der realen Anschlussmaße.
-5. Gehäuse-/Baumarktmaterial erst nach Layout. Arduino und PIR nicht doppelt bestellen.
+3. Elektrogehäuse und Kabeldurchführungen anhand des Elektroniklayouts auswählen. Vorhandene Teile nicht doppelt bestellen.
 
 Bestellstatus künftig in `teile.csv` pflegen und beide Listen gemeinsam neu erzeugen. Ein angekreuztes Feld in einem Ausdruck ist keine automatische Bestellung.
 """

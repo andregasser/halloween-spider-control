@@ -6,7 +6,7 @@ Eine große Halloween-Spinne fährt auf einem Wagen mit sechs kugelgelagerten Ro
 
 ## Projektstand
 
-Vorhanden sind laut Bestätigung vom 26.09.2026 ausschließlich **Arduino Uno R3 und PIR-Modul**. Motor, Treiber, Netzteil, Riemenantrieb und weiteres Material sind noch zu beschaffen. Der PIR entspricht optisch einem HC-SR501; die tatsächliche Anschlussbeschriftung ist vor dem Verdrahten zu prüfen.
+Vorhanden sind laut Bestätigung vom 26.09.2026 **Arduino Uno R3 (E01), PIR-Modul (E02), Patchkabel (E08) und CH-Mehrfachsteckdose (E28)**. Motor, Treiber, Netzteile und weitere Elektronik sind noch zu beschaffen. Der aktuelle Arbeitsumfang sowie die Material- und Bestellliste beschränken sich auf die Elektronik. Der PIR entspricht optisch einem HC-SR501; die tatsächliche Anschlussbeschriftung ist vor dem Verdrahten zu prüfen.
 
 Die Grundarchitektur steht fest. Diese Dokumentation konkretisiert die Elektronik zu einem durchgängig verdrahtbaren Entwurf. Eine funktionierende Gesamtanlage benötigt zusätzlich die noch zu entwickelnde Firmware und die Inbetriebnahmeprüfungen. Insbesondere ist dies keine bereits erprobte Bauanleitung.
 
@@ -15,8 +15,8 @@ Die Grundarchitektur steht fest. Diese Dokumentation konkretisiert die Elektroni
 | Dokument | Inhalt |
 |---|---|
 | [Elektronik und Schaltplan](docs/elektronik.md) | Zwei grafische Schaltplanblätter, sämtliche Verbindungen, Lötaufbau und Treibereinstellungen |
-| [Material-Stückliste](bom/material-stueckliste.md) | Alle vorgesehenen Einbauteile, Mengen, Begründung und Bestand |
-| [Bestellliste](bom/bestellliste.md) | Fehlende Teile mit Lieferanten und konkreten Auswahlmerkmalen |
+| [Material-Stückliste](bom/material-stueckliste.md) | Elektronik, elektrisches Zubehör, Mengen, Begründung und Bestand |
+| [Bestellliste](bom/bestellliste.md) | Fehlende Elektronik mit Lieferanten und konkreten Auswahlmerkmalen |
 | [Mechanik](docs/mechanik.md) | Riemenantrieb, Lagerung, Befestigung und noch zu messende Maße |
 | [Hauptwelle: 15 oder 20 mm](docs/hauptwelle-auslegung.md) | Rechnerische Vorprüfung, Einfluss des Riemenüberhangs und offene Maße |
 | [Firmware-Anforderungen](docs/firmware.md) | Pinbelegung, Zustände und Bewegungsparameter; noch keine Implementierung |
@@ -57,12 +57,12 @@ Modellwerte und Quellen stehen in [Elektronik](docs/elektronik.md) und [Quellen]
 
 ## Geplanter Ablauf
 
-Einschalten → Sensor stabilisieren lassen → manuell freigeben → auf neue Bewegung warten → langsam vorfahren → Pause → zurückfahren → Cooldown → erneut scharf werden, wenn der PIR wieder LOW war.
+Einschalten → 60 s Sensor-Anlaufzeit → PIR-LOW abwarten → auf neue Bewegung warten → langsam vorfahren → Pause → zurückfahren → Cooldown → erneut scharf werden, wenn der PIR wieder LOW war.
 
-Die Ausgangsposition wird vor der Freigabe manuell festgelegt. Nach Stromausfall, Blockade oder Schrittverlust ist sie unbekannt und muss neu eingerichtet werden. Die ersten Versuche erfolgen ohne Arm und Wagen.
+Die Ausgangsposition wird vor dem Einschalten bei ausgeschalteter Motorversorgung manuell festgelegt. Nach jedem Einschalten oder Arduino-Reset wird die Steuerung automatisch wieder bereit; es gibt keinen Freigabeschalter. Nach Stromausfall, Blockade oder Schrittverlust ist sie unbekannt und muss neu eingerichtet werden. Die ersten Versuche erfolgen ohne Arm und Wagen.
 
 ## Grenzen des Entwurfs
 
-Der 230-V-Teil wird geklemmt/gecrimpt und durch eine Elektrofachperson aufgebaut und geprüft. Die Lötanleitung betrifft die Kleinspannungsplatinen. Schwenkbereich und Riemenantrieb müssen gegen Zugriff geschützt sein. Der vorgesehene Hauptschalter ist eine Netzabschaltung, kein nachgewiesener Not-Halt; der Freigabeschalter ist eine Software-Bedienfunktion. Eine sofortige mechanische Stillsetzung ist damit nicht zugesichert.
+Der 230-V-Teil wird geklemmt/gecrimpt und durch eine Elektrofachperson aufgebaut und geprüft. Die Lötanleitung betrifft die Kleinspannungsplatinen. Schwenkbereich und Riemenantrieb müssen gegen Zugriff geschützt sein. Der vorgesehene Hauptschalter ist eine Netzabschaltung, kein nachgewiesener Not-Halt. Eine sofortige mechanische Stillsetzung ist damit nicht zugesichert.
 
-Vor der Bestellung der gekennzeichneten Mechanikteile fehlen insbesondere Rohrdurchmesser, Plattenmaße und die Ausführung der Welle-Nabe-Verbindungen. Diese Punkte sind in der Bestellliste vollständig aufgeführt, aber noch nicht als fertige Einkaufsposition freigegeben.
+Die bestehenden Mechanikdokumente bleiben als Projektkontext erhalten. Konstruktion und mechanische Beschaffung sind nicht Bestandteil der Elektronik-Stückliste und -Bestellliste.

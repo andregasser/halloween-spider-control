@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2500" viewBox="0 0 1800 2500">
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2300" viewBox="0 0 1800 2300">
 <style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#152536} .wire{fill:none;stroke:#253b50;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}</style>
-<rect width="1800" height="2500" fill="white"/>
+<rect width="1800" height="2300" fill="white"/>
 <text x="35" y="46" font-size="29" font-weight="bold">Blatt 2 / 2 — Steuerung, STEP/DIR und PIR-Sensor</text>
 <text x="35" y="79" font-size="18">Halloween-Spinne · Revision A · 26.09.2026 · Entwurf, noch nicht aufgebaut oder geprüft</text>
 <text x="35" y="108" font-size="17">Gleiche Netznamen sind verbunden. Punkte = Verbindung. Kreuzungen ohne Punkt = keine Verbindung.</text>
@@ -91,6 +91,7 @@
 <text x="1400" y="285" font-size="20" font-weight="bold">PIR_5V → J0.6 → U1 D7</text>
 <text x="1400" y="355" font-size="17">U2A/U2B: ein gemeinsamer Chip</text>
 <text x="1400" y="382" font-size="17">Weitere U2-Anschlüsse: Feld E</text>
+<text x="1400" y="409" font-size="17">RJ45.3/.6/.7/.8: beidseitig frei.</text>
 <rect x="30" y="520" width="855" height="360" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="46" y="550" font-size="21" font-weight="bold">B · Schrittimpulse: Arduino → Motortreiber</text>
 <rect x="50" y="575" width="235" height="205" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
@@ -193,71 +194,17 @@
 <text x="1498" y="704" font-size="16">J3.3</text>
 <text x="1590" y="727" font-size="20" font-weight="bold">DIR+</text>
 <text x="940" y="812" font-size="17">+5V von U1 5V / J0.1 → Detail G</text>
-<rect x="30" y="910" width="410" height="390" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
+<rect x="30" y="910" width="1740" height="190" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="46" y="940" font-size="21" font-weight="bold">D · U1 · Arduino Uno R3</text>
 <text x="48" y="973" font-size="18">USB-B ← W2 / PS2 (Blatt 1)</text>
 <text x="48" y="1005" font-size="18">J0.1 ↔ 5V → Netz +5V</text>
 <text x="48" y="1037" font-size="18">J0.2 ↔ GND → Netz GND</text>
 <text x="48" y="1069" font-size="18">J0.3 ↔ D2 → R1 (Feld B)</text>
-<text x="48" y="1101" font-size="18">J0.4 ↔ D3 → R2 (Feld C)</text>
-<text x="48" y="1133" font-size="18">J0.5 ↔ D4 → S1 / R7</text>
-<text x="48" y="1165" font-size="18">J0.6 ↔ D7 ← U2.4 (Feld A)</text>
-<text x="48" y="1197" font-size="18">VIN und Hohlbuchse: frei</text>
-<rect x="460" y="910" width="365" height="390" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="476" y="940" font-size="21" font-weight="bold">S1 · Freigabe EIN/AUS</text>
-<text x="495" y="975" font-size="19" font-weight="bold">+5V</text>
-<polyline class="wire" points="520,985 520,1000"/>
-<polyline class="wire" points="520,1000 520,1010"/>
-<rect x="512" y="1010" width="16" height="40" fill="white" stroke="#253b50" stroke-width="2"/>
-<polyline class="wire" points="520,1050 520,1060"/>
-<text x="536" y="1035" font-size="16">R7 · 10 kΩ</text>
-<polyline class="wire" points="520,1060 520,1090 740,1090"/>
-<circle cx="520" cy="1090" r="4" fill="#253b50"/>
-<text x="543" y="1078" font-size="18" font-weight="bold">D4 / J0.5</text>
-<polyline class="wire" points="520,1090 520,1140"/>
-<circle cx="520" cy="1140" r="4" fill="#253b50"/>
-<circle cx="520" cy="1200" r="4" fill="#253b50"/>
-<polyline class="wire" points="520,1200 545,1150"/>
-<polyline class="wire" points="520,1200 520,1210"/>
-<polyline class="wire" points="504,1210 536,1210"/>
-<polyline class="wire" points="510,1217 530,1217"/>
-<polyline class="wire" points="516,1224 524,1224"/>
-<text x="499" y="1247" font-size="16">GND</text>
-<text x="562" y="1147" font-size="17">J4.1</text>
-<text x="562" y="1207" font-size="17">J4.2</text>
-<text x="570" y="1249" font-size="16">EIN = geschlossen</text>
-<text x="478" y="1280" font-size="16">Freigabeschalter, kein Not-Halt.</text>
-<rect x="845" y="910" width="925" height="390" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="861" y="940" font-size="21" font-weight="bold">F · B1 · HC-SR501-Bauform</text>
-<polyline class="wire" points="1095,1000 1435,1000"/>
-<text x="1070" y="980" font-size="18" font-weight="bold">B1 VCC / J2.5</text>
-<polyline class="wire" points="1095,1020 1095,1042"/>
-<polyline class="wire" points="1080,1042 1110,1042"/>
-<polyline class="wire" points="1080,1052 1110,1052"/>
-<polyline class="wire" points="1095,1052 1095,1080"/>
-<text x="1117" y="1053" font-size="16">C3 · 100 nF</text>
-<polyline class="wire" points="1095,1000 1095,1020"/>
-<polyline class="wire" points="1095,1080 1095,1090"/>
-<polyline class="wire" points="1079,1090 1111,1090"/>
-<polyline class="wire" points="1085,1097 1105,1097"/>
-<polyline class="wire" points="1091,1104 1099,1104"/>
-<text x="1074" y="1127" font-size="16">GND</text>
-<polyline class="wire" points="1435,1020 1435,1042"/>
-<polyline class="wire" points="1420,1042 1450,1042"/>
-<polyline class="wire" points="1420,1052 1450,1052"/>
-<polyline class="wire" points="1435,1052 1435,1080"/>
-<text x="1457" y="1053" font-size="16">C4 · 10 µF</text>
-<text x="1407" y="1036" font-size="18">+</text>
-<polyline class="wire" points="1435,1000 1435,1020"/>
-<polyline class="wire" points="1435,1080 1435,1090"/>
-<polyline class="wire" points="1419,1090 1451,1090"/>
-<polyline class="wire" points="1425,1097 1445,1097"/>
-<polyline class="wire" points="1431,1104 1439,1104"/>
-<text x="1414" y="1127" font-size="16">GND</text>
-<text x="1070" y="1170" font-size="17">GND = B1 GND / J2.2 + J2.4</text>
-<text x="1070" y="1200" font-size="17">C2/C4: 16 V oder höher, Polarität!</text>
-<text x="1070" y="1230" font-size="17">C1/C3/C5: 25 V oder höher.</text>
-<text x="1070" y="1260" font-size="17">RJ45.3/.6/.7/.8: beidseitig frei.</text>
+<text x="920" y="973" font-size="18">J0.4 ↔ D3 → R2 (Feld C)</text>
+<text x="920" y="1005" font-size="18">J0.5 und U1 D4: frei lassen</text>
+<text x="920" y="1037" font-size="18">J0.6 ↔ D7 ← U2.4 (Feld A)</text>
+<text x="920" y="1069" font-size="18">VIN und Hohlbuchse: frei</text>
+<g transform="translate(0,-200)">
 <rect x="30" y="1320" width="1740" height="630" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="46" y="1350" font-size="21" font-weight="bold">E · U2 · SN74HCT14N · Anschlüsse am Chip</text>
 <text x="55" y="1384" font-size="19" font-weight="bold">Ansicht von oben auf die Beschriftung · Kerbe oben · Lötseite der Platine ist spiegelverkehrt.</text>
@@ -341,9 +288,11 @@
 <text x="1230" y="1750" font-size="18">C1 direkt zwischen Pin 14 und Pin 7.</text>
 <text x="1230" y="1780" font-size="18">C2: Plus an +5V, Minus an GND.</text>
 <text x="1230" y="1810" font-size="18">C2 nahe dem Versorgungseingang.</text>
+<text x="1230" y="1840" font-size="18">C1/C5: ≥25 V; C2: ≥16 V.</text>
 <text x="55" y="1885" font-size="19">Alle GND-Anschlüsse hier verbinden: Pins 5, 7, 9, 11, 13 und C1/C2 → U1 GND / J0.2.</text>
 <text x="55" y="1917" font-size="19">U2 ist derselbe Chip wie U2A/U2B in Feld A. Bei IC-Sockel an dessen passenden Lötanschlüssen verdrahten.</text>
-<g transform="translate(0,650)">
+</g>
+<g transform="translate(0,450)">
 <rect x="30" y="1320" width="1740" height="330" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="46" y="1350" font-size="21" font-weight="bold">G · 5-V-Zuleitung für J3.1 und J3.3</text>
 <rect x="60" y="1375" width="380" height="215" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
@@ -375,10 +324,10 @@
 <text x="1460" y="1498" font-size="19" font-weight="bold">S2 auf 5 V</text>
 <text x="50" y="1622" font-size="18">J3.2 → Q1 (Feld B), J3.4 → Q2 (Feld C). J3 niemals mit +48 V verbinden.</text>
 <text x="35" y="1684" font-size="18" font-weight="bold">W4 · STEP/DIR-Kabel: J3 → U3, 2 geschirmte Paare. ENA±/ALM±/BRK± offen. GND, M48− und PE getrennt.</text>
-<text x="35" y="1720" font-size="18">J0 · Arduino-Anschlussleiste   |   J3 · STEP/DIR-Klemmenleiste   |   J4 · Freigabeschalter-Klemmenleiste</text>
+<text x="35" y="1720" font-size="18">J0 · Arduino-Anschlussleiste   |   J3 · STEP/DIR-Klemmenleiste</text>
 <text x="35" y="1750" font-size="17">J3.2 = Anschluss 2 der Klemmenleiste J3. Alle GND-Symbole auf diesem Blatt mit U1 GND / J0.2 verbinden.</text>
 </g>
-<polyline class="wire" points="35,2430 1765,2430"/>
-<text x="35" y="2458" font-size="18">Verbindliche Verbindungstabellen, Bauteilwerte und Aufbauhinweise: docs/elektronik.md</text>
-<text x="35" y="2484" font-size="17">Kein Verdrahten unter Spannung. 230-V-Baugruppe durch Elektrofachperson aufbauen und prüfen.</text>
+<polyline class="wire" points="35,2230 1765,2230"/>
+<text x="35" y="2258" font-size="18">Verbindliche Verbindungstabellen, Bauteilwerte und Aufbauhinweise: docs/elektronik.md</text>
+<text x="35" y="2284" font-size="17">Kein Verdrahten unter Spannung. 230-V-Baugruppe durch Elektrofachperson aufbauen und prüfen.</text>
 </svg>

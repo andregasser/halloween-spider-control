@@ -23,6 +23,16 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 
 ## Festlegungen aus dem Gespräch
 
+- 26.09.2026: Logikanalysator (T04) laut Nutzer vorhanden; aus den Bestellpositionen entfernt.
+
+- 26.09.2026: Multimeter (T03) laut Nutzer ebenfalls vorhanden; aus den Bestellpositionen entfernt.
+
+- 26.09.2026: Lötkolben, Elektroniklot und Flussmittel laut Nutzer bereits vorhanden. T01 und V01 als Bestand führen, nicht als Bestellpositionen.
+
+- 26.09.2026: Nutzer bestätigt E08 Patchkabel und E28 CH-Mehrfachsteckdose zusätzlich als vorhanden. Beide bleiben in der Materialliste, entfallen aber als Bestellposition. Arbeitsumfang und Beschaffungslisten werden auf Elektronik und zugehöriges elektrisches Zubehör begrenzt; Konstruktion, Mechanikteile und Kabelbinder entfallen. Keine zusätzliche Lochrasterplatine am PIR nötig; die Steuer-Lochrasterplatine E18 bleibt erforderlich.
+
+- 26.09.2026: Nutzer entfernt S1 und Feld F aus dem Aufbau. S1/R7/J4 sowie C3/C4 und die zusätzliche Sensor-Lochrasterplatine entfallen. Der PIR wird direkt an J2 angeschlossen; Betrieb ohne Zusatzkondensatoren am endgültigen Kabel bei Motorstarts/-stopps prüfen. C1/C2/C5 bleiben auf der Steuerplatine. Nach Einschalten/Reset 60 s Anlaufzeit, danach mindestens 500 ms PIR-LOW und neue Bewegung; automatische Bereitschaft ohne manuelle Freigabe. J0.5 und D4 bleiben frei, übrige Anschlussnummern unverändert.
+
 - 26.09.2026: Nutzer priorisiert **Preis vor Kompaktheit**. DM870 als kompaktere Alternative besprochen, aber nicht ausgewählt. **DM860T V3.0 bleibt der vorgesehene Treiber**; Schaltplan und Stückliste führen ihn bereits. Der Nutzer sieht einen Preisvorteil beim DM860T; ein aktueller Gesamtpreisvergleich inklusive Versand und Einfuhrkosten für die Schweiz wurde in diesem Entscheidungsschritt nicht durchgeführt.
 
 - 26.09.2026: Nutzer bestätigt Einsatz in der Schweiz und gemeinsame Mehrfachsteckdose für beide Netzteile. S0 konkretisiert als fertige CH-Leiste mit Typ-13-Buchsen und gemeinsamem zweipoligem Schalter. Blatt 1 zeigt beide Steckplätze: W1 mit Typ-12-Stecker zu PS1, PS2 direkt eingesteckt. Die interne Netzverdrahtung von PS1 bleibt im geschützten Gehäuse. [ESTI: Schweizer Stecksystem](https://www.esti.admin.ch/inhalte/Info_SN_441011_de-fr-it-en.pdf); Anschlussklemmen siehe oben verlinktes Mean-Well-Datenblatt. Kein bestimmtes Leistenmodell damit für den Einschaltstrom freigegeben.
@@ -30,7 +40,7 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 - 26.09.2026: Handover gelesen; Architektur mit Zahnriemen und separater Hauptachse bleibt Grundlage.
 - Vorhandenes PIR-Modul optisch als HC-SR501-Bauform eingeordnet, Hersteller nicht feststellbar. Nutzer will es verwenden.
 - Sensorleitung: RJ45-Patchkabel, bis 3 m, zwei verdrillte Paare für OUT/GND und 5V/GND.
-- Nutzer bestätigt: **Nur Uno und PIR vorhanden, alles Weitere noch zu bestellen.** Dies ist der aktuelle Bestand, auch wenn das Handover bereits einen Wagen beschreibt. Für Wagen/Spinne ist vor Neukauf ein Bestandsabgleich sinnvoll.
+- Aktueller bestätigter Elektronikbestand: **Uno (E01), PIR (E02), Patchkabel (E08) und Mehrfachsteckdose (E28)**. Frühere Bestandsangaben nur zu Uno/PIR sind damit ergänzt.
 - Auftrag dieser Revision: deutsche Projektdokumente, Schaltplan, vollständige Material- und Bestellliste sowie Einchecken ins Repository. Keine Teile bestellen und noch keine Firmware implementieren.
 - 26.09.2026: Auf Nutzeranfrage [15-mm-Hauptwelle gegenüber 20 mm rechnerisch vorgeprüft](hauptwelle-auslegung.md). 20 mm sind kein nachgewiesenes Mindestmaß; 15 mm sind eine plausible Alternative, abhängig von Riemenüberhang, Lasten und Nut-/Nabenausführung. Rechnung und zusätzliche Primärquellen stehen im Prüfdokument. Keine endgültige Durchmesseränderung beschlossen; davon abhängige Bestellpositionen bleiben bis zur Maßzeichnung offen.
 
@@ -41,7 +51,7 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 | STEP/DIR | Zwei NPN-Stufen statt direkt belasteter GPIOs. Das konkretisiert die Treiberschnittstelle, der mechanische Antrieb bleibt gleich. |
 | PIR-Leitung | RC-Filter und HCT-Schmitt-Trigger auf Empfängerseite; definierte Pegel und etwas Reserve gegen Störungen. Bei 3 m nicht grundsätzlich zwingend, aber Bestandteil dieses einheitlichen Entwurfs. |
 | Arduino-Versorgung | Separates geschlossenes USB-Netzteil; kein 48→5-V-Wandler. Gemeinsame Netzverteilung S0 schaltet beide Netzteile. |
-| Bedienung | S1 als Freigabeschalter ergänzt; Firmware muss nach Reset eine bewusste Freigabe verlangen. S0 ist Netzabschaltung, S1 Softwarefunktion, kein zertifizierter Not-Halt. |
+| Bedienung | Nur S0 als gemeinsame Netzabschaltung; kein Freigabeschalter. Nach jedem Einschalten/Reset automatische Bereitschaft nach Sensor-Anlauf und LOW-Phase. S0 ist kein zertifizierter Not-Halt. |
 | ENA / ALM / BRK | In Rev. A unbeschaltet. Der Treiber kann im Stillstand bestromen. Ausfall der Motorversorgung bei aktivem Uno wird nicht automatisch erkannt. |
 | DM860T-Versorgung | Handbuchreferenz V3.0 mit AC/AC-Klemmen und 48-VDC-Versorgung, nicht die vereinfachte VDC+/VDC−-Darstellung aus dem Handover. |
 | Strom | Peak und RMS getrennt. Unterschiedliche Herstellerangaben offengelegt; Strom zunächst niedrig und Drehmoment praktisch prüfen. |

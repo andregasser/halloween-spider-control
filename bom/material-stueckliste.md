@@ -1,8 +1,8 @@
-# Material-Stückliste
+# Material-Stückliste · Elektronik
 
-Stand: **26.09.2026 · Revision A**. Diese Liste umfasst den beschriebenen Basisaufbau einschließlich Elektronik-Kleinteilen, Versorgung, Leitungen, Mechanik, Gehäusen und Montagezubehör. Werkzeuge und Verbrauchsmaterial stehen separat am Ende. Mengen von Kabeln/Zubehör sind Planmengen; maßabhängige Teile sind ausdrücklich gekennzeichnet.
+Stand: **26.09.2026 · Revision A**. Diese Liste umfasst ausschließlich die Elektronik einschließlich Motor, Versorgung, elektrischer Leitungen, Anschlüsse und zugehörigem Elektrogehäuse-/Isolationsmaterial. Konstruktionsmaterial wie Rohre, Holzplatten, Riemenantrieb und Kabelbinder gehört nicht zum Umfang. Elektronikwerkzeuge und Lötmaterial stehen separat am Ende. Mengen von Leitungen und Zubehör sind Planmengen.
 
-**Bestätigt vorhanden: Arduino Uno R3 und PIR. Sonst nichts als bestellt verbucht.** Bei den im Handover beschriebenen Wagen-/Dekorationsteilen vor einem Neukauf dennoch den realen Bestand abgleichen.
+**Bestätigt vorhanden: E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator.** Noch keine Bestellung ausgelöst.
 
 Die [Bestellliste](bestellliste.md) ergänzt Lieferant und Auswahlhinweise. Die IDs bleiben über beide Listen gleich. Alle eingebauten elektronischen Referenzen gehören zum [Schaltplan](../docs/elektronik.md). Preise sind bewusst nicht aus alten Schätzungen übernommen.
 
@@ -29,7 +29,7 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 | E05 | 1 Stück | PS1 Motornetzteil — Mean Well LRS-350-48, 48 V / 7,3 A | Versorgt den Motortreiber | Noch bestellen |
 | E06 | 1 Stück | PS2 USB-Netzteil — Geschlossenes Steckernetzteil, geregelt 5 V / mindestens 1 A, USB-A, CH-Stecker oder flacher Eurostecker | Versorgt Uno und Sensor getrennt vom Motorstrom | Noch bestellen |
 | E07 | 1 Stück | W2 USB-Kabel — USB-A auf USB-B, Datenkabel, etwa 1 m | Versorgung und Programmierung des Uno | Noch bestellen |
-| E28 | 1 Stück | S0 CH-Mehrfachsteckdose/Hauptschalter — Fertige CH-Steckdosenleiste, Typ-13-Buchsen, 10 A gesamt, mindestens 2 Steckplätze, gemeinsamer zweipoliger Schalter, PE durchverbunden | Gemeinsame Abschaltung beider Netzteile | Noch beschaffen, Variante klären |
+| E28 | 1 Stück | S0 CH-Mehrfachsteckdose/Hauptschalter — Fertige CH-Steckdosenleiste, Typ-13-Buchsen, 10 A gesamt, mindestens 2 Steckplätze, gemeinsamer zweipoliger Schalter, PE durchverbunden | Gemeinsame Abschaltung beider Netzteile | Vorhanden |
 | E29 | 1 Stück | W1 Netzanschlussleitung — Ca. 2 m, angespritzter CH-Typ-12-Stecker mit Schutzleiter, offene Geräteenden, 3G1,5 mm², für Aufstellort geeignet | Verbindet S0 Steckplatz 1 mit dem geschützten Netzanschluss des PS1 | Noch bestellen |
 | E30 | 1 Stück | F1 Netzsicherung — SCHURTER SPT 0001.2532, T6,3 A, 6,3×32 mm, 250 VAC | Zusätzlicher Schutz der Gerätezuleitung | Noch bestellen |
 | E31 | 1 Stück | F2 DC-Sicherung — SCHURTER SPT 0001.2533, T8 A, 6,3×32 mm, 63 VDC | Schutz der 48-V-Abgangsleitung | Noch bestellen |
@@ -44,9 +44,9 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
-| E08 | 1 Stück | W3 Patchkabel — Cat5e/Cat6 Vollkupfer, 1:1 T568B, bis 3 m | Überträgt 5 V, Masse und PIR-Signal | Noch bestellen |
+| E08 | 1 Stück | W3 Patchkabel — Cat5e/Cat6 Vollkupfer, 1:1 T568B, bis 3 m | Überträgt 5 V, Masse und PIR-Signal | Vorhanden |
 | E09 | 2 Stück | J1/J2 RJ45-Klemmenadapter — 8P8C-Buchse auf nummerierte Schraubklemmen, passiv ohne Magnetics | Trennbare Sensorverbindung ohne Crimpen eigener RJ45-Stecker | Noch bestellen |
-| E23 | 1 Satz | PIR-Anschlussleitung — 3-polige 2,54-mm-Buchse mit Litzen, etwa 20 cm | Verbindung B1 zu Sensorplatine/J2 | Noch bestellen |
+| E23 | 1 Satz | PIR-Anschlussleitung — 3-polige 2,54-mm-Buchse mit Litzen, etwa 20 cm | Direkte Verbindung B1 zu J2 | Noch bestellen |
 
 ## Steuerplatine
 
@@ -57,23 +57,14 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 | E12 | 2 Stück | Q1/Q2 NPN-Transistor — onsemi 2N3904, TO-92, E/B/C nach Datenblatt | Schaltet STEP-/DIR-Optokoppler ohne starke GPIO-Belastung | Noch bestellen |
 | E13 | 3 Stück | R1/R2/R5 Widerstände — 1 kΩ, 0,25 W, Metallfilm, bedrahtet | Zwei Basiswiderstände und ein PIR-Filterwiderstand | Noch bestellen |
 | E14 | 3 Stück | R3/R4/R6 Widerstände — 100 kΩ, 0,25 W, bedrahtet | Definierte ausgeschaltete Transistoren und PIR-LOW bei Kabeltrennung | Noch bestellen |
-| E15 | 1 Stück | R7 Widerstand — 10 kΩ, 0,25 W, bedrahtet | Externer Pull-up am Freigabeschalter | Noch bestellen |
-| E16 | 3 Stück | C1/C3/C5 Keramikkondensatoren — 100 nF, mindestens 25 V, bedrahtet | IC-Entkopplung, PIR-Entkopplung, Signalfilter | Noch bestellen |
-| E17 | 2 Stück | C2/C4 Elektrolytkondensatoren — 10 µF, 16 V oder höher, radial | Stützt 5 V lokal an Steuerung und entferntem Sensor | Noch bestellen |
+| E16 | 2 Stück | C1/C5 Keramikkondensatoren — 100 nF, mindestens 25 V, bedrahtet | IC-Entkopplung und Signalfilter | Noch bestellen |
+| E17 | 1 Stück | C2 Elektrolytkondensator — 10 µF, 16 V oder höher, radial | Stützt 5 V lokal an der Steuerplatine | Noch bestellen |
 | E18 | 1 Stück | Steuer-Lochrasterplatine — Einzelpads 2,54 mm, etwa 100×80 mm | Träger für U2, Q1/Q2 und passive Teile | Noch bestellen |
-| E19 | 1 Stück | Sensor-Lochrasterplatine — Einzelpads 2,54 mm, etwa 30×30 mm | Träger für C3/C4 und Sensoranschluss | Noch bestellen |
 | E20 | 1 Stück | J0 Anschlussklemme — 6-polig, Platinenklemme mit passendem Raster | Beschrifteter Anschluss zum Uno | Noch bestellen |
 | E21 | 1 Stück | J3 Anschlussklemme — 4-polig, Raster 5,08 mm | Trennbare STEP/DIR-Verbindung | Noch bestellen |
-| E22 | 1 Stück | J4 Anschlussklemme — 2-polig, Raster 5,08 mm | Anschluss des Freigabeschalters | Noch bestellen |
-| E24 | 1 Satz | Uno-Verbindungsleitungen — 6 einzelne passende Header-Steckleitungen, etwa 20 cm | Verbindet Uno 5V/GND/D2/D3/D4/D7 mit J0 | Noch bestellen |
+| E24 | 1 Satz | Uno-Verbindungsleitungen — 5 einzelne passende Header-Steckleitungen, etwa 20 cm | Verbindet Uno 5V/GND/D2/D3/D7 mit J0, J0.5 bleibt frei | Noch bestellen |
 | E26 | 0,5 m | W4 Steuerkabel — 2 geschirmte verdrillte Paare, etwa 0,25 mm² | Störarme STEP/DIR-Verbindung zum Treiber | Noch bestellen |
-| E27 | 5 m | Kleinspannungslitze — 0,25–0,5 mm², mehrere Farben, Gesamtmenge | Interne 5-V-, Sensor- und Schalterverdrahtung | Noch bestellen |
-
-## Bedienung
-
-| ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
-|---|---|---|---|---|
-| E25 | 1 Stück | S1 Freigabeschalter — Rastender EIN/AUS-Schalter, 1 Schließer, kleinspannungstauglich | Bewusste Betriebsfreigabe und kontrollierter Softwarestopp | Noch bestellen |
+| E27 | 5 m | Kleinspannungslitze — 0,25–0,5 mm², mehrere Farben, Gesamtmenge | Interne 5-V-, Sensor- und Signalverdrahtung | Noch bestellen |
 
 ## Gehäuse
 
@@ -81,73 +72,37 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 |---|---|---|---|---|
 | E37 | 1 Stück | Steuergehäuse mit Montageplatte — Metall, abschließbar/verschraubt, Planmaß ca. 400×300×180 mm, Lüftung und Trennbereich | Berührungsschutz, Befestigung und Wärmeabfuhr | Noch beschaffen, Aufmaß nötig |
 | E38 | 1 Satz | Lüftungselemente und Wetterschutz — Geschützte Zu-/Abluftöffnungen, Regenhaube bei Außenbetrieb | Verhindert Wärmestau und direkten Wassereintritt | Noch beschaffen, Aufmaß nötig |
-| E39 | 1 Stück | Sensorgehäuse mit Halter — Platz für PIR, J2 und C3/C4, Linse frei, Spritzwasserschutz | Schützt Sensorplatine und ermöglicht feste Ausrichtung | Noch beschaffen, Aufmaß nötig |
+| E39 | 1 Stück | PIR-Sensorgehäuse — Platz für PIR und J2, Linse frei, Spritzwasserschutz | Schützt PIR-Modul und ermöglicht feste Ausrichtung | Noch beschaffen, Aufmaß nötig |
 | E40 | 1 Satz | Kabelverschraubungen/Zugentlastungen — Mindestens 5 passende Durchführungen für Netz, Motor, USB, Sensor und Motor-PE | Verhindert Zug auf Klemmen und scharfe Blechkanten | Noch beschaffen, Aufmaß nötig |
 | E41 | 1 Satz | Klemmenabdeckungen und Trennwand — Isolierend, flammhemmend, zwischen Netz- und Steuerbereich | Verhindert versehentlichen Kontakt mit 230 V | Noch beschaffen, Aufmaß nötig |
-| E42 | 12 Stück | Platinen-Abstandshalter — M3, isolierend, passende Schrauben/Muttern | Befestigt Uno und beide Lochrasterplatinen | Noch bestellen |
+| E42 | 8 Stück | Platinen-Abstandshalter — M3, isolierend, passende Schrauben/Muttern | Befestigt Uno und Steuer-Lochrasterplatine elektrisch isoliert | Noch bestellen |
 
 ## Verdrahtungszubehör
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
 | E43 | 1 Satz | Aderendhülsen, Ringkabelschuhe und PE-Schrauben — Zu 0,25–1,5 mm² und jeweiligen Klemmen, Ringösen für PE | Dauerhafte elektrische und mechanische Anschlüsse | Noch bestellen |
-| E44 | 1 Satz | Schrumpfschlauch, Kabelbinder und Beschriftung — Verschiedene Durchmesser, Kabelhalter, Etiketten | Isoliert freie Enden, entlastet Leitungen und verhindert Verwechslung | Noch bestellen |
-
-## Mechanik
-
-| ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
-|---|---|---|---|---|
-| M01 | 1 Stück | Motorhalter — STEPPERONLINE ST-M7 für NEMA 34 | Befestigt Motor am Grundrahmen | Noch bestellen |
-| M02 | 1 Stück | Motor-Riemenscheibe — HTD-5M, 20T, für 15-mm-Riemen, Bohrung 14 mm mit passender Nut | Kleine Scheibe der 2:1-Untersetzung | Noch beschaffen, Variante klären |
-| M03 | 1 Stück | Hauptachsen-Riemenscheibe — HTD-5M, 40T, für 15-mm-Riemen, Bohrung 20 mm mit passender Nut | Große Scheibe der 2:1-Untersetzung | Noch beschaffen, Variante klären |
-| M04 | 1 Stück | Zahnriemen — Geschlossen HTD 450-5M-15, 90 Zähne, 15 mm breit | Überträgt Motorbewegung zur Hauptachse | Noch bestellen |
-| M05 | 1 Stück | Hauptachse — Stahl 20 mm, ca. 200 mm, bearbeitbar, Passfedernut zur 40T-Scheibe | Trägt Armaufnahme und überträgt Drehmoment | Noch beschaffen, Aufmaß nötig |
-| M06 | 2 Stück | Flanschlager — UCFL204, 20-mm-Bohrung, DOLD Artikel 35334 | Separate Lagerung der Hauptachse | Noch beschaffen, Variante klären |
-| M07 | 2 Stück | Geteilte Wellen-Klemmringe — 20-mm-Bohrung, zur Lageranordnung passend | Axiale Sicherung der Hauptachse | Noch beschaffen, Variante klären |
-| M08 | 1 Stück | Flansch-Klemmnabe — 20-mm-Bohrung, geschlitzte Klemmung, dokumentiertes Moment mindestens 20 Nm | Verbindet Welle drehfest mit Armplatte | Noch beschaffen, Variante klären |
-| M09 | 1 Stück | Passfeder Motor — Zur 14-mm-Motorwelle und M02 passend | Formschlüssige Drehmomentübertragung auf 20T-Scheibe | Noch beschaffen, Variante klären |
-| M10 | 1 Stück | Passfeder Hauptachse — Zur 20-mm-Welle und M03 passend | Formschlüssige Drehmomentübertragung auf 40T-Scheibe | Noch beschaffen, Aufmaß nötig |
-| M11 | 1 Satz | Grundrahmen mit zwei Lagerträgern — Steife Grundplatte, zwei parallele Tragebenen, Lagerabstand etwa 80–120 mm | Nimmt Motor, Riemenzug und Armkräfte auf | Noch beschaffen, Aufmaß nötig |
-| M12 | 1 Stück | Verschiebbare Motoraufnahme — Langlöcher für etwa 140–160 mm Achsabstand | Ermöglicht Montage und Spannung des 450-mm-Riemens | Noch beschaffen, Aufmaß nötig |
-| M13 | 1 Stück | Arm-Montageplatte — Metallplatte, passend zu M08 und zwei Rohrschellen | Überträgt Bewegung von Nabe auf Rohr | Noch beschaffen, Aufmaß nötig |
-| M14 | 2 Stück | Rohrschellen/U-Bügel mit Gegenplatten — Passend zum gemessenen Kunststoffrohr-Außendurchmesser | Fixiert Rohr an zwei Stellen der Armplatte | Noch beschaffen, Aufmaß nötig |
-| M15 | 1 Streifen | Gummieinlage — Etwa 2–3 mm, zwischen Rohr und Schellen | Verringert Schlupf und schützt Kunststoff vor Quetschen | Noch bestellen |
-| M16 | 1 m | Kunststoffrohr — Etwa 1 m Arm, Durchmesser/Wandstärke noch festzulegen | Verbindet Hauptachse mit Wagen | Noch beschaffen, Aufmaß nötig |
-| M17 | 1 Satz | Wagen-Rohr-Aufnahme — Befestigte Aufnahme mit gesichertem Gelenkbolzen und Gegenplatte | Überträgt Zug/Druck und erlaubt nötigen Höhenausgleich | Noch beschaffen, Aufmaß nötig |
-| M22 | 1 Satz | Mechanische Schrauben/Muttern/Scheiben — Mindestens 4 Motor-, 4 Lager-, 4 Halter-, 4 Naben-, 4 Schellenbefestigungen, plus Rahmen/Rollen | Verbindet alle mechanischen Baugruppen | Noch beschaffen, Aufmaß nötig |
-| M23 | 1 Satz | Riemenabdeckung mit Befestigung — Feste Abdeckung beider Scheiben und des Riemens | Verhindert Eingreifen und Einziehen | Noch beschaffen, Aufmaß nötig |
-| M24 | 1 Satz | Grundrahmen-Verankerung — Bodenabhängige Schrauben, Anker oder geeignete Ballastierung | Verhindert Wandern und Kippen des Antriebs | Noch beschaffen, Aufmaß nötig |
-| M25 | 1 Satz | Abgrenzung des Bewegungsbereichs — Absperrung außerhalb Kreisbahn inklusive Wagenüberstand | Hält Besucher vom bewegten Arm und Wagen fern | Noch beschaffen, Aufmaß nötig |
-
-## Wagen
-
-| ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
-|---|---|---|---|---|
-| M18 | 1 Stück | Wagenplatte — Stabile wettergeeignete Holz-/Siebdruckplatte, zur Spinne passend | Trägt Spinne und Rollen | Noch beschaffen, Aufmaß nötig |
-| M19 | 6 Stück | Kugelgelagerte Rollen — Für Boden und Kreisfahrt geeignet, schwenkbar oder tangential ausgerichtet | Tragen Wagen und reduzieren Rollwiderstand | Noch beschaffen, Aufmaß nötig |
-| M20 | 1 Stück | Halloween-Spinne — Abmessungen zum Wagen, Gesamtmasse Wagen/Spinne etwa 5 kg | Sichtbare Halloween-Dekoration | Noch beschaffen, Aufmaß nötig |
-| M21 | 2 Stück | Befestigungsgurte — Zur Spinne und Wagenplatte passend | Sichert die Dekoration bei Richtungswechseln | Noch bestellen |
+| E44 | 1 Satz | Schrumpfschlauch und elektrische Beschriftung — Schrumpfschlauch in passenden Durchmessern, Leitungsetiketten | Isoliert elektrische Verbindungen und kennzeichnet Anschlüsse | Noch bestellen |
 
 ## Verbrauchsmaterial
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
-| V01 | 1 Packung | Elektroniklot und Flussmittel — Für bedrahtete Kleinspannungselektronik geeignet | Herstellung der Lötverbindungen | Bestand/Bedarf prüfen |
-| V02 | 1 Flasche | Mittelfeste Schraubensicherung — Für geeignete metallische Gewindeverbindungen | Sichert gegen vibrationsbedingtes Lösen | Bestand/Bedarf prüfen |
+| V01 | 1 Packung | Elektroniklot und Flussmittel — Für bedrahtete Kleinspannungselektronik geeignet | Herstellung der Lötverbindungen | Vorhanden |
 
 ## Werkzeug
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
-| T01 | 1 Satz | Lötstation, Seitenschneider und Abisolierer — Für bedrahtete Bauteile und Leitungsquerschnitte geeignet | Erforderlich zum Bau der Kleinspannungsplatinen | Bestand/Bedarf prüfen |
+| T01 | 1 Stück | Lötkolben — Für bedrahtete Kleinspannungselektronik geeignet | Löten der Steuerplatine | Vorhanden |
 | T02 | 1 Stück | Crimpzange — Passend zu Aderendhülsen/Kabelschuhen | Erzeugt zugfeste Klemmanschlüsse | Bestand/Bedarf prüfen |
-| T03 | 1 Stück | Multimeter — Durchgang, Widerstand und DC-Spannung | Prüft Verdrahtung, Wicklungen und Versorgung | Bestand/Bedarf prüfen |
-| T04 | 1 Stück | Logikanalysator oder Oszilloskop — Für 5-V-Signale und Mikrosekunden-Pulse geeignet | Prüft STEP-Pulsbreite und DIR-Vorlauf | Bestand/Bedarf prüfen |
-| T05 | 1 Satz | Mechanik-Werkzeug und Federwaage — Messschieber, Bohrer, Gewindewerkzeug, Schlüssel, Zugkraftmessung | Ermittelt Maße und Rollwiderstand und ermöglicht Montage | Bestand/Bedarf prüfen |
+| T03 | 1 Stück | Multimeter — Durchgang, Widerstand und DC-Spannung | Prüft Verdrahtung, Wicklungen und Versorgung | Vorhanden |
+| T04 | 1 Stück | Logikanalysator — Für 5-V-Signale und Mikrosekunden-Pulse geeignet | Prüft STEP-Pulsbreite und DIR-Vorlauf | Vorhanden |
 
 ## Enthaltene und nicht benötigte Teile
 
 - Das Motorkabel zählt zum Motorlieferumfang und wird nicht noch einmal bestellt. Montage der Steuerbox in Reichweite des 1-m-Kabels einplanen.
-- Schraubklemmen des DM860T und Befestigungsschrauben der Klemmnaben/Lager sind auf Vollständigkeit bei Lieferung zu prüfen. Fehlende Befestiger aus M22 ergänzen.
-- Kein 48→5-V-Wandler, Ethernet-Modul, PoE-Injector, separater PIR, Hall-Sensor, Endschalter, Soundmodul oder externe Status-LED erforderlich. S0/S1 sind vollständig vorgesehen, eine sicherheitsgerichtete Not-Halt-Baugruppe ist nicht Bestandteil von Rev. A.
-- 230-V-Aufbau/Prüfung sowie nötige Wellen-/Plattenbearbeitung sind zusätzliche Leistungen, keine Bauteile. In der Bestellliste gesondert aufgeführt.
+- Schraubklemmen des DM860T bei Lieferung auf Vollständigkeit prüfen.
+- Keine zusätzliche Lochrasterplatine am PIR erforderlich: Die Sensorleitung verbindet B1 direkt mit J2. E18 ist die weiterhin benötigte Steuer-Lochrasterplatine für U2 und die übrige Schaltung.
+- Kein 48→5-V-Wandler, Ethernet-Modul, PoE-Injector, separater PIR, Hall-Sensor, Endschalter, Soundmodul oder externe Status-LED erforderlich. S0 ist vorgesehen, eine sicherheitsgerichtete Not-Halt-Baugruppe ist nicht Bestandteil von Rev. A.
+- Aufbau und Prüfung der Netzbaugruppe sind eine zusätzliche Leistung, kein Bauteil; in der Bestellliste gesondert aufgeführt.

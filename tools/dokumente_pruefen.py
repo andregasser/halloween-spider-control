@@ -47,7 +47,7 @@ for p in ROOT.glob("docs/*.svg"):
     tree = ET.parse(p)
     svg_text += "\n".join(tree.getroot().itertext()) + "\n"
 electronics = (ROOT / "docs/elektronik.md").read_text(encoding="utf-8")
-for ref in ["U1", "U2", "U3", "B1", "M1", "PS1", "PS2", "S0", "S1", "Q1", "Q2", "F1", "F2", "XPE"] + [f"R{i}" for i in range(1,8)] + [f"C{i}" for i in range(1,6)] + [f"J{i}" for i in range(5)] + [f"W{i}" for i in range(1,5)]:
+for ref in ["U1", "U2", "U3", "B1", "M1", "PS1", "PS2", "S0", "Q1", "Q2", "F1", "F2", "XPE"] + [f"R{i}" for i in range(1,7)] + [f"C{i}" for i in (1,2,5)] + [f"J{i}" for i in range(4)] + [f"W{i}" for i in range(1,5)]:
     if not re.search(rf"\b{ref}\b", svg_text): errors.append(f"Referenz fehlt in SVG: {ref}")
     if not re.search(rf"\b{ref}\b", electronics): errors.append(f"Referenz fehlt in Elektronik-Dokument: {ref}")
     if not any(re.search(rf"\b{ref}\b", r["Teil"]) for r in rows):
