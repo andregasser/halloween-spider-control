@@ -1,6 +1,6 @@
 # Quellen und Entscheidungen
 
-Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Beschaffungsquellen, keine Garantie für Lagerbestand, Liefertermin oder die tatsächlich gelieferte Revision. Die unten genannten technischen Primärquellen wurden für Rev. A eingesehen. Händlerlinks für Standardmaterial in der Bestellliste sind teilweise nur Bezugsquellen; dies wird dort ausdrücklich unterschieden.
+Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Beschaffungsquellen, keine Garantie für Lagerbestand, Liefertermin oder die tatsächlich gelieferte Revision. Die unten genannten technischen Primärquellen wurden für Rev. A eingesehen. Beschaffungslinks unterscheiden konkrete Produkte, Sortimente und offene Auswahlpositionen. Die Dokumentprüfung prüft lokal das Format und die Konsistenz; sie ist keine Live-Verfügbarkeitsprüfung.
 
 ## Primärquellen
 
@@ -22,6 +22,14 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 | [ConCar, Gates HTD-5M-Riemen](https://www.concar-shop.de/shop/en/belts/timing-belts/timing-belts/gates-synchronous-belts-powergrip-htd/gates-synchronous-belts-powergrip-htd-dimension-5m.html) | Riemen 450-5M-15, Artikel GT045005015 |
 
 ## Festlegungen aus dem Gespräch
+
+- 26.09.2026: Distrelec Schweiz auf Nutzerwunsch als weitere Bezugsquelle geprüft. Passende Produktdaten für E07 (L-Com U2A00002-1M, Distrelec 305-04-706) und E17 (Panasonic ECA1HHG100I, 167-25-806) gefunden; konkrete Links stehen in `teile.csv` und der Bestellliste. Die indexierten Händlerseiten bestätigen A–B/1 m beziehungsweise 10 µF/50 V/radial/2,5-mm-Raster. Direkte Seitenabrufe wurden blockiert; Preise, Bestelleinheiten und aktuelle Lieferbarkeit sind nicht bestätigt. Bestehende Bezugsquellen bleiben erhalten.
+- Bei dieser Distrelec-Recherche keine eindeutigen Produktseiten für SN74HCT14N, die festgelegten SCHURTER 0001.2532/0001.2533 und die offenen Netzanschluss-/Sicherungshalterpositionen bestätigt. Das ist kein Nachweis, dass Distrelec sie nicht führt. Der gefundene SN74HC14N wird nicht als Ersatz für den festgelegten HCT-Typ übernommen. Die gefundenen 100er-Widerstandsrollen und 100-m-Litzenrollen werden für den kleinen Projektbedarf nicht als bevorzugte Beschaffung eingetragen.
+
+- 26.09.2026: Schrumpfschläuche (E44) sind laut Nutzer ausreichend vorhanden und nicht zu bestellen. Elektrische Beschriftung als E46 getrennt; deren Bestand ist noch nicht bestätigt.
+
+- 26.09.2026: Nutzer möchte nicht bevorzugt bei Reichelt bestellen und meldet unbrauchbare Links. Allgemeine Shop-Startseiten durch recherchierte Produktseiten bei BerryBase Schweiz, Bastelgarage, DigiKey und Conrad ersetzt. Kategorieverweise sind als Sortiment markiert; unbestätigte Artikel bleiben ohne vermeintlichen Kauflink offen. Artikel-/Packungshinweise ergänzen die Einbaumengen. F1 0001.2532 wird auf der recherchierten DigiKey-Seite als nicht lagernd geführt; keine ungeprüfte Sicherungsalternative übernommen.
+- Beschaffungskonkretisierung ohne Änderung der Netze: J0 aus drei, J3 aus zwei anreihbaren 2-poligen Klemmen; Steuerplatine 120×80 mm statt ungefährem Planmaß 100×80 mm. PIR-/Uno-Leitungen aus fertigen Dupont-Leitungen mit je einem abgetrennten Stecker. Basis sind die in der CSV verlinkten Anbieterbeschreibungen; die Tabellen in `elektronik.md` bleiben maßgeblich.
 
 - 26.09.2026: Logikanalysator (T04) laut Nutzer vorhanden; aus den Bestellpositionen entfernt.
 

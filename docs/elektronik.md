@@ -91,7 +91,7 @@ Auf einer isoliert befestigten Lochrasterplatine werden U2, Q1/Q2, R1–R6 und C
 
 ### Steckverbinder J0 zum Arduino
 
-J0 ist eine sechspolige beschriftete Kleinspannungsklemme. Eine zugentlastete Buchsen-/Stiftleitung verbindet sie mit den Uno-Headern; nicht an der Uno-Platine selbst löten.
+J0 ist eine sechspolige beschriftete Kleinspannungsklemme; für die verlinkte Ausführung drei anreihbare 2-polige Klemmen zusammensetzen. Eine zugentlastete Buchsen-/Stiftleitung verbindet sie mit den Uno-Headern; nicht an der Uno-Platine selbst löten.
 
 | J0-Pin | Uno | Netz / weitere Verbindung |
 |---|---|---|
@@ -106,7 +106,7 @@ J0.5 und Uno D4 bleiben unbeschaltet. Die übrigen Anschlussnummern bleiben unve
 
 ### STEP/DIR-Ausgänge: zwei identische Transistorstufen
 
-**J3.1 und J3.3 erhalten beide +5 V vom 5V-Pin des Arduino U1, über J0.1.** Auf der Steuerplatine die +5-V-Leitung von J0.1 verzweigen und mit den Platinenanschlüssen von J3.1 und J3.3 verbinden. Dazu isolierte Drahtbrücken auf der Lochrasterplatine verwenden. J3 ist eine vierpolige Klemmenleiste auf dieser Platine, kein Anschluss am Arduino selbst. Blatt 2, Feld G zeigt diese Verzweigung ausdrücklich.
+**J3.1 und J3.3 erhalten beide +5 V vom 5V-Pin des Arduino U1, über J0.1.** Auf der Steuerplatine die +5-V-Leitung von J0.1 verzweigen und mit den Platinenanschlüssen von J3.1 und J3.3 verbinden. Dazu isolierte Drahtbrücken auf der Lochrasterplatine verwenden. J3 ist eine vierpolige Klemmenleiste aus zwei anreihbaren 2-poligen Klemmen auf dieser Platine, kein Anschluss am Arduino selbst. Blatt 2, Feld G zeigt diese Verzweigung ausdrücklich.
 
 An den Schraubanschluss **J3.1** kommt die Leitung zu **U3 PUL+**, an **J3.3** die Leitung zu **U3 DIR+**. Beide bekommen dauerhaft +5 V; die Transistoren schalten die jeweiligen Minusleitungen. **Nicht an VIN oder an das 48-V-Motornetzteil anschließen.** Die 5 V stammen im Betrieb vom USB-Netzteil PS2 über den Uno. Die Nummern 1 und 3 bezeichnen die Kontakte von J3; vor dem Verdrahten die Klemmen entsprechend beschriften.
 
@@ -196,11 +196,13 @@ ENA bleibt offen, der Treiber ist damit freigegeben und kann den Motor auch im S
 
 ## 6. Löt- und Montagefolge
 
-1. IC-Sockel, Widerstände und Transistoren auf Lochraster montieren; mit kurzen isolierten Drähten nach obigen Tabellen verbinden. Keine Netzspannung auf der Platine.
+1. IC-Sockel, Widerstände und Transistoren auf der 120×80-mm-Lochrasterplatine montieren; mit kurzen isolierten Drähten nach obigen Tabellen verbinden. Keine Netzspannung auf der Platine.
 2. C1 direkt am IC-Sockel, C2 nahe Versorgungseingang, C5 am U2-Eingang montieren. Elko-Polarität beachten.
 3. J0 und J3 beschriften; J1 über kurze Leitungen an die Platine anschließen. Alle Leitungen zugentlasten.
-4. PIR über die dreipolige Buchsenleitung direkt mit J2 gemäß RJ45-Tabelle verbinden; keine Zusatzkondensatoren am Sensor. Funktion mit endgültiger Kabellänge und laufendem Motor prüfen.
+4. PIR über drei einzelne Buchsenleitungen direkt mit J2 gemäß RJ45-Tabelle verbinden; keine Zusatzkondensatoren am Sensor. Funktion mit endgültiger Kabellänge und laufendem Motor prüfen.
 5. Vor Einsetzen von U2 Kurzschlüsse und alle Verbindungen messen; dann U2 mit richtiger Pin-1-Ausrichtung einsetzen.
 6. Nur PS2 anschließen, 5 V und PIR-Signal prüfen. Erst nach erfolgreich geprüftem Netzteilaufbau PS1/U3/M1 in Betrieb nehmen.
 
 Die Details und Sollmessungen stehen in [Inbetriebnahme](inbetriebnahme.md). Im jetzigen Stand wurden keine Hardwaremessungen durchgeführt.
+
+Für E23 drei F–F-Dupont-Leitungen, für E24 fünf M–M-Dupont-Leitungen verwenden: jeweils nur einen Stecker abschneiden, das freie Ende abisolieren und passend für die Schraubklemme vorbereiten. Die verbleibenden Buchsen gehen zum PIR, die verbleibenden Stifte zu den Uno-Buchsen. Keine verzinnten Litzenenden unter Schraubklemmen.

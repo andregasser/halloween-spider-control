@@ -2,7 +2,7 @@
 
 Stand: **26.09.2026 · Revision A**. Diese Liste umfasst ausschließlich die Elektronik einschließlich Motor, Versorgung, elektrischer Leitungen, Anschlüsse und zugehörigem Elektrogehäuse-/Isolationsmaterial. Konstruktionsmaterial wie Rohre, Holzplatten, Riemenantrieb und Kabelbinder gehört nicht zum Umfang. Elektronikwerkzeuge und Lötmaterial stehen separat am Ende. Mengen von Leitungen und Zubehör sind Planmengen.
 
-**Bestätigt vorhanden: E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator.** Noch keine Bestellung ausgelöst.
+**Bestätigt vorhanden: E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E44 Schrumpfschlauch, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator.** Noch keine Bestellung ausgelöst.
 
 Die [Bestellliste](bestellliste.md) ergänzt Lieferant und Auswahlhinweise. Die IDs bleiben über beide Listen gleich. Alle eingebauten elektronischen Referenzen gehören zum [Schaltplan](../docs/elektronik.md). Preise sind bewusst nicht aus alten Schätzungen übernommen.
 
@@ -30,14 +30,14 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 | E06 | 1 Stück | PS2 USB-Netzteil — Geschlossenes Steckernetzteil, geregelt 5 V / mindestens 1 A, USB-A, CH-Stecker oder flacher Eurostecker | Versorgt Uno und Sensor getrennt vom Motorstrom | Noch bestellen |
 | E07 | 1 Stück | W2 USB-Kabel — USB-A auf USB-B, Datenkabel, etwa 1 m | Versorgung und Programmierung des Uno | Noch bestellen |
 | E28 | 1 Stück | S0 CH-Mehrfachsteckdose/Hauptschalter — Fertige CH-Steckdosenleiste, Typ-13-Buchsen, 10 A gesamt, mindestens 2 Steckplätze, gemeinsamer zweipoliger Schalter, PE durchverbunden | Gemeinsame Abschaltung beider Netzteile | Vorhanden |
-| E29 | 1 Stück | W1 Netzanschlussleitung — Ca. 2 m, angespritzter CH-Typ-12-Stecker mit Schutzleiter, offene Geräteenden, 3G1,5 mm², für Aufstellort geeignet | Verbindet S0 Steckplatz 1 mit dem geschützten Netzanschluss des PS1 | Noch bestellen |
-| E30 | 1 Stück | F1 Netzsicherung — SCHURTER SPT 0001.2532, T6,3 A, 6,3×32 mm, 250 VAC | Zusätzlicher Schutz der Gerätezuleitung | Noch bestellen |
+| E29 | 1 Stück | W1 Netzanschlussleitung — Ca. 2 m, angespritzter CH-Typ-12-Stecker mit Schutzleiter, offene Geräteenden, 3G1,5 mm², für Aufstellort geeignet | Verbindet S0 Steckplatz 1 mit dem geschützten Netzanschluss des PS1 | Noch beschaffen, Variante klären |
+| E30 | 1 Stück | F1 Netzsicherung — SCHURTER SPT 0001.2532, T6,3 A, 6,3×32 mm, 250 VAC | Zusätzlicher Schutz der Gerätezuleitung | Noch beschaffen, Variante klären |
 | E31 | 1 Stück | F2 DC-Sicherung — SCHURTER SPT 0001.2533, T8 A, 6,3×32 mm, 63 VDC | Schutz der 48-V-Abgangsleitung | Noch bestellen |
-| E32 | 2 Stück | Sicherungshalter — Berührungsgeschützt für 6,3×32 mm, mindestens 10 A, 250 VAC und 63 VDC, Klemmenanschluss | Sichere Befestigung von F1 und F2 | Noch bestellen |
-| E33 | 1 Satz | XPE Schutzleiterverteilung — PE-Klemmenblock mit mindestens 6 Anschlüssen und Befestigung | Verteilt PE auf PS1, Gehäuse, Deckel, Montageplatte und Motorrahmen | Noch bestellen |
+| E32 | 2 Stück | Sicherungshalter — Berührungsgeschützt für 6,3×32 mm, mindestens 10 A, 250 VAC und 63 VDC, Klemmenanschluss | Sichere Befestigung von F1 und F2 | Noch beschaffen, Variante klären |
+| E33 | 1 Satz | XPE Schutzleiterverteilung — PE-Klemmenblock mit mindestens 6 Anschlüssen und Befestigung | Verteilt PE auf PS1, Gehäuse, Deckel, Montageplatte und Motorrahmen | Noch beschaffen, Variante klären |
 | E34 | 3 m | Schutzleiterlitze — 1,5 mm², grün-gelb | Erdung der berührbaren Metallteile | Noch bestellen |
-| E35 | 2 m | DC-Leistungslitze — 1,5 mm², rot und schwarz, zusammen 2 m | Verbindet PS1, F2 und U3 | Noch bestellen |
-| E36 | 1 m | Netz-Installationslitze — 1,5 mm², braun und blau, zusammen 1 m | Interne L/N-Verdrahtung | Noch bestellen |
+| E35 | 2 m | DC-Leistungslitze — 1,5 mm², rot und schwarz, zusammen 2 m | Verbindet PS1, F2 und U3 | Noch beschaffen, Variante klären |
+| E36 | 1 m | Netz-Installationslitze — 1,5 mm², braun und blau, zusammen 1 m | Interne L/N-Verdrahtung | Noch beschaffen, Variante klären |
 | E45 | 1 Stück | RCD-Zwischenstecker bei fehlendem geeignetem RCD — 30 mA, CH-tauglich, zum Aufstellort passend | Fehlerstromschutz der Netzversorgung | Bestand/Bedarf prüfen |
 
 ## Sensorleitung
@@ -46,7 +46,7 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 |---|---|---|---|---|
 | E08 | 1 Stück | W3 Patchkabel — Cat5e/Cat6 Vollkupfer, 1:1 T568B, bis 3 m | Überträgt 5 V, Masse und PIR-Signal | Vorhanden |
 | E09 | 2 Stück | J1/J2 RJ45-Klemmenadapter — 8P8C-Buchse auf nummerierte Schraubklemmen, passiv ohne Magnetics | Trennbare Sensorverbindung ohne Crimpen eigener RJ45-Stecker | Noch bestellen |
-| E23 | 1 Satz | PIR-Anschlussleitung — 3-polige 2,54-mm-Buchse mit Litzen, etwa 20 cm | Direkte Verbindung B1 zu J2 | Noch bestellen |
+| E23 | 1 Satz | PIR-Anschlussleitung — Drei einzelne 2,54-mm-Buchsenleitungen mit freiem Ende, etwa 20 cm | Direkte Verbindung B1 zu J2 | Noch bestellen |
 
 ## Steuerplatine
 
@@ -59,9 +59,9 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 | E14 | 3 Stück | R3/R4/R6 Widerstände — 100 kΩ, 0,25 W, bedrahtet | Definierte ausgeschaltete Transistoren und PIR-LOW bei Kabeltrennung | Noch bestellen |
 | E16 | 2 Stück | C1/C5 Keramikkondensatoren — 100 nF, mindestens 25 V, bedrahtet | IC-Entkopplung und Signalfilter | Noch bestellen |
 | E17 | 1 Stück | C2 Elektrolytkondensator — 10 µF, 16 V oder höher, radial | Stützt 5 V lokal an der Steuerplatine | Noch bestellen |
-| E18 | 1 Stück | Steuer-Lochrasterplatine — Einzelpads 2,54 mm, etwa 100×80 mm | Träger für U2, Q1/Q2 und passive Teile | Noch bestellen |
-| E20 | 1 Stück | J0 Anschlussklemme — 6-polig, Platinenklemme mit passendem Raster | Beschrifteter Anschluss zum Uno | Noch bestellen |
-| E21 | 1 Stück | J3 Anschlussklemme — 4-polig, Raster 5,08 mm | Trennbare STEP/DIR-Verbindung | Noch bestellen |
+| E18 | 1 Stück | Steuer-Lochrasterplatine — Einzelpads 2,54 mm, 120×80 mm, doppelseitig | Träger für U2, Q1/Q2 und passive Teile | Noch bestellen |
+| E20 | 1 Stück | J0 Anschlussklemme — 6-polig aus drei anreihbaren 2-poligen Platinenklemmen, Raster 5,08 mm | Beschrifteter Anschluss zum Uno | Noch bestellen |
+| E21 | 1 Stück | J3 Anschlussklemme — 4-polig aus zwei anreihbaren 2-poligen Platinenklemmen, Raster 5,08 mm | Trennbare STEP/DIR-Verbindung | Noch bestellen |
 | E24 | 1 Satz | Uno-Verbindungsleitungen — 5 einzelne passende Header-Steckleitungen, etwa 20 cm | Verbindet Uno 5V/GND/D2/D3/D7 mit J0, J0.5 bleibt frei | Noch bestellen |
 | E26 | 0,5 m | W4 Steuerkabel — 2 geschirmte verdrillte Paare, etwa 0,25 mm² | Störarme STEP/DIR-Verbindung zum Treiber | Noch bestellen |
 | E27 | 5 m | Kleinspannungslitze — 0,25–0,5 mm², mehrere Farben, Gesamtmenge | Interne 5-V-, Sensor- und Signalverdrahtung | Noch bestellen |
@@ -81,8 +81,9 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
-| E43 | 1 Satz | Aderendhülsen, Ringkabelschuhe und PE-Schrauben — Zu 0,25–1,5 mm² und jeweiligen Klemmen, Ringösen für PE | Dauerhafte elektrische und mechanische Anschlüsse | Noch bestellen |
-| E44 | 1 Satz | Schrumpfschlauch und elektrische Beschriftung — Schrumpfschlauch in passenden Durchmessern, Leitungsetiketten | Isoliert elektrische Verbindungen und kennzeichnet Anschlüsse | Noch bestellen |
+| E43 | 1 Satz | Aderendhülsen, Ringkabelschuhe und PE-Schrauben — Zu 0,25–1,5 mm² und jeweiligen Klemmen, Ringösen für PE | Dauerhafte elektrische und mechanische Anschlüsse | Noch beschaffen, Variante klären |
+| E44 | 1 Satz | Schrumpfschlauch — Schrumpfschlauch in passenden Durchmessern | Isoliert elektrische Verbindungen | Vorhanden |
+| E46 | 1 Satz | Elektrische Beschriftung — Leitungsetiketten für PIR 5V KEIN LAN/PoE, 48V, PE und S0 | Kennzeichnet Leitungen und Anschlüsse eindeutig | Bestand/Bedarf prüfen |
 
 ## Verbrauchsmaterial
 
@@ -95,7 +96,7 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
 | T01 | 1 Stück | Lötkolben — Für bedrahtete Kleinspannungselektronik geeignet | Löten der Steuerplatine | Vorhanden |
-| T02 | 1 Stück | Crimpzange — Passend zu Aderendhülsen/Kabelschuhen | Erzeugt zugfeste Klemmanschlüsse | Bestand/Bedarf prüfen |
+| T02 | 1 Stück | Crimpzange für Aderendhülsen — Für Aderendhülsen 0,25–2,5 mm² | Erzeugt zugfeste Klemmanschlüsse | Bestand/Bedarf prüfen |
 | T03 | 1 Stück | Multimeter — Durchgang, Widerstand und DC-Spannung | Prüft Verdrahtung, Wicklungen und Versorgung | Vorhanden |
 | T04 | 1 Stück | Logikanalysator — Für 5-V-Signale und Mikrosekunden-Pulse geeignet | Prüft STEP-Pulsbreite und DIR-Vorlauf | Vorhanden |
 

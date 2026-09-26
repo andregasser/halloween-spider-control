@@ -23,6 +23,11 @@ def table(headers, entries):
     lines += ["| " + " | ".join(cell(x) for x in row) + " |" for row in entries]
     return "\n".join(lines) + "\n"
 
+def supplier(row):
+    if not row["Link"]:
+        return row["Lieferant"] + " — Produkt noch offen"
+    return f'[{row["Lieferant"]} · {row["Linkart"]}]({row["Link"]})'
+
 def qty(row):
     return row["Menge"] + " " + row["Einheit"]
 
@@ -61,7 +66,9 @@ Stand: **26.09.2026 · Revision A**. Noch keine Bestellung ausgelöst.
 
 **Nicht bestellen, bereits vorhanden:** {inventory}. Die Liste enthält nur fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
 
-Ein Link zu einer Produktseite belegt die gefundene Produktfamilie, nicht jede auswählbare Variante. Mit **Bezugsquelle** gekennzeichnete Einträge nennen einen vorgeschlagenen Lieferanten, aber noch keine einzeln geprüfte Artikelnummer. Keine Lieferbarkeit oder Schweizer Versandkosten zugesichert. Bei Anfragepositionen erst Maße/Kompatibilität klären, dann bestellen. Bei Elektrogehäusen und Kabeldurchführungen die Abmessungen der Elektronik und Leitungen abgleichen.
+**Lieferantenlinks überarbeitet am 26.09.2026, ohne Reichelt:** **Produkt** führt zum konkreten Artikel; Artikelnummern, Varianten und Packungsmengen stehen im Hinweis. **Sortiment** führt zu einer passenden Kategorie, die genaue Ausführung ist noch offen. **Produkt noch offen** enthält bewusst keinen unbestätigten Link; diese Position ist erst nach Auswahl bestellbar. Eine recherchierte Produktseite ist keine Lager- oder Lieferzusage.
+
+Die Spalte Menge beschreibt den Bedarf im Aufbau. Bei Mehrfachpackungen die Bestellmenge aus dem Hinweis verwenden: für E20/E21 zusammen fünf 2-polige Klemmen, bei E23/E24 jeweils ein Kabelpack, bei E42 ein 10er-Set.
 
 Die ursprünglichen Budgetwerte aus dem Handover sind keine aktuellen Angebote. Vor Zahlung Endpreis in CHF einschließlich Versand/Einfuhr und Lieferdatum bis Halloween kontrollieren.
 
@@ -79,7 +86,7 @@ for status, title in [
     order += f"## {title}\n\n"
     order += table(["Erledigt", "ID", "Menge", "Teil / genaue Auswahl", "Lieferant / Link", "Vor Bestellung beachten"], [
         ["☐", r["ID"], qty(r), r["Teil"] + " — " + r["Spezifikation"],
-         f'[{r["Lieferant"]}]({r["Link"]})', r["Bestellhinweis"]]
+         supplier(r), r["Bestellhinweis"]]
         for r in rows if r["Status"] == status
     ]) + "\n"
 order += """## Zusätzlich einplanen: Netzaufbau und Prüfung
@@ -93,8 +100,14 @@ Noch kein konkreter regionaler Betrieb ausgewählt. Die Anbieterangabe ist eine 
 ## Empfohlene Bündelung
 
 1. STEPPERONLINE: Motor, Treiber und Motornetzteil. Treiberrevision und Lieferung in die Schweiz vorher bestätigen.
-2. Elektronikdistributor: U2, Transistoren, Widerstände/Kondensatoren, Sicherungen und Halter. Weitere Kleinteile bei Reichelt bündeln.
-3. Elektrogehäuse und Kabeldurchführungen anhand des Elektroniklayouts auswählen. Vorhandene Teile nicht doppelt bestellen.
+2. BerryBase Schweiz: Widerstände, Kondensatoren, Sockel, Platinenklemmen, USB-Versorgung und weiteres Kleinzubehör.
+3. Bastelgarage: RJ45-Adapter, Steuerplatine, Anschlussleitungen und isolierende Abstandshalter.
+4. DigiKey Schweiz: exakter HCT-Chip, Transistoren und Sicherungen. E30 ist bei der Recherche nicht lagernd; Termin klären.
+5. Conrad Schweiz / Elektrofachbetrieb: Steuerkabel, PE-Litze und die noch auszuwählenden Netz-/Gehäuseteile.
+
+Distrelec Schweiz ist als zusätzliche Bezugsquelle für E07 und E17 im jeweiligen Hinweis verlinkt. Die Produktdaten sind über indexierte Händlerseiten recherchiert; der direkte Abruf wurde blockiert. Aktuelle Preise, Bestelleinheiten und Lagerbestand sind deshalb nicht bestätigt. Je Position nur eine Bezugsquelle wählen.
+
+Versandkosten der Teilbestellungen vor Kauf zusammenrechnen; diese Aufteilung ist kein Nachweis für den günstigsten Gesamtpreis. Vorhandene Teile nicht doppelt bestellen.
 
 Bestellstatus künftig in `teile.csv` pflegen und beide Listen gemeinsam neu erzeugen. Ein angekreuztes Feld in einem Ausdruck ist keine automatische Bestellung.
 """
