@@ -44,4 +44,4 @@ V01;Verbrauchsmaterial;1;Packung;Elektroniklot und Flussmittel;Für bedrahtete K
 T01;Werkzeug;1;Stück;Lötkolben;Für bedrahtete Kleinspannungselektronik geeignet;Löten der Steuerplatine;vorhanden;Bestand;;Vorhanden laut Nutzer, nicht bestellen
 T02;Werkzeug;1;Stück;Crimpzange;Passend zu Aderendhülsen/Kabelschuhen;Erzeugt zugfeste Klemmanschlüsse;bestand_pruefen;Reichelt;https://www.reichelt.com/;Kein Einbauteil, Elektrofachperson hat Netzverdrahtungswerkzeug
 T03;Werkzeug;1;Stück;Multimeter;Durchgang, Widerstand und DC-Spannung;Prüft Verdrahtung, Wicklungen und Versorgung;vorhanden;Bestand;;Vorhanden laut Nutzer, nicht bestellen. Netzseitige Messungen durch Fachperson mit geeignetem Messgerät
-T04;Werkzeug;1;Stück;Logikanalysator oder Oszilloskop;Für 5-V-Signale und Mikrosekunden-Pulse geeignet;Prüft STEP-Pulsbreite und DIR-Vorlauf;bestand_pruefen;Reichelt;https://www.reichelt.com/;Kein Einbauteil, Ausleihe genügt
+T04;Werkzeug;1;Stück;Logikanalysator;Für 5-V-Signale und Mikrosekunden-Pulse geeignet;Prüft STEP-Pulsbreite und DIR-Vorlauf;vorhanden;Bestand;;Vorhanden laut Nutzer, nicht bestellen

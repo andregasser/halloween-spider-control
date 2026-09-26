@@ -2,7 +2,7 @@
 
 Stand: **26.09.2026 · Revision A**. Noch keine Bestellung ausgelöst.
 
-**Nicht bestellen, bereits vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter. Die Liste enthält nur fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
+**Nicht bestellen, bereits vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator. Die Liste enthält nur fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
 
 Ein Link zu einer Produktseite belegt die gefundene Produktfamilie, nicht jede auswählbare Variante. Mit **Bezugsquelle** gekennzeichnete Einträge nennen einen vorgeschlagenen Lieferanten, aber noch keine einzeln geprüfte Artikelnummer. Keine Lieferbarkeit oder Schweizer Versandkosten zugesichert. Bei Anfragepositionen erst Maße/Kompatibilität klären, dann bestellen. Bei Elektrogehäusen und Kabeldurchführungen die Abmessungen der Elektronik und Leitungen abgleichen.
 
@@ -62,7 +62,6 @@ Automatisch erzeugt aus [teile.csv](teile.csv). Die [Material-Stückliste](mater
 |---|---|---|---|---|---|
 | ☐ | E45 | 1 Stück | RCD-Zwischenstecker bei fehlendem geeignetem RCD — 30 mA, CH-tauglich, zum Aufstellort passend | [Elektrofachhandel](https://www.galaxus.ch/) | Nur beschaffen, wenn kein passender geprüfter Schutz vorgeschaltet ist |
 | ☐ | T02 | 1 Stück | Crimpzange — Passend zu Aderendhülsen/Kabelschuhen | [Reichelt](https://www.reichelt.com/) | Kein Einbauteil, Elektrofachperson hat Netzverdrahtungswerkzeug |
-| ☐ | T04 | 1 Stück | Logikanalysator oder Oszilloskop — Für 5-V-Signale und Mikrosekunden-Pulse geeignet | [Reichelt](https://www.reichelt.com/) | Kein Einbauteil, Ausleihe genügt |
 
 ## Zusätzlich einplanen: Netzaufbau und Prüfung
 

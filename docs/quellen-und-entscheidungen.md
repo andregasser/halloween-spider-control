@@ -23,6 +23,8 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 
 ## Festlegungen aus dem Gespräch
 
+- 26.09.2026: Logikanalysator (T04) laut Nutzer vorhanden; aus den Bestellpositionen entfernt.
+
 - 26.09.2026: Multimeter (T03) laut Nutzer ebenfalls vorhanden; aus den Bestellpositionen entfernt.
 
 - 26.09.2026: Lötkolben, Elektroniklot und Flussmittel laut Nutzer bereits vorhanden. T01 und V01 als Bestand führen, nicht als Bestellpositionen.
