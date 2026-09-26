@@ -35,7 +35,7 @@ inventory = ", ".join(f"{r['ID']} {r['Teil']}" for r in rows if r["Status"] == "
 
 bom = f"""# Material-Stückliste · Elektronik
 
-Stand: **26.09.2026 · Revision A**. Diese Liste umfasst ausschließlich die Elektronik einschließlich Motor, Versorgung, elektrischer Leitungen, Anschlüsse und zugehörigem Elektrogehäuse-/Isolationsmaterial. Konstruktionsmaterial wie Rohre, Holzplatten, Riemenantrieb und Kabelbinder gehört nicht zum Umfang. Elektronikwerkzeuge und Lötmaterial stehen separat am Ende. Mengen von Leitungen und Zubehör sind Planmengen.
+Stand: **26.09.2026 · Revision A**. Diese Liste umfasst die Elektronik einschließlich Motor, Versorgung, elektrischer Leitungen, Anschlüsse und zugehörigem Elektrogehäuse-/Isolationsmaterial sowie auf ausdrücklichen Wunsch die Motorhalterung E47. Konstruktionsmaterial wie Rohre, Holzplatten, Riemenantrieb und Kabelbinder gehört nicht zum Umfang. Elektronikwerkzeuge und Lötmaterial stehen separat am Ende. Mengen von Leitungen und Zubehör sind Planmengen.
 
 **Bestätigt vorhanden: {inventory}.** Noch keine Bestellung ausgelöst.
 
@@ -64,7 +64,7 @@ order = f"""# Bestellliste · Elektronik
 
 Stand: **26.09.2026 · Revision A**. Noch keine Bestellung ausgelöst.
 
-**Nicht bestellen, bereits vorhanden:** {inventory}. Die Liste enthält nur fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
+**Nicht bestellen, bereits vorhanden:** {inventory}. Die Liste enthält fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial sowie die ausdrücklich ergänzte Motorhalterung E47. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
 
 **Lieferantenlinks überarbeitet am 26.09.2026, ohne Reichelt:** **Produkt** führt zum konkreten Artikel; Artikelnummern, Varianten und Packungsmengen stehen im Hinweis. **Sortiment** führt zu einer passenden Kategorie, die genaue Ausführung ist noch offen. **Produkt noch offen** enthält bewusst keinen unbestätigten Link; diese Position ist erst nach Auswahl bestellbar. Eine recherchierte Produktseite ist keine Lager- oder Lieferzusage.
 
@@ -99,7 +99,7 @@ Noch kein konkreter regionaler Betrieb ausgewählt. Die Anbieterangabe ist eine 
 
 ## Empfohlene Bündelung
 
-1. STEPPERONLINE: Motor, Treiber und Motornetzteil. Treiberrevision und Lieferung in die Schweiz vorher bestätigen.
+1. STEPPERONLINE: Motor, Motorhalterung ST-M7 (E47), Treiber und Motornetzteil. Treiberrevision und Lieferung in die Schweiz vorher bestätigen.
 2. BerryBase Schweiz: Widerstände, Kondensatoren, Sockel, Platinenklemmen, USB-Versorgung und weiteres Kleinzubehör.
 3. Bastelgarage: RJ45-Adapter, Steuerplatine, Anschlussleitungen und isolierende Abstandshalter.
 4. DigiKey Schweiz: exakter HCT-Chip, Transistoren und Sicherungen. E30 ist bei der Recherche nicht lagernd; Termin klären.

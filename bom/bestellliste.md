@@ -2,7 +2,7 @@
 
 Stand: **26.09.2026 · Revision A**. Noch keine Bestellung ausgelöst.
 
-**Nicht bestellen, bereits vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E44 Schrumpfschlauch, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator. Die Liste enthält nur fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
+**Nicht bestellen, bereits vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E44 Schrumpfschlauch, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator. Die Liste enthält fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial sowie die ausdrücklich ergänzte Motorhalterung E47. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
 
 **Lieferantenlinks überarbeitet am 26.09.2026, ohne Reichelt:** **Produkt** führt zum konkreten Artikel; Artikelnummern, Varianten und Packungsmengen stehen im Hinweis. **Sortiment** führt zu einer passenden Kategorie, die genaue Ausführung ist noch offen. **Produkt noch offen** enthält bewusst keinen unbestätigten Link; diese Position ist erst nach Auswahl bestellbar. Eine recherchierte Produktseite ist keine Lager- oder Lieferzusage.
 
@@ -17,6 +17,7 @@ Automatisch erzeugt aus [teile.csv](teile.csv). Die [Material-Stückliste](mater
 | Erledigt | ID | Menge | Teil / genaue Auswahl | Lieferant / Link | Vor Bestellung beachten |
 |---|---|---|---|---|---|
 | ☐ | E03 | 1 Stück | M1 NEMA-34-Motor — STEPPERONLINE 34HS46-6004S1, 14-mm-Welle, mit 1-m-Motorkabel | [STEPPERONLINE · Produkt](https://www.omc-stepperonline.com/fr/moteur-pas-a-pas-nema-34-serie-s-8-5nm-1203-94oz-in-14mm-arbre-a-cle-cable-1m-34hs46-6004s1) | Produktseite geprüft, Motorvariante bestätigen |
+| ☐ | E47 | 1 Stück | Motorhalterung für M1 — STEPPERONLINE ST-M7, Stahl-Montagewinkel für NEMA 34 / 86-mm-Motoren | [STEPPERONLINE · Produkt](https://www.omc-stepperonline.com/nema-34-bracket-for-stepper-motor-alloy-steel-bracket-st-m7) | Ein Stück ST-M7 mit dem Motor bestellen. Hersteller ordnet ST-M7 NEMA-34-Schrittmotoren zu. Vor Montage Lochbild, Zentrierbund und Freiraum am 34HS46-6004S1 abgleichen. Schraubenlieferumfang nicht bestätigt; Befestigungsmittel und Schraubenlängen passend zu Motorflansch und Träger ergänzen. Montage für senkrechte Motorwelle und verschiebbare Riemenspannung vorsehen. CH-Endpreis/Versand im Warenkorb prüfen. |
 | ☐ | E04 | 1 Stück | U3 Schrittmotortreiber — STEPPERONLINE DM860T V3.0 mit 5/24-V-Wahlschalter | [STEPPERONLINE · Produkt](https://www.omc-stepperonline.com/digital-stepper-driver-2-4-7-2a-18-80vac-or-24-110vdc-for-nema-34-motor-dm860t) | Produktseite geprüft, V3.0 und passende Klemmstecker vor Kauf bestätigen |
 | ☐ | E05 | 1 Stück | PS1 Motornetzteil — Mean Well LRS-350-48, 48 V / 7,3 A | [STEPPERONLINE · Produkt](https://www.omc-stepperonline.com/fr/lrs-350-48-mean-well-350w-48vdc-7-3a-115-230vac-alimentation-a-decoupage-fermee-lrs-350-48) | Produktseite gefunden, Herstellerhinweise zum Einsatzort und CH-Versand prüfen |
 | ☐ | E06 | 1 Stück | PS2 USB-Netzteil — Geschlossenes Steckernetzteil, geregelt 5 V / mindestens 1 A, USB-A, CH-Stecker oder flacher Eurostecker | [BerryBase Schweiz · Produkt](https://www.berrybase.ch/dual-usb-netzteil-ladeadapter-2-4a-2x-usb-flache-bauform-weiss) | Goobay 44952: 5 V / 2,4 A gesamt, USB-A, Eurostecker. Einen Anschluss für U1 verwenden. |
@@ -80,7 +81,7 @@ Noch kein konkreter regionaler Betrieb ausgewählt. Die Anbieterangabe ist eine 
 
 ## Empfohlene Bündelung
 
-1. STEPPERONLINE: Motor, Treiber und Motornetzteil. Treiberrevision und Lieferung in die Schweiz vorher bestätigen.
+1. STEPPERONLINE: Motor, Motorhalterung ST-M7 (E47), Treiber und Motornetzteil. Treiberrevision und Lieferung in die Schweiz vorher bestätigen.
 2. BerryBase Schweiz: Widerstände, Kondensatoren, Sockel, Platinenklemmen, USB-Versorgung und weiteres Kleinzubehör.
 3. Bastelgarage: RJ45-Adapter, Steuerplatine, Anschlussleitungen und isolierende Abstandshalter.
 4. DigiKey Schweiz: exakter HCT-Chip, Transistoren und Sicherungen. E30 ist bei der Recherche nicht lagernd; Termin klären.

@@ -1,6 +1,6 @@
 # Material-Stückliste · Elektronik
 
-Stand: **26.09.2026 · Revision A**. Diese Liste umfasst ausschließlich die Elektronik einschließlich Motor, Versorgung, elektrischer Leitungen, Anschlüsse und zugehörigem Elektrogehäuse-/Isolationsmaterial. Konstruktionsmaterial wie Rohre, Holzplatten, Riemenantrieb und Kabelbinder gehört nicht zum Umfang. Elektronikwerkzeuge und Lötmaterial stehen separat am Ende. Mengen von Leitungen und Zubehör sind Planmengen.
+Stand: **26.09.2026 · Revision A**. Diese Liste umfasst die Elektronik einschließlich Motor, Versorgung, elektrischer Leitungen, Anschlüsse und zugehörigem Elektrogehäuse-/Isolationsmaterial sowie auf ausdrücklichen Wunsch die Motorhalterung E47. Konstruktionsmaterial wie Rohre, Holzplatten, Riemenantrieb und Kabelbinder gehört nicht zum Umfang. Elektronikwerkzeuge und Lötmaterial stehen separat am Ende. Mengen von Leitungen und Zubehör sind Planmengen.
 
 **Bestätigt vorhanden: E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E44 Schrumpfschlauch, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator.** Noch keine Bestellung ausgelöst.
 
@@ -20,6 +20,7 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
 | E03 | 1 Stück | M1 NEMA-34-Motor — STEPPERONLINE 34HS46-6004S1, 14-mm-Welle, mit 1-m-Motorkabel | Bewegt den Riemenantrieb | Noch bestellen |
+| E47 | 1 Stück | Motorhalterung für M1 — STEPPERONLINE ST-M7, Stahl-Montagewinkel für NEMA 34 / 86-mm-Motoren | Befestigt den Motor am Träger und hält seine Lage zum Zahnriemen | Noch bestellen |
 | E04 | 1 Stück | U3 Schrittmotortreiber — STEPPERONLINE DM860T V3.0 mit 5/24-V-Wahlschalter | Schaltet die Motorwicklungen stromgeregelt | Noch bestellen |
 
 ## Versorgung

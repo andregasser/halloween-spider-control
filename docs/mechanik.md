@@ -10,6 +10,12 @@ Die beiden UCFL204-Lager werden auf zwei festen, parallelen Tragebenen montiert.
 
 Vorgesehen sind eine ungefähr 200 mm lange Welle und eine verschiebbare Motoraufnahme. **200 mm sind ein Planmaß**, kein bereits überprüfter Zuschnitt: Lagerbreiten, Riemennabe, Sicherungsringe und Armnabe zunächst übereinander aufzeichnen. Ebenso beziehen sich die 118 mm des Motors auf die Gehäuselänge; Welle, Riemenscheibe und Montage benötigen zusätzlichen Raum. Eine Gesamthöhe unter 150 mm ist damit noch nicht nachgewiesen.
 
+## Motorhalterung
+
+Für M1 ist **1 × STEPPERONLINE ST-M7** als E47 in der [Bestellliste](../bom/bestellliste.md) ergänzt. Der Hersteller führt den Stahlwinkel für NEMA-34-Schrittmotoren mit 86-mm-Rahmen; unser 34HS46-6004S1 gehört zu dieser Baugröße. Auswahlgrundlage ist die [Kompatibilitätsübersicht des Herstellers](https://help.omc-stepperonline.com/hc/s/articles/motor-types-that-the-brackets-on-sale-can-match).
+
+Den Winkel am Träger so anordnen, dass die Motorwelle wie die Hauptachse senkrecht steht. Eine Montage mit waagerechter Motorwelle würde nicht zur geplanten Riemengeometrie passen. Die Motoraufnahme muss zum Einstellen der Riemenspannung verschiebbar bleiben. Vor Montage Lochabstände, Zentrierbund, Freiraum und Schraubenlängen am gelieferten Motor und Winkel abgleichen. Der Schraubenlieferumfang ist nicht bestätigt. Die Herstellerzuordnung ersetzt keinen Belastungsnachweis für Träger und Befestigung im fertigen Aufbau.
+
 ## Riemengeometrie
 
 | Größe | Wert |
