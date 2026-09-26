@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1210" viewBox="0 0 1800 1210">
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#152536} .wire{fill:none;stroke:#253b50;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}</style>
+<rect width="1800" height="1210" fill="white"/>
+<text x="35" y="46" font-size="29" font-weight="bold">Blatt 1 / 2 — Netzversorgung, 48-V-Motorversorgung und Schutzleiter</text>
+<text x="35" y="79" font-size="18">Halloween-Spinne · Revision A · 26.09.2026 · Entwurf, noch nicht aufgebaut oder geprüft</text>
+<text x="35" y="108" font-size="17">Gleiche Netznamen sind verbunden. Punkte = Verbindung. Kreuzungen ohne Punkt = keine Verbindung.</text>
+<rect x="30" y="135" width="1740" height="475" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="46" y="165" font-size="21" font-weight="bold">Leistungsteil · 230 V nur im geschlossenen Netzbereich; Motorverdrahtung nicht auf Lochraster</text>
+<rect x="55" y="198" width="225" height="335" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="72" y="228" font-size="18" font-weight="bold">S0 · Hauptschalter</text>
+<text x="72" y="264" font-size="17">230-V-Eingang</text>
+<text x="72" y="292" font-size="17">über geprüften</text>
+<text x="72" y="320" font-size="17">30-mA-RCD</text>
+<text x="72" y="348" font-size="17">(E45 bei Bedarf)</text>
+<text x="72" y="429" font-size="16">Fertig konfektioniert</text>
+<text x="72" y="458" font-size="16">L/N zweipolig schalten</text>
+<text x="72" y="487" font-size="16">PE durchverbunden</text>
+<polyline class="wire" points="280,250 375,250"/>
+<text x="289" y="238" font-size="17" font-weight="bold">L_SW</text>
+<polyline class="wire" points="280,330 375,330"/>
+<text x="289" y="318" font-size="17" font-weight="bold">N_SW</text>
+<polyline class="wire" points="280,410 375,410"/>
+<text x="289" y="398" font-size="17" font-weight="bold">PE</text>
+<polyline class="wire" points="375,250 385,250"/>
+<rect x="385" y="242" width="70" height="16" fill="white" stroke="#253b50" stroke-width="2"/>
+<polyline class="wire" points="455,250 465,250"/>
+<text x="375" y="228" font-size="17">F1 · T6,3 A</text>
+<polyline class="wire" points="465,250 595,250"/>
+<text x="485" y="231" font-size="16">W1 L</text>
+<polyline class="wire" points="375,330 595,330"/>
+<text x="488" y="310" font-size="16">W1 N</text>
+<polyline class="wire" points="375,410 595,410" style="stroke:#36813f"/>
+<circle cx="425" cy="410" r="4" fill="#253b50"/>
+<text x="456" y="388" font-size="18" font-weight="bold">XPE</text>
+<rect x="595" y="195" width="300" height="330" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="611" y="225" font-size="21" font-weight="bold">PS1 · LRS-350-48</text>
+<text x="610" y="257" font-size="21" font-weight="bold">L</text>
+<text x="610" y="337" font-size="21" font-weight="bold">N</text>
+<text x="610" y="417" font-size="21" font-weight="bold">PE</text>
+<text x="690" y="325" font-size="18">Eingang: 230 V</text>
+<text x="690" y="355" font-size="18">Wahlschalter</text>
+<text x="690" y="385" font-size="18">auf 230 V!</text>
+<text x="834" y="257" font-size="20" font-weight="bold">+V</text>
+<text x="834" y="442" font-size="20" font-weight="bold">−V</text>
+<polyline class="wire" points="895,250 970,250"/>
+<polyline class="wire" points="970,250 980,250"/>
+<rect x="980" y="242" width="70" height="16" fill="white" stroke="#253b50" stroke-width="2"/>
+<polyline class="wire" points="1050,250 1060,250"/>
+<text x="970" y="228" font-size="17"></text>
+<text x="944" y="204" font-size="18">F2 · T8 A / 63 VDC</text>
+<polyline class="wire" points="1060,250 1210,250"/>
+<polyline class="wire" points="385,250 455,250"/>
+<polyline class="wire" points="980,250 1050,250"/>
+<polyline class="wire" points="895,435 1130,435 1130,330 1210,330"/>
+<text x="929" y="418" font-size="19" font-weight="bold">M48−</text>
+<text x="1090" y="231" font-size="19" font-weight="bold">+48 V</text>
+<rect x="1210" y="195" width="280" height="365" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="1226" y="225" font-size="21" font-weight="bold">U3 · DM860T V3.0</text>
+<text x="1228" y="257" font-size="19" font-weight="bold">AC (1)</text>
+<text x="1228" y="337" font-size="19" font-weight="bold">AC (2)</text>
+<text x="1228" y="395" font-size="17">48 VDC an AC/AC</text>
+<text x="1228" y="424" font-size="17">Bei V3.0 zulässig.</text>
+<text x="1228" y="453" font-size="17">Andere Version:</text>
+<text x="1228" y="482" font-size="17">Belegung neu prüfen!</text>
+<rect x="1580" y="195" width="170" height="365" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="1596" y="225" font-size="21" font-weight="bold">M1 · Motor</text>
+<text x="1594" y="545" font-size="17">NEMA 34</text>
+<polyline class="wire" points="1490,250 1580,250" style="stroke:#253b50"/>
+<text x="1500" y="237" font-size="14">A+ schwarz</text>
+<text x="1593" y="258" font-size="19" font-weight="bold">A+</text>
+<polyline class="wire" points="1490,330 1580,330" style="stroke:#36813f"/>
+<text x="1500" y="317" font-size="14">A− grün</text>
+<text x="1593" y="338" font-size="19" font-weight="bold">A−</text>
+<polyline class="wire" points="1490,410 1580,410" style="stroke:#b33333"/>
+<text x="1500" y="397" font-size="14">B+ rot</text>
+<text x="1593" y="418" font-size="19" font-weight="bold">B+</text>
+<polyline class="wire" points="1490,490 1580,490" style="stroke:#2463af"/>
+<text x="1500" y="477" font-size="14">B− blau</text>
+<text x="1593" y="498" font-size="19" font-weight="bold">B−</text>
+<text x="60" y="578" font-size="18">F1/F2: 6,3×32 mm, eigene berührungsgeschützte Halter. Leistungslitzen 1,5 mm²; Motor mit mitgeliefertem Kabel.</text>
+<rect x="30" y="635" width="540" height="330" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="46" y="665" font-size="21" font-weight="bold">XPE · Schutzleiterverteilung</text>
+<polyline class="wire" points="425,410 555,410 555,690 500,690" style="stroke:#36813f"/>
+<text x="53" y="712" font-size="18">W1 PE → XPE → PS1 PE</text>
+<text x="53" y="747" font-size="18">XPE → Metallgehäuse</text>
+<text x="53" y="782" font-size="18">XPE → Metall-Montageplatte</text>
+<text x="53" y="817" font-size="18">XPE → leitfähiger Deckel (flexible Brücke)</text>
+<text x="53" y="852" font-size="18">XPE → Motorrahmen / Motorgehäuse</text>
+<text x="53" y="887" font-size="18">J3-Kabelschirm → PE am Gehäuseeintritt</text>
+<text x="53" y="942" font-size="18" font-weight="bold">Eigene gesicherte PE-Anschlüsse, grün-gelb.</text>
+<rect x="595" y="635" width="1175" height="330" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="611" y="665" font-size="21" font-weight="bold">5-V-Versorgung · über zweiten Ausgang derselben Netzverteilung S0</text>
+<rect x="625" y="708" width="270" height="170" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="641" y="738" font-size="21" font-weight="bold">PS2 · USB-Netzteil</text>
+<text x="640" y="770" font-size="17">230 V ← L_SW / N_SW</text>
+<text x="640" y="813" font-size="18">5 V / ≥1 A, geschlossen</text>
+<polyline class="wire" points="895,790 1160,790"/>
+<text x="936" y="765" font-size="19" font-weight="bold">W2 · USB-A/B</text>
+<rect x="1160" y="708" width="265" height="170" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="1176" y="738" font-size="21" font-weight="bold">U1 · Arduino Uno</text>
+<text x="1176" y="799" font-size="20" font-weight="bold">USB-B</text>
+<polyline class="wire" points="1425,752 1705,752"/>
+<text x="1475" y="731" font-size="18" font-weight="bold">5V → +5V (Blatt 2)</text>
+<polyline class="wire" points="1425,837 1705,837"/>
+<text x="1475" y="821" font-size="18" font-weight="bold">GND → GND (Blatt 2)</text>
+<text x="620" y="925" font-size="18">Beim Programmieren: Motor aus, USB-Kabel von PS2 auf Rechner umstecken. VIN bleibt frei.</text>
+<rect x="30" y="990" width="1740" height="130" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="46" y="1020" font-size="21" font-weight="bold">Betriebsgrenzen und Zuordnung</text>
+<text x="50" y="1050" font-size="18">M48−, Steuer-GND und PE nicht miteinander brücken. Die Treibereingänge bleiben optisch getrennt.</text>
+<text x="50" y="1077" font-size="18">U3-Signale PUL± / DIR±: Blatt 2. ENA± / ALM± / BRK± offen. S0 ist Netzabschaltung, kein nachgewiesener Not-Halt.</text>
+<text x="50" y="1104" font-size="18">Schwenkbereich abgrenzen. Nachlauf und Verlust des Haltemoments nach Abschaltung berücksichtigen.</text>
+<polyline class="wire" points="35,1140 1765,1140"/>
+<text x="35" y="1168" font-size="18">Verbindliche Verbindungstabellen, Bauteilwerte und Aufbauhinweise: docs/elektronik.md</text>
+<text x="35" y="1194" font-size="17">Kein Verdrahten unter Spannung. 230-V-Baugruppe durch Elektrofachperson aufbauen und prüfen.</text>
+</svg>
