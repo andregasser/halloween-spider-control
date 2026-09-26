@@ -96,97 +96,107 @@
 <text x="1400" y="436" font-size="17">Versorgung/übrige Pins: Feld E</text>
 <rect x="30" y="520" width="855" height="360" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="46" y="550" font-size="21" font-weight="bold">B · Schrittimpulse, Common-Anode</text>
-<text x="55" y="600" font-size="19" font-weight="bold">U1 · Arduino Uno R3</text>
-<text x="55" y="642" font-size="21" font-weight="bold">D2</text>
-<polyline class="wire" points="130,650 165,650"/>
-<polyline class="wire" points="165,650 175,650"/>
-<rect x="175" y="642" width="70" height="16" fill="white" stroke="#253b50" stroke-width="2"/>
-<polyline class="wire" points="245,650 255,650"/>
-<text x="165" y="628" font-size="17">R1 · 1 kΩ</text>
-<polyline class="wire" points="255,650 360,650"/>
-<circle cx="300" cy="650" r="4" fill="#253b50"/>
-<polyline class="wire" points="300,650 300,700"/>
-<polyline class="wire" points="300,700 300,710"/>
-<rect x="292" y="710" width="16" height="40" fill="white" stroke="#253b50" stroke-width="2"/>
-<polyline class="wire" points="300,750 300,760"/>
-<text x="316" y="735" font-size="16"></text>
-<polyline class="wire" points="300,760 300,770"/>
-<polyline class="wire" points="284,770 316,770"/>
-<polyline class="wire" points="290,777 310,777"/>
-<polyline class="wire" points="296,784 304,784"/>
-<text x="279" y="807" font-size="16">GND</text>
-<text x="175" y="737" font-size="16">R3 · 100 kΩ</text>
-<polyline class="wire" points="360,620 360,680"/>
-<polyline class="wire" points="360,635 410,605 410,580"/>
-<polyline class="wire" points="360,665 410,700 410,760"/>
-<path d="M393,681 L399,694 L384,690 Z" fill="#253b50"/>
-<polyline class="wire" points="410,760 410,770"/>
-<polyline class="wire" points="394,770 426,770"/>
-<polyline class="wire" points="400,777 420,777"/>
-<polyline class="wire" points="406,784 414,784"/>
-<text x="389" y="807" font-size="16">GND</text>
-<text x="430" y="685" font-size="18" font-weight="bold">Q1 · 2N3904</text>
-<text x="332" y="608" font-size="15">B</text>
-<text x="416" y="612" font-size="15">C</text>
-<text x="415" y="729" font-size="15">E</text>
+<rect x="50" y="575" width="235" height="205" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="65" y="605" font-size="17" font-weight="bold">U1 · Arduino Uno R3</text>
+<text x="65" y="642" font-size="18" font-weight="bold">Digital-Pin 2 (D2)</text>
+<text x="65" y="715" font-size="15">Derselbe Arduino U1</text>
+<text x="65" y="740" font-size="15">wie in Feld D.</text>
+<circle cx="285" cy="650" r="4" fill="#253b50"/>
+<polyline class="wire" points="285,650 310,650"/>
+<polyline class="wire" points="310,650 320,650"/>
+<rect x="320" y="642" width="70" height="16" fill="white" stroke="#253b50" stroke-width="2"/>
+<polyline class="wire" points="390,650 400,650"/>
+<text x="310" y="628" font-size="17">R1 · 1 kΩ</text>
+<text x="292" y="685" font-size="15">über J0.3</text>
+<polyline class="wire" points="400,650 475,650"/>
+<circle cx="430" cy="650" r="4" fill="#253b50"/>
+<polyline class="wire" points="430,650 430,700"/>
+<polyline class="wire" points="430,700 430,710"/>
+<rect x="422" y="710" width="16" height="40" fill="white" stroke="#253b50" stroke-width="2"/>
+<polyline class="wire" points="430,750 430,760"/>
+<text x="446" y="735" font-size="16"></text>
+<polyline class="wire" points="430,760 430,770"/>
+<polyline class="wire" points="414,770 446,770"/>
+<polyline class="wire" points="420,777 440,777"/>
+<polyline class="wire" points="426,784 434,784"/>
+<text x="409" y="807" font-size="16">GND</text>
+<text x="308" y="737" font-size="16">R3 · 100 kΩ</text>
+<polyline class="wire" points="475,620 475,680"/>
+<polyline class="wire" points="475,635 520,605 520,580"/>
+<polyline class="wire" points="475,665 520,700 520,760"/>
+<path d="M503,681 L509,694 L494,690 Z" fill="#253b50"/>
+<polyline class="wire" points="520,760 520,770"/>
+<polyline class="wire" points="504,770 536,770"/>
+<polyline class="wire" points="510,777 530,777"/>
+<polyline class="wire" points="516,784 524,784"/>
+<text x="499" y="807" font-size="16">GND</text>
+<text x="540" y="685" font-size="16" font-weight="bold">Q1 · 2N3904</text>
+<text x="447" y="608" font-size="15">B</text>
+<text x="526" y="612" font-size="15">C</text>
+<text x="525" y="750" font-size="15">E</text>
 <rect x="680" y="565" width="180" height="210" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="691" y="593" font-size="16" font-weight="bold">U3 · DM860T V3.0</text>
 <text x="691" y="616" font-size="15">Steuereingang</text>
-<polyline class="wire" points="410,580 615,580 615,630 680,630"/>
-<text x="470" y="564" font-size="16">J3.2</text>
+<polyline class="wire" points="520,580 615,580 615,630 680,630"/>
+<text x="545" y="564" font-size="16">J3.2</text>
 <text x="705" y="637" font-size="20" font-weight="bold">PUL−</text>
 <polyline class="wire" points="600,720 680,720"/>
-<text x="515" y="727" font-size="20" font-weight="bold">+5V</text>
+<text x="540" y="727" font-size="20" font-weight="bold">+5V</text>
 <text x="613" y="704" font-size="16">J3.1</text>
 <text x="705" y="727" font-size="20" font-weight="bold">PUL+</text>
-<text x="470" y="812" font-size="17">+5V von U1 5V / J0.1 → Detail G</text>
+<text x="55" y="812" font-size="17">+5V von U1 5V / J0.1 → Detail G</text>
 <text x="55" y="853" font-size="16">HIGH am Uno aktiviert den Optokoppler. GND bleibt auf der Steuerungsseite.</text>
 <rect x="915" y="520" width="855" height="360" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="931" y="550" font-size="21" font-weight="bold">C · Richtung, Common-Anode</text>
-<text x="940" y="600" font-size="19" font-weight="bold">U1 · Arduino Uno R3</text>
-<text x="940" y="642" font-size="21" font-weight="bold">D3</text>
-<polyline class="wire" points="1015,650 1050,650"/>
-<polyline class="wire" points="1050,650 1060,650"/>
-<rect x="1060" y="642" width="70" height="16" fill="white" stroke="#253b50" stroke-width="2"/>
-<polyline class="wire" points="1130,650 1140,650"/>
-<text x="1050" y="628" font-size="17">R2 · 1 kΩ</text>
-<polyline class="wire" points="1140,650 1245,650"/>
-<circle cx="1185" cy="650" r="4" fill="#253b50"/>
-<polyline class="wire" points="1185,650 1185,700"/>
-<polyline class="wire" points="1185,700 1185,710"/>
-<rect x="1177" y="710" width="16" height="40" fill="white" stroke="#253b50" stroke-width="2"/>
-<polyline class="wire" points="1185,750 1185,760"/>
-<text x="1201" y="735" font-size="16"></text>
-<polyline class="wire" points="1185,760 1185,770"/>
-<polyline class="wire" points="1169,770 1201,770"/>
-<polyline class="wire" points="1175,777 1195,777"/>
-<polyline class="wire" points="1181,784 1189,784"/>
-<text x="1164" y="807" font-size="16">GND</text>
-<text x="1060" y="737" font-size="16">R4 · 100 kΩ</text>
-<polyline class="wire" points="1245,620 1245,680"/>
-<polyline class="wire" points="1245,635 1295,605 1295,580"/>
-<polyline class="wire" points="1245,665 1295,700 1295,760"/>
-<path d="M1278,681 L1284,694 L1269,690 Z" fill="#253b50"/>
-<polyline class="wire" points="1295,760 1295,770"/>
-<polyline class="wire" points="1279,770 1311,770"/>
-<polyline class="wire" points="1285,777 1305,777"/>
-<polyline class="wire" points="1291,784 1299,784"/>
-<text x="1274" y="807" font-size="16">GND</text>
-<text x="1315" y="685" font-size="18" font-weight="bold">Q2 · 2N3904</text>
-<text x="1217" y="608" font-size="15">B</text>
-<text x="1301" y="612" font-size="15">C</text>
-<text x="1300" y="729" font-size="15">E</text>
+<rect x="935" y="575" width="235" height="205" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
+<text x="950" y="605" font-size="17" font-weight="bold">U1 · Arduino Uno R3</text>
+<text x="950" y="642" font-size="18" font-weight="bold">Digital-Pin 3 (D3)</text>
+<text x="950" y="715" font-size="15">Derselbe Arduino U1</text>
+<text x="950" y="740" font-size="15">wie in Feld D.</text>
+<circle cx="1170" cy="650" r="4" fill="#253b50"/>
+<polyline class="wire" points="1170,650 1195,650"/>
+<polyline class="wire" points="1195,650 1205,650"/>
+<rect x="1205" y="642" width="70" height="16" fill="white" stroke="#253b50" stroke-width="2"/>
+<polyline class="wire" points="1275,650 1285,650"/>
+<text x="1195" y="628" font-size="17">R2 · 1 kΩ</text>
+<text x="1177" y="685" font-size="15">über J0.4</text>
+<polyline class="wire" points="1285,650 1360,650"/>
+<circle cx="1315" cy="650" r="4" fill="#253b50"/>
+<polyline class="wire" points="1315,650 1315,700"/>
+<polyline class="wire" points="1315,700 1315,710"/>
+<rect x="1307" y="710" width="16" height="40" fill="white" stroke="#253b50" stroke-width="2"/>
+<polyline class="wire" points="1315,750 1315,760"/>
+<text x="1331" y="735" font-size="16"></text>
+<polyline class="wire" points="1315,760 1315,770"/>
+<polyline class="wire" points="1299,770 1331,770"/>
+<polyline class="wire" points="1305,777 1325,777"/>
+<polyline class="wire" points="1311,784 1319,784"/>
+<text x="1294" y="807" font-size="16">GND</text>
+<text x="1193" y="737" font-size="16">R4 · 100 kΩ</text>
+<polyline class="wire" points="1360,620 1360,680"/>
+<polyline class="wire" points="1360,635 1405,605 1405,580"/>
+<polyline class="wire" points="1360,665 1405,700 1405,760"/>
+<path d="M1388,681 L1394,694 L1379,690 Z" fill="#253b50"/>
+<polyline class="wire" points="1405,760 1405,770"/>
+<polyline class="wire" points="1389,770 1421,770"/>
+<polyline class="wire" points="1395,777 1415,777"/>
+<polyline class="wire" points="1401,784 1409,784"/>
+<text x="1384" y="807" font-size="16">GND</text>
+<text x="1425" y="685" font-size="16" font-weight="bold">Q2 · 2N3904</text>
+<text x="1332" y="608" font-size="15">B</text>
+<text x="1411" y="612" font-size="15">C</text>
+<text x="1410" y="750" font-size="15">E</text>
 <rect x="1565" y="565" width="180" height="210" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="1576" y="593" font-size="16" font-weight="bold">U3 · DM860T V3.0</text>
 <text x="1576" y="616" font-size="15">Steuereingang</text>
-<polyline class="wire" points="1295,580 1500,580 1500,630 1565,630"/>
-<text x="1355" y="564" font-size="16">J3.4</text>
+<polyline class="wire" points="1405,580 1500,580 1500,630 1565,630"/>
+<text x="1430" y="564" font-size="16">J3.4</text>
 <text x="1590" y="637" font-size="20" font-weight="bold">DIR−</text>
 <polyline class="wire" points="1485,720 1565,720"/>
-<text x="1400" y="727" font-size="20" font-weight="bold">+5V</text>
+<text x="1425" y="727" font-size="20" font-weight="bold">+5V</text>
 <text x="1498" y="704" font-size="16">J3.3</text>
 <text x="1590" y="727" font-size="20" font-weight="bold">DIR+</text>
-<text x="1355" y="812" font-size="17">+5V von U1 5V / J0.1 → Detail G</text>
+<text x="940" y="812" font-size="17">+5V von U1 5V / J0.1 → Detail G</text>
 <text x="940" y="853" font-size="16">HIGH am Uno aktiviert den Optokoppler. GND bleibt auf der Steuerungsseite.</text>
 <rect x="30" y="910" width="410" height="390" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="46" y="940" font-size="21" font-weight="bold">D · U1 · Arduino Uno R3</text>
