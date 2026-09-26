@@ -8,6 +8,24 @@ Der Plan gilt für **U1 Arduino Uno R3**, **B1 HC-SR501-kompatiblen PIR**, STEPP
 
 Die beiden Blätter bilden gemeinsam den vollständigen elektrischen Entwurf. Gleich benannte Netze sind elektrisch verbunden. Steckverbinderbezeichnungen beziehen sich auf diesen Projektplan, nicht auf die Steckerbezeichnungen im Treiberhandbuch.
 
+Geräte werden auf beiden Blättern als **Kennzeichen · Bauteilbezeichnung** beschriftet. Die Kennzeichen bleiben beim Wechsel zwischen den Blättern gleich:
+
+| Kennzeichen | Bauteilbezeichnung |
+|---|---|
+| U1 | Arduino Uno R3 |
+| U2 | SN74HCT14N |
+| U3 | DM860T V3.0 |
+| B1 | HC-SR501-Bauform, vorhandener PIR-Sensor |
+| M1 | 34HS46-6004S1, NEMA-34-Motor |
+| PS1 | LRS-350-48, 48-V-Netzteil |
+| PS2 | USB-Netzteil, 5 V |
+| J0 | Arduino-Anschlussleiste |
+| J1 / J2 | RJ45-Klemmenadapter an Steuerung / Sensor |
+| J3 | STEP/DIR-Klemmenleiste |
+| J4 | Freigabeschalter-Klemmenleiste |
+
+**U2A und U2B gehören zum selben Bauteil U2**, dem SN74HCT14N; die Buchstaben bezeichnen zwei seiner internen Schaltstufen. Anschlussverweise dürfen verkürzt erscheinen: `U1 D2` bedeutet Pin D2 des Arduino Uno R3, `J3.2` bedeutet Anschluss 2 der Klemmenleiste J3. Feldbuchstaben A–F gliedern das Blatt und sind keine Bauteilkennzeichen.
+
 ### Blatt 1: Versorgung und Motor
 
 ![Versorgung und Motor](schaltplan-versorgung.svg)
@@ -20,7 +38,14 @@ Die folgenden Tabellen sind die verbindliche Punkt-zu-Punkt-Verdrahtung. Die Gra
 
 ## 2. Versorgung und Trennung
 
-S0 ist eine fertig konfektionierte, zweipolig geschaltete Netzverteilung mit mindestens zwei Steckplätzen. An ihr hängen das Motor-Netzteil PS1 und das separate 5-V-USB-Netzteil PS2. S0 schaltet damit im Betriebsaufbau beide Versorgungen ab. Das Schaltgerät muss ausdrücklich für die kapazitive Last bzw. den Einschaltstrom von PS1 geeignet sein; allein „10/16 A“ auf einem beliebigen Schalter reicht als Nachweis nicht.
+**Beide Netzteile werden in dieselbe Schweizer Mehrfachsteckdose S0 eingesteckt.** S0 ist eine fertig konfektionierte CH-Steckdosenleiste mit Typ-13-Buchsen, 10 A Gesamtbelastbarkeit, mindestens zwei Steckplätzen und gemeinsamem zweipoligem EIN/AUS-Schalter. Die Leiste bleibt geschlossen und wird nicht umverdrahtet.
+
+- **Steckplatz 1:** W1 mit Schweizer Typ-12-Stecker und Schutzleiter → geschützter Anschlussbereich → PS1 Motornetzteil LRS-350-48.
+- **Steckplatz 2:** PS2, geschlossenes USB-Steckernetzteil mit passendem CH-Stecker oder flachem Eurostecker → W2 USB-A/B → U1 Arduino Uno R3.
+
+Die Netzteile liegen parallel am 230-V-Netz. Ein gemeinsamer 10-A-Anschluss reicht für ihre Betriebslast; bei zusätzlich angeschlossenen Geräten gilt die Gesamtbelastbarkeit der Leiste. S0 schaltet beide Netzteile gemeinsam. Die Ausführung muss zum Aufstellort passen; eine Innenraumleiste gehört in einen trockenen, geschützten Bereich. Das Schaltgerät muss auch für die kapazitive Last beziehungsweise den Einschaltstrom von PS1 geeignet sein; diese Eigenschaft folgt nicht allein aus der 10-A-Angabe. Schweizer Stecksystem: [ESTI-Übersicht SN 441011](https://www.esti.admin.ch/inhalte/Info_SN_441011_de-fr-it-en.pdf).
+
+**PS1 ist ein Einbaunetzteil mit Schraubklemmen, kein fertiges Steckernetzteil.** Die Netzleitung W1, F1, Schutzleiter und Berührungsschutz werden durch eine Elektrofachperson montiert und geprüft. Danach wird im Alltag nur der fertige W1-Stecker in S0 gesteckt. PS2 wird unverändert eingesteckt.
 
 PS2 versorgt ausschließlich über das USB-A/B-Kabel W2 den USB-Anschluss des Uno. Vom Uno-5V-Pin werden U2, PIR und die Optokoppler-Eingänge des Treibers gespeist. **48 V niemals an Uno, PIR oder RJ45 anschließen.** VIN und die Uno-Hohlbuchse bleiben frei. Zum Programmieren W2 vom USB-Netzteil lösen und an den Rechner stecken; S0/Motorversorgung bleibt dabei aus. Ein am Rechner angeschlossener Uno wird durch S0 nicht abgeschaltet.
 
@@ -30,8 +55,8 @@ GND bezeichnet die gemeinsame 5-V-Masse. M48− ist der Rückleiter der Motorver
 
 | Von | Nach | Ausführung |
 |---|---|---|
-| Netzsteckdose mit funktionierendem 30-mA-RCD | S0 Eingang | Für Aufstellort geeignete, fertig konfektionierte Netzverteilung; vorhandenen RCD prüfen |
-| S0 Ausgang 1 | W1 Netzleitung | Schweiz: passender Schutzkontaktstecker Typ J, 3G1,5 mm², Zugentlastung |
+| CH-Netzsteckdose mit funktionierendem 30-mA-RCD | S0 Eingang | Fertige CH-Mehrfachsteckdose mit passendem CH-Stecker einstecken; vorhandenen RCD prüfen |
+| S0 Steckplatz 1, Typ-13-Buchse | W1 Netzleitung | Fertig angespritzter CH-Typ-12-Stecker, 3G1,5 mm², offene Geräteenden im Gehäuse, Zugentlastung |
 | W1 braun / L | F1 Eingang | Berührungsgeschützter Sicherungshalter |
 | F1 Ausgang | PS1 L | 1,5 mm² braun |
 | W1 blau / N | PS1 N | 1,5 mm² blau |
@@ -39,7 +64,7 @@ GND bezeichnet die gemeinsame 5-V-Masse. M48− ist der Rückleiter der Motorver
 | XPE | PS1 Schutzleiterklemme ⏚ | 1,5 mm² grün-gelb |
 | XPE | Metallgehäuse, Metall-Montageplatte, gegebenenfalls Deckel | Separate gesicherte PE-Anschlüsse; Deckel mit flexibler Brücke |
 | XPE | leitfähiger Motorrahmen / Motorgehäuse | Eigene Bonding-Leitung, geeigneter Erdungspunkt |
-| S0 Ausgang 2 | PS2 USB-Netzteil | Fertiger Steckanschluss, keine geöffneten USB-Netzteile |
+| S0 Steckplatz 2, Typ-13-Buchse | PS2 USB-Netzteil | Geschlossenes Steckernetzteil mit CH-/Eurostecker direkt einstecken |
 
 PS1-Eingangswahlschalter vor Anschluss auf **230 V** stellen. PS1 enthält einen Lüfter: Lüftungswege freihalten. Netz- und Kleinspannungsbereich mechanisch trennen, Klemmen abdecken, Netzleitung zugentlasten. Unter Schraubklemmen keine verzinnten Litzen verwenden; passende Aderendhülsen bzw. Kabelschuhe crimpen. PS1 ist trotz Metallabdeckung kein fertiges berührungssicheres Netzgerät für einen offenen Aufbau.
 

@@ -27,10 +27,10 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
 | E05 | 1 Stück | PS1 Motornetzteil — Mean Well LRS-350-48, 48 V / 7,3 A | Versorgt den Motortreiber | Noch bestellen |
-| E06 | 1 Stück | PS2 USB-Netzteil — Geschlossen, geregelt 5 V / mindestens 1 A, USB-A, CH-tauglicher Stecker | Versorgt Uno und Sensor getrennt vom Motorstrom | Noch bestellen |
+| E06 | 1 Stück | PS2 USB-Netzteil — Geschlossenes Steckernetzteil, geregelt 5 V / mindestens 1 A, USB-A, CH-Stecker oder flacher Eurostecker | Versorgt Uno und Sensor getrennt vom Motorstrom | Noch bestellen |
 | E07 | 1 Stück | W2 USB-Kabel — USB-A auf USB-B, Datenkabel, etwa 1 m | Versorgung und Programmierung des Uno | Noch bestellen |
-| E28 | 1 Stück | S0 Netzverteilung/Hauptschalter — Fertig konfektioniert, zweipolig schaltend, Schutzleiter durchverbunden, mindestens 2 Ausgänge, CH-Stecker | Gemeinsame Abschaltung beider Netzteile | Noch beschaffen, Variante klären |
-| E29 | 2 m | W1 Netzanschlussleitung — CH-Typ-J-Stecker, offene Geräteenden, 3G1,5 mm², für Aufstellort geeignet | Netzzuleitung vom S0-Ausgang zu PS1 | Noch bestellen |
+| E28 | 1 Stück | S0 CH-Mehrfachsteckdose/Hauptschalter — Fertige CH-Steckdosenleiste, Typ-13-Buchsen, 10 A gesamt, mindestens 2 Steckplätze, gemeinsamer zweipoliger Schalter, PE durchverbunden | Gemeinsame Abschaltung beider Netzteile | Noch beschaffen, Variante klären |
+| E29 | 1 Stück | W1 Netzanschlussleitung — Ca. 2 m, angespritzter CH-Typ-12-Stecker mit Schutzleiter, offene Geräteenden, 3G1,5 mm², für Aufstellort geeignet | Verbindet S0 Steckplatz 1 mit dem geschützten Netzanschluss des PS1 | Noch bestellen |
 | E30 | 1 Stück | F1 Netzsicherung — SCHURTER SPT 0001.2532, T6,3 A, 6,3×32 mm, 250 VAC | Zusätzlicher Schutz der Gerätezuleitung | Noch bestellen |
 | E31 | 1 Stück | F2 DC-Sicherung — SCHURTER SPT 0001.2533, T8 A, 6,3×32 mm, 63 VDC | Schutz der 48-V-Abgangsleitung | Noch bestellen |
 | E32 | 2 Stück | Sicherungshalter — Berührungsgeschützt für 6,3×32 mm, mindestens 10 A, 250 VAC und 63 VDC, Klemmenanschluss | Sichere Befestigung von F1 und F2 | Noch bestellen |
@@ -102,8 +102,8 @@ Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_gene
 | M03 | 1 Stück | Hauptachsen-Riemenscheibe — HTD-5M, 40T, für 15-mm-Riemen, Bohrung 20 mm mit passender Nut | Große Scheibe der 2:1-Untersetzung | Noch beschaffen, Variante klären |
 | M04 | 1 Stück | Zahnriemen — Geschlossen HTD 450-5M-15, 90 Zähne, 15 mm breit | Überträgt Motorbewegung zur Hauptachse | Noch bestellen |
 | M05 | 1 Stück | Hauptachse — Stahl 20 mm, ca. 200 mm, bearbeitbar, Passfedernut zur 40T-Scheibe | Trägt Armaufnahme und überträgt Drehmoment | Noch beschaffen, Aufmaß nötig |
-| M06 | 2 Stück | Flanschlager — UCFL204, 20-mm-Bohrung, DOLD Artikel 35334 | Separate Lagerung der Hauptachse | Noch bestellen |
-| M07 | 2 Stück | Geteilte Wellen-Klemmringe — 20-mm-Bohrung, zur Lageranordnung passend | Axiale Sicherung der Hauptachse | Noch bestellen |
+| M06 | 2 Stück | Flanschlager — UCFL204, 20-mm-Bohrung, DOLD Artikel 35334 | Separate Lagerung der Hauptachse | Noch beschaffen, Variante klären |
+| M07 | 2 Stück | Geteilte Wellen-Klemmringe — 20-mm-Bohrung, zur Lageranordnung passend | Axiale Sicherung der Hauptachse | Noch beschaffen, Variante klären |
 | M08 | 1 Stück | Flansch-Klemmnabe — 20-mm-Bohrung, geschlitzte Klemmung, dokumentiertes Moment mindestens 20 Nm | Verbindet Welle drehfest mit Armplatte | Noch beschaffen, Variante klären |
 | M09 | 1 Stück | Passfeder Motor — Zur 14-mm-Motorwelle und M02 passend | Formschlüssige Drehmomentübertragung auf 20T-Scheibe | Noch beschaffen, Variante klären |
 | M10 | 1 Stück | Passfeder Hauptachse — Zur 20-mm-Welle und M03 passend | Formschlüssige Drehmomentübertragung auf 40T-Scheibe | Noch beschaffen, Aufmaß nötig |

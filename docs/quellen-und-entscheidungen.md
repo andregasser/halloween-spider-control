@@ -23,11 +23,14 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 
 ## Festlegungen aus dem Gespräch
 
+- 26.09.2026: Nutzer bestätigt Einsatz in der Schweiz und gemeinsame Mehrfachsteckdose für beide Netzteile. S0 konkretisiert als fertige CH-Leiste mit Typ-13-Buchsen und gemeinsamem zweipoligem Schalter. Blatt 1 zeigt beide Steckplätze: W1 mit Typ-12-Stecker zu PS1, PS2 direkt eingesteckt. Die interne Netzverdrahtung von PS1 bleibt im geschützten Gehäuse. [ESTI: Schweizer Stecksystem](https://www.esti.admin.ch/inhalte/Info_SN_441011_de-fr-it-en.pdf); Anschlussklemmen siehe oben verlinktes Mean-Well-Datenblatt. Kein bestimmtes Leistenmodell damit für den Einschaltstrom freigegeben.
+
 - 26.09.2026: Handover gelesen; Architektur mit Zahnriemen und separater Hauptachse bleibt Grundlage.
 - Vorhandenes PIR-Modul optisch als HC-SR501-Bauform eingeordnet, Hersteller nicht feststellbar. Nutzer will es verwenden.
 - Sensorleitung: RJ45-Patchkabel, bis 3 m, zwei verdrillte Paare für OUT/GND und 5V/GND.
 - Nutzer bestätigt: **Nur Uno und PIR vorhanden, alles Weitere noch zu bestellen.** Dies ist der aktuelle Bestand, auch wenn das Handover bereits einen Wagen beschreibt. Für Wagen/Spinne ist vor Neukauf ein Bestandsabgleich sinnvoll.
 - Auftrag dieser Revision: deutsche Projektdokumente, Schaltplan, vollständige Material- und Bestellliste sowie Einchecken ins Repository. Keine Teile bestellen und noch keine Firmware implementieren.
+- 26.09.2026: Auf Nutzeranfrage [15-mm-Hauptwelle gegenüber 20 mm rechnerisch vorgeprüft](hauptwelle-auslegung.md). 20 mm sind kein nachgewiesenes Mindestmaß; 15 mm sind eine plausible Alternative, abhängig von Riemenüberhang, Lasten und Nut-/Nabenausführung. Rechnung und zusätzliche Primärquellen stehen im Prüfdokument. Keine endgültige Durchmesseränderung beschlossen; davon abhängige Bestellpositionen bleiben bis zur Maßzeichnung offen.
 
 ## Technische Konkretisierungen dieser Revision
 
