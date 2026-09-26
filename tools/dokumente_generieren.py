@@ -105,6 +105,8 @@ Noch kein konkreter regionaler Betrieb ausgewählt. Die Anbieterangabe ist eine 
 4. DigiKey Schweiz: exakter HCT-Chip, Transistoren und Sicherungen. E30 ist bei der Recherche nicht lagernd; Termin klären.
 5. Conrad Schweiz / Elektrofachbetrieb: Steuerkabel, PE-Litze und die noch auszuwählenden Netz-/Gehäuseteile.
 
+Distrelec Schweiz ist als zusätzliche Bezugsquelle für E07 und E17 im jeweiligen Hinweis verlinkt. Die Produktdaten sind über indexierte Händlerseiten recherchiert; der direkte Abruf wurde blockiert. Aktuelle Preise, Bestelleinheiten und Lagerbestand sind deshalb nicht bestätigt. Je Position nur eine Bezugsquelle wählen.
+
 Versandkosten der Teilbestellungen vor Kauf zusammenrechnen; diese Aufteilung ist kein Nachweis für den günstigsten Gesamtpreis. Vorhandene Teile nicht doppelt bestellen.
 
 Bestellstatus künftig in `teile.csv` pflegen und beide Listen gemeinsam neu erzeugen. Ein angekreuztes Feld in einem Ausdruck ist keine automatische Bestellung.
