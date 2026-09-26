@@ -15,7 +15,7 @@
 - Referenzmotor 34HS46-6004S1; Referenztreiber DM860T V3.0; 48-V-Versorgung LRS-350-48.
 - Auswahlpriorität des Nutzers: Preis vor Kompaktheit. Bei technisch geeigneten Alternativen die Gesamtkosten für die Schweiz vergleichen. DM860T bleibt vorgesehen; kein Wechsel zum DM870 allein wegen des kleineren Gehäuses.
 - PIR HC-SR501-Bauform, bis 3 m RJ45-Patchkabel, kein Ethernet/PoE.
-- Uno und PIR sind vorhanden; sonstige Teile noch nicht bestellt. Statusänderungen nur aufgrund einer tatsächlichen Bestätigung.
+- Uno (E01), PIR (E02), Patchkabel (E08) und CH-Mehrfachsteckdose (E28) sind vorhanden; weitere Elektronik noch nicht als bestellt bestätigt. Statusänderungen nur aufgrund einer tatsächlichen Bestätigung.
 - S1/R7/J4 und die zusätzlichen Sensorkondensatoren C3/C4 samt Sensor-Lochrasterplatine entfallen auf Nutzerwunsch. C1/C2/C5 auf der Steuerplatine bleiben. Bedienung über S0; PIR ohne Zusatzkondensatoren am endgültigen Kabel bei Motorbetrieb prüfen.
 - Kein Hall-/Home-Sensor im Basisaufbau. Nach Neustart ist die mechanische Position nicht bekannt.
 
@@ -24,6 +24,7 @@
 - Schaltplanblätter auf den praktischen Aufbau beschränken: Geräteboxen, Bauteilwerte, Pins, Leitungen, Versorgung, nötige Einstellungen und konkrete Montage-/Sicherheitshinweise. Keine Erklärungen zur internen Funktionsweise fertiger Geräte (z. B. Optokoppler) oder Fachbegriffe wie Common-Anode in den Zeichnungen. Technische Begründungen gehören in den Begleittext. Nutzer benötigt klar erkennbare reale Anschlüsse.
 
 - `docs/elektronik.md` ist die maßgebliche Verbindungs- und Pinliste. Grafiken: `docs/schaltplan-steuerung.svg` und `docs/schaltplan-versorgung.svg`.
+- Material- und Bestellliste ausschließlich auf Elektronik beschränken: Motor, Treiber, Versorgung, Schaltung, elektrische Leitungen/Anschlüsse und Elektrogehäuse-/Isolationsmaterial. Keine Mechanikteile, Rohre, Holzplatten, Kabelbinder oder Konstruktionswerkzeuge aufnehmen. Bestehende Mechanikdokumente dienen nur als Projektkontext; aktueller Arbeitsumfang ist Elektronik.
 - `bom/teile.csv` ist die Datenquelle für Stück- und Bestellliste. Generierung: `python3 tools/dokumente_generieren.py`.
 - Grafiken werden durch `python3 tools/schaltplaene_generieren.py` erzeugt. Änderungen an der Schaltung in Generator, Verbindungstabelle und Stückliste gemeinsam durchführen.
 - `docs/firmware.md` beschreibt die nächste Implementierung; im aktuellen Stand gibt es noch keine Firmware, keine Build-Konfiguration und keinen Hardwaretest.
