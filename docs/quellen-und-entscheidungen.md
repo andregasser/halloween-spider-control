@@ -23,6 +23,8 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 
 ## Festlegungen aus dem Gespräch
 
+- 26.09.2026: Nutzer priorisiert **Preis vor Kompaktheit**. DM870 als kompaktere Alternative besprochen, aber nicht ausgewählt. **DM860T V3.0 bleibt der vorgesehene Treiber**; Schaltplan und Stückliste führen ihn bereits. Der Nutzer sieht einen Preisvorteil beim DM860T; ein aktueller Gesamtpreisvergleich inklusive Versand und Einfuhrkosten für die Schweiz wurde in diesem Entscheidungsschritt nicht durchgeführt.
+
 - 26.09.2026: Nutzer bestätigt Einsatz in der Schweiz und gemeinsame Mehrfachsteckdose für beide Netzteile. S0 konkretisiert als fertige CH-Leiste mit Typ-13-Buchsen und gemeinsamem zweipoligem Schalter. Blatt 1 zeigt beide Steckplätze: W1 mit Typ-12-Stecker zu PS1, PS2 direkt eingesteckt. Die interne Netzverdrahtung von PS1 bleibt im geschützten Gehäuse. [ESTI: Schweizer Stecksystem](https://www.esti.admin.ch/inhalte/Info_SN_441011_de-fr-it-en.pdf); Anschlussklemmen siehe oben verlinktes Mean-Well-Datenblatt. Kein bestimmtes Leistenmodell damit für den Einschaltstrom freigegeben.
 
 - 26.09.2026: Handover gelesen; Architektur mit Zahnriemen und separater Hauptachse bleibt Grundlage.

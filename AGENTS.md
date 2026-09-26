@@ -13,6 +13,7 @@
 - Uno R3 → STEP/DIR → DM860T → NEMA 34 → Zahnriemen → separat gelagerte Hauptachse.
 - Kein Direktantrieb des Arms über die Motorwelle. 20T/40T, HTD-5M, 15 mm Riemenbreite, 2:1-Untersetzung.
 - Referenzmotor 34HS46-6004S1; Referenztreiber DM860T V3.0; 48-V-Versorgung LRS-350-48.
+- Auswahlpriorität des Nutzers: Preis vor Kompaktheit. Bei technisch geeigneten Alternativen die Gesamtkosten für die Schweiz vergleichen. DM860T bleibt vorgesehen; kein Wechsel zum DM870 allein wegen des kleineren Gehäuses.
 - PIR HC-SR501-Bauform, bis 3 m RJ45-Patchkabel, kein Ethernet/PoE.
 - Uno und PIR sind vorhanden; sonstige Teile noch nicht bestellt. Statusänderungen nur aufgrund einer tatsächlichen Bestätigung.
 - Kein Hall-/Home-Sensor im Basisaufbau. Nach Neustart ist die mechanische Position nicht bekannt.
