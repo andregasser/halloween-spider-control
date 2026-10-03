@@ -1,333 +1,124 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2300" viewBox="0 0 1800 2300">
-<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#152536} .wire{fill:none;stroke:#253b50;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}</style>
-<rect width="1800" height="2300" fill="white"/>
-<text x="35" y="46" font-size="29" font-weight="bold">Blatt 2 / 2 — Steuerung, STEP/DIR und PIR-Sensor</text>
-<text x="35" y="79" font-size="18">Rev. A · ÜBERHOLT seit 03.10.2026 · Neue Vorgabe: fertige Module ohne Lötplatine</text>
-<text x="35" y="108" font-size="17">Gleiche Netznamen sind verbunden. Punkte = Verbindung. Kreuzungen ohne Punkt = keine Verbindung.</text>
-<rect x="30" y="130" width="1740" height="365" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="46" y="160" font-size="21" font-weight="bold">A · PIR über RJ45, bis 3 m; U2 · SN74HCT14N (DIP-14), nicht 74HC14</text>
-<rect x="55" y="190" width="190" height="240" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="55" y="188" font-size="16" font-weight="bold">B1 · HC-SR501-Bauform</text>
-<text x="175" y="226" font-size="17">VCC</text>
-<polyline class="wire" points="245,235 340,235"/>
-<text x="175" y="301" font-size="17">OUT</text>
-<polyline class="wire" points="245,310 340,310"/>
-<text x="175" y="391" font-size="17">GND</text>
-<polyline class="wire" points="245,400 340,400"/>
-<text x="70" y="273" font-size="17">PIR-Sensor</text>
-<text x="65" y="457" font-size="16">B1-Pinreihenfolge am eigenen Modul prüfen!</text>
-<rect x="340" y="200" width="105" height="225" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<rect x="640" y="200" width="105" height="225" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="340" y="188" font-size="16" font-weight="bold">J2 · RJ45-Klemmenadapter</text>
-<text x="640" y="188" font-size="16" font-weight="bold">J1 · RJ45-Klemmenadapter</text>
-<text x="356" y="227" font-size="17">5</text>
-<text x="653" y="227" font-size="17">5</text>
-<polyline class="wire" points="445,235 640,235"/>
-<text x="356" y="302" font-size="17">1</text>
-<text x="653" y="302" font-size="17">1</text>
-<polyline class="wire" points="445,310 640,310"/>
-<text x="356" y="392" font-size="17">2+4</text>
-<text x="653" y="392" font-size="17">2+4</text>
-<polyline class="wire" points="445,400 640,400"/>
-<text x="455" y="210" font-size="16" font-weight="bold">W3 · Patchkabel 1:1</text>
-<text x="462" y="268" font-size="16">weiß/blau: +5V</text>
-<text x="457" y="343" font-size="16">weiß/orange: OUT</text>
-<text x="454" y="435" font-size="16">orange + blau: GND</text>
-<polyline class="wire" points="745,235 820,235"/>
-<text x="775" y="218" font-size="18" font-weight="bold">+5V</text>
-<polyline class="wire" points="745,400 810,400"/>
-<polyline class="wire" points="810,400 810,410"/>
-<polyline class="wire" points="794,410 826,410"/>
-<polyline class="wire" points="800,417 820,417"/>
-<polyline class="wire" points="806,424 814,424"/>
-<text x="789" y="447" font-size="16">GND</text>
-<polyline class="wire" points="745,310 815,310"/>
-<polyline class="wire" points="815,310 825,310"/>
-<rect x="825" y="302" width="70" height="16" fill="white" stroke="#253b50" stroke-width="2"/>
-<polyline class="wire" points="895,310 905,310"/>
-<text x="815" y="288" font-size="17">R5 · 1 kΩ</text>
-<polyline class="wire" points="905,310 1090,310"/>
-<circle cx="950" cy="310" r="4" fill="#253b50"/>
-<circle cx="1020" cy="310" r="4" fill="#253b50"/>
-<polyline class="wire" points="950,310 950,345"/>
-<polyline class="wire" points="950,345 950,355"/>
-<rect x="942" y="355" width="16" height="40" fill="white" stroke="#253b50" stroke-width="2"/>
-<polyline class="wire" points="950,395 950,405"/>
-<text x="966" y="380" font-size="16"></text>
-<polyline class="wire" points="950,405 950,415"/>
-<polyline class="wire" points="934,415 966,415"/>
-<polyline class="wire" points="940,422 960,422"/>
-<polyline class="wire" points="946,429 954,429"/>
-<text x="929" y="452" font-size="16">GND</text>
-<polyline class="wire" points="1020,310 1020,345"/>
-<polyline class="wire" points="1020,345 1020,367"/>
-<polyline class="wire" points="1005,367 1035,367"/>
-<polyline class="wire" points="1005,377 1035,377"/>
-<polyline class="wire" points="1020,377 1020,405"/>
-<text x="1042" y="378" font-size="16"></text>
-<polyline class="wire" points="1020,405 1020,415"/>
-<polyline class="wire" points="1004,415 1036,415"/>
-<polyline class="wire" points="1010,422 1030,422"/>
-<polyline class="wire" points="1016,429 1024,429"/>
-<text x="999" y="452" font-size="16">GND</text>
-<text x="863" y="480" font-size="16">R6 · 100 kΩ</text>
-<text x="1010" y="480" font-size="16">C5 · 100 nF</text>
-<path d="M1090,280 L1090,340 L1150,310 Z" fill="white" stroke="#253b50" stroke-width="2"/>
-<circle cx="1157" cy="310" r="7" fill="white" stroke="#253b50" stroke-width="2"/>
-<text x="1096" y="316" font-size="16">H</text>
-<text x="1085" y="242" font-size="19" font-weight="bold">U2A</text>
-<text x="1085" y="264" font-size="15">SN74HCT14N</text>
-<text x="1068" y="300" font-size="16">1</text>
-<text x="1166" y="300" font-size="16">2</text>
-<polyline class="wire" points="1164,310 1270,310"/>
-<path d="M1270,280 L1270,340 L1330,310 Z" fill="white" stroke="#253b50" stroke-width="2"/>
-<circle cx="1337" cy="310" r="7" fill="white" stroke="#253b50" stroke-width="2"/>
-<text x="1276" y="316" font-size="16">H</text>
-<text x="1265" y="242" font-size="19" font-weight="bold">U2B</text>
-<text x="1265" y="264" font-size="15">SN74HCT14N</text>
-<text x="1248" y="300" font-size="16">3</text>
-<text x="1346" y="300" font-size="16">4</text>
-<polyline class="wire" points="1344,310 1695,310"/>
-<text x="1400" y="285" font-size="20" font-weight="bold">PIR_5V → J0.6 → U1 D7</text>
-<text x="1400" y="355" font-size="17">U2A/U2B: ein gemeinsamer Chip</text>
-<text x="1400" y="382" font-size="17">Weitere U2-Anschlüsse: Feld E</text>
-<text x="1400" y="409" font-size="17">RJ45.3/.6/.7/.8: beidseitig frei.</text>
-<rect x="30" y="520" width="855" height="360" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="46" y="550" font-size="21" font-weight="bold">B · Schrittimpulse: Arduino → Motortreiber</text>
-<rect x="50" y="575" width="235" height="205" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="65" y="605" font-size="17" font-weight="bold">U1 · Arduino Uno R3</text>
-<text x="65" y="642" font-size="18" font-weight="bold">Digital-Pin 2 (D2)</text>
-<text x="65" y="715" font-size="15">Derselbe Arduino U1</text>
-<text x="65" y="740" font-size="15">wie in Feld D.</text>
-<circle cx="285" cy="650" r="4" fill="#253b50"/>
-<polyline class="wire" points="285,650 310,650"/>
-<polyline class="wire" points="310,650 320,650"/>
-<rect x="320" y="642" width="70" height="16" fill="white" stroke="#253b50" stroke-width="2"/>
-<polyline class="wire" points="390,650 400,650"/>
-<text x="310" y="628" font-size="17">R1 · 1 kΩ</text>
-<text x="292" y="685" font-size="15">über J0.3</text>
-<polyline class="wire" points="400,650 475,650"/>
-<circle cx="430" cy="650" r="4" fill="#253b50"/>
-<polyline class="wire" points="430,650 430,700"/>
-<polyline class="wire" points="430,700 430,710"/>
-<rect x="422" y="710" width="16" height="40" fill="white" stroke="#253b50" stroke-width="2"/>
-<polyline class="wire" points="430,750 430,760"/>
-<text x="446" y="735" font-size="16"></text>
-<polyline class="wire" points="430,760 430,770"/>
-<polyline class="wire" points="414,770 446,770"/>
-<polyline class="wire" points="420,777 440,777"/>
-<polyline class="wire" points="426,784 434,784"/>
-<text x="409" y="807" font-size="16">GND</text>
-<text x="308" y="737" font-size="16">R3 · 100 kΩ</text>
-<polyline class="wire" points="475,620 475,680"/>
-<polyline class="wire" points="475,635 520,605 520,580"/>
-<polyline class="wire" points="475,665 520,700 520,760"/>
-<path d="M503,681 L509,694 L494,690 Z" fill="#253b50"/>
-<polyline class="wire" points="520,760 520,770"/>
-<polyline class="wire" points="504,770 536,770"/>
-<polyline class="wire" points="510,777 530,777"/>
-<polyline class="wire" points="516,784 524,784"/>
-<text x="499" y="807" font-size="16">GND</text>
-<text x="540" y="685" font-size="16" font-weight="bold">Q1 · 2N3904</text>
-<text x="447" y="608" font-size="15">B</text>
-<text x="526" y="612" font-size="15">C</text>
-<text x="525" y="750" font-size="15">E</text>
-<rect x="680" y="565" width="180" height="210" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="691" y="593" font-size="16" font-weight="bold">U3 · DM860T V3.0</text>
-<text x="691" y="616" font-size="15">Steuereingang</text>
-<polyline class="wire" points="520,580 615,580 615,630 680,630"/>
-<text x="545" y="564" font-size="16">J3.2</text>
-<text x="705" y="637" font-size="20" font-weight="bold">PUL−</text>
-<polyline class="wire" points="600,720 680,720"/>
-<text x="540" y="727" font-size="20" font-weight="bold">+5V</text>
-<text x="613" y="704" font-size="16">J3.1</text>
-<text x="705" y="727" font-size="20" font-weight="bold">PUL+</text>
-<text x="55" y="812" font-size="17">+5V von U1 5V / J0.1 → Detail G</text>
-<rect x="915" y="520" width="855" height="360" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="931" y="550" font-size="21" font-weight="bold">C · Drehrichtung: Arduino → Motortreiber</text>
-<rect x="935" y="575" width="235" height="205" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="950" y="605" font-size="17" font-weight="bold">U1 · Arduino Uno R3</text>
-<text x="950" y="642" font-size="18" font-weight="bold">Digital-Pin 3 (D3)</text>
-<text x="950" y="715" font-size="15">Derselbe Arduino U1</text>
-<text x="950" y="740" font-size="15">wie in Feld D.</text>
-<circle cx="1170" cy="650" r="4" fill="#253b50"/>
-<polyline class="wire" points="1170,650 1195,650"/>
-<polyline class="wire" points="1195,650 1205,650"/>
-<rect x="1205" y="642" width="70" height="16" fill="white" stroke="#253b50" stroke-width="2"/>
-<polyline class="wire" points="1275,650 1285,650"/>
-<text x="1195" y="628" font-size="17">R2 · 1 kΩ</text>
-<text x="1177" y="685" font-size="15">über J0.4</text>
-<polyline class="wire" points="1285,650 1360,650"/>
-<circle cx="1315" cy="650" r="4" fill="#253b50"/>
-<polyline class="wire" points="1315,650 1315,700"/>
-<polyline class="wire" points="1315,700 1315,710"/>
-<rect x="1307" y="710" width="16" height="40" fill="white" stroke="#253b50" stroke-width="2"/>
-<polyline class="wire" points="1315,750 1315,760"/>
-<text x="1331" y="735" font-size="16"></text>
-<polyline class="wire" points="1315,760 1315,770"/>
-<polyline class="wire" points="1299,770 1331,770"/>
-<polyline class="wire" points="1305,777 1325,777"/>
-<polyline class="wire" points="1311,784 1319,784"/>
-<text x="1294" y="807" font-size="16">GND</text>
-<text x="1193" y="737" font-size="16">R4 · 100 kΩ</text>
-<polyline class="wire" points="1360,620 1360,680"/>
-<polyline class="wire" points="1360,635 1405,605 1405,580"/>
-<polyline class="wire" points="1360,665 1405,700 1405,760"/>
-<path d="M1388,681 L1394,694 L1379,690 Z" fill="#253b50"/>
-<polyline class="wire" points="1405,760 1405,770"/>
-<polyline class="wire" points="1389,770 1421,770"/>
-<polyline class="wire" points="1395,777 1415,777"/>
-<polyline class="wire" points="1401,784 1409,784"/>
-<text x="1384" y="807" font-size="16">GND</text>
-<text x="1425" y="685" font-size="16" font-weight="bold">Q2 · 2N3904</text>
-<text x="1332" y="608" font-size="15">B</text>
-<text x="1411" y="612" font-size="15">C</text>
-<text x="1410" y="750" font-size="15">E</text>
-<rect x="1565" y="565" width="180" height="210" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="1576" y="593" font-size="16" font-weight="bold">U3 · DM860T V3.0</text>
-<text x="1576" y="616" font-size="15">Steuereingang</text>
-<polyline class="wire" points="1405,580 1500,580 1500,630 1565,630"/>
-<text x="1430" y="564" font-size="16">J3.4</text>
-<text x="1590" y="637" font-size="20" font-weight="bold">DIR−</text>
-<polyline class="wire" points="1485,720 1565,720"/>
-<text x="1425" y="727" font-size="20" font-weight="bold">+5V</text>
-<text x="1498" y="704" font-size="16">J3.3</text>
-<text x="1590" y="727" font-size="20" font-weight="bold">DIR+</text>
-<text x="940" y="812" font-size="17">+5V von U1 5V / J0.1 → Detail G</text>
-<rect x="30" y="910" width="1740" height="190" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="46" y="940" font-size="21" font-weight="bold">D · U1 · Arduino Uno R3</text>
-<text x="48" y="973" font-size="18">USB-B ← W2 / PS2 (Blatt 1)</text>
-<text x="48" y="1005" font-size="18">J0.1 ↔ 5V → Netz +5V</text>
-<text x="48" y="1037" font-size="18">J0.2 ↔ GND → Netz GND</text>
-<text x="48" y="1069" font-size="18">J0.3 ↔ D2 → R1 (Feld B)</text>
-<text x="920" y="973" font-size="18">J0.4 ↔ D3 → R2 (Feld C)</text>
-<text x="920" y="1005" font-size="18">J0.5 und U1 D4: frei lassen</text>
-<text x="920" y="1037" font-size="18">J0.6 ↔ D7 ← U2.4 (Feld A)</text>
-<text x="920" y="1069" font-size="18">VIN und Hohlbuchse: frei</text>
-<g transform="translate(0,-200)">
-<rect x="30" y="1320" width="1740" height="630" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="46" y="1350" font-size="21" font-weight="bold">E · U2 · SN74HCT14N · Anschlüsse am Chip</text>
-<text x="55" y="1384" font-size="19" font-weight="bold">Ansicht von oben auf die Beschriftung · Kerbe oben · Lötseite der Platine ist spiegelverkehrt.</text>
-<rect x="680" y="1445" width="300" height="370" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<path d="M805,1445 A25,25 0 0 0 855,1445" fill="none" stroke="#253b50" stroke-width="2.5"/>
-<text x="798" y="1433" font-size="17">Kerbe</text>
-<text x="770" y="1610" font-size="27" font-weight="bold">U2</text>
-<text x="726" y="1650" font-size="21" font-weight="bold">SN74HCT14N</text>
-<text x="774" y="1682" font-size="18">DIP-14</text>
-<polyline class="wire" points="620,1480 680,1480"/>
-<text x="692" y="1487" font-size="20" font-weight="bold">1</text>
-<polyline class="wire" points="980,1480 1040,1480"/>
-<text x="946" y="1487" font-size="20" font-weight="bold">14</text>
-<polyline class="wire" points="620,1530 680,1530"/>
-<text x="692" y="1537" font-size="20" font-weight="bold">2</text>
-<polyline class="wire" points="980,1530 1040,1530"/>
-<text x="946" y="1537" font-size="20" font-weight="bold">13</text>
-<polyline class="wire" points="620,1580 680,1580"/>
-<text x="692" y="1587" font-size="20" font-weight="bold">3</text>
-<polyline class="wire" points="980,1580 1040,1580"/>
-<text x="946" y="1587" font-size="20" font-weight="bold">12</text>
-<polyline class="wire" points="620,1630 680,1630"/>
-<text x="692" y="1637" font-size="20" font-weight="bold">4</text>
-<polyline class="wire" points="980,1630 1040,1630"/>
-<text x="946" y="1637" font-size="20" font-weight="bold">11</text>
-<polyline class="wire" points="620,1680 680,1680"/>
-<text x="692" y="1687" font-size="20" font-weight="bold">5</text>
-<polyline class="wire" points="980,1680 1040,1680"/>
-<text x="946" y="1687" font-size="20" font-weight="bold">10</text>
-<polyline class="wire" points="620,1730 680,1730"/>
-<text x="692" y="1737" font-size="20" font-weight="bold">6</text>
-<polyline class="wire" points="980,1730 1040,1730"/>
-<text x="946" y="1737" font-size="20" font-weight="bold">9</text>
-<polyline class="wire" points="620,1780 680,1780"/>
-<text x="692" y="1787" font-size="20" font-weight="bold">7</text>
-<polyline class="wire" points="980,1780 1040,1780"/>
-<text x="946" y="1787" font-size="20" font-weight="bold">8</text>
-<polyline class="wire" points="360,1480 620,1480"/>
-<text x="70" y="1450" font-size="18">Von R5 / R6 / C5 (Feld A)</text>
-<text x="70" y="1486" font-size="19" font-weight="bold">PIR_FILTER → Pin 1</text>
-<polyline class="wire" points="620,1530 620,1580"/>
-<text x="335" y="1562" font-size="19" font-weight="bold">Pin 2 mit Pin 3 verbinden</text>
-<polyline class="wire" points="360,1630 620,1630"/>
-<text x="70" y="1636" font-size="19" font-weight="bold">Pin 4 → J0.6 → U1 D7</text>
-<text x="540" y="1687" font-size="19" font-weight="bold">GND</text>
-<text x="410" y="1737" font-size="19">frei lassen</text>
-<text x="1055" y="1537" font-size="19" font-weight="bold">GND</text>
-<text x="1055" y="1587" font-size="19">frei lassen</text>
-<text x="1055" y="1637" font-size="19" font-weight="bold">GND</text>
-<text x="1055" y="1687" font-size="19">frei lassen</text>
-<text x="1055" y="1737" font-size="19" font-weight="bold">GND</text>
-<text x="1055" y="1787" font-size="19">frei lassen</text>
-<polyline class="wire" points="1040,1480 1500,1480"/>
-<text x="1110" y="1454" font-size="19" font-weight="bold">+5V von U1 5V / J0.1 → Pin 14</text>
-<circle cx="1250" cy="1480" r="4" fill="#253b50"/>
-<polyline class="wire" points="1250,1480 1250,1540"/>
-<polyline class="wire" points="1250,1540 1250,1562"/>
-<polyline class="wire" points="1235,1562 1265,1562"/>
-<polyline class="wire" points="1235,1572 1265,1572"/>
-<polyline class="wire" points="1250,1572 1250,1600"/>
-<text x="1272" y="1573" font-size="16">C1 · 100 nF</text>
-<polyline class="wire" points="1250,1600 1250,1640"/>
-<circle cx="1250" cy="1640" r="4" fill="#253b50"/>
-<circle cx="1500" cy="1480" r="4" fill="#253b50"/>
-<polyline class="wire" points="1500,1480 1500,1540"/>
-<polyline class="wire" points="1500,1540 1500,1562"/>
-<polyline class="wire" points="1485,1562 1515,1562"/>
-<polyline class="wire" points="1485,1572 1515,1572"/>
-<polyline class="wire" points="1500,1572 1500,1600"/>
-<text x="1522" y="1573" font-size="16">C2 · 10 µF</text>
-<text x="1472" y="1556" font-size="18">+</text>
-<polyline class="wire" points="1500,1600 1500,1640"/>
-<circle cx="1500" cy="1640" r="4" fill="#253b50"/>
-<polyline class="wire" points="1190,1640 1620,1640"/>
-<polyline class="wire" points="1620,1640 1620,1650"/>
-<polyline class="wire" points="1604,1650 1636,1650"/>
-<polyline class="wire" points="1610,1657 1630,1657"/>
-<polyline class="wire" points="1616,1664 1624,1664"/>
-<text x="1599" y="1687" font-size="16">GND</text>
-<polyline class="wire" points="1190,1640 1190,1840 620,1840 620,1780"/>
-<text x="1230" y="1750" font-size="18">C1 direkt zwischen Pin 14 und Pin 7.</text>
-<text x="1230" y="1780" font-size="18">C2: Plus an +5V, Minus an GND.</text>
-<text x="1230" y="1810" font-size="18">C2 nahe dem Versorgungseingang.</text>
-<text x="1230" y="1840" font-size="18">C1/C5: ≥25 V; C2: ≥16 V.</text>
-<text x="55" y="1885" font-size="19">Alle GND-Anschlüsse hier verbinden: Pins 5, 7, 9, 11, 13 und C1/C2 → U1 GND / J0.2.</text>
-<text x="55" y="1917" font-size="19">U2 ist derselbe Chip wie U2A/U2B in Feld A. Bei IC-Sockel an dessen passenden Lötanschlüssen verdrahten.</text>
-</g>
-<g transform="translate(0,450)">
-<rect x="30" y="1320" width="1740" height="330" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="46" y="1350" font-size="21" font-weight="bold">G · 5-V-Zuleitung für J3.1 und J3.3</text>
-<rect x="60" y="1375" width="380" height="215" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="76" y="1405" font-size="21" font-weight="bold">U1 · Arduino Uno R3</text>
-<text x="300" y="1440" font-size="20" font-weight="bold">5V-Pin</text>
-<text x="80" y="1505" font-size="17">Versorgung über USB von PS2</text>
-<text x="80" y="1535" font-size="17">Abgriff am 5V-Pin, nicht VIN.</text>
-<polyline class="wire" points="440,1450 720,1450"/>
-<text x="465" y="1427" font-size="18" font-weight="bold">über J0.1</text>
-<circle cx="600" cy="1450" r="4" fill="#253b50"/>
-<polyline class="wire" points="600,1450 600,1530 720,1530"/>
-<text x="460" y="1570" font-size="17">+5V-Verzweigung</text>
-<rect x="720" y="1375" width="340" height="215" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="736" y="1405" font-size="18" font-weight="bold">J3 · STEP/DIR-Klemmenleiste</text>
-<polyline class="wire" points="720,1450 1060,1450"/>
-<circle cx="875" cy="1450" r="4" fill="#253b50"/>
-<text x="827" y="1434" font-size="20" font-weight="bold">J3.1</text>
-<polyline class="wire" points="1060,1450 1320,1450"/>
-<text x="1090" y="1434" font-size="17">W4 · Paar 1 (+)</text>
-<polyline class="wire" points="720,1530 1060,1530"/>
-<circle cx="875" cy="1530" r="4" fill="#253b50"/>
-<text x="827" y="1514" font-size="20" font-weight="bold">J3.3</text>
-<polyline class="wire" points="1060,1530 1320,1530"/>
-<text x="1090" y="1514" font-size="17">W4 · Paar 2 (+)</text>
-<rect x="1320" y="1375" width="420" height="215" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="1336" y="1405" font-size="21" font-weight="bold">U3 · DM860T V3.0</text>
-<text x="1340" y="1457" font-size="20" font-weight="bold">PUL+</text>
-<text x="1340" y="1537" font-size="20" font-weight="bold">DIR+</text>
-<text x="1460" y="1498" font-size="19" font-weight="bold">S2 auf 5 V</text>
-<text x="50" y="1622" font-size="18">J3.2 → Q1 (Feld B), J3.4 → Q2 (Feld C). J3 niemals mit +48 V verbinden.</text>
-<text x="35" y="1684" font-size="18" font-weight="bold">W4 · STEP/DIR-Kabel: J3 → U3, 2 geschirmte Paare. ENA±/ALM±/BRK± offen. GND, M48− und PE getrennt.</text>
-<text x="35" y="1720" font-size="18">J0 · Arduino-Anschlussleiste   |   J3 · STEP/DIR-Klemmenleiste</text>
-<text x="35" y="1750" font-size="17">J3.2 = Anschluss 2 der Klemmenleiste J3. Alle GND-Symbole auf diesem Blatt mit U1 GND / J0.2 verbinden.</text>
-</g>
-<polyline class="wire" points="35,2230 1765,2230"/>
-<text x="35" y="2258" font-size="18">Verbindliche Verbindungstabellen, Bauteilwerte und Aufbauhinweise: docs/elektronik.md</text>
-<text x="35" y="2284" font-size="17">Kein Verdrahten unter Spannung. 230-V-Baugruppe durch Elektrofachperson aufbauen und prüfen.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2290" viewBox="0 0 1800 2290">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,DejaVu Sans,sans-serif;fill:#152331;font-size:24px} .title{font-size:37px;font-weight:bold}.head{font-size:27px;font-weight:bold}.small{font-size:22px}</style>
+<text x="55" y="65" class="title">Blatt 2 · Arduino, fertige Signalmodule und PIR</text>
+<text x="55" y="105" class="small">03.10.2026 · Revision B · Entwurf, noch nicht aufgebaut/getestet</text>
+<polyline points="55,140 1745,140" fill="none" stroke="#c3ced8" stroke-width="4"/>
+<text x="55" y="182" class="head">A · STEP: D2 schaltet das Schritt-Signal</text>
+<rect x="65" y="235" width="390" height="130" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="272" class="head">U1 · Arduino Uno R3</text>
+<text x="81" y="313" class="small">D2 → aufgestecktes U6</text>
+<text x="81" y="349" class="small">5 V / GND → U6</text>
+<rect x="530" y="235" width="600" height="250" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="546" y="272" class="head">U6 · DFRobot DFR0265</text>
+<text x="546" y="313" class="small">D2 grüner Signalstift → In</text>
+<text x="546" y="349" class="small">A1 roter +V-Stift → V+</text>
+<text x="546" y="385" class="small">A1 schwarzer GND-Stift → GND</text>
+<text x="546" y="421" class="small">Jumper 5V/3.3V auf 5 V</text>
+<text x="546" y="457" class="small">Rote digitale D-Versorgungsreihe frei</text>
+<polyline points="455,310 530,310" fill="none" stroke="#c26311" stroke-width="4"/>
+<rect x="1240" y="235" width="500" height="270" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="1256" y="272" class="head">U4 · Adafruit MOSFET #5648</text>
+<text x="1256" y="313" class="small">STEMMA In ← weiße Leitung</text>
+<text x="1256" y="349" class="small">STEMMA V+ ← rote Leitung</text>
+<text x="1256" y="385" class="small">STEMMA GND ← schwarze Leitung</text>
+<text x="1256" y="421" class="small">Ausgang + → PUL+</text>
+<text x="1256" y="457" class="small">Ausgang − → PUL−</text>
+<polyline points="1130,313 1240,313" fill="none" stroke="#c26311" stroke-width="4"/>
+<polyline points="1130,349 1240,349" fill="none" stroke="#bd2734" stroke-width="4"/>
+<polyline points="1130,385 1240,385" fill="none" stroke="#556779" stroke-width="4"/>
+<rect x="65" y="505" width="1065" height="140" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="542" class="head">U3 · DM860T V3.0</text>
+<text x="81" y="583" class="small">PUL− ← U4 Ausgang −; keine zusätzliche GND-Brücke</text>
+<text x="81" y="619" class="small">PUL+ ← U4 Ausgang +; S2 auf 5 V</text>
+<polyline points="1740,421 1770,421 1770,619 1130,619" fill="none" stroke="#c26311" stroke-width="4"/>
+<polyline points="1740,457 1755,457 1755,583 1130,583" fill="none" stroke="#c26311" stroke-width="4"/>
+<text x="1240" y="550" class="small">W4 · PUL+ / PUL−: ein verdrilltes Paar</text>
+<polyline points="55,670 1745,670" fill="none" stroke="#c3ced8" stroke-width="4"/>
+<text x="55" y="712" class="head">B · DIR: D3 schaltet die Richtung</text>
+<rect x="65" y="765" width="390" height="130" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="802" class="head">U1 · Arduino Uno R3</text>
+<text x="81" y="843" class="small">D3 → aufgestecktes U6</text>
+<text x="81" y="879" class="small">5 V / GND → U6</text>
+<rect x="530" y="765" width="600" height="250" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="546" y="802" class="head">U6 · DFRobot DFR0265</text>
+<text x="546" y="843" class="small">D3 grüner Signalstift → In</text>
+<text x="546" y="879" class="small">A2 roter +V-Stift → V+</text>
+<text x="546" y="915" class="small">A2 schwarzer GND-Stift → GND</text>
+<text x="546" y="951" class="small">Jumper 5V/3.3V auf 5 V</text>
+<text x="546" y="987" class="small">Rote digitale D-Versorgungsreihe frei</text>
+<polyline points="455,840 530,840" fill="none" stroke="#7357ad" stroke-width="4"/>
+<rect x="1240" y="765" width="500" height="270" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="1256" y="802" class="head">U5 · Adafruit MOSFET #5648</text>
+<text x="1256" y="843" class="small">STEMMA In ← weiße Leitung</text>
+<text x="1256" y="879" class="small">STEMMA V+ ← rote Leitung</text>
+<text x="1256" y="915" class="small">STEMMA GND ← schwarze Leitung</text>
+<text x="1256" y="951" class="small">Ausgang + → DIR+</text>
+<text x="1256" y="987" class="small">Ausgang − → DIR−</text>
+<polyline points="1130,843 1240,843" fill="none" stroke="#7357ad" stroke-width="4"/>
+<polyline points="1130,879 1240,879" fill="none" stroke="#bd2734" stroke-width="4"/>
+<polyline points="1130,915 1240,915" fill="none" stroke="#556779" stroke-width="4"/>
+<rect x="65" y="1035" width="1065" height="140" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="1072" class="head">U3 · DM860T V3.0</text>
+<text x="81" y="1113" class="small">DIR− ← U5 Ausgang −; keine zusätzliche GND-Brücke</text>
+<text x="81" y="1149" class="small">DIR+ ← U5 Ausgang +; S2 auf 5 V</text>
+<polyline points="1740,951 1770,951 1770,1149 1130,1149" fill="none" stroke="#7357ad" stroke-width="4"/>
+<polyline points="1740,987 1755,987 1755,1113 1130,1113" fill="none" stroke="#7357ad" stroke-width="4"/>
+<text x="1240" y="1080" class="small">W4 · DIR+ / DIR−: ein verdrilltes Paar</text>
+<polyline points="55,1200 1745,1200" fill="none" stroke="#c3ced8" stroke-width="4"/>
+<text x="55" y="1242" class="head">C · PIR: drei elektrische Netze über vier RJ45-Adern · KEIN LAN / PoE</text>
+<rect x="65" y="1300" width="650" height="120" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="1337" class="head">U1 · Arduino Uno R3</text>
+<text x="81" y="1378" class="small">U6 wird auf die Uno-Buchsenleisten gesteckt.</text>
+<text x="81" y="1414" class="small">Versorgung weiterhin über W2 an USB-B.</text>
+<rect x="65" y="1500" width="650" height="260" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="1537" class="head">U6 · DFRobot DFR0265</text>
+<text x="81" y="1578" class="small">A0 blauer Signalstift → J1.1 (OUT)</text>
+<text x="81" y="1614" class="small">A0 schwarzer GND-Stift → J1.2</text>
+<text x="81" y="1650" class="small">A3 schwarzer GND-Stift → J1.4</text>
+<text x="81" y="1686" class="small">A0 roter +V-Stift → J1.5 (+5 V)</text>
+<text x="81" y="1722" class="small">Jumper auf 5 V; A3-Signalstift bleibt frei</text>
+<polyline points="380,1420 380,1500" fill="none" stroke="#556779" stroke-width="4"/>
+<rect x="850" y="1500" width="400" height="260" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="866" y="1537" class="head">J1 · DFRobot FIT0849</text>
+<text x="866" y="1578" class="small">1: OUT</text>
+<text x="866" y="1614" class="small">2: GND</text>
+<text x="866" y="1650" class="small">4: GND</text>
+<text x="866" y="1686" class="small">5: +5 V</text>
+<rect x="1370" y="1500" width="370" height="260" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="1386" y="1537" class="head">W3 · Patchkabel ≤ 3 m</text>
+<text x="1386" y="1578" class="small">1 ↔ 1: OUT</text>
+<text x="1386" y="1614" class="small">2 ↔ 2: GND</text>
+<text x="1386" y="1650" class="small">4 ↔ 4: GND</text>
+<text x="1386" y="1686" class="small">5 ↔ 5: +5 V</text>
+<text x="1386" y="1722" class="small">1/2 und 4/5 sind Paare</text>
+<polyline points="715,1578 850,1578" fill="none" stroke="#18836b" stroke-width="4"/>
+<polyline points="1250,1578 1370,1578" fill="none" stroke="#18836b" stroke-width="4"/>
+<polyline points="715,1614 850,1614" fill="none" stroke="#556779" stroke-width="4"/>
+<polyline points="1250,1614 1370,1614" fill="none" stroke="#556779" stroke-width="4"/>
+<polyline points="715,1650 850,1650" fill="none" stroke="#556779" stroke-width="4"/>
+<polyline points="1250,1650 1370,1650" fill="none" stroke="#556779" stroke-width="4"/>
+<polyline points="715,1686 850,1686" fill="none" stroke="#bd2734" stroke-width="4"/>
+<polyline points="1250,1686 1370,1686" fill="none" stroke="#bd2734" stroke-width="4"/>
+<rect x="65" y="1860" width="650" height="260" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="1897" class="head">J2 · DFRobot FIT0849</text>
+<text x="81" y="1938" class="small">Sensor</text>
+<text x="81" y="1974" class="small">1 → B1 OUT</text>
+<text x="81" y="2010" class="small">2 → B1 GND</text>
+<text x="81" y="2046" class="small">4 → Brücke an J2.2</text>
+<text x="81" y="2082" class="small">5 → B1 VCC (+5 V)</text>
+<polyline points="1510,1760 1510,1800 380,1800 380,1860" fill="none" stroke="#556779" stroke-width="4"/>
+<rect x="1240" y="1860" width="500" height="260" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="1256" y="1897" class="head">B1 · PIR · HC-SR501-Bauform</text>
+<text x="1256" y="1938" class="small">Vorhandener Sensor</text>
+<text x="1256" y="1974" class="small">OUT: an J2.1</text>
+<text x="1256" y="2010" class="small">GND: an J2.2</text>
+<text x="1256" y="2046" class="small">VCC: an J2.5</text>
+<text x="1256" y="2082" class="small">Pinfolge am eigenen Sensor prüfen</text>
+<polyline points="715,1974 1240,1974" fill="none" stroke="#18836b" stroke-width="4"/>
+<polyline points="715,2010 1240,2010" fill="none" stroke="#556779" stroke-width="4"/>
+<polyline points="715,2082 1060,2082 1060,2046 1240,2046" fill="none" stroke="#bd2734" stroke-width="4"/>
+<text x="780" y="2140" class="small">E23/E24: vorhandene Header-Kabel; Modul-Eingänge: 2 × Adafruit #3894</text>
+<text x="65" y="2190" class="small">W4-Schirm → U6 SERVO_PWR-GND; Plus dort frei. PWR_IN frei. Keine 48 V an U6/U4/U5.</text>
+<text x="55" y="2255" class="small">Maßgebliche Pinliste und Aufbaufolge: docs/elektronik.md · Nur spannungslos verdrahten.</text>
 </svg>

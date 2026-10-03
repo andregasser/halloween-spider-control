@@ -1,119 +1,52 @@
 #!/usr/bin/env python3
-"""Erzeugt deutsche Material- und Bestelllisten aus bom/teile.csv (nur Standardbibliothek)."""
+"""Erzeugt Stück- und Bestellliste aus bom/teile.csv; nur Standardbibliothek."""
 import csv
 from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+with (ROOT/'bom/teile.csv').open(encoding='utf-8',newline='') as f:rows=list(csv.DictReader(f,delimiter=';'))
+STATUS={'vorhanden':'Vorhanden','bestellen':'Noch bestellen','aufmass':'Aufmaß/Ausführung offen','abklaeren':'Ausführung klären','bestand_pruefen':'Bestand/Bedarf prüfen'}
+def table(headers,entries):
+ def cell(v):return v.replace('|','\\|').replace('\n',' ')
+ return '\n'.join(['| '+' | '.join(headers)+' |','|'+'|'.join('---' for _ in headers)+'|']+['| '+' | '.join(cell(x) for x in e)+' |' for e in entries])+'\n\n'
+def quantity(r):return r['Menge']+' '+r['Einheit']
+def supplier(r):
+ return f"[{r['Lieferant']} · {r['Linkart']}]({r['Link']})" if r['Link'] else r['Lieferant']+' — Produkt offen'
+inventory=', '.join(r['ID']+' '+r['Teil'] for r in rows if r['Status']=='vorhanden')
+intro='Stand **03.10.2026 · Revision B · fertige Module, keine selbst gelötete Zusatzplatine**. Noch nicht aufgebaut/getestet, keine Bestellung ausgelöst. Umfang: Elektronik, elektrische Leitungen und Gehäusezubehör sowie ausdrücklich Motorhalterung ST-M7. Keine weitere Konstruktion/Mechanik.\n\n'
+bom='# Material-Stückliste · Elektronik\n\n'+intro+f'**Bestätigt vorhanden:** {inventory}.\n\nAutomatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) nennt Lieferanten; [Anschlussplan](../docs/elektronik.md) beschreibt die Verdrahtung. Leitungs-/Zubehörmengen sind Planbedarf; Packungsmengen stehen in der Bestellliste.\n\n'
+for group in dict.fromkeys(r['Gruppe'] for r in rows):
+ bom+='## '+group+'\n\n'+table(['ID','Menge','Teil / Spezifikation','Warum benötigt?','Status'],[[r['ID'],quantity(r),r['Teil']+' — '+r['Spezifikation'],r['Begruendung'],STATUS[r['Status']]] for r in rows if r['Gruppe']==group])
+bom+='''## Lieferumfang und entfallene Teile
 
-ROOT = Path(__file__).resolve().parents[1]
-with (ROOT / "bom/teile.csv").open(encoding="utf-8", newline="") as f:
-    rows = list(csv.DictReader(f, delimiter=";"))
+Motor enthält 1 m Anschlusskabel; Adafruit #5648 wird ohne STEMMA-Kabel geliefert: zwei Kabel #3894 separat bestellen. Treiber-Klemmstecker bei Lieferung prüfen. Kabel W5 ist eine fertige Verlängerung; nur dessen männliches Ende wird zum Klemmen abgeschnitten.
 
-STATUS = {
-    "vorhanden": "Vorhanden",
-    "bestellen": "Noch bestellen",
-    "aufmass": "Noch beschaffen, Aufmaß nötig",
-    "abklaeren": "Noch beschaffen, Variante klären",
-    "bestand_pruefen": "Bestand/Bedarf prüfen",
-}
+Lochrasterplatinen, HCT-Chip, Sockel, Einzeltransistoren, externe Kondensatoren, Netzsicherungsaufbau und interne 230-V-Verkabelung aus Revision A entfallen. Lötwerkzeug/Lot/Flussmittel sind bestätigt vorhanden, werden für Rev. B aber nicht benötigt und stehen deshalb nicht als Projektbedarf in dieser Liste. Kein Ethernet/PoE, Home-Sensor oder Freigabeschalter im Basisaufbau.
+'''
+(ROOT/'bom/material-stueckliste.md').write_text(bom,encoding='utf-8')
+order='# Bestellliste · Elektronik\n\n'+intro+f'**Nicht bestellen, bereits vorhanden:** {inventory}.\n\n'
+order+='''Die festgelegte Elektronik ist unten mit konkreten Artikelmodellen aufgeführt. Gehäuse und Durchführungen setzen derzeit einen **trockenen, geschützten Standort** voraus; Ausführung nach realem Layout bestätigen. Offene Zubehörpositionen gehören zum vollständigen Aufbau und sind bewusst keine vermeintlich geprüften Kaufartikel.
 
-def cell(value):
-    return value.replace("|", "\\|").replace("\n", " ")
+**Produkt** verlinkt einen konkreten Artikel. **Offen** bedeutet: kein bestätigter Artikel, erst nach Aufmaß/Bestandsprüfung bestellbar. Linkrecherche und technische Auswahl sind keine Liefer- oder Hardwarefunktionszusage. CHF-Endpreise, Packungsmengen, Einfuhr, Versand und Halloween-Lieferdatum im Warenkorb prüfen. Ein Gesamtpreis ist wegen offener Zubehörmaße und Versandkosten noch nicht verlässlich berechenbar.
 
-def table(headers, entries):
-    lines = ["| " + " | ".join(headers) + " |", "|" + "|".join("---" for _ in headers) + "|"]
-    lines += ["| " + " | ".join(cell(x) for x in row) + " |" for row in entries]
-    return "\n".join(lines) + "\n"
+Die Menge ist der Bedarf. Bei E50 zwei WAGO-Einzelstücke, bei E55 zwei STEMMA-Kabel #3894, bei E56 ein fertig bestücktes Shield wählen. Vor Bestellung Module vollständig mit Anschlussklemmen/Kabeln und Treiber ausdrücklich als **V3.0** bestätigen. [Technische Auswahl und Abnahmekriterien](../docs/fertige-module.md).
 
-def supplier(row):
-    if not row["Link"]:
-        return row["Lieferant"] + " — Produkt noch offen"
-    return f'[{row["Lieferant"]} · {row["Linkart"]}]({row["Link"]})'
+Automatisch erzeugt aus [teile.csv](teile.csv); Änderungen dort pflegen.
 
-def qty(row):
-    return row["Menge"] + " " + row["Einheit"]
+'''
+for status,title in [('bestellen','Festgelegte Elektronik und Anschlussmaterial'),('abklaeren','Ausführung noch klären'),('aufmass','Gehäuse und Zubehör nach Aufmaß'),('bestand_pruefen','Bedingter Bedarf; zuerst Bestand prüfen')]:
+ selected=[r for r in rows if r['Status']==status]
+ if selected:order+='## '+title+'\n\n'+table(['Erledigt','ID','Menge','Teil / genaue Auswahl','Lieferant / Link','Vor Bestellung beachten'],[['☐',r['ID'],quantity(r),r['Teil']+' — '+r['Spezifikation'],supplier(r),r['Bestellhinweis']] for r in selected])
+order+='''## Beschaffung bündeln
 
-inventory = ", ".join(f"{r['ID']} {r['Teil']}" for r in rows if r["Status"] == "vorhanden")
+1. **STEPPERONLINE:** Motor E03, Halterung E47, Treiber E04.
+2. **Bastelgarage:** zwei RJ45-Buchsenadapter E09.
+3. **BerryBase Schweiz:** USB-Netzteil E06, USB-A/B-Kabel E07, Anschluss-Shield E56 und WAGO E50.
+4. **DigiKey Schweiz:** Power-DIN-Kabel E49, zwei Adafruit-Module E48 und zwei STEMMA-Kabel E55; PS1 E05 und gegebenenfalls das gewählte Gehäuse samt Platte mitbestellen. PS1 alternativ Distrelec 300-42-762 oder [Simpex GST220A48-R7B](https://www.simpex.ch/shop/stromversorgungen/netzteile-ac-dc/tischnetzteile/gst220a48-r7b/), jeweils ein Netzteil, keine Großpackung.
+5. **Simpex / Conrad / Elektrobedarf Troller:** W1, W4 und 1 m DC-Litze; zusätzliche Versandkosten mit lokalen Bezugsoptionen vergleichen.
 
-bom = f"""# Material-Stückliste · Elektronik
+Distrelec wurde für PS1 als konkrete Alternative recherchiert. Preise/Lagerbestand waren dort nicht zuverlässig abrufbar. Die Händleraufteilung ist kein Nachweis für den niedrigsten Schweizer Gesamtpreis; Kleinmaterial nach Möglichkeit bei ohnehin verwendeten Lieferanten bündeln und gleiche Spezifikation beibehalten.
 
-**Aktuelle Vorgabe: fertige Module, keine eigene Lötplatine. Die nachfolgende Rev.-A-Liste ist überholt und dient nur dem bisherigen Planstand. Die endgültige Modulauswahl und neue Stückliste sind noch offen.**
-
-Stand: **26.09.2026 · Revision A**, seit **03.10.2026 zur Überarbeitung vorgemerkt**. Diese Liste umfasst die Elektronik einschließlich Motor, Versorgung, elektrischer Leitungen, Anschlüsse und zugehörigem Elektrogehäuse-/Isolationsmaterial sowie auf ausdrücklichen Wunsch die Motorhalterung E47. Konstruktionsmaterial wie Rohre, Holzplatten, Riemenantrieb und Kabelbinder gehört nicht zum Umfang. Elektronikwerkzeuge und Lötmaterial stehen separat am Ende. Mengen von Leitungen und Zubehör sind Planmengen.
-
-**Bestätigt vorhanden: {inventory}.** Noch keine Bestellung ausgelöst.
-
-Die [Bestellliste](bestellliste.md) ergänzt Lieferant und Auswahlhinweise. Die IDs bleiben über beide Listen gleich. Alle eingebauten elektronischen Referenzen gehören zum [Schaltplan](../docs/elektronik.md). Preise sind bewusst nicht aus alten Schätzungen übernommen.
-
-Automatisch erzeugt aus [teile.csv](teile.csv) mit `python3 tools/dokumente_generieren.py`.
-
-"""
-for group in dict.fromkeys(r["Gruppe"] for r in rows):
-    bom += f"## {group}\n\n"
-    bom += table(["ID", "Menge", "Teil / Spezifikation", "Warum benötigt?", "Status"], [
-        [r["ID"], qty(r), r["Teil"] + " — " + r["Spezifikation"], r["Begruendung"], STATUS[r["Status"]]]
-        for r in rows if r["Gruppe"] == group
-    ]) + "\n"
-bom += """## Enthaltene und nicht benötigte Teile
-
-- Das Motorkabel zählt zum Motorlieferumfang und wird nicht noch einmal bestellt. Montage der Steuerbox in Reichweite des 1-m-Kabels einplanen.
-- Schraubklemmen des DM860T bei Lieferung auf Vollständigkeit prüfen.
-- Keine zusätzliche Lochrasterplatine am PIR erforderlich: Die Sensorleitung verbindet B1 direkt mit J2. E18 ist die weiterhin benötigte Steuer-Lochrasterplatine für U2 und die übrige Schaltung.
-- Kein 48→5-V-Wandler, Ethernet-Modul, PoE-Injector, separater PIR, Hall-Sensor, Endschalter, Soundmodul oder externe Status-LED erforderlich. S0 ist vorgesehen, eine sicherheitsgerichtete Not-Halt-Baugruppe ist nicht Bestandteil von Rev. A.
-- Aufbau und Prüfung der Netzbaugruppe sind eine zusätzliche Leistung, kein Bauteil; in der Bestellliste gesondert aufgeführt.
-"""
-(ROOT / "bom/material-stueckliste.md").write_text(bom, encoding="utf-8")
-
-order = f"""# Bestellliste · Elektronik
-
-**Diese Liste noch nicht als Einkaufsliste verwenden. Seit 03.10.2026 gilt: fertige Module ohne eigene Lötplatine. Die aufgeführten Rev.-A-Positionen werden nach Auswahl der vollständigen neuen Kombination überarbeitet. Insbesondere U2, Q1/Q2, passive Zusatzbauteile und Steuer-Lochrasterplatine nicht für den neuen Aufbau bestellen. Am 03.10.2026 bestätigt: noch keine Teile bestellt. Die neue [Modul-Vorauswahl](../docs/fertige-module.md) ist separat dokumentiert.**
-
-Stand: **26.09.2026 · Revision A**, seit **03.10.2026 zur Überarbeitung vorgemerkt**. Noch keine Bestellung ausgelöst.
-
-**Nicht bestellen, bereits vorhanden:** {inventory}. Die Liste enthält fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial sowie die ausdrücklich ergänzte Motorhalterung E47. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
-
-**Lieferantenlinks überarbeitet am 26.09.2026, ohne Reichelt:** **Produkt** führt zum konkreten Artikel; Artikelnummern, Varianten und Packungsmengen stehen im Hinweis. **Sortiment** führt zu einer passenden Kategorie, die genaue Ausführung ist noch offen. **Produkt noch offen** enthält bewusst keinen unbestätigten Link; diese Position ist erst nach Auswahl bestellbar. Eine recherchierte Produktseite ist keine Lager- oder Lieferzusage.
-
-Die Spalte Menge beschreibt den Bedarf im Aufbau. Bei Mehrfachpackungen die Bestellmenge aus dem Hinweis verwenden: für E20/E21 zusammen fünf 2-polige Klemmen. Header-Kabel (E23/E24) und Abstandshalter (E42) aus dem vorhandenen Bestand verwenden.
-
-Die ursprünglichen Budgetwerte aus dem Handover sind keine aktuellen Angebote. Vor Zahlung Endpreis in CHF einschließlich Versand/Einfuhr und Lieferdatum bis Halloween kontrollieren.
-
-Automatisch erzeugt aus [teile.csv](teile.csv). Die [Material-Stückliste](material-stueckliste.md) erklärt den Zweck jedes Teils.
-
-"""
-for status, title in [
-    ("bestellen", "Fehlende Standardteile und festgelegte Modelle"),
-    ("abklaeren", "Fehlende Teile mit noch zu bestätigender Ausführung"),
-    ("aufmass", "Elektrogehäuse und Anschlussteile nach Aufmaß"),
-    ("bestand_pruefen", "Elektronikwerkzeug und bedingter Bedarf"),
-]:
-    if not any(r["Status"] == status for r in rows):
-        continue
-    order += f"## {title}\n\n"
-    order += table(["Erledigt", "ID", "Menge", "Teil / genaue Auswahl", "Lieferant / Link", "Vor Bestellung beachten"], [
-        ["☐", r["ID"], qty(r), r["Teil"] + " — " + r["Spezifikation"],
-         supplier(r), r["Bestellhinweis"]]
-        for r in rows if r["Status"] == status
-    ]) + "\n"
-order += """## Zusätzlich einplanen: Netzaufbau und Prüfung
-
-| Leistung | Anbieter | Umfang |
-|---|---|---|
-| Netzbaugruppe aufbauen und prüfen | Lokaler Elektroinstallateur / Elektrofachbetrieb | S0-Eignung, W1/F1/PS1/XPE, Gehäuse/PE, Trennung, RCD und Prüfung nach Einsatzort |
-
-Noch kein konkreter regionaler Betrieb ausgewählt. Die Anbieterangabe ist eine Beschaffungsroute, kein eingeholtes Angebot.
-
-## Empfohlene Bündelung
-
-1. STEPPERONLINE: Motor, Motorhalterung ST-M7 (E47), Treiber und Motornetzteil. Treiberrevision und Lieferung in die Schweiz vorher bestätigen.
-2. BerryBase Schweiz: Widerstände, Kondensatoren, Sockel, Platinenklemmen, USB-Versorgung und weiteres Kleinzubehör.
-3. Bastelgarage: RJ45-Adapter und Steuerplatine.
-4. DigiKey Schweiz: exakter HCT-Chip, Transistoren und Sicherungen. E30 ist bei der Recherche nicht lagernd; Termin klären.
-5. Conrad Schweiz / Elektrofachbetrieb: Steuerkabel, PE-Litze und die noch auszuwählenden Netz-/Gehäuseteile.
-
-Distrelec Schweiz ist als zusätzliche Bezugsquelle für E07 und E17 im jeweiligen Hinweis verlinkt. Die Produktdaten sind über indexierte Händlerseiten recherchiert; der direkte Abruf wurde blockiert. Aktuelle Preise, Bestelleinheiten und Lagerbestand sind deshalb nicht bestätigt. Je Position nur eine Bezugsquelle wählen.
-
-Versandkosten der Teilbestellungen vor Kauf zusammenrechnen; diese Aufteilung ist kein Nachweis für den günstigsten Gesamtpreis. Vorhandene Teile nicht doppelt bestellen.
-
-Bestellstatus künftig in `teile.csv` pflegen und beide Listen gemeinsam neu erzeugen. Ein angekreuztes Feld in einem Ausdruck ist keine automatische Bestellung.
-"""
-(ROOT / "bom/bestellliste.md").write_text(order, encoding="utf-8")
-print(f"Stückliste und Bestellliste erzeugt: {len(rows)} Positionen.")
+Keine Bestellung wird durch diese Liste ausgelöst. Der 230-V-Anschluss besteht ausschließlich aus fertigen Steckverbindungen. Keine zusätzliche Dienstleistung für eine selbst gebaute Netzbaugruppe eingeplant.
+'''
+(ROOT/'bom/bestellliste.md').write_text(order,encoding='utf-8')
+print(f'Stück- und Bestellliste erzeugt: {len(rows)} Positionen.')

@@ -1,210 +1,134 @@
-# Elektronik, Schaltplan und Verdrahtung
+# Elektronik · Revision B
 
-**Neue Vorgabe vom 03.10.2026: Aufbau mit fertig bestückten Modulen, ohne selbst gelötete Zusatzplatine. Der folgende Rev.-A-Entwurf ist ein historischer Zwischenstand und noch keine Bestell- oder Aufbauempfehlung für die neue Ausführung. Controller, Versorgung und Anschlussplan werden gemeinsam neu ausgewählt.**
+Stand **03.10.2026**. Maßgeblicher Anschlussplan für den Aufbau mit fertigen Modulen. Noch keine Hardwaremessung; die Abnahmekriterien stehen in [Inbetriebnahme](inbetriebnahme.md). Revision A ist [historisch archiviert](archiv/revision-a/README.md).
 
-**Revision A · 26.09.2026 · Schaltungsentwurf, noch kein getesteter Aufbau.**
+## Schaltplanblätter
 
-Der Plan gilt für **U1 Arduino Uno R3**, **B1 HC-SR501-kompatiblen PIR**, STEPPERONLINE **DM860T V3.0**, Motor **34HS46-6004S1** und Mean Well **LRS-350-48**. Die gelieferten Typenschilder und Pinbelegungen müssen dazu passen. Besonders DM860T-Nachbauten können abweichen.
+- [Blatt 1: Versorgung und Motor](schaltplan-versorgung.svg)
+- [Blatt 2: Arduino, Signalmodule und PIR](schaltplan-steuerung.svg)
 
-## 1. Schaltplanblätter
+Die Bauteilnummer bleibt auf beiden Blättern gleich. Jeder Gerätekasten enthält Nummer und Modell. Gleichnamige Anschlüsse auf getrennten Feldern sind dieselben realen Anschlüsse. **X-Klemmen sind fertige WAGO-Verbindungsklemmen, keine Platinen.** Innerhalb einer einzelnen WAGO sind alle Anschlüsse verbunden; verschiedene WAGO müssen bei Bedarf ausdrücklich über ein Kabel verbunden werden.
 
-Die beiden Blätter bilden gemeinsam den vollständigen elektrischen Entwurf. Gleich benannte Netze sind elektrisch verbunden. Steckverbinderbezeichnungen beziehen sich auf diesen Projektplan, nicht auf die Steckerbezeichnungen im Treiberhandbuch.
+## Geräte und Leitungen
 
-Geräte werden auf beiden Blättern als **Kennzeichen · Bauteilbezeichnung** beschriftet. Die Kennzeichen bleiben beim Wechsel zwischen den Blättern gleich:
-
-| Kennzeichen | Bauteilbezeichnung |
+| Kennung | Reales Bauteil |
 |---|---|
 | U1 | Arduino Uno R3 |
-| U2 | SN74HCT14N |
-| U3 | DM860T V3.0 |
-| B1 | HC-SR501-Bauform, vorhandener PIR-Sensor |
-| M1 | 34HS46-6004S1, NEMA-34-Motor |
-| PS1 | LRS-350-48, 48-V-Netzteil |
-| PS2 | USB-Netzteil, 5 V |
-| J0 | Arduino-Anschlussleiste |
-| J1 / J2 | RJ45-Klemmenadapter an Steuerung / Sensor |
-| J3 | STEP/DIR-Klemmenleiste |
+| U3 | STEPPERONLINE DM860T V3.0 |
+| U6 | DFRobot IO Expansion Shield V7.1, DFR0265, auf Uno gesteckt |
+| U4 / U5 | Adafruit MOSFET Driver #5648, je ein Modul für STEP / DIR |
+| B1 | Vorhandenes PIR-Modul, HC-SR501-Bauform |
+| M1 | STEPPERONLINE 34HS46-6004S1 |
+| PS1 | Mean Well GST220A48-R7B, geschlossenes Tischnetzteil |
+| PS2 | Goobay 44952, USB-Netzteil, nominal 5 V |
+| S0 | Vorhandene geschaltete CH-Mehrfachsteckdose |
+| J1 / J2 | DFRobot FIT0849, RJ45-Buchse auf Schraubklemmen; Steuerbox / Sensor |
+| X1 / X2 | WAGO 221-413, je 3 Anschlüsse für +48 V / 48-V-Rückleiter |
+| W1 | Fertiges CH-Typ-12-auf-IEC-C13-Netzkabel |
+| W2 | USB-A-auf-USB-B-Datenkabel zum Uno |
+| W3 | Vorhandenes 1:1-RJ45-Patchkabel, bis 3 m |
+| W4 | 2 × 2 × 0,25 mm², paarverseilte Signalleitung zum Treiber, höchstens 0,5 m |
+| W5 | GlobTek KPPX4124641M0KPJX4(R), 1-m-Power-DIN-Verlängerung, treiberseitig gekürzt |
 
-**U2A und U2B gehören zum selben Bauteil U2**, dem SN74HCT14N; die Buchstaben bezeichnen zwei seiner internen Schaltstufen. Anschlussverweise dürfen verkürzt erscheinen: `U1 D2` bedeutet Pin D2 des Arduino Uno R3, `J3.2` bedeutet Anschluss 2 der Klemmenleiste J3. Feldbuchstaben A–E und G gliedern das Blatt und sind keine Bauteilkennzeichen.
+## 1. Netzanschluss und Motorversorgung
 
-### Blatt 1: Versorgung und Motor
+**Keine offenen 230-V-Anschlüsse im Aufbau.** W1 in Steckplatz 1 von S0 und in den IEC-C14-Eingang von PS1 stecken. PS2 in Steckplatz 2, W2 von PS2 zum Uno-USB-B-Anschluss. Das Netzteil PS1 bleibt außerhalb der Steuerbox, trocken, belüftet und zugentlastet. Keine Änderung an Netzsteckern oder Netzteilgehäusen.
 
-![Versorgung und Motor](schaltplan-versorgung.svg)
-
-### Blatt 2: Steuerung und PIR
-
-![Steuerung und PIR](schaltplan-steuerung.svg)
-
-Die folgenden Tabellen sind die verbindliche Punkt-zu-Punkt-Verdrahtung. Die Grafiken sind keine maßstäbliche Lochrasteransicht. Bauteilnummern stimmen mit der [Stückliste](../bom/material-stueckliste.md) überein.
-
-## 2. Versorgung und Trennung
-
-**Beide Netzteile werden in dieselbe Schweizer Mehrfachsteckdose S0 eingesteckt.** S0 ist eine fertig konfektionierte CH-Steckdosenleiste mit Typ-13-Buchsen, 10 A Gesamtbelastbarkeit, mindestens zwei Steckplätzen und gemeinsamem zweipoligem EIN/AUS-Schalter. Die Leiste bleibt geschlossen und wird nicht umverdrahtet.
-
-- **Steckplatz 1:** W1 mit Schweizer Typ-12-Stecker und Schutzleiter → geschützter Anschlussbereich → PS1 Motornetzteil LRS-350-48.
-- **Steckplatz 2:** PS2, geschlossenes USB-Steckernetzteil mit passendem CH-Stecker oder flachem Eurostecker → W2 USB-A/B → U1 Arduino Uno R3.
-
-Die Netzteile liegen parallel am 230-V-Netz. Ein gemeinsamer 10-A-Anschluss reicht für ihre Betriebslast; bei zusätzlich angeschlossenen Geräten gilt die Gesamtbelastbarkeit der Leiste. S0 schaltet beide Netzteile gemeinsam. Die Ausführung muss zum Aufstellort passen; eine Innenraumleiste gehört in einen trockenen, geschützten Bereich. Das Schaltgerät muss auch für die kapazitive Last beziehungsweise den Einschaltstrom von PS1 geeignet sein; diese Eigenschaft folgt nicht allein aus der 10-A-Angabe. Schweizer Stecksystem: [ESTI-Übersicht SN 441011](https://www.esti.admin.ch/inhalte/Info_SN_441011_de-fr-it-en.pdf).
-
-**PS1 ist ein Einbaunetzteil mit Schraubklemmen, kein fertiges Steckernetzteil.** Die Netzleitung W1, F1, Schutzleiter und Berührungsschutz werden durch eine Elektrofachperson montiert und geprüft. Danach wird im Alltag nur der fertige W1-Stecker in S0 gesteckt. PS2 wird unverändert eingesteckt.
-
-PS2 versorgt ausschließlich über das USB-A/B-Kabel W2 den USB-Anschluss des Uno. Vom Uno-5V-Pin werden U2, PIR und die Optokoppler-Eingänge des Treibers gespeist. **48 V niemals an Uno, PIR oder RJ45 anschließen.** VIN und die Uno-Hohlbuchse bleiben frei. Zum Programmieren W2 vom USB-Netzteil lösen und an den Rechner stecken; S0/Motorversorgung bleibt dabei aus. Ein am Rechner angeschlossener Uno wird durch S0 nicht abgeschaltet.
-
-GND bezeichnet die gemeinsame 5-V-Masse. M48− ist der Rückleiter der Motorversorgung. PE ist der Schutzleiter. Diese drei Netze werden im Entwurf **nicht miteinander gebrückt**. Die Treibereingänge sind optisch getrennt; Q1/Q2 befinden sich vollständig auf der Uno-Seite.
-
-### 230 V: Klemm-/Crimpverdrahtung durch Elektrofachperson
+W5 hat einen passenden vierpoligen Power-DIN-Buchsenstecker für PS1. **Nur den männlichen Stecker am anderen Ende der Verlängerung abschneiden**, nicht das Kabel von PS1. W5 hat vier AWG-18-Adern, zwei pro Versorgungsschiene. Alle vier werden verwendet.
 
 | Von | Nach | Ausführung |
 |---|---|---|
-| CH-Netzsteckdose mit funktionierendem 30-mA-RCD | S0 Eingang | Fertige CH-Mehrfachsteckdose mit passendem CH-Stecker einstecken; vorhandenen RCD prüfen |
-| S0 Steckplatz 1, Typ-13-Buchse | W1 Netzleitung | Fertig angespritzter CH-Typ-12-Stecker, 3G1,5 mm², offene Geräteenden im Gehäuse, Zugentlastung |
-| W1 braun / L | F1 Eingang | Berührungsgeschützter Sicherungshalter |
-| F1 Ausgang | PS1 L | 1,5 mm² braun |
-| W1 blau / N | PS1 N | 1,5 mm² blau |
-| W1 grün-gelb / PE | XPE Verteilung | Eigene Schutzleiterklemme |
-| XPE | PS1 Schutzleiterklemme ⏚ | 1,5 mm² grün-gelb |
-| XPE | Metallgehäuse, Metall-Montageplatte, gegebenenfalls Deckel | Separate gesicherte PE-Anschlüsse; Deckel mit flexibler Brücke |
-| XPE | leitfähiger Motorrahmen / Motorgehäuse | Eigene Bonding-Leitung, geeigneter Erdungspunkt |
-| S0 Steckplatz 2, Typ-13-Buchse | PS2 USB-Netzteil | Geschlossenes Steckernetzteil mit CH-/Eurostecker direkt einstecken |
+| W5, beide identifizierten +48-V-Adern | X1, Plätze 1 und 2 | Getrennt in zwei Klemmplätze |
+| X1, Platz 3 | U3, erste AC-Klemme | Kurze 1,5-mm²-Kupferlitze |
+| W5, beide identifizierten Rückleiter-Adern | X2, Plätze 1 und 2 | Getrennt in zwei Klemmplätze |
+| X2, Platz 3 | U3, zweite AC-Klemme | Kurze 1,5-mm²-Kupferlitze |
+| M1 schwarz | U3 A+ | Motorlieferkabel |
+| M1 grün | U3 A− | Motorlieferkabel |
+| M1 rot | U3 B+ | Motorlieferkabel |
+| M1 blau | U3 B− | Motorlieferkabel |
 
-PS1-Eingangswahlschalter vor Anschluss auf **230 V** stellen. PS1 enthält einen Lüfter: Lüftungswege freihalten. Netz- und Kleinspannungsbereich mechanisch trennen, Klemmen abdecken, Netzleitung zugentlasten. Unter Schraubklemmen keine verzinnten Litzen verwenden; passende Aderendhülsen bzw. Kabelschuhe crimpen. PS1 ist trotz Metallabdeckung kein fertiges berührungssicheres Netzgerät für einen offenen Aufbau.
+V3.0 hat zwei mit **AC** beschriftete Versorgungsklemmen und akzeptiert dort 48 V Gleichspannung ohne vorgegebene Polarität. Andere Revisionen benötigen ihren eigenen Anschlussplan. Motorwicklungen vor Anschluss durchmessen; nie bei eingeschaltetem Treiber stecken oder umklemmen.
 
-**F1:** Projekt-Auslegungswert T6,3 A, hohes Ausschaltvermögen, 250 VAC, 6,3×32 mm; Beispiel SCHURTER SPT **0001.2532**. Der Wert schützt die vorgesehene kurze 1,5-mm²-Gerätezuleitung; Einschaltverhalten und Schutzkoordination im tatsächlichen Aufbau müssen geprüft werden. Das PS1-Datenblatt nennt etwa 60 A Einschaltstrom. [Netzteil-Datenblatt](https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF), [Sicherung](https://www.schurter.com/en/datasheet/typ_spt_6.3x32.pdf)
+**W5-Aderzuordnung durchmessen, nicht nach Farben oder aufgedruckten GlobTek-Pinnummern raten.** Mean Well und GlobTek verwenden unterschiedliche Pinnummerierungen. Beim Blick auf die Kontaktseite des PS1-Steckers, Führungsnase oben, sind die beiden unteren Kontakte +48 V und die beiden oberen Rückleiter. Im Mean-Well-Datenblatt heißen diese 1/4 beziehungsweise 2/3. Am Gegenstecker ist die Ansicht gespiegelt. Spannungsfrei per Durchgang die Zuordnung bestimmen, danach PS1 allein einschalten und an X1/X2 Polarität und Spannung messen, wieder ausschalten und erst dann U3 anschließen. W5-Abschirmung am abgeschnittenen Ende einzeln isolieren.
 
-### 48 V und Motor
+**Keine Brücke von X2 an die Arduino-GND-Klemmen.** Die Signalmasse wird nur in Abschnitt 2 verbunden. PS1 verbindet seinen DC-Rückleiter intern mit Schutzleiter; das ist eine Eigenschaft des fertigen Geräts, keine zusätzliche Verdrahtungsaufgabe. Das Netzteil schützt seinen Ausgang gegen Kurzschluss/Überlast. Zusätzliche Sicherungen aus Rev. A sind nicht übernommen: alle Adern verwenden, DC-Abgang kurz halten und nur den einen Treiber versorgen. Änderungen an Leitungsquerschnitt oder Abgängen erfordern erneute Auslegung.
 
-| Von | Nach | Ausführung |
+## 2. Steckbare Arduino-Anschlüsse und Signalmodule
+
+**U6 DFRobot DFR0265** wird vollständig auf die Buchsenleisten des Uno gesteckt. Seine farbigen Stifte machen Signal, Versorgung und GND einzeln zugänglich. Den **5V/3.3V-Jumper auf 5 V** setzen, Schalter auf **PROG** lassen. Die externe Versorgung **PWR_IN bleibt frei**. Kein Funkmodul und keine zusätzliche Versorgung anschließen.
+
+Die Module U4/U5 bekommen je ein fertig konfektioniertes **Adafruit-3894-Kabel**, JST PH 2 mm auf drei einzelne **Buchsen**. Diese Kabel sind nicht im Modul enthalten. Alle drei Kabelenden werden gesteckt; nichts abschneiden. Die freien Löt-/Headerplätze am Modul bleiben unbenutzt.
+
+| Funktion | Verbindung an U6 | Modul / Sensorleitung |
 |---|---|---|
-| PS1 +V | F2 Eingang | Kurze rote 1,5-mm²-Leitung |
-| F2 Ausgang | U3 erste AC-Klemme | +48 V, rot, 1,5 mm² |
-| PS1 −V | U3 zweite AC-Klemme | M48−, schwarz, 1,5 mm² |
-| U3 A+ | M1 schwarze Motorader | Wicklung A |
-| U3 A− | M1 grüne Motorader | Wicklung A; **kein Schutzleiter** |
-| U3 B+ | M1 rote Motorader | Wicklung B |
-| U3 B− | M1 blaue Motorader | Wicklung B |
+| STEP | Digitalgruppe **D2, grüner Signalstift** | U4 STEMMA **In**, weiße Leitung |
+| Versorgung U4 | Analoggruppe **A1, roter +V-Stift** | U4 STEMMA **V+**, rote Leitung |
+| GND U4 | Analoggruppe **A1, schwarzer GND-Stift** | U4 STEMMA **GND**, schwarze Leitung |
+| DIR | Digitalgruppe **D3, grüner Signalstift** | U5 STEMMA **In**, weiße Leitung |
+| Versorgung U5 | Analoggruppe **A2, roter +V-Stift** | U5 STEMMA **V+**, rote Leitung |
+| GND U5 | Analoggruppe **A2, schwarzer GND-Stift** | U5 STEMMA **GND**, schwarze Leitung |
+| PIR OUT | Analoggruppe **A0, blauer Signalstift** | J1.1 |
+| PIR +5 V | Analoggruppe **A0, roter +V-Stift** | J1.5 |
+| PIR GND | Analoggruppe **A0, schwarzer GND-Stift** | J1.2 |
+| Zweite PIR-GND-Ader | Analoggruppe **A3, schwarzer GND-Stift** | J1.4 |
+| W4-Schirm | **SERVO_PWR, Minus-/GND-Schraubklemme** | Nur Steuerbox-Ende; SERVO_PWR-Plus bleibt frei |
 
-**F2:** T8 A, 6,3×32 mm, ausdrücklich für mindestens 63 VDC zugelassen; Beispiel SCHURTER SPT **0001.2533**, passender berührungsgeschützter Halter ebenfalls DC-geeignet. Direkt hinter PS1 montieren. Der Ausgangskurzschlussschutz des Netzteils bleibt zusätzlich wirksam; bei strombegrenztem Netzteil muss eine Sicherung nicht bei jedem Fehler auslösen. [Sicherungsdaten](https://www.schurter.com/en/datasheet/typ_spt_6.3x32.pdf)
+**Bewusst die roten/schwarzen A1-/A2-Stifte für die Modulversorgung verwenden.** Die rote Versorgungsreihe der digitalen D-Pins wird hier nicht benutzt. Im Herstellerplan läuft diese über einen zusätzlichen Versorgungspfad; die Analoggruppen stellen bei gesetztem 5-V-Jumper die direkte Uno-5-V-Versorgung bereit. Die analogen Signalstifte A1/A2/A3 selbst bleiben frei. [U6-Herstellerplan](https://dfimg.dfrobot.com/wiki/18598/DFR0265_io-expansion-shield-for-arduino_schematics_V1.0.pdf).
 
-Die beiden **AC**-Klemmen des geprüften DM860T V3.0 dürfen mit 48 VDC gespeist werden; ihre Reihenfolge ist dort unerheblich. Die Zuordnung oben wird dennoch einheitlich eingehalten. Bei einer anderen Revision mit V+/V− deren Polarität beachten. Das 1-m-Motorkabel ist beim Motor vorgesehen; keine Verlängerung in Rev. A. Motor niemals unter Spannung an-/abstecken. [Treiber](https://www.omc-stepperonline.com/digital-stepper-driver-2-4-7-2a-18-80vac-or-24-110vdc-for-nema-34-motor-dm860t), [Motor und Aderfarben](https://www.omc-stepperonline.com/fr/moteur-pas-a-pas-nema-34-serie-s-8-5nm-1203-94oz-in-14mm-arbre-a-cle-cable-1m-34hs46-6004s1)
-
-## 3. Steuerplatine: vollständige Lötverbindungen
-
-Auf einer isoliert befestigten Lochrasterplatine werden U2, Q1/Q2, R1–R6 und C1/C2/C5 aufgebaut. Ausschließlich diese Kleinspannungsbaugruppen löten; 230 V und Motorstrom gehören nicht auf diese Platine.
-
-### Steckverbinder J0 zum Arduino
-
-J0 ist eine sechspolige beschriftete Kleinspannungsklemme; für die verlinkte Ausführung drei anreihbare 2-polige Klemmen zusammensetzen. Eine zugentlastete Buchsen-/Stiftleitung verbindet sie mit den Uno-Headern; nicht an der Uno-Platine selbst löten.
-
-| J0-Pin | Uno | Netz / weitere Verbindung |
-|---|---|---|
-| 1 | 5V | +5V: U2.14, C1, C2+, J1.5, J3.1, J3.3 |
-| 2 | GND | GND: U2.7, R3/R4/R6, C1/C2−/C5, Q1.E/Q2.E, J1.2/J1.4 |
-| 3 | D2 | R1 Eingang, STEP |
-| 4 | D3 | R2 Eingang, DIR |
-| 5 | — | Frei lassen; keine Leitung zum Uno |
-| 6 | D7 | U2.4, PIR aufbereitet |
-
-J0.5 und Uno D4 bleiben unbeschaltet. Die übrigen Anschlussnummern bleiben unverändert. Der PIR wird direkt mit J2 verbunden, ohne zusätzliche Sensor-Lochrasterplatine.
-
-### STEP/DIR-Ausgänge: zwei identische Transistorstufen
-
-**J3.1 und J3.3 erhalten beide +5 V vom 5V-Pin des Arduino U1, über J0.1.** Auf der Steuerplatine die +5-V-Leitung von J0.1 verzweigen und mit den Platinenanschlüssen von J3.1 und J3.3 verbinden. Dazu isolierte Drahtbrücken auf der Lochrasterplatine verwenden. J3 ist eine vierpolige Klemmenleiste aus zwei anreihbaren 2-poligen Klemmen auf dieser Platine, kein Anschluss am Arduino selbst. Blatt 2, Feld G zeigt diese Verzweigung ausdrücklich.
-
-An den Schraubanschluss **J3.1** kommt die Leitung zu **U3 PUL+**, an **J3.3** die Leitung zu **U3 DIR+**. Beide bekommen dauerhaft +5 V; die Transistoren schalten die jeweiligen Minusleitungen. **Nicht an VIN oder an das 48-V-Motornetzteil anschließen.** Die 5 V stammen im Betrieb vom USB-Netzteil PS2 über den Uno. Die Nummern 1 und 3 bezeichnen die Kontakte von J3; vor dem Verdrahten die Klemmen entsprechend beschriften.
-
-| Bauteil / Anschluss | Verbindung |
+| Moduleingang / Ausgang | Verbindung zum Treiber |
 |---|---|
-| R1, 1 kΩ | J0.3 / Uno D2 → Q1 Basis |
-| R3, 100 kΩ | Q1 Basis → GND |
-| Q1, 2N3904 | Emitter → GND; Kollektor → J3.2 / U3 PUL− |
-| R2, 1 kΩ | J0.4 / Uno D3 → Q2 Basis |
-| R4, 100 kΩ | Q2 Basis → GND |
-| Q2, 2N3904 | Emitter → GND; Kollektor → J3.4 / U3 DIR− |
-| J3.1 | U1 5V → J0.1 → +5V-Verzweigung auf der Platine → J3.1 → W4 → U3 PUL+ |
-| J3.2 | Q1 Kollektor → U3 PUL− |
-| J3.3 | Dieselbe +5V-Verzweigung von J0.1 → J3.3 → W4 → U3 DIR+ |
-| J3.4 | Q2 Kollektor → U3 DIR− |
-| U3 ENA+, ENA− | Beide offen, kein Draht / keine Brücke |
-| U3 ALM+, ALM−, BRK+, BRK− | Alle offen; optionale Treiberausgänge nicht genutzt |
+| U4 Ausgang **+** | W4 → U3 **PUL+** |
+| U4 Ausgang **−** | W4 → U3 **PUL−** |
+| U5 Ausgang **+** | W4 → U3 **DIR+** |
+| U5 Ausgang **−** | W4 → U3 **DIR−** |
+| U3 ENA+/ENA−, ALM, BRK | Unbeschaltet |
 
-Die Transistoren schalten die Optokoppler als Common-Anode-Ansteuerung. D2 HIGH lässt Q1 leiten und aktiviert den STEP-Eingang. R3/R4 halten die Transistoren während Uno-Reset aus. Die Basisströme betragen ungefähr `(5−0,8)/1000 = 4,2 mA`; die GPIOs müssen dadurch nicht den gesamten Optokopplerstrom liefern. Bei 5-V-Betrieb keine zusätzlichen Optokoppler-Vorwiderstände einbauen, sofern der tatsächliche Treiber dem Referenzmodell entspricht.
+**Die Minus-Ausgänge der Module sind keine dauerhaften GND-Anschlüsse. PUL−/DIR− nicht zusätzlich an GND anschließen.** Arduino-HIGH aktiviert das entsprechende Signal. Beide Ausgangspaare gehen unmittelbar zum Treiber. Zusätzliche einzelne Widerstände oder eine Ausgangsverteilerplatine sind nicht erforderlich.
 
-Für den onsemi-2N3904 im dokumentierten TO-92-Gehäuse gilt **1 = Emitter, 2 = Basis, 3 = Kollektor**. Die Pin-1-Lage anhand der Gehäusezeichnung prüfen; eine andere Transistorbauform darf nicht nur anhand der flachen Seite übernommen werden. [onsemi-Datenblatt](https://www.onsemi.com/pdf/datasheet/2n3904-d.pdf)
+Die Ausgangsklemmen am Modul sind **Federklemmen mit Drucktaste**, keine Schraubklemmen: Taste vorsichtig mit kleinem Schraubendreher drücken, abisolierte 0,25-mm²-Ader einführen, Taste loslassen und Zugprobe machen. Abisolierlänge nach gelieferter Klemme prüfen, keinen 11-mm-WAGO-221-Wert pauschal übertragen. [Herstelleranleitung](https://learn.adafruit.com/adafruit-mosfet-driver/plugging-into-the-terminal-block).
 
-J3→Treiber mit W4: zwei geschirmte verdrillte Paare, je PUL+/PUL− und DIR+/DIR−, möglichst ≤0,5 m. Schirm an der Gehäuseeinführung auf PE, anderes Ende isolieren. Signalleitungen getrennt von Motorleitungen führen; etwa 10 cm Abstand anstreben.
+W4: ein verdrilltes Paar für PUL+/PUL−, das andere für DIR+/DIR−. Schirm nur am Steuerbox-Ende an U6 SERVO_PWR-GND, treiberseitig isolieren. Von Motor-/DC-Leistungskabeln getrennt führen. Gegebenenfalls freies Schirmende für die Klemme passend vorbereiten und isolieren.
 
-### PIR-Eingang und U2
+Die Module sind für Versorgung **3–30 V** spezifiziert; hier ausschließlich Uno nominal 5 V. **S2 am DM860T auf 5 V.** Vor Motorbetrieb die Signalspannung **zwischen PUL+ und PUL−** beziehungsweise **DIR+ und DIR−** unter Last prüfen. Kein Anschluss dieser Module oder des Shields an 48 V. Die Versorgung über USB-B des Uno bleibt bestehen.
 
-| Bauteil / Anschluss | Verbindung |
-|---|---|
-| J1.1 | R5 Eingang, PIR_RAW |
-| R5, 1 kΩ | PIR_RAW → PIR_FILTER |
-| R6, 100 kΩ | PIR_FILTER → GND, definierter LOW-Pegel bei abgezogenem Kabel |
-| C5, 100 nF | PIR_FILTER → GND, kurzer Störimpulsfilter |
-| U2.1 (1A) | PIR_FILTER |
-| U2.2 (1Y) | U2.3 (2A) |
-| U2.4 (2Y) | J0.6 → Uno D7 |
-| U2.14 (VCC) | +5V |
-| U2.7 (GND) | GND |
-| U2.5, .9, .11, .13 | Jeweils GND; ungenutzte Eingänge festlegen |
-| U2.6, .8, .10, .12 | Offen; ungenutzte Ausgänge |
-| C1, 100 nF | U2.14 → U2.7, unmittelbar am IC |
-| C2, 10 µF / 16 V | Plus → +5V, Minus → GND, lokal auf Steuerplatine |
-| C5, 100 nF | PIR_FILTER / U2.1 → GND, am Eingang von U2 |
+## 3. PIR und RJ45-Patchkabel
 
-U2 ist ausdrücklich **SN74HCT14N, DIP-14**, nicht 74HC14. Zwei invertierende Schmitt-Trigger hintereinander erhalten die Polarität: PIR HIGH → Uno HIGH. Die HCT-Eingänge akzeptieren den ungefähr 3,3-V-Pegel des PIR bei 5-V-Versorgung; am Uno kommen wieder 5-V-Logikpegel an. R5/C5 ergeben nominell 0,1 ms Filterzeit; das ersetzt keine saubere Kabelverlegung. [TI-Datenblatt und Pinbelegung](https://www.ti.com/lit/gpn/SN74HCT14)
+Der PIR wird ohne Zusatzplatine direkt an **A0**, einen analogen Eingang des Uno, angeschlossen. Die Firmware wertet den typischen 3–3,3-V-Pegel aus. **D7 aus Revision A wird nicht verwendet.** Die tatsächliche VCC/OUT/GND-Pinfolge am vorhandenen PIR ist vor dem Anschließen zu prüfen.
 
-### Bedienung
-
-Ein- und Ausschalten erfolgt über die Mehrfachsteckdose S0. Nach Einschalten oder Arduino-Reset wartet die Steuerung 60 s und anschließend auf PIR-LOW sowie eine neue Bewegung; siehe [Firmware-Vertrag](firmware.md). Es gibt keinen separaten Freigabeschalter und keinen kontrollierten Softwarestopp per Schalter.
-
-## 4. RJ45 zum Sensor
-
-Zwei **passive** RJ45-auf-Schraubklemmen-Adapter J1 (Steuerung) und J2 (Sensor), ohne Ethernet-Magnetics, plus W3: Cat5e/Cat6, Vollkupfer, 1:1, T568B an beiden Enden, höchstens 3 m. Nach Pinnummer verdrahten und vor Anschluss durchmessen. Aderfarben dienen nur als zusätzliche Orientierung.
-
-| RJ45-Pin an J1 UND J2 | Farbe bei T568B | Steuerungsseite | Sensorseite |
+| RJ45-Pin an J1 und J2 | Verbindung in Steuerbox J1 | Verbindung am Sensor J2 | Paar, T568B |
 |---|---|---|---|
-| 1 | weiß/orange | R5 / PIR_RAW | PIR OUT |
-| 2 | orange | GND | PIR GND |
-| 3 | weiß/grün | offen | offen |
-| 4 | blau | GND | PIR GND |
-| 5 | weiß/blau | +5V | PIR VCC |
-| 6 | grün | offen | offen |
-| 7 | weiß/braun | offen | offen |
-| 8 | braun | offen | offen |
+| 1 | U6 A0, blauer Signalstift → U1 A0 | B1 OUT | Weiß/Orange |
+| 2 | U6 A0, schwarzer GND-Stift | B1 GND | Orange |
+| 4 | U6 A3, schwarzer GND-Stift | Brücke zu J2.2 | Blau |
+| 5 | U6 A0, roter +V-Stift (+5 V) | B1 VCC | Weiß/Blau |
+| 3 / 6 / 7 / 8 | Frei | Frei | Nicht anschließen |
 
-Beide GND-Adern an beiden Enden verbinden. Dies hält die frühere Zuordnung bei: weiß/blau führt 5 V, blau führt GND. Steckeransicht und Buchsenansicht sind spiegelverkehrt; deshalb nummerierte Adapter nutzen. Bei geschirmtem Kabel den Schirm nur steuerungsseitig mit dem geerdeten Gehäuse verbinden, sensorseitig isolieren; Schirm ist keine Ersatzmasse. Keine Verbindung der Adapter-Schirme nach GND vorsehen.
+Damit gibt es drei elektrische Netze auf vier Adern: OUT/GND als Paar und +5V/GND als Paar. Bei abweichender Farbnorm sind die **Pinnummern** maßgeblich. Mit dem vorhandenen Patchkabel alle acht Leitungen auf 1:1-Durchgang prüfen. J1/J2 beschriften: **PIR · 5 V · KEIN LAN / PoE**.
 
-Die **physische Reihenfolge VCC/OUT/GND am vorhandenen PIR ist noch nicht sicher ablesbar**. Aufdruck gegebenenfalls unter abnehmbarer Linse prüfen, nicht nach einem beliebigen Internetfoto anschließen. Der Plan benennt deshalb die Sensoranschlüsse funktional.
+A0 wird per `INPUT_PULLUP` und `analogRead()` ausgewertet. Ein abgezogenes OUT wird damit typischerweise als ungültiger hoher Messwert erkannt. Die Firmware muss gültiges LOW, gültige Bewegung und ungültige Werte unterscheiden; Details in [Firmware](firmware.md). Softwarefilter ersetzen keine Prüfung auf Motorstörungen und erkennen nicht jeden Leitungsfehler. Sensorlinse frei lassen; kein Glasfenster davor.
 
-An beiden RJ45-Buchsen dauerhaft beschriften: **„PIR · 5 V · KEIN LAN / PoE“**. Das Kabel verbindet nur J1 und J2, niemals Netzwerkgeräte. PIR fest montieren, Platine gegen Wasser schützen und die vorhandene Fresnel-Linse frei lassen; kein gewöhnliches Glasfenster davor.
+## 4. DM860T-V3.0-Einstellungen
 
-## 5. Einstellungen am Referenztreiber
+Spannungslos einstellen; [Herstellerhandbuch](https://www.omc-stepperonline.com/download/DM860T_V3.0.pdf) hat Vorrang vor abweichenden Produktseiten.
 
-Nur für **DM860T V3.0**. Einstellungen spannungslos vornehmen. Referenz: [Handbuch, Abschnitte 3, 7 und 10](https://www.omc-stepperonline.com/download/DM860T_V3.0.pdf).
+| Schalter | Erstinbetriebnahme |
+|---|---|
+| S2 | **5 V** |
+| SW1 / SW2 / SW3 | **ON / ON / ON**, 2,40 A Peak / 1,70 A RMS |
+| SW4 | **OFF**, reduzierter Stillstandsstrom |
+| SW5 / SW6 / SW7 / SW8 | **ON / OFF / ON / ON**, 1600 Pulse/Motorumdrehung |
+| SW9 | **OFF**, STEP/DIR |
+| SW10 | **OFF**, Rampen durch Firmware |
 
-| Schalter | Erstinbetriebnahme | Bedeutung |
-|---|---|---|
-| S2 | **5 V** | Separater Logikspannungswahlschalter, nicht Werkseinstellung 24 V |
-| SW1 / SW2 / SW3 | ON / ON / ON | 2,40 A Peak / 1,70 A RMS, zunächst ohne Last |
-| SW4 | OFF | Reduzierter Stillstandsstrom |
-| SW5 / SW6 / SW7 / SW8 | ON / OFF / ON / ON | 1600 Pulse/Motorumdrehung, 8× Microstepping |
-| SW9 | OFF | STEP/DIR |
-| SW10 | OFF | Treiberglättung aus; Rampen durch Controller |
+200 Vollschritte × 8 Mikroschritte × 2 Untersetzung = **3200 Pulse/Hauptachsenumdrehung**. Zunächst maximal 100 Pulse/s, mindestens 500 µs HIGH/LOW und 1 ms DIR-Vorlauf. Bei höherem Strom Temperatur und Leistungsbedarf erneut prüfen. Maximalwert laut V3.0-Handbuch: 7,20 A Peak / 5,09 A RMS; das sind nicht 6 A RMS und nicht garantiert 8,5 Nm im Betrieb.
 
-Eine mögliche höhere Teststufe ist SW1/2/3 = OFF/ON/OFF (5,83 A Peak / 4,12 A RMS). Nur bei Bedarf steigern und Temperatur/Schrittverluste prüfen. Das V3.0-Handbuch nennt maximal 7,20 A Peak / 5,09 A RMS; die Produktseite nennt abweichend 6 A RMS. **Nicht als identische Angaben behandeln.** Der Motor hat 6 A Phasen-Nennstrom; der niedrigere Treiberstrom begrenzt das erreichbare Moment. 8,5 Nm sind deshalb kein garantierter Wert dieses Aufbaus.
+## 5. Aufbau ohne Löten
 
-ENA bleibt offen, der Treiber ist damit freigegeben und kann den Motor auch im Stillstand bestromen. Die Software erzeugt im gesperrten Zustand keine Schritte. Nach Netzabschaltung können gespeicherte Energie und die bewegte Masse Nachlauf verursachen.
+1. Module und Uno isoliert befestigen; trockenen Standort und Lüftung sicherstellen. PS1 bleibt außerhalb der Box. Durchführungen nach tatsächlichen Kabeln wählen.
+2. Header-Kabel aus Bestand verwenden: jeweils nur das benötigte freie Ende abisolieren. Keine Header-Metallstifte in WAGO stecken, sondern nur Leiter mit passendem Querschnitt. Schraubklemmen nach Herstellervorgabe mit passenden Aderendhülsen anschließen; keine verzinnten Litzenenden.
+3. U6 auf den Uno stecken, Jumper auf 5 V setzen. STEMMA-Kabel und U4/U5 gemäß Tabellen verbinden. X1/X2 mit 11 mm abisolierter Leitung anklemmen.
+4. J1/J2 und PIR verbinden; Patchkabel prüfen und anschließen. alle Verbindungen durchmessen.
+5. W5 ausschließlich an der Verlängerung bearbeiten, Kontakte identifizieren, X1/X2 verdrahten und 48 V separat messen. Netzteilkabel selbst nicht verändern.
+6. Treiber einstellen, Motorwicklungen messen und anschließen. Danach die gestuften [Inbetriebnahmeprüfungen](inbetriebnahme.md) durchführen.
 
-## 6. Löt- und Montagefolge
-
-1. IC-Sockel, Widerstände und Transistoren auf der 120×80-mm-Lochrasterplatine montieren; mit kurzen isolierten Drähten nach obigen Tabellen verbinden. Keine Netzspannung auf der Platine.
-2. C1 direkt am IC-Sockel, C2 nahe Versorgungseingang, C5 am U2-Eingang montieren. Elko-Polarität beachten.
-3. J0 und J3 beschriften; J1 über kurze Leitungen an die Platine anschließen. Alle Leitungen zugentlasten.
-4. PIR über drei einzelne Buchsenleitungen direkt mit J2 gemäß RJ45-Tabelle verbinden; keine Zusatzkondensatoren am Sensor. Funktion mit endgültiger Kabellänge und laufendem Motor prüfen.
-5. Vor Einsetzen von U2 Kurzschlüsse und alle Verbindungen messen; dann U2 mit richtiger Pin-1-Ausrichtung einsetzen.
-6. Nur PS2 anschließen, 5 V und PIR-Signal prüfen. Erst nach erfolgreich geprüftem Netzteilaufbau PS1/U3/M1 in Betrieb nehmen.
-
-Die Details und Sollmessungen stehen in [Inbetriebnahme](inbetriebnahme.md). Im jetzigen Stand wurden keine Hardwaremessungen durchgeführt.
-
-Für E23 drei F–F-Dupont-Leitungen, für E24 fünf M–M-Dupont-Leitungen verwenden: jeweils nur einen Stecker abschneiden, das freie Ende abisolieren und passend für die Schraubklemme vorbereiten. Die verbleibenden Buchsen gehen zum PIR, die verbleibenden Stifte zu den Uno-Buchsen. Keine verzinnten Litzenenden unter Schraubklemmen.
+Es werden keine Lochrasterplatine, IC-Sockel, HCT-Chip, Einzeltransistoren oder externen Widerstände oder Kondensatoren aufgebaut. Nicht benötigte Rev.-A-Bauteile stehen nur im Archiv. Die Motorhalterung ST-M7 ist die einzige mechanische Ausnahme in der Bestellliste; ihre Schrauben müssen nach dem tatsächlichen Lieferumfang gewählt werden.

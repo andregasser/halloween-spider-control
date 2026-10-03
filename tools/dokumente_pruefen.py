@@ -56,11 +56,34 @@ for p in ROOT.glob("docs/*.svg"):
     tree = ET.parse(p)
     svg_text += "\n".join(tree.getroot().itertext()) + "\n"
 electronics = (ROOT / "docs/elektronik.md").read_text(encoding="utf-8")
-for ref in ["U1", "U2", "U3", "B1", "M1", "PS1", "PS2", "S0", "Q1", "Q2", "F1", "F2", "XPE"] + [f"R{i}" for i in range(1,7)] + [f"C{i}" for i in (1,2,5)] + [f"J{i}" for i in range(4)] + [f"W{i}" for i in range(1,5)]:
+for ref in ["U1", "U3", "U4", "U5", "U6", "B1", "M1", "PS1", "PS2", "S0"] + ["X1","X2"] + ["J1","J2"] + [f"W{i}" for i in range(1,6)]:
     if not re.search(rf"\b{ref}\b", svg_text): errors.append(f"Referenz fehlt in SVG: {ref}")
     if not re.search(rf"\b{ref}\b", electronics): errors.append(f"Referenz fehlt in Elektronik-Dokument: {ref}")
     if not any(re.search(rf"\b{ref}\b", r["Teil"]) for r in rows):
         errors.append(f"Referenz fehlt in Stückliste: {ref}")
+
+# Revisionswechsel und bestätigten Bestand gegen versehentliche Altbestellungen sichern.
+by_id={r["ID"]:r for r in rows}
+for item in ["E01","E02","E08","E23","E24","E28","E42","E44","T03","T04"]:
+    if by_id.get(item,{}).get("Status")!="vorhanden":errors.append(f"Bestätigter Bestand verändert: {item}")
+obsolete={"E10","E11","E12","E13","E14","E16","E17","E18","E20","E21","E30","E31","E32","E33","E34","E36","E41"}
+if obsolete.intersection(ids):errors.append("Überholte Rev.-A-Bestellteile in aktueller CSV")
+for item,qty in [("E09","2"),("E48","2"),("E50","2"),("E55","2"),("E56","1")]:
+    if by_id.get(item,{}).get("Menge")!=qty:errors.append(f"Anzahl im Klemmplan stimmt nicht: {item}")
+for ref in ["U2","Q1","Q2","J0","J3","F1","F2","XPE"]:
+    if re.search(rf"\b{ref}\b",svg_text):errors.append(f"Rev.-A-Bauteil im aktuellen Schaltplan: {ref}")
+firmware=(ROOT/"docs/firmware.md").read_text(encoding="utf-8")
+for token in ["A0","INPUT_PULLUP","500 µs","1 ms","3200"]:
+    if token not in firmware or token not in electronics:errors.append(f"Pin-/Zeitvertrag unvollständig: {token}")
+from schaltplaene_generieren import DEVICES
+for ref,model in DEVICES.items():
+    # Jede Gerätebox verwendet dieselbe Modellbezeichnung, auch bei Wiederholung.
+    expected=ref+" · "+model
+    if expected not in svg_text:errors.append(f"Gerätemodell fehlt im Schaltplan: {expected}")
+    for p in ROOT.glob("docs/schaltplan-*.svg"):
+        for node in ET.parse(p).getroot().iter():
+            if node.tag.endswith("text") and (node.text or "").startswith(ref+" · ") and node.text!=expected:
+                errors.append(f"Inkonsistente Gerätebox: {node.text}")
 
 if errors:
     print("\n".join(errors), file=sys.stderr)

@@ -1,59 +1,49 @@
-# Firmware-Anforderungen
+# Firmware-Anforderungen · Revision B
 
-**Neue Vorgabe vom 03.10.2026: Aufbau mit fertig bestückten Modulen, ohne selbst gelötete Zusatzplatine. Der folgende Rev.-A-Entwurf ist ein historischer Zwischenstand und noch keine Bestell- oder Aufbauempfehlung für die neue Ausführung. Controller, Versorgung und Anschlussplan werden gemeinsam neu ausgewählt.**
+Stand 03.10.2026. **Noch keine Firmware, Build-Konfiguration oder Hardwaretests.** Dieser Vertrag ist Grundlage der nächsten Implementierung. Maßgeblicher elektrischer Aufbau: [Elektronik](elektronik.md).
 
-Stand: 26.09.2026. **Spezifikation, noch keine implementierte oder getestete Firmware.** Zielplattform: Arduino Uno R3 / ATmega328P; vorgesehene Bibliothek: AccelStepper.
+## Pins und Zeiten
 
-## Pinvertrag
-
-| Uno-Pin | Funktion | Verhalten |
+| Uno-Pin | Funktion | Pegel |
 |---|---|---|
-| D2 | STEP über R1/Q1 | LOW = Optokoppler aus, HIGH = aktiv; Ruhezustand LOW |
-| D3 | DIR über R2/Q2 | Richtung durch realen Drehtest zuordnen |
-| D4 | unbenutzt | Nicht anschließen; J0.5 bleibt frei |
-| D7 | PIR über U2 | `INPUT`; HIGH = Bewegung; kein Pull-up nötig |
-| D13 | eingebaute LED | Bereitschaft/Status; keine externe LED erforderlich |
-| D8 | reserviert | ENA wird in Rev. A nicht angeschlossen |
+| D2 | STEP → U4 STEMMA-In | HIGH aktiviert STEP über PUL− |
+| D3 | DIR → U5 STEMMA-In | HIGH aktiviert DIR über DIR− |
+| A0 | PIR über J1.1 | Analogauswertung mit internem Pull-up |
+| D4 / D7 / D8 | Frei | Kein Rev.-A-PIR an D7 |
 
-## Zustände
+D2/D3 zunächst LOW setzen, dann OUTPUT aktivieren. Kein Schritt beim Start. A0 `INPUT_PULLUP`, ADC-Referenz `DEFAULT` (Vcc). Pull-up beim Lesen nicht abschalten. Analogpins können diesen Modus nutzen; [Arduino-Dokumentation](https://github.com/arduino/docs-content/blob/main/content/learn/02.microcontrollers/02.analog-input/analog-input.md).
 
-Die mechanische Startposition vor dem Einschalten bei ausgeschalteter Motorversorgung einrichten. Beim Start wird die aktuelle Position als relativer Nullpunkt angenommen; eine automatische Positionsprüfung gibt es nicht.
+STEP-HIGH und STEP-LOW jeweils mindestens **500 µs**, DIR mindestens **1 ms** vor der nächsten STEP-Flanke setzen. Konservative Prüfwerte für diese Ausführung; Erstbetrieb bleibt bei **100 Pulse/s**. Beschleunigungs-/Bremsrampen in Software, keine blockierenden `delay()` oder `runToPosition()`. ADC, Fehlerüberwachung und Bewegung müssen gleichzeitig weiterlaufen. 1600 Pulse/Motorumdrehung, 3200 Pulse/Hauptachsenumdrehung.
 
-1. **START/ANLAUF:** D2/D3 zuerst LOW initialisieren; keine Pulse. Sensor nach jedem Einschalten oder Reset 60 s stabilisieren lassen. Währenddessen erkannte PIR-Ereignisse verwerfen.
-2. **WARTEN AUF LOW:** Erst nach der Anlaufzeit mindestens 500 ms durchgehend PIR-LOW erkennen. Ein bereits anliegendes HIGH löst keine Fahrt aus.
-3. **BEREIT:** Eine neue steigende Flanke, mindestens 50 ms bestätigt, startet die Sequenz. Keine manuelle Freigabe erforderlich.
-4. **VORFAHRT:** relativer Zielweg mit Geschwindigkeits- und Beschleunigungsbegrenzung.
-5. **PAUSE:** zeitgesteuert mit `millis()`, ohne blockierendes Warten.
-6. **RÜCKFAHRT:** zum gespeicherten Startwert; Beschleunigung und Bremsung.
-7. **COOLDOWN:** mindestens 5 s, danach wieder WARTEN AUF LOW. PIR-Ereignisse während der Sequenz nicht aufstauen.
+## PIR-Auswertung
 
-`motor.run()` muss im Hauptloop häufig aufgerufen werden. Zustandswechsel und Sensor werden auch während der Fahrt ausgewertet. Ausschalten erfolgt über S0; ein kontrollierter Softwarestopp per Schalter ist nicht vorgesehen. S0 ist kein Not-Halt.
+Alle 10 ms messen. Die folgenden 10-Bit-Bereiche sind **Startwerte zur Kalibrierung**, keine Messwerte des vorhandenen Sensors:
 
-Nach Reset oder Stromwiederkehr wird eine unterbrochene Fahrt verworfen. Die Steuerung wird nach dem beschriebenen Startablauf automatisch wieder bereit und kann auf eine neue Bewegung reagieren. Sie erkennt eine verschobene mechanische Ausgangsposition nicht.
+| ADC-Wert | Zustand |
+|---|---|
+| 0–200 | Gültiges LOW |
+| 450–850 | Gültige Bewegung; mindestens 100 ms stabil |
+| 201–449 und 851–1023 | Ungültig; nie als Bewegung interpretieren |
 
-## Parameter
+OUT nominal 3–3,3 V liegt bei nominal 5-V-ADC-Referenz ungefähr bei 614–675. Ein offenes OUT wird durch den Pull-up typischerweise nahe 1023 gezogen. Tatsächliche Bereiche am vorhandenen Sensor einschließlich Pull-up, 3-m-Kabel und Motorbetrieb messen. Stabilitätszeiten setzen neue gültige Messwerte voraus; ungültige Messungen zählen weder als LOW noch als Bewegung.
 
-| Parameter | Erster Versuch ohne Arm | Späterer Planwert |
-|---|---:|---:|
-| Pulse je Hauptachsenumdrehung | 3200 | 3200 |
-| Maximalgeschwindigkeit | 50 Pulse/s | zunächst 100–300 Pulse/s, vor Ort prüfen |
-| Beschleunigung | 20 Pulse/s² | zunächst 50 Pulse/s², vor Ort prüfen |
-| Weg vor/zurück | 200 Pulse = 22,5° Hauptachse | konfigurierbar, bis 3200 Pulse nur bei freiem Vollkreis |
-| Pause | 1500 ms | 1500 ms |
-| Cooldown | 5000 ms | 5000 ms |
-| STEP-HIGH und STEP-LOW | jeweils mindestens 5 µs | identisch |
-| DIR stabil vor erstem STEP | mindestens 10 µs | identisch |
+Ungültiger Zustand für mindestens 100 ms: laufende Sequenz abbrechen, STEP LOW setzen, Fehler verriegeln. Kein automatisches Weiterfahren. Nach Fehler Startposition prüfen und bewusst neu starten. Nach einem zulässigen Sensorausgangswechsel wird innerhalb der Stabilitätsprüfung nicht voreilig ein Fehler verriegelt. Die Auswertung erkennt nicht jede Unterbrechung von 5V/GND und ist keine Sicherheitssteuerung.
 
-`setMinPulseWidth(5)` sichert nur die Pulsbreite. Den DIR-Vorlauf separat implementieren bzw. am Ausgang messen; eine Bibliotheksvoreinstellung ist dafür kein Nachweis. Bei HIGH an D2 leitet Q1, dadurch steigt die Spannung PUL+ gegen PUL−: keine zusätzliche STEP-Invertierung für die Transistorstufe erforderlich.
+## Ablauf
 
-Rechnung: `200 × 8 × (40/20) = 3200 Pulse/Umdrehung`.
-`Weg_Pulse = Winkel_Grad × 3200 / 360` mit sinnvoller Rundung.
+1. `WARMUP`: Nach Einschalten/Reset **60 s ohne Motorpulse**.
+2. `WAIT_LOW`: Mindestens **500 ms** durchgehend gültiges LOW abwarten.
+3. `READY`: Neue stabile LOW→Bewegung-Flanke akzeptieren; bestehendes HIGH startet keine Fahrt.
+4. `FORWARD`: Mit Beschleunigung begrenzte Pulszahl vorfahren.
+5. `PAUSE`: Einstellbare Pause ohne neue Fahrt.
+6. `RETURN`: Gleiche Pulszahl mit Rampen zurückfahren.
+7. `COOLDOWN`: Weitere PIR-Flanken ignorieren, danach wieder `WAIT_LOW`.
+8. `FAULT`: Pulse stoppen und Fehler verriegeln; kein automatischer Neustart einer alten Fahrt.
 
-Bei 1 m Radius ergeben 400 Pulse/s etwa **0,79 m/s** am Wagen. Die im Handover genannten 8 s pro Runde sind nur die Fahrzeit bei konstantem Tempo. Mit 80 Pulse/s² dauert eine 3200-Pulse-Fahrt aus dem Stillstand bis zum Stillstand etwa **13 s** (5 s Beschleunigung, 3 s konstant, 5 s Bremsung). Deshalb 400 Pulse/s nicht ungeprüft als „langsam“ übernehmen.
+Ungeklärte Parameter vor Implementierung als Konfiguration definieren: Fahrwinkel, Pause, Cooldown, Beschleunigung und Richtung. Für den ersten Versuch ohne Mechanik **1600 Pulse** als eine Motorumdrehung; am späteren Riemenaufbau 3200 Pulse als eine Hauptachsenumdrehung. Erst dann kleinen sicheren Fahrwinkel festlegen.
 
-## Ausfälle und spätere Tests
+Bei 1 m Radius und 3200 Pulsen/Hauptachsenumdrehung entsprechen 100 Pulse/s etwa **0,196 m/s**; ein erster Zielwert von 50 Pulse/s entspricht etwa **0,098 m/s**. Diese Werte gelten nach Erreichen der Geschwindigkeit; Rampen verlängern die Fahrt.
 
-- Kein automatisches Homing gegen einen Anschlag. Ohne Sensor existiert nur eine relative Softwareposition.
-- Nach Schrittverlust, Riemenschlupf oder Treiberabschaltung manuell neu ausrichten und Steuerung zurücksetzen.
-- Tests der späteren Firmware: Start mit PIR HIGH und LOW; keine Pulse während 60 s Anlauf; mindestens 500 ms LOW erst nach Anlauf; neue Flanke mindestens 50 ms; dauerhaftes HIGH; Trigger während Fahrt/Cooldown; `millis()`-Überlauf; Reset während Fahrt verwirft die alte Sequenz; erneute automatische Bereitschaft; fehlender Sensor.
-- Motor nur am Prüfstand ansteuern, bevor Arm/Wagen montiert werden. Die detaillierte Prüfreihenfolge steht in [Inbetriebnahme](inbetriebnahme.md).
+## Position und Ausfälle
+
+Kein Home-Sensor. Startposition vor Einschalten bei ausgeschalteter Motorversorgung manuell setzen. Nach Reset alte Sequenz verwerfen, 60-s-Anlauf und neue PIR-Flanke verlangen. Ein Ausfall von PS1 bei weiterlaufendem Uno wird nicht automatisch erkannt: gemeinsam abschalten, Position neu einrichten und neu starten. Blockade oder Schrittverlust erzeugt ebenfalls unbekannte Position. ENA bleibt frei; der Treiber kann im Stillstand bestromen. Ein Softwarefehler oder S0 garantiert keine sofortige mechanische Stillsetzung.

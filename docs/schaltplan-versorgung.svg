@@ -1,145 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1540" viewBox="0 0 1800 1540">
-<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#152536} .wire{fill:none;stroke:#253b50;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}</style>
-<rect width="1800" height="1540" fill="white"/>
-<text x="35" y="46" font-size="29" font-weight="bold">Blatt 1 / 2 — Netzversorgung, 48-V-Motorversorgung und Schutzleiter</text>
-<text x="35" y="79" font-size="18">Rev. A · ÜBERHOLT seit 03.10.2026 · Neue Vorgabe: fertige Module ohne Lötplatine</text>
-<text x="35" y="108" font-size="17">Gleiche Netznamen sind verbunden. Punkte = Verbindung. Kreuzungen ohne Punkt = keine Verbindung.</text>
-<rect x="30" y="130" width="1740" height="285" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="46" y="160" font-size="21" font-weight="bold">Steckübersicht Schweiz · zwei Netzteile an derselben Mehrfachsteckdose</text>
-<rect x="55" y="190" width="300" height="170" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="71" y="220" font-size="21" font-weight="bold">CH-Wandsteckdose</text>
-<text x="72" y="250" font-size="17">230 V / 50 Hz · Typ 13</text>
-<text x="72" y="280" font-size="17">30-mA-FI/RCD vorhanden</text>
-<text x="72" y="310" font-size="17">E45 nur bei fehlendem RCD</text>
-<polyline class="wire" points="355,275 505,275"/>
-<text x="372" y="257" font-size="16">CH-Stecker</text>
-<rect x="505" y="175" width="480" height="215" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="521" y="205" font-size="21" font-weight="bold">S0 · CH-Mehrfachsteckdose</text>
-<text x="525" y="243" font-size="17">Typ-13-Buchsen · 10 A gesamt</text>
-<text x="525" y="276" font-size="17">Gemeinsamer EIN/AUS-Schalter</text>
-<text x="525" y="309" font-size="17">L/N zweipolig, PE durchverbunden</text>
-<circle cx="955" cy="245" r="19" fill="white" stroke="#253b50" stroke-width="2"/>
-<text x="949" y="251" font-size="17" font-weight="bold">1</text>
-<polyline class="wire" points="974,245 1260,245"/>
-<circle cx="955" cy="350" r="19" fill="white" stroke="#253b50" stroke-width="2"/>
-<text x="949" y="356" font-size="17" font-weight="bold">2</text>
-<polyline class="wire" points="974,350 1260,350"/>
-<text x="1005" y="223" font-size="17" font-weight="bold">W1 · CH-Typ-12-Stecker</text>
-<text x="1005" y="272" font-size="16">3-adrige Netzleitung</text>
-<rect x="1260" y="205" width="485" height="85" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="1276" y="235" font-size="21" font-weight="bold">PS1 · LRS-350-48</text>
-<text x="1276" y="268" font-size="17">Motornetzteil · Klemmenanschluss unten</text>
-<text x="1005" y="328" font-size="17" font-weight="bold">PS2 direkt einstecken</text>
-<text x="1005" y="377" font-size="16">CH-/Eurostecker</text>
-<rect x="1260" y="310" width="485" height="85" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="1276" y="340" font-size="21" font-weight="bold">PS2 · USB-Netzteil</text>
-<text x="1276" y="373" font-size="17">5 V → W2 USB-Kabel → U1 Arduino Uno R3</text>
-<g transform="translate(0,330)">
-<rect x="30" y="135" width="1740" height="475" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="46" y="165" font-size="21" font-weight="bold">Leistungsteil · 230 V nur im geschlossenen Netzbereich; Motorverdrahtung nicht auf Lochraster</text>
-<rect x="55" y="198" width="225" height="335" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="72" y="228" font-size="18" font-weight="bold">S0 · Steckplatz 1</text>
-<text x="72" y="270" font-size="16">CH-Mehrfachsteckdose</text>
-<text x="72" y="300" font-size="16">W1 eingesteckt:</text>
-<text x="72" y="330" font-size="16">CH-Typ-12-Stecker</text>
-<text x="72" y="360" font-size="16">L / N / PE</text>
-<text x="72" y="429" font-size="16">Leiste nicht öffnen</text>
-<text x="72" y="458" font-size="16">PE durchverbunden</text>
-<polyline class="wire" points="280,250 375,250"/>
-<text x="289" y="238" font-size="17" font-weight="bold">L_SW</text>
-<polyline class="wire" points="280,330 375,330"/>
-<text x="289" y="318" font-size="17" font-weight="bold">N_SW</text>
-<polyline class="wire" points="280,410 375,410"/>
-<text x="289" y="398" font-size="17" font-weight="bold">PE</text>
-<polyline class="wire" points="375,250 385,250"/>
-<rect x="385" y="242" width="70" height="16" fill="white" stroke="#253b50" stroke-width="2"/>
-<polyline class="wire" points="455,250 465,250"/>
-<text x="375" y="228" font-size="17">F1 · T6,3 A</text>
-<polyline class="wire" points="465,250 595,250"/>
-<text x="485" y="231" font-size="16">W1 L</text>
-<polyline class="wire" points="375,330 595,330"/>
-<text x="488" y="310" font-size="16">W1 N</text>
-<polyline class="wire" points="375,410 595,410" style="stroke:#36813f"/>
-<circle cx="425" cy="410" r="4" fill="#253b50"/>
-<text x="456" y="388" font-size="18" font-weight="bold">XPE</text>
-<rect x="595" y="195" width="300" height="330" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="611" y="225" font-size="21" font-weight="bold">PS1 · LRS-350-48</text>
-<text x="610" y="257" font-size="21" font-weight="bold">L</text>
-<text x="610" y="337" font-size="21" font-weight="bold">N</text>
-<text x="610" y="417" font-size="21" font-weight="bold">PE</text>
-<text x="690" y="325" font-size="18">Eingang: 230 V</text>
-<text x="690" y="355" font-size="18">Wahlschalter</text>
-<text x="690" y="385" font-size="18">auf 230 V!</text>
-<text x="834" y="257" font-size="20" font-weight="bold">+V</text>
-<text x="834" y="442" font-size="20" font-weight="bold">−V</text>
-<polyline class="wire" points="895,250 970,250"/>
-<polyline class="wire" points="970,250 980,250"/>
-<rect x="980" y="242" width="70" height="16" fill="white" stroke="#253b50" stroke-width="2"/>
-<polyline class="wire" points="1050,250 1060,250"/>
-<text x="970" y="228" font-size="17"></text>
-<text x="944" y="204" font-size="18">F2 · T8 A / 63 VDC</text>
-<polyline class="wire" points="1060,250 1210,250"/>
-<polyline class="wire" points="385,250 455,250"/>
-<polyline class="wire" points="980,250 1050,250"/>
-<polyline class="wire" points="895,435 1130,435 1130,330 1210,330"/>
-<text x="929" y="418" font-size="19" font-weight="bold">M48−</text>
-<text x="1090" y="231" font-size="19" font-weight="bold">+48 V</text>
-<rect x="1210" y="195" width="280" height="365" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="1226" y="225" font-size="21" font-weight="bold">U3 · DM860T V3.0</text>
-<text x="1228" y="257" font-size="19" font-weight="bold">AC (1)</text>
-<text x="1228" y="337" font-size="19" font-weight="bold">AC (2)</text>
-<text x="1228" y="395" font-size="17">48 VDC an AC/AC</text>
-<text x="1228" y="424" font-size="17">Nur für DM860T V3.0.</text>
-<text x="1228" y="453" font-size="17">Typenschild prüfen.</text>
-<rect x="1580" y="195" width="170" height="365" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="1593" y="220" font-size="13" font-weight="bold">M1 · 34HS46-6004S1</text>
-<text x="1594" y="545" font-size="17">NEMA 34</text>
-<polyline class="wire" points="1490,250 1580,250" style="stroke:#253b50"/>
-<text x="1500" y="237" font-size="14">A+ schwarz</text>
-<text x="1593" y="258" font-size="19" font-weight="bold">A+</text>
-<polyline class="wire" points="1490,330 1580,330" style="stroke:#36813f"/>
-<text x="1500" y="317" font-size="14">A− grün</text>
-<text x="1593" y="338" font-size="19" font-weight="bold">A−</text>
-<polyline class="wire" points="1490,410 1580,410" style="stroke:#b33333"/>
-<text x="1500" y="397" font-size="14">B+ rot</text>
-<text x="1593" y="418" font-size="19" font-weight="bold">B+</text>
-<polyline class="wire" points="1490,490 1580,490" style="stroke:#2463af"/>
-<text x="1500" y="477" font-size="14">B− blau</text>
-<text x="1593" y="498" font-size="19" font-weight="bold">B−</text>
-<text x="60" y="578" font-size="18">F1/F2: 6,3×32 mm, eigene berührungsgeschützte Halter. Leistungslitzen 1,5 mm²; Motor mit mitgeliefertem Kabel.</text>
-<rect x="30" y="635" width="540" height="330" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="46" y="665" font-size="21" font-weight="bold">XPE · Schutzleiterverteilung</text>
-<polyline class="wire" points="425,410 555,410 555,690 500,690" style="stroke:#36813f"/>
-<text x="53" y="712" font-size="18">W1 PE → XPE → PS1 PE</text>
-<text x="53" y="747" font-size="18">XPE → Metallgehäuse</text>
-<text x="53" y="782" font-size="18">XPE → Metall-Montageplatte</text>
-<text x="53" y="817" font-size="18">XPE → leitfähiger Deckel (flexible Brücke)</text>
-<text x="53" y="852" font-size="18">XPE → Motorrahmen / Motorgehäuse</text>
-<text x="53" y="887" font-size="18">J3-Kabelschirm → PE am Gehäuseeintritt</text>
-<text x="53" y="942" font-size="18" font-weight="bold">Eigene gesicherte PE-Anschlüsse, grün-gelb.</text>
-<rect x="595" y="635" width="1175" height="330" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="611" y="665" font-size="21" font-weight="bold">5-V-Versorgung · PS2 direkt in Steckplatz 2 derselben CH-Mehrfachsteckdose S0</text>
-<rect x="625" y="708" width="270" height="170" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="641" y="738" font-size="21" font-weight="bold">PS2 · USB-Netzteil</text>
-<text x="640" y="770" font-size="17">230 V ← S0, Steckplatz 2</text>
-<text x="640" y="813" font-size="18">5 V / ≥1 A, geschlossen</text>
-<polyline class="wire" points="895,790 1160,790"/>
-<text x="936" y="765" font-size="19" font-weight="bold">W2 · USB-A/B</text>
-<rect x="1160" y="708" width="265" height="170" rx="6" fill="white" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="1176" y="738" font-size="21" font-weight="bold">U1 · Arduino Uno R3</text>
-<text x="1176" y="799" font-size="20" font-weight="bold">USB-B</text>
-<polyline class="wire" points="1425,752 1705,752"/>
-<text x="1475" y="731" font-size="18" font-weight="bold">5V → +5V (Blatt 2)</text>
-<polyline class="wire" points="1425,837 1705,837"/>
-<text x="1475" y="821" font-size="18" font-weight="bold">GND → GND (Blatt 2)</text>
-<text x="620" y="925" font-size="18">Beim Programmieren: Motor aus, USB-Kabel von PS2 auf Rechner umstecken. VIN bleibt frei.</text>
-<rect x="30" y="990" width="1740" height="130" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
-<text x="46" y="1020" font-size="21" font-weight="bold">Anschlüsse und Montage</text>
-<text x="50" y="1050" font-size="18">M48−, Arduino-GND und PE nicht miteinander verbinden.</text>
-<text x="50" y="1077" font-size="18">U3 PUL± / DIR±: siehe Blatt 2. ENA± / ALM± / BRK± bleiben frei. S0 ist der Hauptschalter, kein Not-Halt.</text>
-<text x="50" y="1104" font-size="18">230-V-Anschlüsse abdecken. W1 am Gehäuse zugentlasten. Lüftungsöffnungen von PS1 und U3 freihalten.</text>
-</g>
-<polyline class="wire" points="35,1470 1765,1470"/>
-<text x="35" y="1498" font-size="18">Verbindliche Verbindungstabellen, Bauteilwerte und Aufbauhinweise: docs/elektronik.md</text>
-<text x="35" y="1524" font-size="17">Kein Verdrahten unter Spannung. 230-V-Baugruppe durch Elektrofachperson aufbauen und prüfen.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1590" viewBox="0 0 1800 1590">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,DejaVu Sans,sans-serif;fill:#152331;font-size:24px} .title{font-size:37px;font-weight:bold}.head{font-size:27px;font-weight:bold}.small{font-size:22px}</style>
+<text x="55" y="65" class="title">Blatt 1 · Versorgung und Motor</text>
+<text x="55" y="105" class="small">03.10.2026 · Revision B · Entwurf, noch nicht aufgebaut/getestet</text>
+<polyline points="55,140 1745,140" fill="none" stroke="#c3ced8" stroke-width="4"/>
+<text x="55" y="182" class="head">A · Beide fertigen Netzteile in die vorhandene Schweizer Mehrfachsteckdose stecken</text>
+<rect x="65" y="225" width="485" height="220" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="262" class="head">S0 · CH-Mehrfachsteckdose</text>
+<text x="81" y="303" class="small">Typ-13-Buchsen · gemeinsamer Schalter</text>
+<text x="81" y="339" class="small">Steckplatz 1 → W1 → PS1</text>
+<text x="81" y="375" class="small">Steckplatz 2 → PS2</text>
+<text x="81" y="411" class="small">Vorhanden; beide Netzteile gemeinsam aus</text>
+<rect x="850" y="225" width="870" height="200" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="866" y="262" class="head">PS1 · Mean Well GST220A48-R7B</text>
+<text x="866" y="303" class="small">W1: Typ-12-Stecker ↔ IEC-C13-Buchse, 1,8 m</text>
+<text x="866" y="339" class="small">Netzteileingang: IEC-C14</text>
+<text x="866" y="375" class="small">Ausgang: 48 V / 4,6 A · 4-poliger Power-DIN-R7B</text>
+<polyline points="550,300 850,300" fill="none" stroke="#556779" stroke-width="4"/>
+<text x="585" y="280" class="small">W1 · fertiges Netzkabel</text>
+<rect x="65" y="520" width="670" height="155" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="557" class="head">PS2 · Goobay 44952 · USB-Netzteil</text>
+<text x="81" y="598" class="small">Steckt direkt in Steckplatz 2 von S0</text>
+<text x="81" y="634" class="small">USB-A-Ausgang: nominal 5 V</text>
+<polyline points="290,445 290,520" fill="none" stroke="#556779" stroke-width="4"/>
+<rect x="1170" y="520" width="550" height="155" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="1186" y="557" class="head">U1 · Arduino Uno R3</text>
+<text x="1186" y="598" class="small">W2 in USB-B-Buchse stecken</text>
+<text x="1186" y="634" class="small">5-V-Verteilung siehe Blatt 2</text>
+<polyline points="735,600 1170,600" fill="none" stroke="#bd2734" stroke-width="4"/>
+<text x="780" y="580" class="small">W2 · USB-A ↔ USB-B</text>
+<polyline points="55,735 1745,735" fill="none" stroke="#c3ced8" stroke-width="4"/>
+<text x="55" y="777" class="head">B · 48-V-Anschluss über W5; keine Arbeiten am Netzteilkabel oder an 230 V</text>
+<rect x="65" y="825" width="750" height="230" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="862" class="head">W5 · GlobTek KPPX4124641M0KPJX4(R)</text>
+<text x="81" y="903" class="small">Power-DIN-Buchse auf unveränderten PS1-Stecker</text>
+<text x="81" y="939" class="small">Nur männliches Ende der Verlängerung abschneiden</text>
+<text x="81" y="975" class="small">Vier AWG-18-Adern: 2 × +48 V, 2 × Rückleiter</text>
+<text x="81" y="1011" class="small">Kontaktlage durchmessen; Schirm am Schnitt isolieren</text>
+<polyline points="1720,350 1760,350 1760,800 440,800 440,825" fill="none" stroke="#bd2734" stroke-width="4"/>
+<rect x="900" y="825" width="330" height="100" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="916" y="862" class="head">X1 · WAGO 221-413</text>
+<text x="916" y="903" class="small">1 / 2: beide +48-V-Adern</text>
+<rect x="900" y="985" width="330" height="100" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="916" y="1022" class="head">X2 · WAGO 221-413</text>
+<text x="916" y="1063" class="small">1 / 2: beide Rückleiter</text>
+<polyline points="815,900 900,900" fill="none" stroke="#bd2734" stroke-width="4"/>
+<polyline points="815,1035 900,1035" fill="none" stroke="#556779" stroke-width="4"/>
+<rect x="1360" y="825" width="360" height="300" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="1376" y="862" class="head">U3 · DM860T V3.0</text>
+<text x="1376" y="903" class="small">AC (erste Klemme)</text>
+<text x="1376" y="939" class="small">AC (zweite Klemme)</text>
+<text x="1376" y="975" class="small">A+ / A− / B+ / B−</text>
+<text x="1376" y="1011" class="small">Signale: Blatt 2</text>
+<text x="1376" y="1047" class="small">ENA / ALM / BRK frei</text>
+<polyline points="1230,900 1360,900" fill="none" stroke="#bd2734" stroke-width="4"/>
+<text x="1240" y="880" class="small">X1.3</text>
+<polyline points="1230,1035 1305,1035 1305,936 1360,936" fill="none" stroke="#556779" stroke-width="4"/>
+<text x="1240" y="1015" class="small">X2.3</text>
+<text x="890" y="1160" class="small">X1.3 / X2.3 → U3 AC/AC: je kurze 1,5-mm²-Kupferlitze</text>
+<rect x="65" y="1190" width="750" height="230" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="1227" class="head">M1 · 34HS46-6004S1</text>
+<text x="81" y="1268" class="small">Motorlieferkabel, 1 m; keine Verlängerung vorgesehen</text>
+<text x="81" y="1304" class="small">Schwarz → A+       Grün → A−</text>
+<text x="81" y="1340" class="small">Rot → B+               Blau → B−</text>
+<text x="81" y="1376" class="small">Wicklungspaare vor Anschluss durchmessen</text>
+<polyline points="1530,1125 1530,1230 815,1230" fill="none" stroke="#895821" stroke-width="4"/>
+<text x="875" y="1210" class="small">Vier Motoradern → U3 A+/A−/B+/B−</text>
+<rect x="900" y="1270" width="820" height="185" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="916" y="1307" class="head">Vor dem Einschalten</text>
+<text x="916" y="1348" class="small">PS1 trocken und belüftet außerhalb der Steuerbox.</text>
+<text x="916" y="1384" class="small">48-V-Rückleiter X2 nicht an Arduino-GND brücken.</text>
+<text x="916" y="1420" class="small">W5-Steckerzuordnung messen; nie nach Farben raten.</text>
+<text x="65" y="1495" class="small">Beide AC-Klemmen akzeptieren 48 V DC nur für die hier bezeichnete U3-Version.</text>
+<text x="55" y="1555" class="small">Maßgebliche Pinliste und Aufbaufolge: docs/elektronik.md · Nur spannungslos verdrahten.</text>
 </svg>

@@ -1,61 +1,56 @@
-# Inbetriebnahme und Prüfprotokoll
+# Inbetriebnahme · Revision B
 
-**Neue Vorgabe vom 03.10.2026: Aufbau mit fertig bestückten Modulen, ohne selbst gelötete Zusatzplatine. Der folgende Rev.-A-Entwurf ist ein historischer Zwischenstand und noch keine Bestell- oder Aufbauempfehlung für die neue Ausführung. Controller, Versorgung und Anschlussplan werden gemeinsam neu ausgewählt.**
+**Noch nicht durchgeführt.** Sollprüfungen, keine bestandenen Tests. Reale Modelle, Revisionen und Messwerte am Ende eintragen. [Anschlussplan](elektronik.md) und [Firmware-Vertrag](firmware.md) gemeinsam beachten.
 
-**Alle Kästchen sind offen. Es wurde bisher weder aufgebaut noch gemessen.**
+## 1. Spannungsfrei
 
-## Vor Montage und Einschalten
+- Prüfen: DM860T tatsächlich V3.0, montierte Klemmen, S2 5 V und DIP-Stellungen gemäß Plan.
+- U6-Jumper auf 5 V, rote Modulversorgung tatsächlich aus A1/A2, keine externe Shieldversorgung.
+- Alle Verbindungen gegen Tabellen durchmessen, insbesondere U6 +5 V gegenüber X1 +48 V. Keine zusätzliche Verbindung von X2 an Signal-GND.
+- Motor: schwarz/grün bilden eine Wicklung, rot/blau die andere; Farben am tatsächlichen Motor bestätigen. Zwischen Wicklungen kein Durchgang.
+- W3 ist 1:1 und höchstens 3 m; PIR-Pinfolge prüfen. STEMMA-Kabel korrekt eingesteckt, offene Enden isoliert. PUL−/DIR− ausschließlich an die jeweiligen Minus-Ausgänge, keine zusätzliche GND-Brücke.
+- W5-Adern über die Kontaktlage am Mean-Well-Stecker identifizieren; GlobTek-Pinnummern nicht übernehmen. Beide Adern jeder Versorgungsschiene anschließen.
+- Alle Geräte isoliert befestigt, Durchführungen zugentlastet, Netzteile trocken und frei belüftet. Gehäuse-IP-Werte gelten nach eigenen Bohrungen nicht automatisch.
 
-- [ ] Tatsächliche Typen/Revisionen und Fotos von M1, U3 und PS1 dokumentiert.
-- [ ] PIR-Anschlüsse anhand der eigenen Platinenbeschriftung identifiziert.
-- [ ] U3-Eingangsbelegung und Stromtabelle stimmen mit dem referenzierten V3.0-Handbuch überein; S2 = 5 V.
-- [ ] Zwei Motorwicklungen spannungslos per Durchgang/Widerstand identifiziert. Keine Motorader mit Motorgehäuse verbunden.
-- [ ] Riemennaben, Passfedern und Wellenlänge passen tatsächlich; Schrauben gesichert.
-- [ ] Riemenabdeckung und Abgrenzung des gesamten Schwenkbereichs vorhanden.
+## 2. Nur Arduino und Signalmodule
 
-## Netzteilbaugruppe
+PS1 noch nicht mit U3 verbinden. PS2/W2 einschalten. Eine spätere Prüffirmware muss D2/D3 zunächst LOW halten und Messwerte ausgeben; sie existiert noch nicht.
 
-Durch eine Elektrofachperson: Schutzleiterdurchgängigkeit, Isolation, Berührungsschutz, Zugentlastung, Sicherungsauswahl, Schaltvermögen von S0 und örtlicher RCD. PS1 auf 230-V-Eingang stellen. Montage der Netzbaugruppe abgeschlossen dokumentieren, bevor die Steuerung angeschlossen wird.
+| Messung | Kriterium / Reaktion |
+|---|---|
+| U4/U5 STEMMA-V+ gegen GND | Nominal etwa 5 V aus Uno; Modulbereich 3–30 V. Keine 48 V und keine zusätzliche Modulversorgung. |
+| PUL+ gegen PUL−, DIR+ gegen DIR−, bei angeschlossenem Treibersignaleingang | LOW **0–0,5 V**, HIGH **4,5–5 V** gemäß DM860T-V3.0-Handbuch. Außerhalb: keine Motorfreigabe. |
+| A0 bei Sensor-LOW / Bewegung | Messwert stabil in den konfigurierten gültigen Bereichen; Werte mit Pull-up protokollieren. |
+| OUT-Leitung am Sensor abziehen | Ungültiger Messwert, keine Fahrt; bei laufendem Prüfabschnitt Abbruch/Fehler. 5V-/GND-Trennung separat untersuchen, keine vollständige Fehlererkennung voraussetzen. |
+| STEP/DIR mit vorhandenem Logikanalysator | HIGH/LOW mindestens 500 µs, DIR-Vorlauf mindestens 1 ms; keine Pulse während Warmup/Reset/Fehler. |
 
-- [ ] PE an PS1, Gehäuse/Deckel/Metallplatte und vorgesehenen Metallteilen geprüft.
-- [ ] PS1-Ausgang unbelastet gemessen: etwa 48 VDC, Polarität an F2 bestätigt.
-- [ ] F1 und F2 samt Haltern stimmen mit Schaltplan überein; F2 ist ausdrücklich DC-geeignet.
-- [ ] S0 trennt im Betriebsaufbau beide Netzteile; beim Programmieren bleibt PS1 aus.
+Ein Logikanalysator bestätigt Zeiten, nicht analoge Pegelqualität. Statische Pegel mit Multimeter messen; bei unklaren Flanken zusätzlich Oszilloskopmessung organisieren. Keine Signalmessgeräte an 48 V anschließen.
 
-## Steuerung zuerst ohne 48 V
+## 3. Motornetzteil separat
 
-- [ ] +5V/GND nicht kurzgeschlossen; M48− und PE nicht unbeabsichtigt mit GND gebrückt.
-- [ ] RJ45-Pins 1→1, 2→2, 4→4, 5→5 geprüft, übrige Pins frei; kein Crossover-Kabel.
-- [ ] 5-V-Versorgung am Uno und am PIR gemessen; U2 muss innerhalb 4,5–5,5 V liegen.
-- [ ] U2.14 = +5V, U2.7 = GND; freie Eingänge auf GND.
-- [ ] Nach 60 s stabiler PIR-Anlaufzeit reagiert PIR_RAW ungefähr mit 0/3,3 V.
-- [ ] D7 zeigt gleiche Polarität, ungefähr 0/5 V; abgezogenes PIR-Kabel ergibt LOW.
-- [ ] J0.5 und Uno D4 bleiben frei; PIR direkt an J2 ohne zusätzliche Sensorplatine angeschlossen.
-- [ ] Reset erzeugt keine STEP-Pulse; R3/R4 halten Q1/Q2 aus.
+U3 noch abgetrennt. PS1 an W1/S0, W5 an PS1. An X1/X2 ungefähr **48 V, Toleranz ±2 %** und Polarität messen. Ausschalten, Entladung abwarten, Spannung kontrollieren, erst danach U3/M1 anschließen. Nicht am 230-V-Eingang messen oder das fertige Netzteil öffnen.
 
-## Treiber und Motor ohne Riemen/Arm
+## 4. Motor ohne Rohr, Riemen und Wagen
 
-- [ ] Erst eine Firmware gemäß `firmware.md` entwickeln und Softwaretests durchführen. Die Beispiele im historischen Handover nicht als fertige Steuerung flashen.
-- [ ] Motor festgeschraubt, Welle frei, U3 zunächst auf 2,40 A Peak, 8× Microstepping.
-- [ ] STEP/DIR-Spannung **differenziell zwischen + und −** am Treiber geprüft. D2 HIGH muss PUL-Optokoppler aktivieren.
-- [ ] Oszilloskop/Logikanalysator: mindestens 5 µs HIGH/LOW und mindestens 10 µs DIR-Vorlauf nachgewiesen. Messgerät-Masse nur auf GND der Steuerung, nicht auf beliebige Leistungsklemmen legen.
-- [ ] Je 1600 Pulse ergeben eine Motorumdrehung; Richtung und Rückfahrt stimmen.
-- [ ] Nach Einschalten/Reset 60 s keine Fahrt; erst danach mindestens 500 ms PIR-LOW und eine neue, mindestens 50 ms bestätigte HIGH-Flanke zulassen.
-- [ ] Dauerhaftes PIR-HIGH löst nach Reset keine Fahrt aus. Reset während Fahrt verwirft die alte Sequenz; anschließend gilt erneut der vollständige Startablauf.
+Niedrige Stromstufe 2,40 A Peak / 1,70 A RMS. Mit Rampe 1600 Pulse fahren, volle Motorumdrehung und beide Richtungen prüfen. Mindestens 500-µs-Pulse und maximal 100 Pulse/s. Reset, PIR-Fehler und gemeinsames Aus-/Einschalten prüfen; alte Fahrt darf nicht fortgesetzt werden.
 
-## Mechanik schrittweise hinzufügen
+PIR mit endgültigem W3 testen, während Motor startet, stoppt und die Richtung wechselt. Fehltrigger oder ungültige ADC-Werte sind zu beheben, bevor der Wagen angeschlossen wird. Erst nach mindestens 30 Minuten Betrieb Motor-/Treiber-/Gehäusetemperatur und Versorgung protokollieren. Herstellergrenzen einhalten; Strom nicht vorsorglich maximal einstellen.
 
-1. Riemen/Hauptachse ohne Rohr: 3200 Pulse ergeben eine Hauptachsenumdrehung.
-2. Rohr ohne Wagen: zunächst kleiner Winkel, niedrige Geschwindigkeit, Freiraum beobachten.
-3. Wagen ohne Spinne: Boden, Rollwiderstand und Verbindung prüfen; erforderliche Zugkraft messen.
-4. Vollständiger Wagen: Geschwindigkeit und Beschleunigung schrittweise anpassen; keine Personen im Bewegungsraum.
-5. PIR am endgültigen Ort mit endgültigem 3-m-Kabel testen, insbesondere ohne zusätzliche Sensorkondensatoren bei wiederholten Motorstarts/-stopps und laufendem Netzteillüfter. Keine Phantomtrigger/Resets akzeptieren.
-6. Wiederholte Zyklen mindestens 30 Minuten unter Aufsicht, Temperatur und Positionsmarkierung beobachten. Bei Drift, Schlupf, Klemmen oder starker Erwärmung abbrechen.
+**Netzteilreserve und Bremsen praktisch prüfen:** PS1 darf nicht in Überlast abschalten. Beim Bremsen darf die 48-V-Schiene nicht unzulässig ansteigen; Entwurfsziel höchstens **50 V**, W5 ist für **56 V** ausgelegt. Für kurze Überspannungsspitzen reicht ein gewöhnliches Multimeter nicht als Nachweis; bei Bedarf geeignete Messung organisieren. Wenn das Ziel nicht eingehalten wird, Rampen/Last anpassen und erforderliche fertige Schutzbaugruppe neu auswählen. Keine pauschale Rückspeisefestigkeit behaupten.
 
-S0 abschalten und Nachlauf erfassen. Eine Netzabschaltung nimmt dem Motor anschließend das Haltemoment. Die Anlage darf nicht auf einer Neigung selbständig wegrollen. Nach Stromausfall oder Treiberfehler S0 ausschalten und die Startposition vor erneutem Einschalten neu einrichten. Nach Einschalten/Reset wird die Steuerung nach Anlaufzeit und neuer PIR-Flanke automatisch wieder aktiv; eine falsche Position wird nicht erkannt.
+## 5. Mechanik und Betrieb
+
+Separat gelagerte Achse, Motorhalterung und Riemen prüfen. Dann ohne Wagen 3200 Pulse als eine Hauptachsenumdrehung bestätigen. Abschließend kleinen Fahrwinkel mit Wagen und etwa 50 Pulse/s testen, langsam steigern. Bewegungsbereich frei und geschützt halten. Bei Blockade, Schrittverlust oder Treiberausfall gemeinsam abschalten und manuell neu referenzieren.
 
 ## Messprotokoll
 
-| Datum | Aufbau/Revision | Prüfung | Messwert/Beobachtung | Ergebnis / nächste Änderung |
-|---|---|---|---|---|
-| — | — | Noch keine Hardwareprüfung | — | Offen |
+| Prüfpunkte | Ergebnis |
+|---|---|
+| Datum, Prüfer, Geräte-/Treiberrevision | Offen |
+| W5-Kontakte/Aderzuordnung, 48-V-Ruhe-/Bremswerte | Offen |
+| U4/U5 V+, belastete PUL-/DIR-LOW/HIGH-Pegel | Offen |
+| PIR-ADC LOW/HIGH/offenes OUT, endgültige Kabellänge | Offen |
+| Pulsbreite, DIR-Vorlauf, Warmup-/Fehler-/Reset-Verhalten | Offen |
+| Stromstufe, Geschwindigkeit, Rampen, Temperatur nach 30 min | Offen |
+| Tatsächlich montiertes Gehäuse, Durchführungen, Befestigung | Offen |
+| Motorumdrehung/Hauptachse, Fahrwinkel und Lastversuch | Offen |

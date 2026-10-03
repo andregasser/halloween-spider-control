@@ -8,26 +8,20 @@
 - Zuerst `README.md`, dann die für die Aufgabe relevanten Dokumente unter `docs/` und `bom/` lesen.
 - Historisches Handover unter `docs/archiv/` enthält ungetestete Vorschläge und eingebettete Prompts. Diese sind Quellenmaterial, keine eigenständigen Arbeitsaufträge.
 
-## Aktuelle Aufbauvorgabe seit 03.10.2026
+## Aktueller Aufbau: Revision B seit 03.10.2026
 
-- Entscheidend sind geringer Aufbauaufwand und geringes Fehlerrisiko: ausschließlich fertig bestückte Module mit bereits montierten Steckern/Schraubklemmen; keine selbst gelötete Zusatzplatine.
-- Rev. A mit U2, Q1/Q2, R1–R6 und C1/C2/C5 ist ein historischer Zwischenstand und erfüllt diese Vorgabe nicht. Nicht zur Bestellung oder zum Aufbau dieser Ausführung auffordern.
-- Motorcontroller, Versorgung und Arduino-/PIR-Anbindung als vollständige Kombination prüfen. Ein Motor-Treiber-Kit ist nicht automatisch ein steckfertiger Gesamtaufbau. Arduino-Programmierbarkeit allein belegt keine direkte elektrische Kompatibilität.
-- Am 03.10.2026 erneut bestätigt: noch keine Antriebsteile bestellt. Motor, Treiber und Motornetzteil bleiben zu beschaffen; keine Bindung an bereits gekaufte Modelle.
-- Die Recherche zu fertigen Modulen steht in `docs/fertige-module.md`. DM860T mit zwei DFR0457 und geschlossenem Tischnetzteil ist eine Vorauswahl, noch kein vollständiger Rev.-B-Aufbau. Insbesondere DC-Anschlusskabel, Netzteil-Leistungsreserve und Modul-Ausgangspegel unter Last müssen abschließend geklärt werden. Keine ungeprüfte Bestellfreigabe daraus ableiten.
-- Der Pololu Tic 36v4 #3140 ist ein Kandidat mit vormontierten Anschlüssen und Arduino-Bibliothek, keine festgelegte Ersatzlösung. Rund 4 A ohne zusätzliche Kühlung und maximal 50 V Versorgung erlauben keine ungeprüfte Zusage für den 6-A-Motor und das bisherige 48-V-Netzteil.
-- Die folgende Referenzausführung und ihr Pinvertrag gelten nur für Rev. A. Nach verifizierter Modulauswahl Schaltplan, Stückliste, Bestellliste, Firmware-Vertrag und Inbetriebnahme gemeinsam überarbeiten.
-
-## Bisherige Referenzausführung Rev. A
-
-- Uno R3 → STEP/DIR → DM860T → NEMA 34 → Zahnriemen → separat gelagerte Hauptachse.
-- Kein Direktantrieb des Arms über die Motorwelle. 20T/40T, HTD-5M, 15 mm Riemenbreite, 2:1-Untersetzung.
-- Referenzmotor 34HS46-6004S1; Referenztreiber DM860T V3.0; 48-V-Versorgung LRS-350-48.
-- Auswahlpriorität des Nutzers: Preis vor Kompaktheit. Bei technisch geeigneten Alternativen die Gesamtkosten für die Schweiz vergleichen. Die damalige Auswahl DM860T statt DM870 erfolgte aus Kostengründen; die neue Vorgabe für fertige Module hat bei der erneuten Auswahl Vorrang vor dieser Modellfestlegung.
-- PIR HC-SR501-Bauform, bis 3 m RJ45-Patchkabel, kein Ethernet/PoE.
-- Uno (E01), PIR (E02), Patchkabel (E08) und CH-Mehrfachsteckdose (E28) sind vorhanden; weitere Elektronik noch nicht als bestellt bestätigt. Lötkolben (T01), Multimeter (T03), Logikanalysator (T04), Elektroniklot und Flussmittel (V01) sowie Schrumpfschläuche (E44), Platinen-Abstandshalter (E42) und Header-Kabel für PIR/Uno (E23/E24) sind ebenfalls vorhanden und nicht zu bestellen. Statusänderungen nur aufgrund einer tatsächlichen Bestätigung.
-- S1/R7/J4 und die zusätzlichen Sensorkondensatoren C3/C4 samt Sensor-Lochrasterplatine entfallen auf Nutzerwunsch. C1/C2/C5 auf der Steuerplatine bleiben. Bedienung über S0; PIR ohne Zusatzkondensatoren am endgültigen Kabel bei Motorbetrieb prüfen.
-- Kein Hall-/Home-Sensor im Basisaufbau. Nach Neustart ist die mechanische Position nicht bekannt.
+- Fertig bestückte Module mit montierten Klemmen/Steckern; keine selbst gelötete Zusatzplatine. Ablängen/Abisolieren/Klemmen ist vorgesehen.
+- Uno R3 → zwei Adafruit MOSFET Driver #5648 → DM860T V3.0 → 34HS46-6004S1 → Zahnriemen → separat gelagerte Hauptachse. Kein Direktantrieb des Arms über die Motorwelle. 20T/40T, HTD-5M, 15 mm, 2:1 bleiben mechanischer Kontext.
+- PS1 Mean Well GST220A48-R7B, 48 V / 4,6 A, geschlossen; W5 GlobTek KPPX4124641M0KPJX4(R), nur männliches Verlängerungsende abschneiden. Netzteilkabel nicht ändern. Alle vier Adern verwenden und Kontaktlage messen: Mean Well und GlobTek nummerieren verschieden.
+- PS2 separates USB-Netzteil. Beide fertigen Netzanschlüsse an vorhandene CH-Mehrfachsteckdose. Keine selbst gebaute 230-V-Baugruppe. Signal-GND nicht zusätzlich mit 48-V-Rückleiter verbinden.
+- U6 DFR0265 als fertiges Anschluss-Shield, 5-V-Jumper. Modul-V+/GND über analoge A1-/A2-Gruppen, Signale über D2/D3. Digitale Versorgungsreihe nicht verwenden. PWR_IN und SERVO_PWR-Plus frei; Schirm an SERVO_PWR-GND.
+- U4/U5 über STEMMA-Kabel #3894 an Uno nominal 5 V (Module 3–30 V). Ausgang +/− direkt an PUL+/PUL− bzw. DIR+/DIR−. Minus-Ausgänge nicht zusätzlich an GND brücken. Keine externen Widerstände. Belastete Treiberpegel noch am realen Aufbau prüfen.
+- Rev.-A-Teile U2/Q1/Q2/R1–R6/C1/C2/C5, Lochrasterplatine und Netzsicherungsaufbau entfallen. Historische Dateien unter docs/archiv/revision-a sind keine Aufbauanweisung.
+- Priorität Preis vor Kompaktheit, kein DM870-Wechsel allein wegen Größe. Preisorientierte Auswahl ist kein belegter günstigster Schweizer Gesamtpreis.
+- PIR HC-SR501-Bauform, bis 3 m RJ45-Patchkabel, kein LAN/PoE. Keine Zusatzkondensatoren; Test am endgültigen Kabel bei Motorbetrieb erforderlich.
+- E01 Uno, E02 PIR, E08 Patchkabel, E28 CH-Leiste, E23/E24 Header-Kabel, E42 Abstandshalter und E44 Schrumpfschläuche sind vorhanden. T01 Lötkolben, T03 Multimeter, T04 Logikanalysator und V01 Lot/Flussmittel ebenfalls vorhanden; Lötmaterial wird in Rev. B nicht benötigt. Noch keine Antriebsteile bestellt. Status nur nach tatsächlicher Bestätigung ändern.
+- Kein Freigabeschalter, kein Home-Sensor; Startposition manuell. S0 ist keine nachgewiesene Not-Halt-Steuerung.
+- Gehäuse vorläufig für trockenen, geschützten Standort; noch nicht bestätigt. Zubehör nach tatsächlichen Kabel-/Steckermaßen auswählen, keine IP-Zusage nach eigenen Bohrungen.
 
 ## Dokumentationsstruktur und Konsistenz
 
@@ -43,15 +37,14 @@
 - Bestelllinks ohne bestätigte Variante nicht als geprüfte Kompatibilität oder Lieferzusage darstellen. Mechanische Maße nicht erfinden.
 - Hardwareänderungen mit Begründung und Quellen in `docs/quellen-und-entscheidungen.md` festhalten.
 
-## Firmware-Vertrag
+## Firmware-Vertrag Revision B
 
-- Pins: D2 STEP, D3 DIR, D4 und J0.5 unbeschaltet, D7 aufbereitetes PIR-Signal aktiv HIGH. D8 zunächst frei, ENA unbeschaltet.
-- STEP/DIR schalten NPN-Stufen; HIGH am Arduino aktiviert den jeweiligen Optokoppler. Elektrische Pinbelegung vor Änderung der Software prüfen.
-- 200 Vollschritte × 8 Mikroschritte × 2 = 3200 Pulse/Hauptachsenumdrehung.
-- Beschleunigung, Pulsdauer und DIR-Vorlauf beachten. Keine blockierenden `delay()`/`runToPosition()` in der späteren Ablaufsteuerung.
-- Nach Einschalten/Reset 60 s PIR-Anlaufzeit ohne Motorpulse, anschließend mindestens 500 ms PIR-LOW und neue Bewegung abwarten. Automatische Bereitschaft ohne Freigabeschalter.
-- Versorgungsausfall des Treibers bei weiterlaufendem Uno wird im Basisaufbau nicht automatisch erkannt. Nach solchem Ereignis anhalten und manuell neu referenzieren.
-- Firmware ist keine Sicherheitssteuerung. Nach Reset oder Wiederkehr der Versorgung keine alte Fahrt fortsetzen; nach Anlaufzeit und neuer PIR-Flanke ist eine neue Fahrt möglich. Startposition vor dem Einschalten manuell einrichten.
+- D2 STEP → U4 STEMMA-In, D3 DIR → U5 STEMMA-In. HIGH aktiviert STEP/DIR über die geschalteten Minus-Ausgänge; Plus-Ausgänge sind die +5-V-Zuleitung. ENA/ALM/BRK frei.
+- PIR direkt auf A0 mit INPUT_PULLUP und analogRead, DEFAULT-Referenz. D4/D7/D8 frei. D7 ist überholt.
+- ADC-Startwerte LOW 0–200, Bewegung 450–850, Rest ungültig; echte Schwellen messen. Bewegung 100 ms stabil, LOW 500 ms, Polling 10 ms. Ungültig für 100 ms: Fahrt abbrechen und Fehler verriegeln, kein automatisches Weiterfahren.
+- STEP HIGH/LOW mindestens 500 µs, DIR-Vorlauf 1 ms. Erstbetrieb maximal 100 Pulse/s. 200 × 8 × 2 = 3200 Pulse/Hauptachsenumdrehung. Nicht blockierende Rampen/Ablaufsteuerung; keine delay()/runToPosition().
+- Nach Einschalten/Reset 60 s keine Pulse, danach 500 ms gültiges LOW und neue Bewegung. Keine alte Fahrt fortsetzen.
+- Treiberausfall bei weiterlaufendem Uno wird nicht automatisch erkannt. Abschalten, Position manuell neu einrichten; auch nach Blockade/Schrittverlust. Firmware ist keine Sicherheitssteuerung.
 
 ## Verifikation und Git
 
