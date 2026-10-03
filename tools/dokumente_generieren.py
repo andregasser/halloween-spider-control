@@ -26,7 +26,9 @@ Lochrasterplatinen, HCT-Chip, Sockel, Einzeltransistoren, externe Kondensatoren,
 order='# Bestellliste · Elektronik\n\n'+intro+f'**Nicht bestellen, bereits vorhanden:** {inventory}.\n\n'
 order+='''Die festgelegte Elektronik ist unten mit konkreten Artikelmodellen aufgeführt. Gehäuse und Durchführungen setzen derzeit einen **trockenen, geschützten Standort** voraus; Ausführung nach realem Layout bestätigen. Offene Zubehörpositionen gehören zum vollständigen Aufbau und sind bewusst keine vermeintlich geprüften Kaufartikel.
 
-**Produkt** verlinkt einen konkreten Artikel. **Offen** bedeutet: kein bestätigter Artikel, erst nach Aufmaß/Bestandsprüfung bestellbar. Linkrecherche und technische Auswahl sind keine Liefer- oder Hardwarefunktionszusage. CHF-Endpreise, Packungsmengen, Einfuhr, Versand und Halloween-Lieferdatum im Warenkorb prüfen. Ein Gesamtpreis ist wegen offener Zubehörmaße und Versandkosten noch nicht verlässlich berechenbar.
+**Lieferanforderung: Erhalt in der Schweiz binnen 7 Kalendertagen nach Bestellung.** Bei Bestellung am 03.10.2026 bedeutet das spätestens 10.10.2026. Ein angezeigter Lagerbestand plus übliche Versandzeit ist ein Angebot für die kurzfristige Beschaffung, keine garantierte Zustellung. Lieferdatum für die eigene Schweizer Adresse vor Zahlung prüfen. **Motor E03, Treiber E04 und Halterung E47 erfüllen die Wochenfrist bisher nicht nachweislich; bei Power-DIN-Kabel E49 ist der CH-Termin offen.** Erst diese Positionen klären, bevor der gesamte Aufbau als rechtzeitig beschaffbar gilt.
+
+**Produkt** verlinkt einen konkreten Artikel. **Offen** bedeutet: kein bestätigter Artikel, erst nach Aufmaß/Bestandsprüfung bestellbar. Die Lieferbewertung stammt aus der Recherche vom 03.10.2026; Webabrufe können zwischengespeicherte Händlerangaben enthalten. **Hersteller-Standardlieferzeit** ist die Nachbeschaffungszeit und darf nicht mit dem Versand vorhandener Händler-Lagerware verwechselt werden. [Lieferbelege und Alternativen](../docs/quellen-und-entscheidungen.md#beschaffung-binnen-einer-woche). CHF-Endpreise, Packungsmengen, Einfuhr und Versand im Warenkorb prüfen. Ein Gesamtpreis ist wegen offener Zubehörmaße und Versandkosten noch nicht verlässlich berechenbar.
 
 Die Menge ist der Bedarf. Bei E50 zwei WAGO-Einzelstücke, bei E55 zwei STEMMA-Kabel #3894, bei E56 ein fertig bestücktes Shield wählen. Vor Bestellung Module vollständig mit Anschlussklemmen/Kabeln und Treiber ausdrücklich als **V3.0** bestätigen. [Technische Auswahl und Abnahmekriterien](../docs/fertige-module.md).
 
@@ -35,16 +37,19 @@ Automatisch erzeugt aus [teile.csv](teile.csv); Änderungen dort pflegen.
 '''
 for status,title in [('bestellen','Festgelegte Elektronik und Anschlussmaterial'),('abklaeren','Ausführung noch klären'),('aufmass','Gehäuse und Zubehör nach Aufmaß'),('bestand_pruefen','Bedingter Bedarf; zuerst Bestand prüfen')]:
  selected=[r for r in rows if r['Status']==status]
- if selected:order+='## '+title+'\n\n'+table(['Erledigt','ID','Menge','Teil / genaue Auswahl','Lieferant / Link','Vor Bestellung beachten'],[['☐',r['ID'],quantity(r),r['Teil']+' — '+r['Spezifikation'],supplier(r),r['Bestellhinweis']] for r in selected])
+ if selected:order+='## '+title+'\n\n'+table(['Erledigt','ID','Menge','Teil / genaue Auswahl','Lieferant / Link','Lieferbewertung / Hinweis','Vor Bestellung beachten'],[['☐',r['ID'],quantity(r),r['Teil']+' — '+r['Spezifikation'],supplier(r),r['Lieferbewertung']+' — '+r['Lieferhinweis'],r['Bestellhinweis']] for r in selected])
 order+='''## Beschaffung bündeln
 
-1. **STEPPERONLINE:** Motor E03, Halterung E47, Treiber E04.
-2. **Bastelgarage:** zwei RJ45-Buchsenadapter E09.
-3. **BerryBase Schweiz:** USB-Netzteil E06, USB-A/B-Kabel E07, Anschluss-Shield E56 und WAGO E50.
-4. **DigiKey Schweiz:** Power-DIN-Kabel E49, zwei Adafruit-Module E48 und zwei STEMMA-Kabel E55; PS1 E05 und gegebenenfalls das gewählte Gehäuse samt Platte mitbestellen. PS1 alternativ Distrelec 300-42-762 oder [Simpex GST220A48-R7B](https://www.simpex.ch/shop/stromversorgungen/netzteile-ac-dc/tischnetzteile/gst220a48-r7b/), jeweils ein Netzteil, keine Großpackung.
-5. **Conrad / Elektrobedarf Troller:** W4 und 1 m DC-Litze; zusätzliche Versandkosten mit lokalen Bezugsoptionen vergleichen.
+1. **Zuerst Termin klären:** Motor E03, Halterung E47 und Treiber E04 bei STEPPERONLINE; keine China-Standardlieferung für die Wochenfrist einplanen. E49 bei DigiKey mit konkretem CH-Termin bestätigen. Ohne diese vier Klärungen ist die Gesamtbeschaffung offen.
+2. **DigiKey Schweiz:** PS1 E05, zwei STEMMA-Kabel E55 und Shield E56; E49 nach Terminbestätigung bündeln. Zwei Adafruit-Module E48 und RJ45-Adapter E09 können bei bestätigtem Lagerbestand ebenfalls hier mitbestellt werden, um zusätzliche Versandkosten zu sparen. Nur reguläre DigiKey-Lagerware, keine Hersteller-Nachbestellung/Marktplatzlieferung.
+3. **Play-Zone Schweiz:** zwei Adafruit-Module E48 als Bezugsquelle ab eigenem CH-Lager, Priority oder reservierte Abholung. Originalmodell #5648 bleibt.
+4. **Bastelgarage:** zwei RJ45-Buchsenadapter E09, Priority oder reservierte Abholung.
+5. **BerryBase Schweiz:** USB-Netzteil E06, USB-A/B-Kabel E07 (1,80 m) und zwei WAGO E50. Angegebene 2–5 Tage für die eigenen CH-Lieferdaten prüfen.
+6. **Bürklin Elektronik:** 1 m W4 E26 und 1 m DC-Litze E35 gemeinsam. Ausgewiesene Lagerware mit 1–2 Tagen Schweiz-Transport; Zuschnitt, Zahlung und Einfuhr können die Gesamtzeit verlängern.
 
-Distrelec wurde für PS1 als konkrete Alternative recherchiert. Preise/Lagerbestand waren dort nicht zuverlässig abrufbar. Die Händleraufteilung ist kein Nachweis für den niedrigsten Schweizer Gesamtpreis; Kleinmaterial nach Möglichkeit bei ohnehin verwendeten Lieferanten bündeln und gleiche Spezifikation beibehalten.
+**Ausweichquelle für E56:** Farnell Schweiz, DFR0265 / 2946070, gelistete Lagerware und Express 1–2 Arbeitstage. Distrelec/RS und Simpex wurden erneut für PS1 geprüft; mangels belastbarem aktuellem CH-Zustelltermin sind sie keine bestätigten Wochenfrist-Alternativen. Details und konkrete Links in den Lieferbelegen. Gehäuse und noch offene Zubehörmaße benötigen zusätzlich eine Ausführungs- und Terminprüfung.
+
+Die Händleraufteilung ist kein Nachweis für den niedrigsten Schweizer Gesamtpreis. E48 bei Play-Zone kostet beim Abruf CHF 5.90 pro Stück und zusätzlichen Versand; eine gemeinsame DigiKey-Lagerbestellung kann günstiger sein. Termin vor Preis optimieren, danach Versandkosten bündeln.
 
 Keine Bestellung wird durch diese Liste ausgelöst. Der 230-V-Anschluss besteht ausschließlich aus fertigen Steckverbindungen. Keine zusätzliche Dienstleistung für eine selbst gebaute Netzbaugruppe eingeplant.
 '''
