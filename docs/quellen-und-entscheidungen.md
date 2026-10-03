@@ -39,6 +39,8 @@ GlobTek und Mean Well verwenden **unterschiedliche Pinnummern**. Maßgeblich ist
 
 11. Nutzer verzichtet auf die Neubeschaffung des **Steuergehäuses E37 und der zugehörigen Montageplatte E53**. Temporärer Betrieb etwa vier Stunden, danach Abbau; bei Bedarf ist eigenes Gehäusematerial vorhanden. Beide festen Kaufpositionen entfallen aus der CSV. Lüftungszubehör E38 ist nur noch bedingter Bedarf; E40 wird nach tatsächlicher Montage gewählt. Befestigung, Isolation, Zugentlastung und freie Belüftung bleiben Aufbauanforderungen. Keine elektrische Anschlussänderung.
 
+12. **PIR-Sensorgehäuse E39 entfällt ebenfalls auf Nutzerwunsch.** Aus aktuellem Material-/Bestellbedarf entfernt. PIR und RJ45-Adapter bleiben vorgesehen; den Sensor fest ausrichten, Linse freihalten und Anschlussleitung zugentlasten. Keine elektrische Anschlussänderung.
+
 ## Schweizer Händler oder Amazon
 
 **Aktuelle Nutzerentscheidung vom 03.10.2026:** Keine Bestellung bei DigiKey oder Farnell, auch keine Empfehlungen als Ausweichquelle. Schweizer Händler oder Amazon bevorzugen. Die Wochenfrist bleibt verbindliche Beschaffungsanforderung. Diese Entscheidung ersetzt die Händlerempfehlungen der früheren Recherche weiter unten; der elektrische Aufbau bleibt unverändert.

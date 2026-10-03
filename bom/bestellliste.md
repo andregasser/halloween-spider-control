@@ -4,7 +4,7 @@ Stand **03.10.2026 · Revision B · fertige Module, keine selbst gelötete Zusat
 
 **Nicht bestellen, bereits vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E23 PIR-Anschlussleitung, E24 Uno-Verbindungsleitungen, E26 W4 Steuerkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E29 W1 Netzanschlussleitung, E35 DC-Leistungslitze, E42 Platinen-Abstandshalter, E44 Schrumpfschlauch, T03 Multimeter, T04 Logikanalysator.
 
-Die festgelegte Elektronik ist unten mit konkreten Artikelmodellen aufgeführt. **Steuergehäuse E37 und Montageplatte E53 nicht bestellen:** Bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden. Für den temporären Aufbau ist ein **trockener, geschützter Standort** angenommen; tatsächliche Montage und Zugentlastung festlegen. Offene Zubehörpositionen gehören zum vollständigen Aufbau und sind bewusst keine vermeintlich geprüften Kaufartikel.
+Die festgelegte Elektronik ist unten mit konkreten Artikelmodellen aufgeführt. **Steuergehäuse E37, Montageplatte E53 und PIR-Sensorgehäuse E39 nicht bestellen:** Bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden. Für den temporären Aufbau ist ein **trockener, geschützter Standort** angenommen; tatsächliche Montage und Zugentlastung festlegen. Offene Zubehörpositionen gehören zum vollständigen Aufbau und sind bewusst keine vermeintlich geprüften Kaufartikel.
 
 **Lieferanforderung: Erhalt in der Schweiz binnen 7 Kalendertagen nach Bestellung.** Bei Bestellung am 03.10.2026 bedeutet das spätestens 10.10.2026. Ein angezeigter Lagerbestand plus übliche Versandzeit ist ein Angebot für die kurzfristige Beschaffung, keine garantierte Zustellung. Lieferdatum für die eigene Schweizer Adresse vor Zahlung prüfen. **Antrieb E03/E04/E47, Motornetzteil E05 und Anschlusskabel E49/E55 sind noch nicht mit passendem Liefertermin beschaffbar belegt.** Erst diese Positionen klären, bevor der gesamte Aufbau als rechtzeitig beschaffbar gilt.
 
@@ -39,11 +39,10 @@ Automatisch erzeugt aus [teile.csv](teile.csv); Änderungen dort pflegen.
 | ☐ | E49 | 1 Stück | W5 Power-DIN-Verlängerung — GlobTek KPPX4124641M0KPJX4(R), 1 m, 4×AWG18, Stecker/Buchse | Schweizer Händler oder Amazon; Bezugsquelle offen — Produkt offen | Offen — Keine verifizierte Schweizer/Amazon-Bezugsquelle für das spezifizierte Power-DIN-Kabel gefunden. Wochenfrist nicht belegt. | Ein GlobTek KPPX4124641M0KPJX4(R), 1 m, vier AWG18-Adern. Nur männliches Ende abschneiden, alle vier Adern verwenden und Kontaktlage messen. Kein ungeprüfter DIN-/Barrel-Ersatz. Nicht zusammenlöten; fertiges Kabel bleibt erforderlich. |
 | ☐ | E43 | 1 Satz | Aderendhülsen, Ringkabelschuhe und PE-Schrauben — Aderendhülsen für tatsächliche Schraubklemmen und 0,25/1,5 mm² sowie Motorkabel | Elektrogehäuse-/Elektroniklieferant, Auswahl offen — Produkt offen | Offen — Artikel/Aufmaß und Liefertermin noch offen; keine Wochenlieferung belegt. | Querschnitt der mitgelieferten Motorleitungen und Klemmvorgaben prüfen. Konkrete Größen/Mengen danach wählen. Keine PE-Ringkabelschuhe im Basisaufbau. |
 
-## Montage- und Sensorzubehör nach Aufmaß
+## Montagezubehör nach Aufmaß
 
 | Erledigt | ID | Menge | Teil / genaue Auswahl | Lieferant / Link | Lieferbewertung / Hinweis | Vor Bestellung beachten |
 |---|---|---|---|---|---|---|
-| ☐ | E39 | 1 Stück | PIR-Sensorgehäuse — PIR-Sensorgehäuse für B1 und J2, Linse freiliegend | Elektrogehäuse-/Elektroniklieferant, Auswahl offen — Produkt offen | Offen — Artikel/Aufmaß und Liefertermin noch offen; keine Wochenlieferung belegt. | Sensor und Adapter tatsächlich messen, Linse frei, feste Ausrichtung. Modell nach Aufstellort/Abmessungen festlegen. |
 | ☐ | E40 | 1 Satz | Kabelverschraubungen/Zugentlastungen — Zugentlastungen passend zu W2/W3/W5/Motorkabel und Sensorleitung; Durchführungen nur bei verwendeter Abdeckung | Elektrogehäuse-/Elektroniklieferant, Auswahl offen — Produkt offen | Offen — Artikel/Aufmaß und Liefertermin noch offen; keine Wochenlieferung belegt. | Nach tatsächlicher Montage wählen. Bei Abdeckung aus Bestand Kabeldurchmesser und USB-/RJ45-Steckergröße messen. Fertige Stecker nicht abschneiden; ggf. geteilte Durchführung verwenden. Keine festen vier Steuerbox-Durchführungen vorgeschrieben. |
 | ☐ | E54 | 1 Satz | Befestigungen für Treiber, Klemmen und Motorhalterung — Passende Schrauben/Muttern/Unterlegscheiben, ggf. WAGO-Halter | Elektronik-/Befestigungslieferant, Auswahl offen — Produkt offen | Offen — Artikel/Aufmaß und Liefertermin noch offen; keine Wochenlieferung belegt. | Lieferumfang von Treiber/ST-M7 prüfen. Schraubenlängen nach Materialdicke und Motorflansch wählen, nicht pauschal erfinden. Gehäuse/Platine nicht leitend überbrücken. |
 
@@ -66,7 +65,7 @@ Automatisch erzeugt aus [teile.csv](teile.csv); Änderungen dort pflegen.
 
 **Zusätzlich bestätigt vorhanden:** E26 Steuerkabel W4 und E35 DC-Leistungslitze. Beide aus Bestand verwenden; dafür entfällt die Beschaffung bei Bürklin.
 
-E37/E53 sind gestrichen. Nur tatsächlich fehlendes Montage-/Sensorzubehör benötigt zusätzlich Aufmaß und Lieferterminprüfung. Distrelec wird als mögliche Bezugsquelle weiter berücksichtigt. Für Amazon ist bislang kein konkretes Angebot mit passender Variante und belegtem CH-Termin aufgenommen; Suchseiten werden nicht als Bestelllinks ausgegeben. [Aktuelle Händlerprüfung](../docs/quellen-und-entscheidungen.md#schweizer-händler-oder-amazon).
+E37/E53/E39 sind gestrichen. Nur tatsächlich fehlendes Montagezubehör benötigt zusätzlich Aufmaß und Lieferterminprüfung. Distrelec wird als mögliche Bezugsquelle weiter berücksichtigt. Für Amazon ist bislang kein konkretes Angebot mit passender Variante und belegtem CH-Termin aufgenommen; Suchseiten werden nicht als Bestelllinks ausgegeben. [Aktuelle Händlerprüfung](../docs/quellen-und-entscheidungen.md#schweizer-händler-oder-amazon).
 
 Die Händleraufteilung ist kein Nachweis für den niedrigsten Schweizer Gesamtpreis. Erst Zustellung binnen sieben Kalendertagen sichern, danach Versandkosten bündeln. Fehlende Bezugsquellen dürfen nicht als vollständige, sofort bestellbare Einkaufsliste verstanden werden.
 

@@ -30,7 +30,7 @@ Die Bauteilnummer bleibt auf beiden Blättern gleich. Jeder Gerätekasten enthä
 | W4 | 2 × 2 × 0,25 mm², paarverseilte Signalleitung zum Treiber, höchstens 0,5 m |
 | W5 | GlobTek KPPX4124641M0KPJX4(R), 1-m-Power-DIN-Verlängerung, treiberseitig gekürzt |
 
-Für den etwa vierstündigen Aufbau ist kein neues Steuergehäuse samt Montageplatte vorgesehen. Geräte mit vorhandenen Abstandshaltern befestigen und Leitungen zugentlasten; bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden.
+Für den etwa vierstündigen Aufbau sind weder ein neues Steuergehäuse samt Montageplatte noch ein separates PIR-Sensorgehäuse vorgesehen. Den PIR fest ausrichten und seine Linse freihalten. Geräte mit vorhandenen Abstandshaltern befestigen und Leitungen zugentlasten; bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden.
 
 ## 1. Netzanschluss und Motorversorgung
 
