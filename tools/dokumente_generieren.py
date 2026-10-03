@@ -52,9 +52,9 @@ order+='''## Beschaffung bündeln
 2. **Bastelgarage (CH):** zwei FIT0849-RJ45-Adapter E09, kein DFR0265-Shield mehr. Angezeigte Lagerware, Priority oder reservierte Abholung.
 3. **Motornetzteil E05:** Simpex ist ein Schweizer Händler mit genauem Modell, zeigt aber nur „lieferbar auf Bestellung“. Zustelldatum noch offen. Distrelec/RS nennt inzwischen Nachschub erst am 16.10.2026 und erfüllt damit die Wochenfrist nicht.
 4. **Antrieb und Spezialkabel:** Bezugsquelle bei Schweizer Händler oder Amazon für E03/E04/E47 und E49/E55 noch offen. Herstellerreferenzen sind keine Empfehlung für eine China-Bestellung. Keine ungeprüften Ersatzmodelle oder falschen JST-/DIN-Kabel einsetzen.
-5. **BerryBase CH-Shop:** E06/E07/E50/E57 sind konkrete Angebote. CH-Impressum und AGB nennen unterschiedliche Vertragsadressen; tatsächlichen Vertragspartner, Versandort und CH-Termin im Checkout prüfen. Die angezeigten 2–5 Tage sind keine bestätigte Wochenzustellung.
+5. **BerryBase CH-Shop:** E06/E50/E57 sind konkrete Angebote. CH-Impressum und AGB nennen unterschiedliche Vertragsadressen; tatsächlichen Vertragspartner, Versandort und CH-Termin im Checkout prüfen. Die angezeigten 2–5 Tage sind keine bestätigte Wochenzustellung.
 
-**Zusätzlich bestätigt vorhanden:** E26 Steuerkabel W4 und E35 DC-Leistungslitze. Beide aus Bestand verwenden; dafür entfällt die Beschaffung bei Bürklin.
+**Zusätzlich bestätigt vorhanden:** E07 USB-A/B-Kabel W2 (ca. 2 m), E26 Steuerkabel W4 und E35 DC-Leistungslitze. Aus Bestand verwenden; USB-Kabel nicht bei BerryBase und Meterware nicht bei Bürklin bestellen.
 
 E37/E53/E39 sind gestrichen. Nur tatsächlich fehlendes Montagezubehör benötigt zusätzlich Aufmaß und Lieferterminprüfung. Distrelec wird als mögliche Bezugsquelle weiter berücksichtigt. Für Amazon ist bislang kein konkretes Angebot mit passender Variante und belegtem CH-Termin aufgenommen; Suchseiten werden nicht als Bestelllinks ausgegeben. [Aktuelle Händlerprüfung](../docs/quellen-und-entscheidungen.md#schweizer-händler-oder-amazon).
 

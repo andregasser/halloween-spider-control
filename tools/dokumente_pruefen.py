@@ -64,7 +64,7 @@ for ref in ["U1", "U3", "U4", "U5", "B1", "M1", "PS1", "PS2", "S0"] + ["X1","X2"
 
 # Revisionswechsel und bestätigten Bestand gegen versehentliche Altbestellungen sichern.
 by_id={r["ID"]:r for r in rows}
-for item in ["E01","E02","E08","E23","E24","E28","E29","E42","E44","T03","T04"]:
+for item in ["E01","E02","E07","E08","E23","E24","E28","E29","E42","E44","T03","T04"]:
     if by_id.get(item,{}).get("Status")!="vorhanden":errors.append(f"Bestätigter Bestand verändert: {item}")
 obsolete={"E10","E11","E12","E13","E14","E16","E17","E18","E20","E21","E30","E31","E32","E33","E34","E36","E41","E56"}
 if obsolete.intersection(ids):errors.append("Entfallene Teile in aktueller CSV")

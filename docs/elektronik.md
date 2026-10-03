@@ -25,7 +25,7 @@ Die Bauteilnummer bleibt auf beiden Blättern gleich. Jeder Gerätekasten enthä
 | X1 / X2 | WAGO 221-413, je 3 Anschlüsse für +48 V / 48-V-Rückleiter |
 | X3 / X4 | WAGO 221-415, je 5 Anschlüsse für Uno +5 V / Signal-GND |
 | W1 | Vorhandenes 230-V-Anschlusskabel; für PS1 CH-Stecker auf IEC-C13-Buchse auswählen |
-| W2 | USB-A-auf-USB-B-Datenkabel zum Uno |
+| W2 | Vorhandenes USB-A-auf-USB-B-Datenkabel zum Uno, ca. 2 m |
 | W3 | Vorhandenes normales Cat5-/Cat6-RJ45-Patchkabel, 1:1, bis 3 m |
 | W4 | 2 × 2 × 0,25 mm², paarverseilte Signalleitung zum Treiber, höchstens 0,5 m |
 | W5 | GlobTek KPPX4124641M0KPJX4(R), 1-m-Power-DIN-Verlängerung, treiberseitig gekürzt |

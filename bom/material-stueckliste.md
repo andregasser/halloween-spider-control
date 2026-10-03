@@ -2,7 +2,7 @@
 
 Stand **04.10.2026 · Revision B · fertige Module, keine selbst gelötete Zusatzplatine**. Noch nicht aufgebaut/getestet, keine Bestellung ausgelöst. Umfang: Elektronik, elektrische Leitungen und Gehäusezubehör sowie ausdrücklich Motorhalterung ST-M7. Keine weitere Konstruktion/Mechanik.
 
-**Bestätigt vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E23 PIR-Anschlussleitung, E24 Uno-Verbindungsleitungen, E26 W4 Steuerkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E29 W1 Netzanschlussleitung, E35 DC-Leistungslitze, E42 Platinen-Abstandshalter, E44 Schrumpfschlauch, T03 Multimeter, T04 Logikanalysator.
+**Bestätigt vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E07 W2 USB-Kabel, E08 W3 Patchkabel, E23 PIR-Anschlussleitung, E24 Uno-Verbindungsleitungen, E26 W4 Steuerkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E29 W1 Netzanschlussleitung, E35 DC-Leistungslitze, E42 Platinen-Abstandshalter, E44 Schrumpfschlauch, T03 Multimeter, T04 Logikanalysator.
 
 Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) nennt Lieferanten; [Anschlussplan](../docs/elektronik.md) beschreibt die Verdrahtung. Leitungs-/Zubehörmengen sind Planbedarf; Packungsmengen stehen in der Bestellliste.
 
@@ -27,7 +27,7 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 |---|---|---|---|---|
 | E05 | 1 Stück | PS1 geschlossenes Motornetzteil — Mean Well GST220A48-R7B, 48 V / 4,6 A / 221 W, IEC-C14 und Power-DIN-R7B | Versorgt den einzelnen Treiber ohne eigene Netzverdrahtung | Bezugsquelle/Ausführung klären |
 | E06 | 1 Stück | PS2 USB-Netzteil — Geschlossenes Steckernetzteil, geregelt 5 V / mindestens 1 A, USB-A, CH-Stecker oder flacher Eurostecker | Versorgt Uno und Sensor getrennt vom Motorstrom | Noch bestellen |
-| E07 | 1 Stück | W2 USB-Kabel — USB-2.0-A auf USB-B, Datenkabel; ausgewählte BerryBase-Variante 1,80 m | Versorgung und Programmierung des Uno | Noch bestellen |
+| E07 | 1 Stück | W2 USB-Kabel — USB-A auf USB-B, Datenkabel aus Bestand, ca. 2 m | Versorgung und Programmierung des Uno | Vorhanden |
 | E28 | 1 Stück | S0 CH-Mehrfachsteckdose/Hauptschalter — Fertige CH-Steckdosenleiste, Typ-13-Buchsen, 10 A gesamt, mindestens 2 Steckplätze, gemeinsamer zweipoliger Schalter, PE durchverbunden | Gemeinsame Abschaltung beider Netzteile | Vorhanden |
 | E29 | 1 Stück | W1 Netzanschlussleitung — Benötigt: fertiges CH-Typ-12-auf-IEC-C13-Netzkabel mit Schutzleiter; passende Länge aus Bestand | Steckfertiger Netzanschluss PS1 an vorhandene CH-Leiste | Vorhanden |
 | E49 | 1 Stück | W5 Power-DIN-Verlängerung — GlobTek KPPX4124641M0KPJX4(R), 1 m, 4×AWG18, Stecker/Buchse | Fertig montierte passende Netzteilbuchse, andere Seite in Treiberklemmen | Bezugsquelle/Ausführung klären |

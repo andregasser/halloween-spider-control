@@ -15,7 +15,7 @@ Eine etwa 5 kg schwere Spinne auf Rollen bewegt sich langsam auf einer Kreisbahn
 | Motortreiber | STEPPERONLINE DM860T **V3.0**, auf 5-V-Signale eingestellt |
 | Motor | STEPPERONLINE 34HS46-6004S1, NEMA 34, mit 1-m-Kabel |
 | Motorversorgung | Geschlossenes Mean Well GST220A48-R7B, 48 V / 4,6 A |
-| Arduino-Versorgung | Separates USB-Netzteil und USB-A/B-Datenkabel |
+| Arduino-Versorgung | Separates USB-Netzteil und vorhandenes USB-A/B-Datenkabel (ca. 2 m) |
 | Gemeinsames Einschalten | Vorhandene Schweizer Mehrfachsteckdose S0 |
 
 ```mermaid
