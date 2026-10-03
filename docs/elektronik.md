@@ -15,7 +15,6 @@ Die Bauteilnummer bleibt auf beiden Blättern gleich. Jeder Gerätekasten enthä
 |---|---|
 | U1 | Arduino Uno R3 |
 | U3 | STEPPERONLINE DM860T V3.0 |
-| U6 | DFRobot IO Expansion Shield V7.1, DFR0265, auf Uno gesteckt |
 | U4 / U5 | Adafruit MOSFET Driver #5648, je ein Modul für STEP / DIR |
 | B1 | Vorhandenes PIR-Modul, HC-SR501-Bauform |
 | M1 | STEPPERONLINE 34HS46-6004S1 |
@@ -24,6 +23,7 @@ Die Bauteilnummer bleibt auf beiden Blättern gleich. Jeder Gerätekasten enthä
 | S0 | Vorhandene geschaltete CH-Mehrfachsteckdose |
 | J1 / J2 | DFRobot FIT0849, RJ45-Buchse auf Schraubklemmen; Steuerung / Sensor |
 | X1 / X2 | WAGO 221-413, je 3 Anschlüsse für +48 V / 48-V-Rückleiter |
+| X3 / X4 | WAGO 221-415, je 5 Anschlüsse für Uno +5 V / Signal-GND |
 | W1 | Vorhandenes 230-V-Anschlusskabel; für PS1 CH-Stecker auf IEC-C13-Buchse auswählen |
 | W2 | USB-A-auf-USB-B-Datenkabel zum Uno |
 | W3 | Vorhandenes normales Cat5-/Cat6-RJ45-Patchkabel, 1:1, bis 3 m |
@@ -55,27 +55,32 @@ V3.0 hat zwei mit **AC** beschriftete Versorgungsklemmen und akzeptiert dort 48 
 
 **Keine Brücke von X2 an die Arduino-GND-Klemmen.** Die Signalmasse wird nur in Abschnitt 2 verbunden. PS1 verbindet seinen DC-Rückleiter intern mit Schutzleiter; das ist eine Eigenschaft des fertigen Geräts, keine zusätzliche Verdrahtungsaufgabe. Das Netzteil schützt seinen Ausgang gegen Kurzschluss/Überlast. Zusätzliche Sicherungen aus Rev. A sind nicht übernommen: alle Adern verwenden, DC-Abgang kurz halten und nur den einen Treiber versorgen. Änderungen an Leitungsquerschnitt oder Abgängen erfordern erneute Auslegung.
 
-## 2. Steckbare Arduino-Anschlüsse und Signalmodule
+## 2. Direkte Arduino-Anschlüsse und Signalmodule
 
-**U6 DFRobot DFR0265** wird vollständig auf die Buchsenleisten des Uno gesteckt. Seine farbigen Stifte machen Signal, Versorgung und GND einzeln zugänglich. Den **5V/3.3V-Jumper auf 5 V** setzen, Schalter auf **PROG** lassen. Die externe Versorgung **PWR_IN bleibt frei**. Kein Funkmodul und keine zusätzliche Versorgung anschließen.
+**Das DFRobot-Anschluss-Shield U6 / DFR0265 entfällt.** Der Uno bleibt per USB-B versorgt. Zwei fertige Hebelklemmen **X3/X4, WAGO 221-415**, verteilen seine 5 V und GND. Innerhalb einer Klemme sind alle fünf Plätze verbunden; **X3 und X4 niemals miteinander verbinden.** Die Platznummern werden von links nach rechts selbst beschriftet, sie sind keine WAGO-Werksnummern.
 
-Die Module U4/U5 bekommen je ein fertig konfektioniertes **Adafruit-3894-Kabel**, JST PH 2 mm auf drei einzelne **Buchsen**. Diese Kabel sind nicht im Modul enthalten. Alle drei Kabelenden werden gesteckt; nichts abschneiden. Die freien Löt-/Headerplätze am Modul bleiben unbenutzt.
+U4/U5 bekommen jeweils ein unverändertes **Adafruit-3894-Kabel**, JST PH 2 mm auf drei einzelne Buchsen. Diese Kabel sind nicht im Modul enthalten. Vorhandene 2,54-mm-Header-Leitungen E24 mit männlichen Steckern passen in diese Buchsen und in die Uno-Buchsenleisten. Die freien Löt-/Headerplätze am Modul bleiben unbenutzt. [Uno-Pins](https://docs.arduino.cc/resources/pinouts/A000066-full-pinout.pdf), [Adafruit #3894](https://www.adafruit.com/product/3894).
 
-| Funktion | Verbindung an U6 | Modul / Sensorleitung |
+| Von | Nach | Ausführung |
 |---|---|---|
-| STEP | Digitalgruppe **D2, grüner Signalstift** | U4 STEMMA **In**, weiße Leitung |
-| Versorgung U4 | Analoggruppe **A1, roter +V-Stift** | U4 STEMMA **V+**, rote Leitung |
-| GND U4 | Analoggruppe **A1, schwarzer GND-Stift** | U4 STEMMA **GND**, schwarze Leitung |
-| DIR | Digitalgruppe **D3, grüner Signalstift** | U5 STEMMA **In**, weiße Leitung |
-| Versorgung U5 | Analoggruppe **A2, roter +V-Stift** | U5 STEMMA **V+**, rote Leitung |
-| GND U5 | Analoggruppe **A2, schwarzer GND-Stift** | U5 STEMMA **GND**, schwarze Leitung |
-| PIR OUT | Analoggruppe **A0, blauer Signalstift** | J1.1 |
-| PIR +5 V | Analoggruppe **A0, roter +V-Stift** | J1.5 |
-| PIR GND | Analoggruppe **A0, schwarzer GND-Stift** | J1.2 |
-| Zweite PIR-GND-Ader | Analoggruppe **A3, schwarzer GND-Stift** | J1.4 |
-| W4-Schirm | **SERVO_PWR, Minus-/GND-Schraubklemme** | Nur Ende an der Steuerung; SERVO_PWR-Plus bleibt frei |
+| Uno **D2** | U4 STEMMA **In**, weiße E55-Buchse | Vorhandene Stecker/Stecker-Header-Leitung |
+| Uno **D3** | U5 STEMMA **In**, weiße E55-Buchse | Vorhandene Stecker/Stecker-Header-Leitung |
+| Uno **5V**, Power-Leiste | **X3.1** | Header-Stecker am Uno; anderes Ende abisoliert |
+| **X3.2** | U4 STEMMA **V+**, rote E55-Buchse | Abisolierter Leiter an X3; Header-Stecker in E55-Buchse |
+| **X3.3** | U5 STEMMA **V+**, rote E55-Buchse | Wie U4 |
+| **X3.4** | **J1.5**, PIR +5 V | Beidseitig abisolierte Leitung |
+| **X3.5** | Frei | Nicht belegen |
+| Uno **erster GND nach 5V**, Power-Leiste | **X4.1** | Header-Stecker am Uno; anderes Ende abisoliert |
+| **X4.2** | U4 STEMMA **GND**, schwarze E55-Buchse | Abisolierter Leiter an X4; Header-Stecker in E55-Buchse |
+| **X4.3** | U5 STEMMA **GND**, schwarze E55-Buchse | Wie U4 |
+| **X4.4** | **J1.2**, PIR GND | Beidseitig abisolierte Leitung |
+| **X4.5** | **W4-Schirm** | Nur Steuerungsende; treiberseitig isolieren |
+| Uno **zweiter GND nach 5V**, Power-Leiste | **J1.4**, zweite PIR-GND-Ader | Header-Stecker am Uno; anderes Ende abisoliert |
+| Uno **A0** | **J1.1**, PIR OUT | Header-Stecker am Uno; anderes Ende abisoliert |
 
-**Bewusst die roten/schwarzen A1-/A2-Stifte für die Modulversorgung verwenden.** Die rote Versorgungsreihe der digitalen D-Pins wird hier nicht benutzt. Im Herstellerplan läuft diese über einen zusätzlichen Versorgungspfad; die Analoggruppen stellen bei gesetztem 5-V-Jumper die direkte Uno-5-V-Versorgung bereit. Die analogen Signalstifte A1/A2/A3 selbst bleiben frei. [U6-Herstellerplan](https://dfimg.dfrobot.com/wiki/18598/DFR0265_io-expansion-shield-for-arduino_schematics_V1.0.pdf).
+Die beiden GND-Buchsen der Power-Leiste liegen zwischen **5V und VIN** und sind intern verbunden. **VIN ist hier kein Anschluss.** A1/A2/A3 bleiben frei.
+
+E24-Bedarf: zwei Stecker/Stecker-Leitungen, acht Steckerleitungen mit freiem Ende und zwei beidseitig freie Leiter, aus vorhandenem Kabelmaterial. Für X3/X4 nur zum Klemmbereich passende Leiter verwenden: feindrähtig **0,14–4 mm²**, vorzugsweise vorhandene AWG24-/AWG22-Leitungen; Ausführung im Bestand prüfen. Je Platz nur einen abisolierten Leiter, **11 mm Abisolierlänge**. Keine Header-Metallstifte einklemmen, keine verzinnten Litzenenden, zu dünne Litzen nicht durch Falten anpassen. Hebel schließen und leicht ziehen. STEMMA-Kabel selbst nicht kürzen; die Steckverbindungen zugentlasten. [WAGO 221-415](https://www.wago.com/ch-de/installationsklemmen/verbindungsklemme-mit-hebeln/p/221-415).
 
 | Moduleingang / Ausgang | Verbindung zum Treiber |
 |---|---|
@@ -89,9 +94,9 @@ Die Module U4/U5 bekommen je ein fertig konfektioniertes **Adafruit-3894-Kabel**
 
 Die Ausgangsklemmen am Modul sind **Federklemmen mit Drucktaste**, keine Schraubklemmen: Taste vorsichtig mit kleinem Schraubendreher drücken, abisolierte 0,25-mm²-Ader einführen, Taste loslassen und Zugprobe machen. Abisolierlänge nach gelieferter Klemme prüfen, keinen 11-mm-WAGO-221-Wert pauschal übertragen. [Herstelleranleitung](https://learn.adafruit.com/adafruit-mosfet-driver/plugging-into-the-terminal-block).
 
-W4: ein verdrilltes Paar für PUL+/PUL−, das andere für DIR+/DIR−. Schirm nur am Ende an der Steuerung an U6 SERVO_PWR-GND, treiberseitig isolieren. Von Motor-/DC-Leistungskabeln getrennt führen. Gegebenenfalls freies Schirmende für die Klemme passend vorbereiten und isolieren.
+W4: ein verdrilltes Paar für PUL+/PUL−, das andere für DIR+/DIR−. Schirm nur am Ende an der Steuerung an X4.5, treiberseitig isolieren. Von Motor-/DC-Leistungskabeln getrennt führen. Gegebenenfalls freies Schirmende für die Klemme passend vorbereiten und isolieren.
 
-Die Module sind für Versorgung **3–30 V** spezifiziert; hier ausschließlich Uno nominal 5 V. **S2 am DM860T auf 5 V.** Vor Motorbetrieb die Signalspannung **zwischen PUL+ und PUL−** beziehungsweise **DIR+ und DIR−** unter Last prüfen. Kein Anschluss dieser Module oder des Shields an 48 V. Die Versorgung über USB-B des Uno bleibt bestehen.
+Die Module sind für Versorgung **3–30 V** spezifiziert; hier ausschließlich Uno nominal 5 V. **S2 am DM860T auf 5 V.** Vor Motorbetrieb die Signalspannung **zwischen PUL+ und PUL−** beziehungsweise **DIR+ und DIR−** unter Last prüfen. Kein Anschluss dieser Module oder von X3/X4 an 48 V. Die Versorgung über USB-B des Uno bleibt bestehen.
 
 ## 3. PIR und RJ45-Patchkabel
 
@@ -99,10 +104,10 @@ Der PIR wird ohne Zusatzplatine direkt an **A0**, einen analogen Eingang des Uno
 
 | RJ45-Pin an J1 und J2 | Verbindung an der Steuerung J1 | Verbindung am Sensor J2 | Paar, T568B |
 |---|---|---|---|
-| 1 | U6 A0, blauer Signalstift → U1 A0 | B1 OUT | Weiß/Orange |
-| 2 | U6 A0, schwarzer GND-Stift | B1 GND | Orange |
-| 4 | U6 A3, schwarzer GND-Stift | Brücke zu J2.2 | Blau |
-| 5 | U6 A0, roter +V-Stift (+5 V) | B1 VCC | Weiß/Blau |
+| 1 | Uno A0 direkt | B1 OUT | Weiß/Orange |
+| 2 | X4.4 (Signal-GND) | B1 GND | Orange |
+| 4 | Uno zweiter Power-GND direkt | Brücke zu J2.2 | Blau |
+| 5 | X3.4 (+5 V) | B1 VCC | Weiß/Blau |
 | 3 / 6 / 7 / 8 | Frei | Frei | Nicht anschließen |
 
 Damit gibt es drei elektrische Netze auf vier Adern: OUT/GND als Paar und +5V/GND als Paar. Bei abweichender Farbnorm sind die **Pinnummern** maßgeblich. Mit dem vorhandenen Patchkabel alle acht Leitungen auf 1:1-Durchgang prüfen. J1/J2 beschriften: **PIR · 5 V · KEIN LAN / PoE**.
@@ -126,10 +131,10 @@ Spannungslos einstellen; [Herstellerhandbuch](https://www.omc-stepperonline.com/
 
 ## 5. Aufbau ohne Löten
 
-1. Module und Uno isoliert befestigen; trockenen Standort und Lüftung sicherstellen. PS1 bleibt außerhalb der Box. Durchführungen nach tatsächlichen Kabeln wählen.
+1. Module und Uno isoliert befestigen; trockenen Standort und Lüftung sicherstellen. PS1 separat und frei belüftet aufstellen. Zugentlastungen nach tatsächlicher Montage wählen.
 2. Header-Kabel aus Bestand verwenden: jeweils nur das benötigte freie Ende abisolieren. Keine Header-Metallstifte in WAGO stecken, sondern nur Leiter mit passendem Querschnitt. Aderendhülsen und Crimpzange sind nicht vorgesehen. Vor dem Anschluss an DM860T und FIT0849 prüfen, ob die tatsächlich gelieferten Schraubklemmen blanke Litzen des verwendeten Querschnitts zulassen. Bei geeigneter Klemme alle Einzeldrähte vollständig einführen und den Halt durch leichtes Ziehen prüfen; keine verzinnten Litzenenden.
-3. U6 auf den Uno stecken, Jumper auf 5 V setzen. STEMMA-Kabel und U4/U5 gemäß Tabellen verbinden. X1/X2 mit 11 mm abisolierter Leitung anklemmen.
-4. J1/J2 und PIR verbinden; Patchkabel prüfen und anschließen. alle Verbindungen durchmessen.
+3. X3/X4 getrennt beschriften und gemäß Tabelle an Uno 5V/GND anschließen. STEMMA-Kabel über vorhandene Header-Leitungen an D2/D3 und X3/X4 verbinden. X1/X2 ebenfalls mit 11 mm abisolierter Leitung anklemmen.
+4. J1/J2 und PIR verbinden; Patchkabel prüfen und anschließen. Alle Verbindungen durchmessen.
 5. W5 ausschließlich an der Verlängerung bearbeiten, Kontakte identifizieren, X1/X2 verdrahten und 48 V separat messen. Netzteilkabel selbst nicht verändern.
 6. Treiber einstellen, Motorwicklungen messen und anschließen. Danach die gestuften [Inbetriebnahmeprüfungen](inbetriebnahme.md) durchführen.
 

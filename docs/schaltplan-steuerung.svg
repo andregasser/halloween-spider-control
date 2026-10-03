@@ -1,124 +1,133 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2290" viewBox="0 0 1800 2290">
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2540" viewBox="0 0 1800 2540">
 <rect width="100%" height="100%" fill="white"/>
 <style>text{font-family:Arial,DejaVu Sans,sans-serif;fill:#152331;font-size:24px} .title{font-size:37px;font-weight:bold}.head{font-size:27px;font-weight:bold}.small{font-size:22px}</style>
-<text x="55" y="65" class="title">Blatt 2 · Arduino, fertige Signalmodule und PIR</text>
-<text x="55" y="105" class="small">03.10.2026 · Revision B · Entwurf, noch nicht aufgebaut/getestet</text>
+<text x="55" y="65" class="title">Blatt 2 · Uno direkt, fertige Signalmodule und PIR</text>
+<text x="55" y="105" class="small">04.10.2026 · Revision B · Entwurf, noch nicht aufgebaut/getestet</text>
 <polyline points="55,140 1745,140" fill="none" stroke="#c3ced8" stroke-width="4"/>
-<text x="55" y="182" class="head">A · STEP: D2 schaltet das Schritt-Signal</text>
-<rect x="65" y="235" width="390" height="130" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="81" y="272" class="head">U1 · Arduino Uno R3</text>
-<text x="81" y="313" class="small">D2 → aufgestecktes U6</text>
-<text x="81" y="349" class="small">5 V / GND → U6</text>
-<rect x="530" y="235" width="600" height="250" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="546" y="272" class="head">U6 · DFRobot DFR0265</text>
-<text x="546" y="313" class="small">D2 grüner Signalstift → In</text>
-<text x="546" y="349" class="small">A1 roter +V-Stift → V+</text>
-<text x="546" y="385" class="small">A1 schwarzer GND-Stift → GND</text>
-<text x="546" y="421" class="small">Jumper 5V/3.3V auf 5 V</text>
-<text x="546" y="457" class="small">Rote digitale D-Versorgungsreihe frei</text>
-<polyline points="455,310 530,310" fill="none" stroke="#c26311" stroke-width="4"/>
-<rect x="1240" y="235" width="500" height="270" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="1256" y="272" class="head">U4 · Adafruit MOSFET #5648</text>
-<text x="1256" y="313" class="small">STEMMA In ← weiße Leitung</text>
-<text x="1256" y="349" class="small">STEMMA V+ ← rote Leitung</text>
-<text x="1256" y="385" class="small">STEMMA GND ← schwarze Leitung</text>
-<text x="1256" y="421" class="small">Ausgang + → PUL+</text>
-<text x="1256" y="457" class="small">Ausgang − → PUL−</text>
-<polyline points="1130,313 1240,313" fill="none" stroke="#c26311" stroke-width="4"/>
-<polyline points="1130,349 1240,349" fill="none" stroke="#bd2734" stroke-width="4"/>
-<polyline points="1130,385 1240,385" fill="none" stroke="#556779" stroke-width="4"/>
-<rect x="65" y="505" width="1065" height="140" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="81" y="542" class="head">U3 · DM860T V3.0</text>
-<text x="81" y="583" class="small">PUL− ← U4 Ausgang −; keine zusätzliche GND-Brücke</text>
-<text x="81" y="619" class="small">PUL+ ← U4 Ausgang +; S2 auf 5 V</text>
-<polyline points="1740,421 1770,421 1770,619 1130,619" fill="none" stroke="#c26311" stroke-width="4"/>
-<polyline points="1740,457 1755,457 1755,583 1130,583" fill="none" stroke="#c26311" stroke-width="4"/>
-<text x="1240" y="550" class="small">W4 · PUL+ / PUL−: ein verdrilltes Paar</text>
-<polyline points="55,670 1745,670" fill="none" stroke="#c3ced8" stroke-width="4"/>
-<text x="55" y="712" class="head">B · DIR: D3 schaltet die Richtung</text>
-<rect x="65" y="765" width="390" height="130" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="81" y="802" class="head">U1 · Arduino Uno R3</text>
-<text x="81" y="843" class="small">D3 → aufgestecktes U6</text>
-<text x="81" y="879" class="small">5 V / GND → U6</text>
-<rect x="530" y="765" width="600" height="250" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="546" y="802" class="head">U6 · DFRobot DFR0265</text>
-<text x="546" y="843" class="small">D3 grüner Signalstift → In</text>
-<text x="546" y="879" class="small">A2 roter +V-Stift → V+</text>
-<text x="546" y="915" class="small">A2 schwarzer GND-Stift → GND</text>
-<text x="546" y="951" class="small">Jumper 5V/3.3V auf 5 V</text>
-<text x="546" y="987" class="small">Rote digitale D-Versorgungsreihe frei</text>
-<polyline points="455,840 530,840" fill="none" stroke="#7357ad" stroke-width="4"/>
-<rect x="1240" y="765" width="500" height="270" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="1256" y="802" class="head">U5 · Adafruit MOSFET #5648</text>
-<text x="1256" y="843" class="small">STEMMA In ← weiße Leitung</text>
-<text x="1256" y="879" class="small">STEMMA V+ ← rote Leitung</text>
-<text x="1256" y="915" class="small">STEMMA GND ← schwarze Leitung</text>
-<text x="1256" y="951" class="small">Ausgang + → DIR+</text>
-<text x="1256" y="987" class="small">Ausgang − → DIR−</text>
-<polyline points="1130,843 1240,843" fill="none" stroke="#7357ad" stroke-width="4"/>
-<polyline points="1130,879 1240,879" fill="none" stroke="#bd2734" stroke-width="4"/>
-<polyline points="1130,915 1240,915" fill="none" stroke="#556779" stroke-width="4"/>
-<rect x="65" y="1035" width="1065" height="140" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="81" y="1072" class="head">U3 · DM860T V3.0</text>
-<text x="81" y="1113" class="small">DIR− ← U5 Ausgang −; keine zusätzliche GND-Brücke</text>
-<text x="81" y="1149" class="small">DIR+ ← U5 Ausgang +; S2 auf 5 V</text>
-<polyline points="1740,951 1770,951 1770,1149 1130,1149" fill="none" stroke="#7357ad" stroke-width="4"/>
-<polyline points="1740,987 1755,987 1755,1113 1130,1113" fill="none" stroke="#7357ad" stroke-width="4"/>
-<text x="1240" y="1080" class="small">W4 · DIR+ / DIR−: ein verdrilltes Paar</text>
-<polyline points="55,1200 1745,1200" fill="none" stroke="#c3ced8" stroke-width="4"/>
-<text x="55" y="1242" class="head">C · PIR: drei elektrische Netze über vier RJ45-Adern · KEIN LAN / PoE</text>
-<rect x="65" y="1300" width="650" height="120" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="81" y="1337" class="head">U1 · Arduino Uno R3</text>
-<text x="81" y="1378" class="small">U6 wird auf die Uno-Buchsenleisten gesteckt.</text>
-<text x="81" y="1414" class="small">Versorgung weiterhin über W2 an USB-B.</text>
-<rect x="65" y="1500" width="650" height="260" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="81" y="1537" class="head">U6 · DFRobot DFR0265</text>
-<text x="81" y="1578" class="small">A0 blauer Signalstift → J1.1 (OUT)</text>
-<text x="81" y="1614" class="small">A0 schwarzer GND-Stift → J1.2</text>
-<text x="81" y="1650" class="small">A3 schwarzer GND-Stift → J1.4</text>
-<text x="81" y="1686" class="small">A0 roter +V-Stift → J1.5 (+5 V)</text>
-<text x="81" y="1722" class="small">Jumper auf 5 V; A3-Signalstift bleibt frei</text>
-<polyline points="380,1420 380,1500" fill="none" stroke="#556779" stroke-width="4"/>
-<rect x="850" y="1500" width="400" height="260" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="866" y="1537" class="head">J1 · DFRobot FIT0849</text>
-<text x="866" y="1578" class="small">1: OUT</text>
-<text x="866" y="1614" class="small">2: GND</text>
-<text x="866" y="1650" class="small">4: GND</text>
-<text x="866" y="1686" class="small">5: +5 V</text>
-<rect x="1370" y="1500" width="370" height="260" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="1386" y="1537" class="head">W3 · Patchkabel ≤ 3 m</text>
-<text x="1386" y="1578" class="small">1 ↔ 1: OUT</text>
-<text x="1386" y="1614" class="small">2 ↔ 2: GND</text>
-<text x="1386" y="1650" class="small">4 ↔ 4: GND</text>
-<text x="1386" y="1686" class="small">5 ↔ 5: +5 V</text>
-<text x="1386" y="1722" class="small">1/2 und 4/5 sind Paare</text>
-<polyline points="715,1578 850,1578" fill="none" stroke="#18836b" stroke-width="4"/>
-<polyline points="1250,1578 1370,1578" fill="none" stroke="#18836b" stroke-width="4"/>
-<polyline points="715,1614 850,1614" fill="none" stroke="#556779" stroke-width="4"/>
-<polyline points="1250,1614 1370,1614" fill="none" stroke="#556779" stroke-width="4"/>
-<polyline points="715,1650 850,1650" fill="none" stroke="#556779" stroke-width="4"/>
-<polyline points="1250,1650 1370,1650" fill="none" stroke="#556779" stroke-width="4"/>
-<polyline points="715,1686 850,1686" fill="none" stroke="#bd2734" stroke-width="4"/>
-<polyline points="1250,1686 1370,1686" fill="none" stroke="#bd2734" stroke-width="4"/>
-<rect x="65" y="1860" width="650" height="260" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="81" y="1897" class="head">J2 · DFRobot FIT0849</text>
-<text x="81" y="1938" class="small">Sensor</text>
-<text x="81" y="1974" class="small">1 → B1 OUT</text>
-<text x="81" y="2010" class="small">2 → B1 GND</text>
-<text x="81" y="2046" class="small">4 → Brücke an J2.2</text>
-<text x="81" y="2082" class="small">5 → B1 VCC (+5 V)</text>
-<polyline points="1510,1760 1510,1800 380,1800 380,1860" fill="none" stroke="#556779" stroke-width="4"/>
-<rect x="1240" y="1860" width="500" height="260" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="1256" y="1897" class="head">B1 · PIR · HC-SR501-Bauform</text>
-<text x="1256" y="1938" class="small">Vorhandener Sensor</text>
-<text x="1256" y="1974" class="small">OUT: an J2.1</text>
-<text x="1256" y="2010" class="small">GND: an J2.2</text>
-<text x="1256" y="2046" class="small">VCC: an J2.5</text>
-<text x="1256" y="2082" class="small">Pinfolge am eigenen Sensor prüfen</text>
-<polyline points="715,1974 1240,1974" fill="none" stroke="#18836b" stroke-width="4"/>
-<polyline points="715,2010 1240,2010" fill="none" stroke="#556779" stroke-width="4"/>
-<polyline points="715,2082 1060,2082 1060,2046 1240,2046" fill="none" stroke="#bd2734" stroke-width="4"/>
-<text x="780" y="2140" class="small">E23/E24: vorhandene Header-Kabel; Modul-Eingänge: 2 × Adafruit #3894</text>
-<text x="65" y="2190" class="small">W4-Schirm → U6 SERVO_PWR-GND; Plus dort frei. PWR_IN frei. Keine 48 V an U6/U4/U5.</text>
-<text x="55" y="2255" class="small">Maßgebliche Pinliste und Aufbaufolge: docs/elektronik.md · Nur spannungslos verdrahten.</text>
+<text x="55" y="182" class="head">A · 5 V und GND verteilen · zwei separate WAGO-Klemmen · kein Anschluss-Shield</text>
+<rect x="65" y="230" width="485" height="230" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="267" class="head">U1 · Arduino Uno R3</text>
+<text x="81" y="308" class="small">5V → X3.1</text>
+<text x="81" y="344" class="small">Erster GND nach 5V → X4.1</text>
+<text x="81" y="380" class="small">Zweiter GND nach 5V → J1.4</text>
+<text x="81" y="416" class="small">Power-Leiste: VIN bleibt frei</text>
+<rect x="700" y="230" width="460" height="270" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="716" y="267" class="head">X3 · WAGO 221-415 · +5 V</text>
+<text x="716" y="308" class="small">1 ← Uno 5V</text>
+<text x="716" y="344" class="small">2 → U4 V+ (rote E55-Buchse)</text>
+<text x="716" y="380" class="small">3 → U5 V+ (rote E55-Buchse)</text>
+<text x="716" y="416" class="small">4 → J1.5 (+5 V für PIR)</text>
+<text x="716" y="452" class="small">5: frei</text>
+<rect x="1250" y="230" width="490" height="270" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="1266" y="267" class="head">X4 · WAGO 221-415 · GND</text>
+<text x="1266" y="308" class="small">1 ← Uno erster Power-GND</text>
+<text x="1266" y="344" class="small">2 → U4 GND (schwarze E55-Buchse)</text>
+<text x="1266" y="380" class="small">3 → U5 GND (schwarze E55-Buchse)</text>
+<text x="1266" y="416" class="small">4 → J1.2 (GND für PIR)</text>
+<text x="1266" y="452" class="small">5 ← W4-Schirm, nur Steuerungsende</text>
+<polyline points="550,308 700,308" fill="none" stroke="#bd2734" stroke-width="4"/>
+<polyline points="550,344 610,344 610,545 1210,545 1210,308 1250,308" fill="none" stroke="#556779" stroke-width="4"/>
+<text x="65" y="590" class="small">E24: Header-Stecker am Uno / in E55-Buchse; an WAGO nur freie abisolierte Leiter.</text>
+<text x="65" y="630" class="small">X3 und X4 getrennt halten. WAGO: 11 mm abisolieren; passende Leiter, kein Metallstift.</text>
+<polyline points="55,665 1745,665" fill="none" stroke="#c3ced8" stroke-width="4"/>
+<text x="55" y="707" class="head">B · STEP: D2 schaltet das Schritt-Signal</text>
+<rect x="65" y="750" width="470" height="140" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="787" class="head">U1 · Arduino Uno R3</text>
+<text x="81" y="828" class="small">D2 → weiße E55-Buchse</text>
+<text x="81" y="864" class="small">E24: Stecker/Stecker-Leitung</text>
+<rect x="900" y="750" width="840" height="285" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="916" y="787" class="head">U4 · Adafruit MOSFET #5648</text>
+<text x="916" y="828" class="small">STEMMA In ← D2 über weiße E55-Buchse</text>
+<text x="916" y="864" class="small">STEMMA V+ ← X3.2 über rote E55-Buchse</text>
+<text x="916" y="900" class="small">STEMMA GND ← X4.2 über schwarze E55-Buchse</text>
+<text x="916" y="936" class="small">Ausgang + → U3 PUL+</text>
+<text x="916" y="972" class="small">Ausgang − → U3 PUL−</text>
+<polyline points="535,828 900,828" fill="none" stroke="#c26311" stroke-width="4"/>
+<text x="565" y="810" class="small">Signal über E24 / E55</text>
+<text x="565" y="900" class="small">X3.2 · +5 V</text>
+<polyline points="795,900 830,900 830,864 900,864" fill="none" stroke="#bd2734" stroke-width="4"/>
+<text x="565" y="960" class="small">X4.2 · GND</text>
+<polyline points="795,960 850,960 850,900 900,900" fill="none" stroke="#556779" stroke-width="4"/>
+<rect x="65" y="985" width="690" height="145" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="1022" class="head">U3 · DM860T V3.0</text>
+<text x="81" y="1063" class="small">PUL+ ← U4 Ausgang +; S2 auf 5 V</text>
+<text x="81" y="1099" class="small">PUL− ← U4 Ausgang −; keine GND-Brücke</text>
+<polyline points="1740,936 1770,936 1770,1063 755,1063" fill="none" stroke="#c26311" stroke-width="4"/>
+<polyline points="1740,972 1755,972 1755,1099 755,1099" fill="none" stroke="#c26311" stroke-width="4"/>
+<text x="900" y="1120" class="small">W4: PUL+ / PUL− als ein verdrilltes Paar</text>
+<polyline points="55,1165 1745,1165" fill="none" stroke="#c3ced8" stroke-width="4"/>
+<text x="55" y="1207" class="head">C · DIR: D3 schaltet die Richtung</text>
+<rect x="65" y="1250" width="470" height="140" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="1287" class="head">U1 · Arduino Uno R3</text>
+<text x="81" y="1328" class="small">D3 → weiße E55-Buchse</text>
+<text x="81" y="1364" class="small">E24: Stecker/Stecker-Leitung</text>
+<rect x="900" y="1250" width="840" height="285" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="916" y="1287" class="head">U5 · Adafruit MOSFET #5648</text>
+<text x="916" y="1328" class="small">STEMMA In ← D3 über weiße E55-Buchse</text>
+<text x="916" y="1364" class="small">STEMMA V+ ← X3.3 über rote E55-Buchse</text>
+<text x="916" y="1400" class="small">STEMMA GND ← X4.3 über schwarze E55-Buchse</text>
+<text x="916" y="1436" class="small">Ausgang + → U3 DIR+</text>
+<text x="916" y="1472" class="small">Ausgang − → U3 DIR−</text>
+<polyline points="535,1328 900,1328" fill="none" stroke="#7357ad" stroke-width="4"/>
+<text x="565" y="1310" class="small">Signal über E24 / E55</text>
+<text x="565" y="1400" class="small">X3.3 · +5 V</text>
+<polyline points="795,1400 830,1400 830,1364 900,1364" fill="none" stroke="#bd2734" stroke-width="4"/>
+<text x="565" y="1460" class="small">X4.3 · GND</text>
+<polyline points="795,1460 850,1460 850,1400 900,1400" fill="none" stroke="#556779" stroke-width="4"/>
+<rect x="65" y="1485" width="690" height="145" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="1522" class="head">U3 · DM860T V3.0</text>
+<text x="81" y="1563" class="small">DIR+ ← U5 Ausgang +; S2 auf 5 V</text>
+<text x="81" y="1599" class="small">DIR− ← U5 Ausgang −; keine GND-Brücke</text>
+<polyline points="1740,1436 1770,1436 1770,1563 755,1563" fill="none" stroke="#7357ad" stroke-width="4"/>
+<polyline points="1740,1472 1755,1472 1755,1599 755,1599" fill="none" stroke="#7357ad" stroke-width="4"/>
+<text x="900" y="1620" class="small">W4: DIR+ / DIR− als ein verdrilltes Paar</text>
+<polyline points="55,1670 1745,1670" fill="none" stroke="#c3ced8" stroke-width="4"/>
+<text x="55" y="1712" class="head">D · PIR: drei elektrische Netze über vier RJ45-Adern · KEIN LAN / PoE</text>
+<rect x="65" y="1760" width="640" height="150" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="1797" class="head">U1 · Arduino Uno R3</text>
+<text x="81" y="1838" class="small">A0 → J1.1 (OUT)</text>
+<text x="81" y="1874" class="small">Zweiter Power-GND → J1.4</text>
+<text x="80" y="1940" class="small">X4.4 → J1.2 · GND</text>
+<text x="80" y="1995" class="small">X3.4 → J1.5 · +5 V</text>
+<rect x="850" y="1760" width="400" height="250" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="866" y="1797" class="head">J1 · DFRobot FIT0849</text>
+<text x="866" y="1838" class="small">1: OUT</text>
+<text x="866" y="1874" class="small">4: GND vom Uno</text>
+<text x="866" y="1910" class="small">2: GND von X4.4</text>
+<text x="866" y="1946" class="small">5: +5 V von X3.4</text>
+<rect x="1370" y="1760" width="370" height="285" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="1386" y="1797" class="head">W3 · Patchkabel ≤ 3 m</text>
+<text x="1386" y="1838" class="small">1 ↔ 1: OUT</text>
+<text x="1386" y="1874" class="small">4 ↔ 4: GND</text>
+<text x="1386" y="1910" class="small">2 ↔ 2: GND</text>
+<text x="1386" y="1946" class="small">5 ↔ 5: +5 V</text>
+<text x="1386" y="1982" class="small">1/2 und 4/5 sind Paare</text>
+<text x="1386" y="2018" class="small">Alle acht Adern 1:1</text>
+<polyline points="705,1838 850,1838" fill="none" stroke="#18836b" stroke-width="4"/>
+<polyline points="1250,1838 1370,1838" fill="none" stroke="#18836b" stroke-width="4"/>
+<polyline points="705,1874 850,1874" fill="none" stroke="#556779" stroke-width="4"/>
+<polyline points="1250,1874 1370,1874" fill="none" stroke="#556779" stroke-width="4"/>
+<polyline points="360,1940 800,1940 800,1910 850,1910" fill="none" stroke="#556779" stroke-width="4"/>
+<polyline points="1250,1910 1370,1910" fill="none" stroke="#556779" stroke-width="4"/>
+<polyline points="360,1995 820,1995 820,1946 850,1946" fill="none" stroke="#bd2734" stroke-width="4"/>
+<polyline points="1250,1946 1370,1946" fill="none" stroke="#bd2734" stroke-width="4"/>
+<rect x="65" y="2150" width="650" height="250" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="81" y="2187" class="head">J2 · DFRobot FIT0849</text>
+<text x="81" y="2228" class="small">1 → B1 OUT</text>
+<text x="81" y="2264" class="small">2 → B1 GND</text>
+<text x="81" y="2300" class="small">4 → Brücke an J2.2</text>
+<text x="81" y="2336" class="small">5 → B1 VCC (+5 V)</text>
+<polyline points="1510,2045 1510,2090 380,2090 380,2150" fill="none" stroke="#556779" stroke-width="4"/>
+<rect x="1240" y="2150" width="500" height="250" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
+<text x="1256" y="2187" class="head">B1 · PIR · HC-SR501-Bauform</text>
+<text x="1256" y="2228" class="small">Vorhandener Sensor</text>
+<text x="1256" y="2264" class="small">OUT ← J2.1</text>
+<text x="1256" y="2300" class="small">GND ← J2.2</text>
+<text x="1256" y="2336" class="small">VCC ← J2.5</text>
+<text x="1256" y="2372" class="small">Pinfolge am eigenen Sensor prüfen</text>
+<polyline points="715,2228 1240,2264" fill="none" stroke="#18836b" stroke-width="4"/>
+<polyline points="715,2264 1000,2264 1000,2300 1240,2300" fill="none" stroke="#556779" stroke-width="4"/>
+<polyline points="715,2336 1240,2336" fill="none" stroke="#bd2734" stroke-width="4"/>
+<text x="65" y="2450" class="small">E23/E24 aus Bestand; 2 × E55 Adafruit #3894 unverändert lassen. Keine 48 V an X3/X4/U4/U5.</text>
+<text x="55" y="2505" class="small">Maßgebliche Pinliste und Aufbaufolge: docs/elektronik.md · Nur spannungslos verdrahten.</text>
 </svg>

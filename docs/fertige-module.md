@@ -1,13 +1,13 @@
 # Fertige Module · Auswahl für Revision B
 
-**03.10.2026 · Dokumentierter Entwurf, noch kein Hardwaretest.** Die bisherige Lötplatine wird durch zwei Adafruit-Signalmodule und ein fertiges Uno-Anschluss-Shield ersetzt. Uno, PIR und Patchkabel bleiben. Der vollständige Anschluss steht in [Elektronik](elektronik.md), Beschaffung in [Bestellliste](../bom/bestellliste.md).
+**04.10.2026 · Dokumentierter Entwurf, noch kein Hardwaretest.** Zwei Adafruit-Signalmodule ersetzen die frühere Lötplatine. Das zusätzliche Uno-Anschluss-Shield entfällt; Signale direkt an Uno, 5 V und GND über zwei WAGO-Klemmen. Uno, PIR und Patchkabel bleiben. Der vollständige Anschluss steht in [Elektronik](elektronik.md), Beschaffung in [Bestellliste](../bom/bestellliste.md).
 
 ## Ausgewählte Kombination
 
 - Motor **34HS46-6004S1** und **DM860T V3.0** bleiben.
 - **2 × Adafruit MOSFET Driver #5648**, vollständig bestückt, mit montierter JST-PH-Buchse und Ausgangs-Federklemmen.
 - **2 × Adafruit-STEMMA-Kabel #3894**, mit einzelnen Buchsenenden; separat bestellen.
-- **DFRobot DFR0265 IO Expansion Shield V7.1** auf dem Uno. Es bietet zusätzliche steckbare Versorgung/GND-Anschlüsse und spart eine manuelle Steuer-Verteilung.
+- **2 × WAGO 221-415**, X3 für Uno +5 V, X4 für Signal-GND. Vorhandene Header-Leitungen E24 verbinden Uno und Modulbuchsen mit den Klemmen; kein DFR0265-Shield mehr.
 - Geschlossenes **Mean Well GST220A48-R7B**, **48 V / 4,6 A / 221 W**, mit fertigem Typ-12/C13-Netzkabel.
 - **GlobTek KPPX4124641M0KPJX4(R)**-Power-DIN-Verlängerung; nur männliches Verlängerungsende abschneiden und zum Treiber klemmen. Netzteil selbst bleibt unverändert.
 - Separates USB-Netzteil für Uno; beide fertigen Netzanschlüsse in vorhandene CH-Mehrfachsteckdose.
@@ -21,7 +21,7 @@ Die letzte technische Prüfung ersetzt die DFR0457-Vorauswahl durch Adafruit #56
 
 Bei U4/U5 wird der **Minus-Ausgang geschaltet**, Plus führt die Modulversorgung. Deshalb Ausgangspaare direkt an PUL+/PUL− und DIR+/DIR− anschließen; **keine zusätzliche GND-Brücke an PUL−/DIR−**. Schaltplan und Pinliste gelten ausschließlich für diese Ausführung. Die Module bekommen nie 48 V.
 
-U6-Jumper auf 5 V, Modulversorgung über die **analogen A1-/A2-Versorgungsstifte**; Signal über D2/D3. Die digitale Versorgungsreihe wird nicht benutzt, um deren zusätzlichen Versorgungspfad zu vermeiden. [Shield-Plan](https://dfimg.dfrobot.com/wiki/18598/DFR0265_io-expansion-shield-for-arduino_schematics_V1.0.pdf). Der vorhandene Uno bleibt per USB versorgt.
+Modulversorgung über **Uno 5V/GND und X3/X4**, Signale direkt über D2/D3. Die weiblichen Enden der #3894-Kabel nehmen vorhandene männliche Header-Stecker auf; die Header-Leitungen für die Versorgung haben an der Klemmenseite freie abisolierte Enden. STEMMA-Kabel unverändert lassen. A1/A2/A3 bleiben frei. Der Uno bleibt per USB versorgt. [Uno-Pins](https://docs.arduino.cc/resources/pinouts/A000066-full-pinout.pdf), [WAGO 221-415](https://www.wago.com/ch-de/installationsklemmen/verbindungsklemme-mit-hebeln/p/221-415).
 
 Vor Motorbetrieb belastete Treiberpegel und Pulszeiten messen. Die Auswahl ist aus Herstellerunterlagen begründet, keine bereits getestete Gesamtanlage. Erstbetrieb maximal 100 Pulse/s, mindestens 500 µs HIGH/LOW und 1 ms DIR-Vorlauf als konservative Prüfwerte.
 
@@ -37,14 +37,14 @@ Das Netzteil kann Bremsenergie nicht nachweislich aktiv aufnehmen. Erst langsame
 
 | Variante | Bewertung |
 |---|---|
-| DM860T + 2 × Adafruit #5648 + DFR0265 | Preisorientierte Auswahl mit montierten Anschlüssen, keine eigene Signalplatine |
+| DM860T + 2 × Adafruit #5648 + 2 × WAGO 221-415 | Direkte Uno-Verkabelung, fertige Anschlüsse, keine eigene Signalplatine |
 | DFR0457-Vorauswahl | Zusätzliche Ausgangswiderstände und knappe untere Versorgungsspezifikation; durch Adafruit ersetzt, nicht bestellen |
 | Pololu Tic 36v4 #3140 | Montierte Anschlüsse und Arduino-Bibliothek, aber etwa 4 A ohne Zusatzkühlung und höchstens 50 V; keine ungeprüfte 6-A-/48-V-Ersatzlösung |
 | Geckodrive G201X | Direkte Logikansteuerung laut Handbuch; höherer Preis, Zusatzkühlung oberhalb 3 A |
 
 Quellen: [Tic #3140](https://www.pololu.com/product/3140), [Tic-Handbuch](https://www.pololu.com/docs/0J71/all), [G201X](https://www.geckodrive.com/product/g201x-digital-step-drive/), [G201X-Handbuch](https://www.geckodrive.com/wp-content/uploads/2023/04/G201X-and-G210X-Manual-011717.pdf).
 
-**Aktuelle Beschaffung:** Schweizer Händler oder Amazon bevorzugt, DigiKey und Farnell ausgeschlossen. Zwei Adafruit #5648 kosten bei [Play-Zone](https://www.play-zone.ch/de/adafruit-mosfet-driver-for-motors-solenoids-leds-etc-stemma-jst-ph-2mm.html) beim Abruf zusammen CHF 11.80. Ein DFR0265-Shield kostet bei [Bastelgarage](https://www.bastelgarage.ch/gravity-io-expansion-shield-fur-arduino-v7-1) CHF 11.90. Die zwei Kabel #3894 haben derzeit noch keine verifizierte Schweizer/Amazon-Bezugsquelle. Damit lässt sich für die vollständige Arduino-Schnittstelle noch kein Gesamtpreis nennen; frühere Bündelpreise gelten nicht mehr als Beschaffungsvorschlag.
+**Aktuelle Beschaffung:** Schweizer Händler oder Amazon bevorzugt, DigiKey und Farnell ausgeschlossen. Zwei Adafruit #5648 kosten bei [Play-Zone](https://www.play-zone.ch/de/adafruit-mosfet-driver-for-motors-solenoids-leds-etc-stemma-jst-ph-2mm.html) beim Abruf zusammen CHF 11.80. Das zuvor ausgewählte DFR0265-Shield für CHF 11.90 entfällt. Zwei [WAGO 221-415](https://www.berrybase.ch/wago-221-415-verbindungsklemme-5-fach) kosten laut gelesener Einzelstückanzeige CHF 1.50 zusammen; reine Artikelersparnis CHF 10.40 gegenüber dem dokumentierten Shieldpreis, ohne Versand. Header-Leitungen kommen aus Bestand. Die zwei Kabel #3894 haben derzeit noch keine verifizierte Schweizer/Amazon-Bezugsquelle. Damit lässt sich für die vollständige Arduino-Schnittstelle noch kein Gesamtpreis nennen; frühere Bündelpreise gelten nicht mehr als Beschaffungsvorschlag.
 
 **Lieferanforderung: binnen 7 Kalendertagen in der Schweiz erhalten.** Antrieb, Motornetzteil und Spezialkabel sind innerhalb dieser Vorgaben noch nicht vollständig beschaffbar belegt. Simpex führt PS1 nur auf Bestellung; Distrelec/RS nennt Nachschub am 16.10.2026. E26 Steuerkabel W4 und E35 DC-Leistungslitze sind inzwischen als vorhanden bestätigt und nicht zu bestellen. BerryBase wird als CH-Shop mit ungeprüftem Versandlager geführt. Keine Teile wurden bestellt oder elektrisch geändert. [Aktuelle Händlerprüfung](quellen-und-entscheidungen.md#schweizer-händler-oder-amazon), [Bestellliste](../bom/bestellliste.md).
 

@@ -9,10 +9,11 @@ Stand **04.10.2026**. Aktuelle Entscheidung ist der Aufbau mit fertig bestückte
 | [34HS46-6004S1](https://www.omc-stepperonline.com/fr/moteur-pas-a-pas-nema-34-serie-s-8-5nm-1203-94oz-in-14mm-arbre-a-cle-cable-1m-34hs46-6004s1) | Motor, Wicklungen, Phasenwiderstand, Lieferkabel |
 | [DM860T V3.0](https://www.omc-stepperonline.com/download/DM860T_V3.0.pdf) | Klemmen, DIP, Signalpegel, Peak/RMS und Stromstufen |
 | [Adafruit #5648 Pins](https://learn.adafruit.com/adafruit-mosfet-driver/pinouts) | Versorgung, Signale und Ausgangsklemmen |
+| [Uno-R3-Pins](https://docs.arduino.cc/resources/pinouts/A000066-full-pinout.pdf) | Direkte Uno-Anschlüsse D2/D3/A0 sowie 5V und zwei Power-GND-Buchsen |
+| [Adafruit #3894](https://www.adafruit.com/product/3894) | STEMMA-Kabel mit drei weiblichen 2,54-mm-Buchsen; Gegenstecker aus vorhandenem Header-Material |
+| [WAGO 221-415](https://www.wago.com/ch-de/installationsklemmen/verbindungsklemme-mit-hebeln/p/221-415) | X3/X4: jeweils fünf intern verbundene Plätze, getrennte 5-V-/GND-Verteilung |
 | [Adafruit-Boardunterlagen](https://github.com/adafruit/Adafruit-MOSFET-Driver-STEMMA-PCB) | Vorbestückte Schaltung mit Signal-Pull-down und geschaltetem Minus-Ausgang |
 | [AO3406-Datenblatt](https://cdn-shop.adafruit.com/product-files/5648/5648_ds_AO3406.pdf) | Schalttransistor, niedriger Spannungsabfall bei kleinem Treibersignalstrom |
-| [DFR0265-Shield](https://wiki.dfrobot.com/dfr0265/) | Steckbare Uno-Anschlüsse und 5-V-Jumper |
-| [DFR0265-Schaltplan](https://dfimg.dfrobot.com/wiki/18598/DFR0265_io-expansion-shield-for-arduino_schematics_V1.0.pdf) | Direkte Analog-Versorgung, digitale Versorgungsreihe und gemeinsamer GND |
 | [GST220A](https://www.meanwell.com/Upload/PDF/GST220A/GST220A-SPEC.PDF) | 48 V / 4,6 A, Ausgangskontakte R7B, PE-Verbindung, Temperatur und Überlastschutz |
 | [GlobTek Kabelspezifikation](https://spec.globtek.info/spec/cord_spec?id=01t3a000004eQInAAM) | KPPX4124641M0KPJX4(R), 4×AWG18, 5 A pro Ader, 56-V-Steckerfreigabe, Kontaktzeichnungen |
 | [WAGO 221](https://www.wago.com/fr/produits/technique-de-raccordement/bornes-de-raccordement-221) | Klemmbereiche, Verbindungsprinzip und Abisolierlänge |
@@ -24,6 +25,8 @@ Stand **04.10.2026**. Aktuelle Entscheidung ist der Aufbau mit fertig bestückte
 GlobTek und Mean Well verwenden **unterschiedliche Pinnummern**. Maßgeblich ist deshalb die geprüfte Kontaktlage am Netzteil, nicht die Übernahme von Ziffern auf die Verlängerung. Herstellerunterlagen belegen Kabel-/Steckerfamilie und Belastbarkeit, aber keine individuelle Aderfarbe des gelieferten Kabels. Durchgangs- und Spannungsprüfung bleibt Pflicht.
 
 ## Entscheidungen vom 03.10.2026
+
+Die damalige Shield-Auswahl in Punkt 3 wurde durch die Vereinfachung vom 04.10.2026 weiter unten ersetzt.
 
 1. Nutzer bestätigt: **keine Antriebsteile bestellt**, fertige Module entscheidend. Vorhandener Elektronik-/Werkzeugbestand bleibt; keine Bestellung wird ausgelöst.
 2. **DM860T V3.0 und 34HS46-6004S1 bleiben.** Kompaktheit ist nachrangig, kein Wechsel zum DM870 allein deswegen. Pololu/G201X bleiben recherchierte Alternativen, keine parallel vorgesehenen Teile.
@@ -41,6 +44,16 @@ GlobTek und Mean Well verwenden **unterschiedliche Pinnummern**. Maßgeblich ist
 
 12. **PIR-Sensorgehäuse E39 entfällt ebenfalls auf Nutzerwunsch.** Aus aktuellem Material-/Bestellbedarf entfernt. PIR und RJ45-Adapter bleiben vorgesehen; den Sensor fest ausrichten, Linse freihalten und Anschlussleitung zugentlasten. Keine elektrische Anschlussänderung.
 
+## Aktuelle Vereinfachung vom 04.10.2026: Anschluss-Shield entfällt
+
+Der Nutzer möchte die ungenutzten Zusatzfunktionen des DFRobot-Shields nicht bezahlen. **U6 / DFR0265 und Stücklistenposition E56 entfallen.** Diese Entscheidung ersetzt die Shield-Auswahl und die A1-/A2-Versorgung in Entscheidung 3 vom 03.10.2026. Die Adafruit-Module, DM860T, Motor und Versorgung bleiben unverändert.
+
+**X3/X4: zwei WAGO 221-415**, getrennt für Uno 5 V und Signal-GND. D2/D3 direkt an die Module; A0 direkt an J1.1. Die beiden GND-Buchsen der Uno-Power-Leiste liegen zwischen 5V und VIN. Der erste Power-GND speist X4; der zweite geht an J1.4. X4.5 nimmt den steuerungsseitigen W4-Schirm auf. Der vollständige Platzplan steht in [Elektronik](elektronik.md); keine weiteren Mikrocontrollerfunktionen oder Firmware-Pins ändern sich.
+
+Die bestehenden **#3894-Kabel bleiben unverändert**. Ihre weiblichen Enden benötigen männliche Gegenstecker aus E24: zwei Stecker/Stecker-Leitungen für STEP/DIR und vier Steckerleitungen mit abisoliertem Ende für die Modulversorgung. Weitere Uno-/PIR-Verbindungen ebenfalls aus vorhandenem Header-/Leitungsmaterial. Keine Buchse direkt in eine Uno-Buchse stecken und keine Header-Metallstifte in WAGO klemmen. Bestandsleiter müssen im Klemmbereich liegen (feindrähtig 0,14–4 mm²); AWG24/22 bevorzugen. Damit keine zusätzliche Lötarbeit oder Hülsen-/Crimpzangenbeschaffung.
+
+[BerryBase E57](https://www.berrybase.ch/wago-221-415-verbindungsklemme-5-fach) zeigt **W221-415-1, Einzelstück CHF 0.75**, zwei Stück also CHF 1.50 gegenüber dem dokumentierten Shieldpreis CHF 11.90: **CHF 10.40 reine Artikelersparnis**, Versand nicht berücksichtigt. Gelesene Produktseite zeigt Einzelstück auf Lager, 100+ Stück und 2–5 Tage; Webdaten können zwischengespeichert sein, keine bestätigte CH-Zustellung binnen einer Woche. Bestehendes BerryBase-Bündel enthält bereits X1/X2; kein zusätzlicher Händler nötig. Hersteller-Pins und Klemmentyp geprüft, reale Kabelausführung und belastete Signalpegel bleiben vor Aufbau zu prüfen. Kein Hardwaretest erfolgt.
+
 ## Entscheidung vom 04.10.2026: keine Hülsen oder Crimpzange
 
 Auf Nutzerwunsch entfallen **Aderendhülsen E43 und Crimpzange T02** aus aktuellem Material- und Bestellbedarf. Keine Änderung an Geräten, Leitungen oder Pinbelegung. [WAGO 221](https://www.wago.com/us/lp-221) beschreibt den direkten Anschluss abisolierter Litzen; [Adafruit #5648](https://learn.adafruit.com/adafruit-mosfet-driver/plugging-into-the-terminal-block) zeigt das Einsetzen der Leitungen bei gedrückter Federklemme.
@@ -54,7 +67,7 @@ Für die tatsächlich gelieferten Schraubklemmen an DM860T und FIT0849 ist die E
 | Position | Aktueller Stand nach Händlerprüfung |
 |---|---|
 | E48, zwei Module #5648 | [Play-Zone ada-5648](https://www.play-zone.ch/de/adafruit-mosfet-driver-for-motors-solenoids-leds-etc-stemma-jst-ph-2mm.html) bleibt Schweizer Bezugsquelle; zuvor direkt ab eigenem Lager Steinhausen geprüft. E55 gehört separat dazu und ist noch nicht beschaffbar belegt. |
-| E56, ein Shield DFR0265 | Neu [Bastelgarage 422020](https://www.bastelgarage.ch/gravity-io-expansion-shield-fur-arduino-v7-1): direkter HTML-Abruf am 03.10. zeigt „Lagernd“, CHF 11.90, ein fertig bestücktes V7.1-Shield. Mit zwei RJ45-Adaptern E09 bündeln. Kein Modell-/Pinwechsel. |
+| E57, zwei WAGO 221-415 | [BerryBase W221-415-1](https://www.berrybase.ch/wago-221-415-verbindungsklemme-5-fach), zwei Einzelstücke für X3/X4. Ersetzt das gestrichene Shield E56. Gelesene Produktseite: CHF 0.75 je Stück, auf Lager, 2–5 Tage; CH-Termin im Checkout prüfen. |
 | E05, PS1 | Neu [Simpex GST220A48-R7B](https://www.simpex.ch/shop/stromversorgungen/netzteile-ac-dc/tischnetzteile/gst220a48-r7b/), Schweizer Händler in Wetzikon. Gelesene/indexierte Seite nennt „Lieferbar auf Bestellung“, keinen Lagerbestand; Direktabruf blockiert. Kandidat mit Terminrisiko, keine belegte Wochenlieferung. Ein Stück bestellen, nicht die angegebene 12er-Werksverpackung. |
 | E05, weitere Prüfung | [Distrelec 300-42-762](https://www.distrelec.ch/en/power-supply-gst220a-series-48v-6a-221w-iec-60320-c14-din-pin-mean-well-gst220a48-r7b/p/30042762) bleibt möglicher Lieferant. Die jetzt gelesene [RS-CH-Seite 117-6158](https://ch.rs-online.com/web/p/steckernetzteile/1176158) zeigt vorübergehend ausverkauft und Nachschub erst ab 16.10.2026, damit außerhalb der Frist. |
 | E05, Marktplatzprüfung | [Galaxus 57336550](https://www.galaxus.ch/en/s1/product/meanwell-mean-well-gst220a48-r7b-85-264-v-220-w-48-v-rohs-85-mm-210-mm-220-w-power-supply-pc-57336550) führt das Modell, aber Verkäufer ist GetGoods DE. Der Abruf enthält veraltete Juni-Lieferdaten. Kein belegter aktueller CH-Termin, kein eigenes Schweizer Lager behauptet; deshalb keine neue erste Quelle. |
@@ -64,7 +77,7 @@ Für die tatsächlich gelieferten Schraubklemmen an DM860T und FIT0849 ist die E
 | E37/E53, Gehäuse | Auf Nutzerwunsch aus dem aktuellen Material-/Bestellbedarf entfernt. Aufbau etwa vier Stunden, danach Abbau. Bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden; keine konkrete Hammond-Ausführung als Bestand bestätigt. |
 | E26/E35, Meterware | Nutzer bestätigt beide als vorhanden. Steuerkabel W4 und DC-Leistungslitze bleiben im Materialbedarf, entfallen aber als Bestellpositionen. Die bisherige Bürklin-Ausweichquelle wird nicht mehr benötigt; keine konkrete Herstellermarke des vorhandenen Materials bestätigt. |
 
-**BerryBase richtig einordnen:** Das gelesene [CH-Impressum](https://www.berrybase.ch/footer-ch/informationen/impressum/) nennt BerryBase GmbH c/o Sertronics AG in Birmenstorf und eine CH-Steuernummer. Die gelesenen [CH-AGB](https://www.berrybase.ch/agb/) nennen dagegen einen deutschen Vertragspartner. Deshalb weder ausschließlich deutschen noch eindeutig schweizerischen Vertragspartner aus diesen widersprüchlichen Webangaben ableiten. E06/E07/E50 als CH-Shop mit ungeprüftem Versandlager führen; tatsächlichen Vertragspartner/Versandort im Checkout prüfen. Eine Schweizer Adresse allein bestätigt keinen Schweizer Lagerbestand.
+**BerryBase richtig einordnen:** Das gelesene [CH-Impressum](https://www.berrybase.ch/footer-ch/informationen/impressum/) nennt BerryBase GmbH c/o Sertronics AG in Birmenstorf und eine CH-Steuernummer. Die gelesenen [CH-AGB](https://www.berrybase.ch/agb/) nennen dagegen einen deutschen Vertragspartner. Deshalb weder ausschließlich deutschen noch eindeutig schweizerischen Vertragspartner aus diesen widersprüchlichen Webangaben ableiten. E06/E07/E50/E57 als CH-Shop mit ungeprüftem Versandlager führen; tatsächlichen Vertragspartner/Versandort im Checkout prüfen. Eine Schweizer Adresse allein bestätigt keinen Schweizer Lagerbestand.
 
 Amazon wurde als gewünschte Bezugsquelle geprüft, aber ohne verifiziertes konkretes Angebot für die schwierigen Modellpositionen kein Produktlink aufgenommen. Ein Treffer oder deutsches Lieferdatum belegt keine Zustellung an eine Schweizer Adresse. Verkäufer, Variante, Packungsmenge und konkreten CH-Termin vor einer Empfehlung prüfen. Keine Bestellungen oder Lieferantenanfragen ausgelöst.
 

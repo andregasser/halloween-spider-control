@@ -2,7 +2,7 @@
 <rect width="100%" height="100%" fill="white"/>
 <style>text{font-family:Arial,DejaVu Sans,sans-serif;fill:#152331;font-size:24px} .title{font-size:37px;font-weight:bold}.head{font-size:27px;font-weight:bold}.small{font-size:22px}</style>
 <text x="55" y="65" class="title">Blatt 1 · Versorgung und Motor</text>
-<text x="55" y="105" class="small">03.10.2026 · Revision B · Entwurf, noch nicht aufgebaut/getestet</text>
+<text x="55" y="105" class="small">04.10.2026 · Revision B · Entwurf, noch nicht aufgebaut/getestet</text>
 <polyline points="55,140 1745,140" fill="none" stroke="#c3ced8" stroke-width="4"/>
 <text x="55" y="182" class="head">A · Beide fertigen Netzteile in die vorhandene Schweizer Mehrfachsteckdose stecken</text>
 <rect x="65" y="225" width="485" height="220" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>

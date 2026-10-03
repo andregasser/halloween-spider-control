@@ -18,6 +18,8 @@ for group in dict.fromkeys(r['Gruppe'] for r in rows):
  bom+='## '+group+'\n\n'+table(['ID','Menge','Teil / Spezifikation','Warum benötigt?','Status'],[[r['ID'],quantity(r),r['Teil']+' — '+r['Spezifikation'],r['Begruendung'],STATUS[r['Status']]] for r in rows if r['Gruppe']==group])
 bom+='''## Lieferumfang und entfallene Teile
 
+Das DFRobot-Anschluss-Shield E56 / U6 entfällt auf Nutzerwunsch. X3/X4 (E57) verteilen stattdessen 5 V und GND; Signale direkt an Uno. Header-Leitungen aus Bestand gemäß Anschlussplan verwenden.
+
 Motor enthält 1 m Anschlusskabel; Adafruit #5648 wird ohne STEMMA-Kabel geliefert: zwei Kabel #3894 separat bestellen. Treiber-Klemmstecker bei Lieferung prüfen. Kabel W5 ist eine fertige Verlängerung; nur dessen männliches Ende wird zum Klemmen abgeschnitten.
 
 Steuergehäuse E37, zugehörige Montageplatte E53 und PIR-Sensorgehäuse E39 entfallen als festgelegte Projektteile. Für den etwa vierstündigen Aufbau kann bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwendet werden; kein bestimmtes Modell als Bestand bestätigt.
@@ -32,11 +34,11 @@ order+='''Die festgelegte Elektronik ist unten mit konkreten Artikelmodellen auf
 
 **Lieferanforderung: Erhalt in der Schweiz binnen 7 Kalendertagen nach Bestellung.** Bei Bestellung am 03.10.2026 bedeutet das spätestens 10.10.2026. Ein angezeigter Lagerbestand plus übliche Versandzeit ist ein Angebot für die kurzfristige Beschaffung, keine garantierte Zustellung. Lieferdatum für die eigene Schweizer Adresse vor Zahlung prüfen. **Antrieb E03/E04/E47, Motornetzteil E05 und Anschlusskabel E49/E55 sind noch nicht mit passendem Liefertermin beschaffbar belegt.** Erst diese Positionen klären, bevor der gesamte Aufbau als rechtzeitig beschaffbar gilt.
 
-**Produkt** verlinkt einen konkreten Artikel. **Offen** bedeutet: kein bestätigtes Händlerangebot oder noch ungeklärte Ausführung. Ein technisch festgelegtes Modell bleibt auch ohne Bezugsquelle erforderlich. Die Lieferbewertung stammt aus der Recherche vom 03.10.2026; Webabrufe können zwischengespeicherte Händlerangaben enthalten. **Hersteller-Standardlieferzeit** ist die Nachbeschaffungszeit und darf nicht mit dem Versand vorhandener Händler-Lagerware verwechselt werden. [Lieferbelege und Alternativen](../docs/quellen-und-entscheidungen.md#beschaffung-binnen-einer-woche). CHF-Endpreise, Packungsmengen, Einfuhr und Versand im Warenkorb prüfen. Ein Gesamtpreis ist wegen offener Zubehörmaße und Versandkosten noch nicht verlässlich berechenbar.
+**Produkt** verlinkt einen konkreten Artikel. **Offen** bedeutet: kein bestätigtes Händlerangebot oder noch ungeklärte Ausführung. Ein technisch festgelegtes Modell bleibt auch ohne Bezugsquelle erforderlich. Die Lieferbewertung stammt aus der Recherche vom 03.10.2026 und der Ergänzung E57 vom 04.10.2026; Webabrufe können zwischengespeicherte Händlerangaben enthalten. **Hersteller-Standardlieferzeit** ist die Nachbeschaffungszeit und darf nicht mit dem Versand vorhandener Händler-Lagerware verwechselt werden. [Lieferbelege und Alternativen](../docs/quellen-und-entscheidungen.md#beschaffung-binnen-einer-woche). CHF-Endpreise, Packungsmengen, Einfuhr und Versand im Warenkorb prüfen. Ein Gesamtpreis ist wegen offener Zubehörmaße und Versandkosten noch nicht verlässlich berechenbar.
 
 **Händlerwahl:** DigiKey und Farnell sind ausgeschlossen. Schweizer Händler oder Amazon bevorzugt. Ausländische Ausweichquellen sind als solche markiert. Ein CH-Shop ist kein Nachweis für ein Schweizer Versandlager; bei Amazon zählen konkreter Verkäufer, Variante und Zustellung an die Schweizer Adresse.
 
-Die Menge ist der Bedarf. Bei E50 zwei WAGO-Einzelstücke, bei E55 zwei STEMMA-Kabel #3894, bei E56 ein fertig bestücktes Shield wählen. Vor Bestellung Module vollständig mit Anschlussklemmen/Kabeln und Treiber ausdrücklich als **V3.0** bestätigen. [Technische Auswahl und Abnahmekriterien](../docs/fertige-module.md).
+Die Menge ist der Bedarf. Bei E50 zwei WAGO-221-413-Einzelstücke, bei E57 zusätzlich zwei WAGO-221-415-Einzelstücke und bei E55 zwei STEMMA-Kabel #3894 wählen. Das DFR0265-Shield E56 entfällt; Header-Leitungen E24 aus Bestand verwenden. Vor Bestellung Module vollständig mit Anschlussklemmen/Kabeln und Treiber ausdrücklich als **V3.0** bestätigen. [Technische Auswahl und Abnahmekriterien](../docs/fertige-module.md).
 
 Automatisch erzeugt aus [teile.csv](teile.csv); Änderungen dort pflegen.
 
@@ -47,10 +49,10 @@ for status,title in [('bestellen','Festgelegte Elektronik und Anschlussmaterial'
 order+='''## Beschaffung bündeln
 
 1. **Play-Zone (CH):** zwei Adafruit-Module E48 ab eigenem Lager; Priority oder reservierte Abholung. Kabel E55 sind separat nötig und noch ohne Bezugsquelle.
-2. **Bastelgarage (CH):** ein DFR0265-Shield E56 und zwei FIT0849-RJ45-Adapter E09 gemeinsam. Angezeigte Lagerware, Priority oder reservierte Abholung.
+2. **Bastelgarage (CH):** zwei FIT0849-RJ45-Adapter E09, kein DFR0265-Shield mehr. Angezeigte Lagerware, Priority oder reservierte Abholung.
 3. **Motornetzteil E05:** Simpex ist ein Schweizer Händler mit genauem Modell, zeigt aber nur „lieferbar auf Bestellung“. Zustelldatum noch offen. Distrelec/RS nennt inzwischen Nachschub erst am 16.10.2026 und erfüllt damit die Wochenfrist nicht.
 4. **Antrieb und Spezialkabel:** Bezugsquelle bei Schweizer Händler oder Amazon für E03/E04/E47 und E49/E55 noch offen. Herstellerreferenzen sind keine Empfehlung für eine China-Bestellung. Keine ungeprüften Ersatzmodelle oder falschen JST-/DIN-Kabel einsetzen.
-5. **BerryBase CH-Shop:** E06/E07/E50 bleiben konkrete Angebote. CH-Impressum und AGB nennen unterschiedliche Vertragsadressen; tatsächlichen Vertragspartner, Versandort und CH-Termin im Checkout prüfen. Die angezeigten 2–5 Tage sind keine bestätigte Wochenzustellung.
+5. **BerryBase CH-Shop:** E06/E07/E50/E57 sind konkrete Angebote. CH-Impressum und AGB nennen unterschiedliche Vertragsadressen; tatsächlichen Vertragspartner, Versandort und CH-Termin im Checkout prüfen. Die angezeigten 2–5 Tage sind keine bestätigte Wochenzustellung.
 
 **Zusätzlich bestätigt vorhanden:** E26 Steuerkabel W4 und E35 DC-Leistungslitze. Beide aus Bestand verwenden; dafür entfällt die Beschaffung bei Bürklin.
 

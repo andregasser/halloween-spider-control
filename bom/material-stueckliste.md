@@ -47,20 +47,20 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
 | E48 | 2 Stück | U4/U5 fertige Signalmodule — Adafruit MOSFET Driver #5648, STEMMA-JST-PH und montierte Ausgangs-Federklemmen | Schaltet STEP und DIR ohne Eigenbauplatine oder zusätzliche Einzelbauteile | Noch bestellen |
-| E55 | 2 Stück | STEMMA-Anschlusskabel für U4/U5 — Adafruit #3894, JST PH 2 mm, 3-polig auf einzelne weibliche Header-Buchsen, 200 mm | Steckbare Modulversorgung und Uno-Ansteuerung ohne Löten | Bezugsquelle/Ausführung klären |
-| E56 | 1 Stück | U6 fertiges Uno-Anschluss-Shield — DFRobot DFR0265, IO Expansion Shield V7.1, fertig bestückt | Stellt genügend steckbare 5-V-/GND-/Signalanschlüsse bereit und spart Steuer-Verteilerklemmen | Noch bestellen |
+| E55 | 2 Stück | STEMMA-Anschlusskabel für U4/U5 — Adafruit #3894, JST PH 2 mm, 3-polig auf einzelne weibliche Header-Buchsen, 200 mm | Steckbarer Modulanschluss über vorhandene Header-Leitungen an Uno und Verteilklemmen, ohne Löten | Bezugsquelle/Ausführung klären |
 
 ## Verbindungsklemmen
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
 | E50 | 2 Stück | X1/X2 Verbindungsklemmen — WAGO 221-413, 3 Leiter | Beide Adern jeder DC-Schiene mit kurzem Treiberabgang verbinden | Noch bestellen |
+| E57 | 2 Stück | X3/X4 Steuer-Verbindungsklemmen — WAGO 221-415, je 5 Leiter; getrennt für Uno +5 V und Signal-GND | Verteilt die Uno-Versorgung auf zwei Signalmodule und PIR ohne Anschluss-Shield oder Löten | Noch bestellen |
 
 ## Interne Verdrahtung
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
-| E24 | 1 Satz | Uno-Verbindungsleitungen — Vier einzelne Buchsen-Header-Leitungen zu U6/PIR-Adapter, etwa 20 cm | Steckt PIR OUT/5V und zwei GND-Leitungen auf U6 und führt sie zu J1 | Vorhanden |
+| E24 | 1 Satz | Uno-Verbindungsleitungen — Header-Leitungen aus Bestand, 2,54 mm: zwei Stecker/Stecker-Leitungen und acht Steckerleitungen mit freiem Ende sowie zwei beidseitig freie Leiter, etwa 20 cm | Verbindet Uno direkt mit Modulen und PIR sowie mit X3/X4 statt Anschluss-Shield | Vorhanden |
 | E26 | 0,5 m | W4 Steuerkabel — 2 geschirmte verdrillte Paare, etwa 0,25 mm² | Störarme STEP/DIR-Verbindung zum Treiber | Vorhanden |
 
 ## Gehäuse
@@ -87,6 +87,8 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 | T04 | 1 Stück | Logikanalysator — Für 5-V-Signale und Mikrosekunden-Pulse geeignet | Prüft STEP-Pulsbreite und DIR-Vorlauf | Vorhanden |
 
 ## Lieferumfang und entfallene Teile
+
+Das DFRobot-Anschluss-Shield E56 / U6 entfällt auf Nutzerwunsch. X3/X4 (E57) verteilen stattdessen 5 V und GND; Signale direkt an Uno. Header-Leitungen aus Bestand gemäß Anschlussplan verwenden.
 
 Motor enthält 1 m Anschlusskabel; Adafruit #5648 wird ohne STEMMA-Kabel geliefert: zwei Kabel #3894 separat bestellen. Treiber-Klemmstecker bei Lieferung prüfen. Kabel W5 ist eine fertige Verlängerung; nur dessen männliches Ende wird zum Klemmen abgeschnitten.
 

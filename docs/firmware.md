@@ -1,6 +1,6 @@
 # Firmware-Anforderungen · Revision B
 
-Stand 03.10.2026. **Noch keine Firmware, Build-Konfiguration oder Hardwaretests.** Dieser Vertrag ist Grundlage der nächsten Implementierung. Maßgeblicher elektrischer Aufbau: [Elektronik](elektronik.md).
+Stand 04.10.2026. **Noch keine Firmware, Build-Konfiguration oder Hardwaretests.** Dieser Vertrag ist Grundlage der nächsten Implementierung. Maßgeblicher elektrischer Aufbau: [Elektronik](elektronik.md).
 
 ## Pins und Zeiten
 
@@ -10,6 +10,7 @@ Stand 03.10.2026. **Noch keine Firmware, Build-Konfiguration oder Hardwaretests.
 | D3 | DIR → U5 STEMMA-In | HIGH aktiviert DIR über DIR− |
 | A0 | PIR über J1.1 | Analogauswertung mit internem Pull-up |
 | D4 / D7 / D8 | Frei | Kein Rev.-A-PIR an D7 |
+| A1 / A2 / A3 | Frei | Kein Anschluss-Shield; Versorgung über 5V/GND und X3/X4 |
 
 D2/D3 zunächst LOW setzen, dann OUTPUT aktivieren. Kein Schritt beim Start. A0 `INPUT_PULLUP`, ADC-Referenz `DEFAULT` (Vcc). Pull-up beim Lesen nicht abschalten. Analogpins können diesen Modus nutzen; [Arduino-Dokumentation](https://github.com/arduino/docs-content/blob/main/content/learn/02.microcontrollers/02.analog-input/analog-input.md).
 

@@ -5,9 +5,9 @@
 ## 1. Spannungsfrei
 
 - Prüfen: DM860T tatsächlich V3.0, montierte Klemmen, S2 5 V und DIP-Stellungen gemäß Plan.
-- U6-Jumper auf 5 V, rote Modulversorgung tatsächlich aus A1/A2, keine externe Shieldversorgung.
+- Kein Shield: D2/D3 direkt zu den weißen E55-Buchsen, X3 ausschließlich Uno +5 V, X4 ausschließlich Signal-GND. Power-GND-Buchsen nicht mit VIN verwechseln. E24-Stecker passend; Leiter in X3/X4 im Klemmbereich und 11 mm abisoliert. W4-Schirm an X4.5; J1.4 an zweiter Power-GND-Buchse.
 - Vor Anschluss blanker Litzen die Eignung der gelieferten Schraubklemmen an DM860T/FIT0849 prüfen; Leiter vollständig geklemmt und ohne herausstehende Einzeldrähte. Halt spannungsfrei durch leichtes Ziehen prüfen.
-- Alle Verbindungen gegen Tabellen durchmessen, insbesondere U6 +5 V gegenüber X1 +48 V. Keine zusätzliche Verbindung von X2 an Signal-GND.
+- Alle Verbindungen gegen Tabellen durchmessen, insbesondere X3 +5 V gegenüber X1 +48 V; X3 gegen X4 auf Kurzschluss prüfen. Keine zusätzliche Verbindung von X2 an Signal-GND.
 - Motor: schwarz/grün bilden eine Wicklung, rot/blau die andere; Farben am tatsächlichen Motor bestätigen. Zwischen Wicklungen kein Durchgang.
 - W3 ist 1:1 und höchstens 3 m; PIR-Pinfolge prüfen. STEMMA-Kabel korrekt eingesteckt, offene Enden isoliert. PUL−/DIR− ausschließlich an die jeweiligen Minus-Ausgänge, keine zusätzliche GND-Brücke.
 - W5-Adern über die Kontaktlage am Mean-Well-Stecker identifizieren; GlobTek-Pinnummern nicht übernehmen. Beide Adern jeder Versorgungsschiene anschließen.

@@ -2,7 +2,7 @@
 
 Eine etwa 5 kg schwere Spinne auf Rollen bewegt sich langsam auf einer Kreisbahn. Ein PIR löst die Fahrt aus. Der Arduino steuert einen NEMA-34-Schrittmotor; ein Zahnriemen überträgt die Bewegung auf eine separat gelagerte Hauptachse und das ungefähr 1 m lange Zugrohr.
 
-**Stand 03.10.2026 · Revision B: fertige Module, keine selbst gelötete Zusatzplatine. Entwurf noch nicht aufgebaut oder getestet; Firmware folgt als nächster Arbeitsschritt.**
+**Stand 04.10.2026 · Revision B: fertige Module, keine selbst gelötete Zusatzplatine. Entwurf noch nicht aufgebaut oder getestet; Firmware folgt als nächster Arbeitsschritt.**
 
 ## Aktuelle Konfiguration
 
@@ -10,7 +10,7 @@ Eine etwa 5 kg schwere Spinne auf Rollen bewegt sich langsam auf einer Kreisbahn
 |---|---|
 | Steuerung | Vorhandener Arduino Uno R3 |
 | Bewegungserkennung | Vorhandener PIR in HC-SR501-Bauform, RJ45-Patchkabel bis 3 m |
-| Steckbare Anschlüsse | DFRobot IO Expansion Shield DFR0265 auf dem Uno |
+| Anschlüsse und Verteilung | Vorhandene Header-Kabel direkt am Uno; zwei WAGO 221-415 für 5 V und GND |
 | STEP/DIR-Schnittstelle | 2 × Adafruit MOSFET Driver #5648 plus 2 × STEMMA-Kabel #3894 |
 | Motortreiber | STEPPERONLINE DM860T **V3.0**, auf 5-V-Signale eingestellt |
 | Motor | STEPPERONLINE 34HS46-6004S1, NEMA 34, mit 1-m-Kabel |
@@ -28,11 +28,11 @@ flowchart LR
     MOTOR -->|Zahnriemen · 2:1| AXIS[Separat gelagerte Hauptachse]
 ```
 
-Alle Platinen werden fertig bestückt gekauft. Es bleiben Kabelstecken, Ablängen, Abisolieren und Klemmen. Zusätzliche einzelne Widerstände oder eine Lötplatine sind nicht erforderlich. Das fertig konfektionierte DC-Verlängerungskabel wird nur an seinem treiberseitigen Ende gekürzt. Netzteil und dessen eigenes Kabel bleiben unverändert. Beide Netzteile werden mit fertigen Netzanschlüssen in die Mehrfachsteckdose gesteckt.
+Das DFRobot-Anschluss-Shield entfällt. Zwei einfache WAGO-Klemmen verteilen 5 V und GND; Signale gehen direkt an den Uno. Alle Platinen werden fertig bestückt gekauft. Es bleiben Kabelstecken, Ablängen, Abisolieren und Klemmen. Zusätzliche einzelne Widerstände oder eine Lötplatine sind nicht erforderlich. Das fertig konfektionierte DC-Verlängerungskabel wird nur an seinem treiberseitigen Ende gekürzt. Netzteil und dessen eigenes Kabel bleiben unverändert. Beide Netzteile werden mit fertigen Netzanschlüssen in die Mehrfachsteckdose gesteckt.
 
 Der Aufbau wird nach ungefähr vier Stunden wieder abgebaut. Ein neues Steuergehäuse samt Montageplatte ist nicht vorgesehen; bei Bedarf wird vorhandenes Gehäuse-/Abdeckungsmaterial verwendet. **Trockener, geschützter Standort** ist weiterhin eine Planannahme. Befestigung und Zugentlastung werden nach dem tatsächlichen Aufbau gewählt.
 
-**Beschaffung:** Schweizer Händler oder Amazon bevorzugt; DigiKey und Farnell ausgeschlossen. Die fehlenden Teile sollen binnen einer Woche in der Schweiz eintreffen. Die [Bestellliste](bom/bestellliste.md) nennt konkrete Angebote und offene Bezugsquellen. Module bei Play-Zone und Shield/RJ45-Adapter bei Bastelgarage sind vorgesehen. Für Antrieb, Motornetzteil und spezielle Anschlusskabel ist die Wochenlieferung noch nicht belegt; die Gesamtbeschaffung bleibt offen.
+**Beschaffung:** Schweizer Händler oder Amazon bevorzugt; DigiKey und Farnell ausgeschlossen. Die fehlenden Teile sollen binnen einer Woche in der Schweiz eintreffen. Die [Bestellliste](bom/bestellliste.md) nennt konkrete Angebote und offene Bezugsquellen. Module bei Play-Zone und RJ45-Adapter bei Bastelgarage sind vorgesehen. Für Antrieb, Motornetzteil und spezielle Anschlusskabel ist die Wochenlieferung noch nicht belegt; die Gesamtbeschaffung bleibt offen.
 
 ## Dokumente
 
