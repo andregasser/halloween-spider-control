@@ -13,7 +13,7 @@
 - Separates USB-Netzteil für Uno; beide fertigen Netzanschlüsse in vorhandene CH-Mehrfachsteckdose.
 - PIR direkt an **A0**, über bestehendes RJ45-Kabel und zwei FIT0849-Adapter; keine Sensor-Zusatzplatine.
 
-**Kein Löten, keine zusätzlichen einzelnen Widerstände/Kondensatoren.** Es bleiben Kabelstecken, die Kleinspannungs-Klemmverbindungen, Gehäusemontage und Firmware. Ein gekauftes Motor-Treiber-Kit würde diese Aufgaben nicht vollständig übernehmen.
+**Kein Löten, keine zusätzlichen einzelnen Widerstände/Kondensatoren.** Es bleiben Kabelstecken, die Kleinspannungs-Klemmverbindungen, Befestigung der Geräte und Firmware. Ein gekauftes Motor-Treiber-Kit würde diese Aufgaben nicht vollständig übernehmen.
 
 ## Warum diese Signalmodule?
 
@@ -48,4 +48,4 @@ Quellen: [Tic #3140](https://www.pololu.com/product/3140), [Tic-Handbuch](https:
 
 **Lieferanforderung: binnen 7 Kalendertagen in der Schweiz erhalten.** Antrieb, Motornetzteil und Spezialkabel sind innerhalb dieser Vorgaben noch nicht vollständig beschaffbar belegt. Simpex führt PS1 nur auf Bestellung; Distrelec/RS nennt Nachschub am 16.10.2026. E26 Steuerkabel W4 und E35 DC-Leistungslitze sind inzwischen als vorhanden bestätigt und nicht zu bestellen. BerryBase wird als CH-Shop mit ungeprüftem Versandlager geführt. Keine Teile wurden bestellt oder elektrisch geändert. [Aktuelle Händlerprüfung](quellen-und-entscheidungen.md#schweizer-händler-oder-amazon), [Bestellliste](../bom/bestellliste.md).
 
-**Komplettpreis noch offen:** Antrieb, Anschlusskabel, CH-Versand und Montagezubehör fehlen. Kein Nachweis für das günstigste Gesamtpaket. Gehäuse und Durchführungen werden nach realem Layout und Standort festgelegt.
+**Komplettpreis noch offen:** Antrieb, Anschlusskabel, CH-Versand und Montagezubehör fehlen. Kein Nachweis für das günstigste Gesamtpaket. Für den etwa vierstündigen Aufbau entfällt die Neubeschaffung von Steuergehäuse und Montageplatte. Bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden; Montage und Zugentlastung nach tatsächlichem Aufbau festlegen.

@@ -22,7 +22,7 @@ Die Bauteilnummer bleibt auf beiden Blättern gleich. Jeder Gerätekasten enthä
 | PS1 | Mean Well GST220A48-R7B, geschlossenes Tischnetzteil |
 | PS2 | Goobay 44952, USB-Netzteil, nominal 5 V |
 | S0 | Vorhandene geschaltete CH-Mehrfachsteckdose |
-| J1 / J2 | DFRobot FIT0849, RJ45-Buchse auf Schraubklemmen; Steuerbox / Sensor |
+| J1 / J2 | DFRobot FIT0849, RJ45-Buchse auf Schraubklemmen; Steuerung / Sensor |
 | X1 / X2 | WAGO 221-413, je 3 Anschlüsse für +48 V / 48-V-Rückleiter |
 | W1 | Vorhandenes 230-V-Anschlusskabel; für PS1 CH-Stecker auf IEC-C13-Buchse auswählen |
 | W2 | USB-A-auf-USB-B-Datenkabel zum Uno |
@@ -30,9 +30,11 @@ Die Bauteilnummer bleibt auf beiden Blättern gleich. Jeder Gerätekasten enthä
 | W4 | 2 × 2 × 0,25 mm², paarverseilte Signalleitung zum Treiber, höchstens 0,5 m |
 | W5 | GlobTek KPPX4124641M0KPJX4(R), 1-m-Power-DIN-Verlängerung, treiberseitig gekürzt |
 
+Für den etwa vierstündigen Aufbau ist kein neues Steuergehäuse samt Montageplatte vorgesehen. Geräte mit vorhandenen Abstandshaltern befestigen und Leitungen zugentlasten; bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden.
+
 ## 1. Netzanschluss und Motorversorgung
 
-**Keine offenen 230-V-Anschlüsse im Aufbau.** W1 aus dem bestätigten Kabelbestand auswählen; passende IEC-C13-Buchse für PS1 und Schutzleiter prüfen. W1 in Steckplatz 1 von S0 und in den IEC-C14-Eingang von PS1 stecken. PS2 in Steckplatz 2, W2 von PS2 zum Uno-USB-B-Anschluss. Das Netzteil PS1 bleibt außerhalb der Steuerbox, trocken, belüftet und zugentlastet. Keine Änderung an Netzsteckern oder Netzteilgehäusen.
+**Keine offenen 230-V-Anschlüsse im Aufbau.** W1 aus dem bestätigten Kabelbestand auswählen; passende IEC-C13-Buchse für PS1 und Schutzleiter prüfen. W1 in Steckplatz 1 von S0 und in den IEC-C14-Eingang von PS1 stecken. PS2 in Steckplatz 2, W2 von PS2 zum Uno-USB-B-Anschluss. Das Netzteil PS1 separat, trocken, belüftet und zugentlastet aufstellen. Keine Änderung an Netzsteckern oder Netzteilgehäusen.
 
 W5 hat einen passenden vierpoligen Power-DIN-Buchsenstecker für PS1. **Nur den männlichen Stecker am anderen Ende der Verlängerung abschneiden**, nicht das Kabel von PS1. W5 hat vier AWG-18-Adern, zwei pro Versorgungsschiene. Alle vier werden verwendet.
 
@@ -71,7 +73,7 @@ Die Module U4/U5 bekommen je ein fertig konfektioniertes **Adafruit-3894-Kabel**
 | PIR +5 V | Analoggruppe **A0, roter +V-Stift** | J1.5 |
 | PIR GND | Analoggruppe **A0, schwarzer GND-Stift** | J1.2 |
 | Zweite PIR-GND-Ader | Analoggruppe **A3, schwarzer GND-Stift** | J1.4 |
-| W4-Schirm | **SERVO_PWR, Minus-/GND-Schraubklemme** | Nur Steuerbox-Ende; SERVO_PWR-Plus bleibt frei |
+| W4-Schirm | **SERVO_PWR, Minus-/GND-Schraubklemme** | Nur Ende an der Steuerung; SERVO_PWR-Plus bleibt frei |
 
 **Bewusst die roten/schwarzen A1-/A2-Stifte für die Modulversorgung verwenden.** Die rote Versorgungsreihe der digitalen D-Pins wird hier nicht benutzt. Im Herstellerplan läuft diese über einen zusätzlichen Versorgungspfad; die Analoggruppen stellen bei gesetztem 5-V-Jumper die direkte Uno-5-V-Versorgung bereit. Die analogen Signalstifte A1/A2/A3 selbst bleiben frei. [U6-Herstellerplan](https://dfimg.dfrobot.com/wiki/18598/DFR0265_io-expansion-shield-for-arduino_schematics_V1.0.pdf).
 
@@ -87,7 +89,7 @@ Die Module U4/U5 bekommen je ein fertig konfektioniertes **Adafruit-3894-Kabel**
 
 Die Ausgangsklemmen am Modul sind **Federklemmen mit Drucktaste**, keine Schraubklemmen: Taste vorsichtig mit kleinem Schraubendreher drücken, abisolierte 0,25-mm²-Ader einführen, Taste loslassen und Zugprobe machen. Abisolierlänge nach gelieferter Klemme prüfen, keinen 11-mm-WAGO-221-Wert pauschal übertragen. [Herstelleranleitung](https://learn.adafruit.com/adafruit-mosfet-driver/plugging-into-the-terminal-block).
 
-W4: ein verdrilltes Paar für PUL+/PUL−, das andere für DIR+/DIR−. Schirm nur am Steuerbox-Ende an U6 SERVO_PWR-GND, treiberseitig isolieren. Von Motor-/DC-Leistungskabeln getrennt führen. Gegebenenfalls freies Schirmende für die Klemme passend vorbereiten und isolieren.
+W4: ein verdrilltes Paar für PUL+/PUL−, das andere für DIR+/DIR−. Schirm nur am Ende an der Steuerung an U6 SERVO_PWR-GND, treiberseitig isolieren. Von Motor-/DC-Leistungskabeln getrennt führen. Gegebenenfalls freies Schirmende für die Klemme passend vorbereiten und isolieren.
 
 Die Module sind für Versorgung **3–30 V** spezifiziert; hier ausschließlich Uno nominal 5 V. **S2 am DM860T auf 5 V.** Vor Motorbetrieb die Signalspannung **zwischen PUL+ und PUL−** beziehungsweise **DIR+ und DIR−** unter Last prüfen. Kein Anschluss dieser Module oder des Shields an 48 V. Die Versorgung über USB-B des Uno bleibt bestehen.
 
@@ -95,7 +97,7 @@ Die Module sind für Versorgung **3–30 V** spezifiziert; hier ausschließlich 
 
 Der PIR wird ohne Zusatzplatine direkt an **A0**, einen analogen Eingang des Uno, angeschlossen. Die Firmware wertet den typischen 3–3,3-V-Pegel aus. **D7 aus Revision A wird nicht verwendet.** Die tatsächliche VCC/OUT/GND-Pinfolge am vorhandenen PIR ist vor dem Anschließen zu prüfen.
 
-| RJ45-Pin an J1 und J2 | Verbindung in Steuerbox J1 | Verbindung am Sensor J2 | Paar, T568B |
+| RJ45-Pin an J1 und J2 | Verbindung an der Steuerung J1 | Verbindung am Sensor J2 | Paar, T568B |
 |---|---|---|---|
 | 1 | U6 A0, blauer Signalstift → U1 A0 | B1 OUT | Weiß/Orange |
 | 2 | U6 A0, schwarzer GND-Stift | B1 GND | Orange |

@@ -67,11 +67,9 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
-| E37 | 1 Stück | Steuergehäuse mit Montageplatte — Vorgeschlagen Hammond 1554YAGY ABS, 300×240×120 mm, trockener geschützter Ort | Schützt und befestigt Uno, Module, Treiber und Klemmen | Aufmaß/Ausführung offen |
-| E53 | 1 Stück | Montageplatte für Steuergehäuse — Hammond 1554YPL, passende Stahl-Innenplatte | Befestigt Geräte getrennt von der Gehäusewand | Aufmaß/Ausführung offen |
-| E38 | 1 Satz | Lüftungselemente und Wetterschutz — Lüftung zum tatsächlichen Gehäuse; DM860T-Umgebung maximal 40 °C | Verhindert Wärmestau und direkten Wassereintritt | Aufmaß/Ausführung offen |
+| E38 | 1 Satz | Lüftungselemente und Wetterschutz — Lüftung zum tatsächlichen Gehäuse; DM860T-Umgebung maximal 40 °C | Verhindert Wärmestau und direkten Wassereintritt | Bestand/Bedarf prüfen |
 | E39 | 1 Stück | PIR-Sensorgehäuse — PIR-Sensorgehäuse für B1 und J2, Linse freiliegend | Schützt PIR-Modul und ermöglicht feste Ausrichtung | Aufmaß/Ausführung offen |
-| E40 | 1 Satz | Kabelverschraubungen/Zugentlastungen — Mindestens vier Steuerbox-Durchführungen: W2/W3/W5/Motorkabel; eine am Sensor | Verhindert Zug auf Klemmen und scharfe Blechkanten | Aufmaß/Ausführung offen |
+| E40 | 1 Satz | Kabelverschraubungen/Zugentlastungen — Zugentlastungen passend zu W2/W3/W5/Motorkabel und Sensorleitung; Durchführungen nur bei verwendeter Abdeckung | Verhindert Zug auf Klemmen und scharfe Blechkanten | Aufmaß/Ausführung offen |
 | E42 | 10 Stück | Platinen-Abstandshalter — Isolierende Platinen-Abstandshalter samt Schrauben, zu realen Lochbildern | Befestigt Uno, zwei Module und RJ45-Adapter elektrisch isoliert | Vorhanden |
 | E54 | 1 Satz | Befestigungen für Treiber, Klemmen und Motorhalterung — Passende Schrauben/Muttern/Unterlegscheiben, ggf. WAGO-Halter | Zugfeste Befestigung der elektrischen Geräte und ausdrücklich gewünschten Motorhalterung | Aufmaß/Ausführung offen |
 
@@ -94,5 +92,7 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 ## Lieferumfang und entfallene Teile
 
 Motor enthält 1 m Anschlusskabel; Adafruit #5648 wird ohne STEMMA-Kabel geliefert: zwei Kabel #3894 separat bestellen. Treiber-Klemmstecker bei Lieferung prüfen. Kabel W5 ist eine fertige Verlängerung; nur dessen männliches Ende wird zum Klemmen abgeschnitten.
+
+Steuergehäuse E37 und zugehörige Montageplatte E53 entfallen als festgelegte Projektteile. Für den etwa vierstündigen Aufbau kann bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwendet werden; kein bestimmtes Modell als Bestand bestätigt.
 
 Lochrasterplatinen, HCT-Chip, Sockel, Einzeltransistoren, externe Kondensatoren, Netzsicherungsaufbau und interne 230-V-Verkabelung aus Revision A entfallen. Lötwerkzeug/Lot/Flussmittel sind bestätigt vorhanden, werden für Rev. B aber nicht benötigt und stehen deshalb nicht als Projektbedarf in dieser Liste. Kein Ethernet/PoE, Home-Sensor oder Freigabeschalter im Basisaufbau.

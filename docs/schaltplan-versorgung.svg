@@ -68,7 +68,7 @@
 <text x="875" y="1210" class="small">Vier Motoradern → U3 A+/A−/B+/B−</text>
 <rect x="900" y="1270" width="820" height="185" rx="8" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
 <text x="916" y="1307" class="head">Vor dem Einschalten</text>
-<text x="916" y="1348" class="small">PS1 trocken und belüftet außerhalb der Steuerbox.</text>
+<text x="916" y="1348" class="small">PS1 separat, trocken und belüftet aufstellen.</text>
 <text x="916" y="1384" class="small">48-V-Rückleiter X2 nicht an Arduino-GND brücken.</text>
 <text x="916" y="1420" class="small">W5-Steckerzuordnung messen; nie nach Farben raten.</text>
 <text x="65" y="1495" class="small">Beide AC-Klemmen akzeptieren 48 V DC nur für die hier bezeichnete U3-Version.</text>

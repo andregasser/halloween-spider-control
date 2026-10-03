@@ -10,7 +10,7 @@
 - Motor: schwarz/grün bilden eine Wicklung, rot/blau die andere; Farben am tatsächlichen Motor bestätigen. Zwischen Wicklungen kein Durchgang.
 - W3 ist 1:1 und höchstens 3 m; PIR-Pinfolge prüfen. STEMMA-Kabel korrekt eingesteckt, offene Enden isoliert. PUL−/DIR− ausschließlich an die jeweiligen Minus-Ausgänge, keine zusätzliche GND-Brücke.
 - W5-Adern über die Kontaktlage am Mean-Well-Stecker identifizieren; GlobTek-Pinnummern nicht übernehmen. Beide Adern jeder Versorgungsschiene anschließen.
-- Alle Geräte isoliert befestigt, Durchführungen zugentlastet, Netzteile trocken und frei belüftet. Gehäuse-IP-Werte gelten nach eigenen Bohrungen nicht automatisch.
+- Alle Geräte isoliert befestigt und Leitungen zugentlastet, Netzteile trocken und frei belüftet. Bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden; ein neues Steuergehäuse ist nicht vorgesehen.
 
 ## 2. Nur Arduino und Signalmodule
 
@@ -34,7 +34,7 @@ U3 noch abgetrennt. PS1 an W1/S0, W5 an PS1. An X1/X2 ungefähr **48 V, Toleranz
 
 Niedrige Stromstufe 2,40 A Peak / 1,70 A RMS. Mit Rampe 1600 Pulse fahren, volle Motorumdrehung und beide Richtungen prüfen. Mindestens 500-µs-Pulse und maximal 100 Pulse/s. Reset, PIR-Fehler und gemeinsames Aus-/Einschalten prüfen; alte Fahrt darf nicht fortgesetzt werden.
 
-PIR mit endgültigem W3 testen, während Motor startet, stoppt und die Richtung wechselt. Fehltrigger oder ungültige ADC-Werte sind zu beheben, bevor der Wagen angeschlossen wird. Erst nach mindestens 30 Minuten Betrieb Motor-/Treiber-/Gehäusetemperatur und Versorgung protokollieren. Herstellergrenzen einhalten; Strom nicht vorsorglich maximal einstellen.
+PIR mit endgültigem W3 testen, während Motor startet, stoppt und die Richtung wechselt. Fehltrigger oder ungültige ADC-Werte sind zu beheben, bevor der Wagen angeschlossen wird. Erst nach mindestens 30 Minuten Betrieb Motor-/Treibertemperatur und gegebenenfalls Temperatur unter der Abdeckung und Versorgung protokollieren. Herstellergrenzen einhalten; Strom nicht vorsorglich maximal einstellen.
 
 **Netzteilreserve und Bremsen praktisch prüfen:** PS1 darf nicht in Überlast abschalten. Beim Bremsen darf die 48-V-Schiene nicht unzulässig ansteigen; Entwurfsziel höchstens **50 V**, W5 ist für **56 V** ausgelegt. Für kurze Überspannungsspitzen reicht ein gewöhnliches Multimeter nicht als Nachweis; bei Bedarf geeignete Messung organisieren. Wenn das Ziel nicht eingehalten wird, Rampen/Last anpassen und erforderliche fertige Schutzbaugruppe neu auswählen. Keine pauschale Rückspeisefestigkeit behaupten.
 
@@ -52,5 +52,5 @@ Separat gelagerte Achse, Motorhalterung und Riemen prüfen. Dann ohne Wagen 3200
 | PIR-ADC LOW/HIGH/offenes OUT, endgültige Kabellänge | Offen |
 | Pulsbreite, DIR-Vorlauf, Warmup-/Fehler-/Reset-Verhalten | Offen |
 | Stromstufe, Geschwindigkeit, Rampen, Temperatur nach 30 min | Offen |
-| Tatsächlich montiertes Gehäuse, Durchführungen, Befestigung | Offen |
+| Tatsächliche Befestigung/Zugentlastung, gegebenenfalls Abdeckung aus Bestand | Offen |
 | Motorumdrehung/Hauptachse, Fahrwinkel und Lastversuch | Offen |

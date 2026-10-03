@@ -47,7 +47,7 @@ def supply():
     s.text(890,1160,'X1.3 / X2.3 → U3 AC/AC: je kurze 1,5-mm²-Kupferlitze','small')
     s.device('M1',65,1190,750,230,['Motorlieferkabel, 1 m; keine Verlängerung vorgesehen','Schwarz → A+       Grün → A−','Rot → B+               Blau → B−','Wicklungspaare vor Anschluss durchmessen'])
     s.wire([(1530,1125),(1530,1230),(815,1230)],'#895821');s.text(875,1210,'Vier Motoradern → U3 A+/A−/B+/B−','small')
-    s.box(900,1270,820,185,'Vor dem Einschalten',['PS1 trocken und belüftet außerhalb der Steuerbox.','48-V-Rückleiter X2 nicht an Arduino-GND brücken.','W5-Steckerzuordnung messen; nie nach Farben raten.'])
+    s.box(900,1270,820,185,'Vor dem Einschalten',['PS1 separat, trocken und belüftet aufstellen.','48-V-Rückleiter X2 nicht an Arduino-GND brücken.','W5-Steckerzuordnung messen; nie nach Farben raten.'])
     s.text(65,1495,'Beide AC-Klemmen akzeptieren 48 V DC nur für die hier bezeichnete U3-Version.','small')
     s.save('docs/schaltplan-versorgung.svg')
 

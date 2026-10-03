@@ -18,7 +18,7 @@ Stand **03.10.2026**. Aktuelle Entscheidung ist der Aufbau mit fertig bestückte
 | [WAGO 221](https://www.wago.com/fr/produits/technique-de-raccordement/bornes-de-raccordement-221) | Klemmbereiche, Verbindungsprinzip und Abisolierlänge |
 | [Arduino Analogpins](https://github.com/arduino/docs-content/blob/main/content/learn/02.microcontrollers/02.analog-input/analog-input.md) | Analogauswertung und INPUT_PULLUP auf A0 |
 | [Joy-IT HC-SR501](https://joy-it.net/en/products/SEN-HC-SR501) | Vergleichsdaten PIR, keine Herstelleridentifikation des eigenen Sensors |
-| [Hammond 1554](https://www.hammfg.com/electronics/small-case/plastic/1554) | Gehäuse-/Montageplattenvorschlag, ABS für geschützten Einsatz |
+| [Hammond 1554](https://www.hammfg.com/electronics/small-case/plastic/1554) | Historischer Gehäuse-/Montageplattenvorschlag; Neubeschaffung entfällt auf Nutzerwunsch |
 | [ST-M7](https://www.omc-stepperonline.com/de/nema-34-halterung-fuer-schrittmotor-halterung-aus-legiertem-stahl-st-m7) | Ausdrücklich gewünschte NEMA-34-Motorhalterung |
 
 GlobTek und Mean Well verwenden **unterschiedliche Pinnummern**. Maßgeblich ist deshalb die geprüfte Kontaktlage am Netzteil, nicht die Übernahme von Ziffern auf die Verlängerung. Herstellerunterlagen belegen Kabel-/Steckerfamilie und Belastbarkeit, aber keine individuelle Aderfarbe des gelieferten Kabels. Durchgangs- und Spannungsprüfung bleibt Pflicht.
@@ -32,10 +32,12 @@ GlobTek und Mean Well verwenden **unterschiedliche Pinnummern**. Maßgeblich ist
 5. **GST220A48-R7B statt LRS-350-48.** Fertiger Netzanschluss und berührungsgeschlossenes Gehäuse reduzieren Eigenbau. Leistungsabschätzung und Grenzen in [Modulauswahl](fertige-module.md), Abnahme in [Inbetriebnahme](inbetriebnahme.md). Langsame Erstkonfiguration, keine Zusage für volle Dauerleistung des Motors.
 6. **W5 GlobTek Power-DIN-Verlängerung** statt R7BF/P1M-Barreladapter. Adapter wäre der erste Anschlussabschnitt, sein nachfolgender Buchsen-/Klemmteil war nicht nachgewiesen. Das ausgewählte W5 hat fertig montierte Enden und dokumentierte Belastbarkeit; nur das männliche Verlängerungsende wird bearbeitet. Beide Adern je Schiene verwenden.
 7. **Keine eigene Netzbaugruppe.** S0 speist PS1 über fertiges Typ-12/C13-Kabel und PS2 direkt. Offene Netzenden, zusätzliche Rev.-A-Sicherungen und PE-Verteilung entfallen. Andere Leitungsquerschnitte/Abgänge erfordern erneute Auslegung; kein Netzteil öffnen.
-8. **Gehäuseannahme trocken/geschützt**, noch keine Nutzerbestätigung. Vorschlag Hammond 1554YAGY/1554YPL; Auswahl und Durchführungen nach realem Layout. Kein Regen-/IP-Nachweis nach eigenen Bohrungen.
+8. **Ursprünglicher Gehäusevorschlag:** Hammond 1554YAGY/1554YPL für trockenen, geschützten Standort. Die Neubeschaffung wurde später auf Nutzerwunsch gestrichen, siehe Entscheidung 11. Der tatsächliche Standort ist noch nicht bestätigt.
 9. Schaltpläne zeigen nur Geräte, reale Pins, Kabel und Einstellungen. Innere Schaltungen fertiger Geräte werden nicht gezeichnet. Material-/Bestellliste bleibt auf Elektronik plus ausdrücklich ST-M7 beschränkt.
 
 10. Nutzer bestätigt ausreichend vorhandene **230-V-Anschlusskabel** sowie normale **Cat5-/Cat6-Netzwerkkabel**. E29/W1 wird als Bestand geführt und aus den Bestellpositionen entfernt; E08/W3 bleibt vorhanden. Für W1 passende CH-/IEC-C13-Ausführung im Bestand auswählen, genaue Steckerform ist noch nicht bestätigt. Für PIR vorhandenes 1:1-Patchkabel bis 3 m verwenden. Keine elektrische Anschlussänderung.
+
+11. Nutzer verzichtet auf die Neubeschaffung des **Steuergehäuses E37 und der zugehörigen Montageplatte E53**. Temporärer Betrieb etwa vier Stunden, danach Abbau; bei Bedarf ist eigenes Gehäusematerial vorhanden. Beide festen Kaufpositionen entfallen aus der CSV. Lüftungszubehör E38 ist nur noch bedingter Bedarf; E40 wird nach tatsächlicher Montage gewählt. Befestigung, Isolation, Zugentlastung und freie Belüftung bleiben Aufbauanforderungen. Keine elektrische Anschlussänderung.
 
 ## Schweizer Händler oder Amazon
 
@@ -51,7 +53,7 @@ GlobTek und Mean Well verwenden **unterschiedliche Pinnummern**. Maßgeblich ist
 | E55, zwei Kabel #3894 | Schweizer Händler und Amazon recherchiert, kein verifiziertes passendes Angebot gefunden. Direkte Play-Zone-Artikelsuche nach 3894 liefert keine Ergebnisse. [Adafruit-Produktreferenz](https://www.adafruit.com/product/3894) definiert den benötigten Stecker; ist kein bevorzugter Bestelllieferant. In CSV weiterhin zwei benötigte Kabel, Beschaffungsstatus offen. Keine Verwechslung mit #3893 oder vierpoligem STEMMA QT. |
 | E49, W5 | Keine verifizierte Schweizer/Amazon-Bezugsquelle für GlobTek KPPX4124641M0KPJX4(R) gefunden. Kein Bestelllink. Die Spezifikation und die Herstellerunterlagen bleiben maßgeblich; kein lötenpflichtiger oder ungeprüfter Steckerersatz. |
 | E03/E04/E47, Antrieb | Kein Angebot bei Schweizer Händler/Amazon mit genauem Modell, Treiberrevision V3.0 und belegtem CH-Termin gefunden. STEPPERONLINE-Links dienen als Hersteller-/Modellreferenzen. Beschaffungsstatus jetzt ausdrücklich offen; China-Versand ist keine Wochenfrist-Empfehlung. |
-| E37/E53, Gehäuse | E37 nun konkreter Artikel [Distrelec 302-16-577 / 1554YAGY](https://www.distrelec.ch/en/watertight-enclosure-abs-240x300x120mm-light-grey-hammond-1554yagy/p/30216577). Für E53 / 1554YPL noch keine geprüfte Schweizer/Amazon-Bezugsquelle. Beide bleiben Vorschläge nach Aufmaß und ohne belegten Zustelltermin. |
+| E37/E53, Gehäuse | Auf Nutzerwunsch aus dem aktuellen Material-/Bestellbedarf entfernt. Aufbau etwa vier Stunden, danach Abbau. Bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden; keine konkrete Hammond-Ausführung als Bestand bestätigt. |
 | E26/E35, Meterware | Nutzer bestätigt beide als vorhanden. Steuerkabel W4 und DC-Leistungslitze bleiben im Materialbedarf, entfallen aber als Bestellpositionen. Die bisherige Bürklin-Ausweichquelle wird nicht mehr benötigt; keine konkrete Herstellermarke des vorhandenen Materials bestätigt. |
 
 **BerryBase richtig einordnen:** Das gelesene [CH-Impressum](https://www.berrybase.ch/footer-ch/informationen/impressum/) nennt BerryBase GmbH c/o Sertronics AG in Birmenstorf und eine CH-Steuernummer. Die gelesenen [CH-AGB](https://www.berrybase.ch/agb/) nennen dagegen einen deutschen Vertragspartner. Deshalb weder ausschließlich deutschen noch eindeutig schweizerischen Vertragspartner aus diesen widersprüchlichen Webangaben ableiten. E06/E07/E50 und bedingtes Werkzeug T02 als CH-Shop mit ungeprüftem Versandlager führen; tatsächlichen Vertragspartner/Versandort im Checkout prüfen. Eine Schweizer Adresse allein bestätigt keinen Schweizer Lagerbestand.
@@ -101,7 +103,7 @@ E37/E53 sind weiterhin Gehäuse-/Plattenvorschläge nach Aufmaß. Andere DigiKey
 ## Noch ausstehende Nachweise
 
 - Reale Treiberrevision, PIR-Pinfolge, belastete Modulpegel und Versorgungsspannung.
-- Finaler Standort, Gehäuselayout, Lüftung, Durchführungen und Schraubenmaße.
+- Finaler Standort, Befestigung und Zugentlastung; gegebenenfalls Abdeckung aus Bestand und passende Lüftung/Durchführungen.
 - Netzteil-Leistungsreserve und Spannung beim Bremsen an tatsächlicher Last.
 - Firmware, Sensor-Störfestigkeit am 3-m-Kabel, Temperatur- und Bewegungstests.
 - Schweizer Warenkorbpreise und tatsächliche Liefertermine.

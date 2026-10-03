@@ -20,11 +20,13 @@ bom+='''## Lieferumfang und entfallene Teile
 
 Motor enthält 1 m Anschlusskabel; Adafruit #5648 wird ohne STEMMA-Kabel geliefert: zwei Kabel #3894 separat bestellen. Treiber-Klemmstecker bei Lieferung prüfen. Kabel W5 ist eine fertige Verlängerung; nur dessen männliches Ende wird zum Klemmen abgeschnitten.
 
+Steuergehäuse E37 und zugehörige Montageplatte E53 entfallen als festgelegte Projektteile. Für den etwa vierstündigen Aufbau kann bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwendet werden; kein bestimmtes Modell als Bestand bestätigt.
+
 Lochrasterplatinen, HCT-Chip, Sockel, Einzeltransistoren, externe Kondensatoren, Netzsicherungsaufbau und interne 230-V-Verkabelung aus Revision A entfallen. Lötwerkzeug/Lot/Flussmittel sind bestätigt vorhanden, werden für Rev. B aber nicht benötigt und stehen deshalb nicht als Projektbedarf in dieser Liste. Kein Ethernet/PoE, Home-Sensor oder Freigabeschalter im Basisaufbau.
 '''
 (ROOT/'bom/material-stueckliste.md').write_text(bom,encoding='utf-8')
 order='# Bestellliste · Elektronik\n\n'+intro+f'**Nicht bestellen, bereits vorhanden:** {inventory}.\n\n'
-order+='''Die festgelegte Elektronik ist unten mit konkreten Artikelmodellen aufgeführt. Gehäuse und Durchführungen setzen derzeit einen **trockenen, geschützten Standort** voraus; Ausführung nach realem Layout bestätigen. Offene Zubehörpositionen gehören zum vollständigen Aufbau und sind bewusst keine vermeintlich geprüften Kaufartikel.
+order+='''Die festgelegte Elektronik ist unten mit konkreten Artikelmodellen aufgeführt. **Steuergehäuse E37 und Montageplatte E53 nicht bestellen:** Bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden. Für den temporären Aufbau ist ein **trockener, geschützter Standort** angenommen; tatsächliche Montage und Zugentlastung festlegen. Offene Zubehörpositionen gehören zum vollständigen Aufbau und sind bewusst keine vermeintlich geprüften Kaufartikel.
 
 **Lieferanforderung: Erhalt in der Schweiz binnen 7 Kalendertagen nach Bestellung.** Bei Bestellung am 03.10.2026 bedeutet das spätestens 10.10.2026. Ein angezeigter Lagerbestand plus übliche Versandzeit ist ein Angebot für die kurzfristige Beschaffung, keine garantierte Zustellung. Lieferdatum für die eigene Schweizer Adresse vor Zahlung prüfen. **Antrieb E03/E04/E47, Motornetzteil E05 und Anschlusskabel E49/E55 sind noch nicht mit passendem Liefertermin beschaffbar belegt.** Erst diese Positionen klären, bevor der gesamte Aufbau als rechtzeitig beschaffbar gilt.
 
@@ -37,7 +39,7 @@ Die Menge ist der Bedarf. Bei E50 zwei WAGO-Einzelstücke, bei E55 zwei STEMMA-K
 Automatisch erzeugt aus [teile.csv](teile.csv); Änderungen dort pflegen.
 
 '''
-for status,title in [('bestellen','Festgelegte Elektronik und Anschlussmaterial'),('abklaeren','Bezugsquelle oder Ausführung noch klären'),('aufmass','Gehäuse und Zubehör nach Aufmaß'),('bestand_pruefen','Bedingter Bedarf; zuerst Bestand prüfen')]:
+for status,title in [('bestellen','Festgelegte Elektronik und Anschlussmaterial'),('abklaeren','Bezugsquelle oder Ausführung noch klären'),('aufmass','Montage- und Sensorzubehör nach Aufmaß'),('bestand_pruefen','Bedingter Bedarf; zuerst Bestand prüfen')]:
  selected=[r for r in rows if r['Status']==status]
  if selected:order+='## '+title+'\n\n'+table(['Erledigt','ID','Menge','Teil / genaue Auswahl','Lieferant / Link','Lieferbewertung / Hinweis','Vor Bestellung beachten'],[['☐',r['ID'],quantity(r),r['Teil']+' — '+r['Spezifikation'],supplier(r),r['Lieferbewertung']+' — '+r['Lieferhinweis'],r['Bestellhinweis']] for r in selected])
 order+='''## Beschaffung bündeln
@@ -47,9 +49,10 @@ order+='''## Beschaffung bündeln
 3. **Motornetzteil E05:** Simpex ist ein Schweizer Händler mit genauem Modell, zeigt aber nur „lieferbar auf Bestellung“. Zustelldatum noch offen. Distrelec/RS nennt inzwischen Nachschub erst am 16.10.2026 und erfüllt damit die Wochenfrist nicht.
 4. **Antrieb und Spezialkabel:** Bezugsquelle bei Schweizer Händler oder Amazon für E03/E04/E47 und E49/E55 noch offen. Herstellerreferenzen sind keine Empfehlung für eine China-Bestellung. Keine ungeprüften Ersatzmodelle oder falschen JST-/DIN-Kabel einsetzen.
 5. **BerryBase CH-Shop:** E06/E07/E50 bleiben konkrete Angebote. CH-Impressum und AGB nennen unterschiedliche Vertragsadressen; tatsächlichen Vertragspartner, Versandort und CH-Termin im Checkout prüfen. Die angezeigten 2–5 Tage sind keine bestätigte Wochenzustellung.
+
 **Zusätzlich bestätigt vorhanden:** E26 Steuerkabel W4 und E35 DC-Leistungslitze. Beide aus Bestand verwenden; dafür entfällt die Beschaffung bei Bürklin.
 
-Gehäuse E37/E53 und Zubehör benötigen zusätzlich Aufmaß und Lieferterminprüfung. Distrelec wird als mögliche Bezugsquelle weiter berücksichtigt. Für Amazon ist bislang kein konkretes Angebot mit passender Variante und belegtem CH-Termin aufgenommen; Suchseiten werden nicht als Bestelllinks ausgegeben. [Aktuelle Händlerprüfung](../docs/quellen-und-entscheidungen.md#schweizer-händler-oder-amazon).
+E37/E53 sind gestrichen. Nur tatsächlich fehlendes Montage-/Sensorzubehör benötigt zusätzlich Aufmaß und Lieferterminprüfung. Distrelec wird als mögliche Bezugsquelle weiter berücksichtigt. Für Amazon ist bislang kein konkretes Angebot mit passender Variante und belegtem CH-Termin aufgenommen; Suchseiten werden nicht als Bestelllinks ausgegeben. [Aktuelle Händlerprüfung](../docs/quellen-und-entscheidungen.md#schweizer-händler-oder-amazon).
 
 Die Händleraufteilung ist kein Nachweis für den niedrigsten Schweizer Gesamtpreis. Erst Zustellung binnen sieben Kalendertagen sichern, danach Versandkosten bündeln. Fehlende Bezugsquellen dürfen nicht als vollständige, sofort bestellbare Einkaufsliste verstanden werden.
 

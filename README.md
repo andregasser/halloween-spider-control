@@ -30,7 +30,7 @@ flowchart LR
 
 Alle Platinen werden fertig bestückt gekauft. Es bleiben Kabelstecken, Ablängen, Abisolieren und Klemmen. Zusätzliche einzelne Widerstände oder eine Lötplatine sind nicht erforderlich. Das fertig konfektionierte DC-Verlängerungskabel wird nur an seinem treiberseitigen Ende gekürzt. Netzteil und dessen eigenes Kabel bleiben unverändert. Beide Netzteile werden mit fertigen Netzanschlüssen in die Mehrfachsteckdose gesteckt.
 
-Für die Gehäuseplanung ist zunächst ein **trockener, geschützter Standort** angenommen; dieser ist noch nicht bestätigt. Kabeldurchführungen und Befestigungsmittel müssen nach den realen Kabelmaßen gewählt werden. Die Bestellung von Gehäuseteilen ist deshalb getrennt von der festgelegten Elektronik geführt.
+Der Aufbau wird nach ungefähr vier Stunden wieder abgebaut. Ein neues Steuergehäuse samt Montageplatte ist nicht vorgesehen; bei Bedarf wird vorhandenes Gehäuse-/Abdeckungsmaterial verwendet. **Trockener, geschützter Standort** ist weiterhin eine Planannahme. Befestigung und Zugentlastung werden nach dem tatsächlichen Aufbau gewählt.
 
 **Beschaffung:** Schweizer Händler oder Amazon bevorzugt; DigiKey und Farnell ausgeschlossen. Die fehlenden Teile sollen binnen einer Woche in der Schweiz eintreffen. Die [Bestellliste](bom/bestellliste.md) nennt konkrete Angebote und offene Bezugsquellen. Module bei Play-Zone und Shield/RJ45-Adapter bei Bastelgarage sind vorgesehen. Für Antrieb, Motornetzteil und spezielle Anschlusskabel ist die Wochenlieferung noch nicht belegt; die Gesamtbeschaffung bleibt offen.
 
@@ -55,4 +55,4 @@ Für die Gehäuseplanung ist zunächst ein **trockener, geschützter Standort** 
 
 Startposition bei ausgeschalteter Motorversorgung manuell einrichten. Einschalten → 60 s PIR-Anlaufzeit → mindestens 500 ms LOW → neue Bewegung → langsame Vorfahrt → Pause → Rückfahrt → Cooldown. Kein Home-Sensor und kein Freigabeschalter. Nach Schrittverlust oder Versorgungsausfall ist die Position unbekannt.
 
-Als nächstes: festgelegte Elektronik beschaffen, Kabelmaße/Gehäuse festlegen, Firmware entwickeln und zunächst ohne Rohr und Wagen testen. Die Dokumentprüfung ersetzt keinen Hardwaretest. S0 ist eine gemeinsame Netzabschaltung, kein zertifizierter Not-Halt. Der Bewegungsbereich und der Riemenantrieb müssen vor Zugriff geschützt sein.
+Als nächstes: festgelegte Elektronik beschaffen, Kabelmaße und Montage festlegen, Firmware entwickeln und zunächst ohne Rohr und Wagen testen. Die Dokumentprüfung ersetzt keinen Hardwaretest. S0 ist eine gemeinsame Netzabschaltung, kein zertifizierter Not-Halt. Der Bewegungsbereich und der Riemenantrieb müssen vor Zugriff geschützt sein.
