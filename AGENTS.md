@@ -21,6 +21,7 @@
 - PIR HC-SR501-Bauform, bis 3 m RJ45-Patchkabel, kein LAN/PoE. Keine Zusatzkondensatoren; Test am endgültigen Kabel bei Motorbetrieb erforderlich.
 - E01 Uno, E02 PIR, E08 Cat5-/Cat6-Patchkabel, E28 CH-Leiste, E29 230-V-Anschlusskabel, E23/E24 Header-Kabel, E26 Steuerkabel W4, E35 DC-Leistungslitze, E42 Abstandshalter und E44 Schrumpfschläuche sind vorhanden. T01 Lötkolben, T03 Multimeter, T04 Logikanalysator und V01 Lot/Flussmittel ebenfalls vorhanden; Lötmaterial wird in Rev. B nicht benötigt. Noch keine Antriebsteile bestellt. Status nur nach tatsächlicher Bestätigung ändern.
 - 230-V-Kabelbestand bestätigt; für W1 vorhandenes fertiges CH-/IEC-C13-Kabel auswählen. Konkrete Steckerform/Länge noch nicht bestätigt, keine zusätzliche Kabelbestellung daraus ableiten.
+- Aderendhülsen E43 und Crimpzange T02 entfallen auf Nutzerwunsch. Blanke Litzen nur an dafür geeigneten Klemmen anschließen; Freigabe der tatsächlich gelieferten Schraubklemmen an DM860T/FIT0849 bleibt vor Aufbau zu prüfen. Keine pauschale Eignung aus der Streichung ableiten.
 - Kein Freigabeschalter, kein Home-Sensor; Startposition manuell. S0 ist keine nachgewiesene Not-Halt-Steuerung.
 - Temporärer Betrieb etwa vier Stunden, danach Abbau. Steuergehäuse E37, Montageplatte E53 und PIR-Sensorgehäuse E39 auf Nutzerwunsch entfallen; bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden. Kein bestimmtes Gehäusemodell als Bestand bestätigt. Trockener, geschützter Standort bleibt Planannahme; Montage/Zugentlastung nach tatsächlichem Aufbau und Zubehör nur bei Bedarf.
 

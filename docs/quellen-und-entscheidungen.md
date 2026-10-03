@@ -1,6 +1,6 @@
 # Quellen und Entscheidungen · Revision B
 
-Stand **03.10.2026**. Aktuelle Entscheidung ist der Aufbau mit fertig bestückten Modulen ohne eigene Lötplatine. Frühere Entscheidungen und Recherche einschließlich des R7B-Barreladapters bleiben im [Archiv](archiv/revision-a/quellen-und-entscheidungen.md) erhalten. Sie gelten nicht parallel zu diesem Anschlussplan.
+Stand **04.10.2026**. Aktuelle Entscheidung ist der Aufbau mit fertig bestückten Modulen ohne eigene Lötplatine. Frühere Entscheidungen und Recherche einschließlich des R7B-Barreladapters bleiben im [Archiv](archiv/revision-a/quellen-und-entscheidungen.md) erhalten. Sie gelten nicht parallel zu diesem Anschlussplan.
 
 ## Herstellerquellen
 
@@ -41,6 +41,12 @@ GlobTek und Mean Well verwenden **unterschiedliche Pinnummern**. Maßgeblich ist
 
 12. **PIR-Sensorgehäuse E39 entfällt ebenfalls auf Nutzerwunsch.** Aus aktuellem Material-/Bestellbedarf entfernt. PIR und RJ45-Adapter bleiben vorgesehen; den Sensor fest ausrichten, Linse freihalten und Anschlussleitung zugentlasten. Keine elektrische Anschlussänderung.
 
+## Entscheidung vom 04.10.2026: keine Hülsen oder Crimpzange
+
+Auf Nutzerwunsch entfallen **Aderendhülsen E43 und Crimpzange T02** aus aktuellem Material- und Bestellbedarf. Keine Änderung an Geräten, Leitungen oder Pinbelegung. [WAGO 221](https://www.wago.com/us/lp-221) beschreibt den direkten Anschluss abisolierter Litzen; [Adafruit #5648](https://learn.adafruit.com/adafruit-mosfet-driver/plugging-into-the-terminal-block) zeigt das Einsetzen der Leitungen bei gedrückter Federklemme.
+
+Für die tatsächlich gelieferten Schraubklemmen an DM860T und FIT0849 ist die Eignung für blanke Litzen noch nicht belegt. Das [DM860T-V3.0-Handbuch](https://www.omc-stepperonline.com/download/DM860T_V3.0.pdf) enthält keine eindeutige Leiter-/Hülsenspezifikation für die gelieferten Klemmstecker. Diese Anschlussprüfung bleibt deshalb in Elektronik und Inbetriebnahme festgehalten; die Streichung ist keine pauschale Freigabe für jede Schraubklemme.
+
 ## Schweizer Händler oder Amazon
 
 **Aktuelle Nutzerentscheidung vom 03.10.2026:** Keine Bestellung bei DigiKey oder Farnell, auch keine Empfehlungen als Ausweichquelle. Schweizer Händler oder Amazon bevorzugen. Die Wochenfrist bleibt verbindliche Beschaffungsanforderung. Diese Entscheidung ersetzt die Händlerempfehlungen der früheren Recherche weiter unten; der elektrische Aufbau bleibt unverändert.
@@ -58,7 +64,7 @@ GlobTek und Mean Well verwenden **unterschiedliche Pinnummern**. Maßgeblich ist
 | E37/E53, Gehäuse | Auf Nutzerwunsch aus dem aktuellen Material-/Bestellbedarf entfernt. Aufbau etwa vier Stunden, danach Abbau. Bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden; keine konkrete Hammond-Ausführung als Bestand bestätigt. |
 | E26/E35, Meterware | Nutzer bestätigt beide als vorhanden. Steuerkabel W4 und DC-Leistungslitze bleiben im Materialbedarf, entfallen aber als Bestellpositionen. Die bisherige Bürklin-Ausweichquelle wird nicht mehr benötigt; keine konkrete Herstellermarke des vorhandenen Materials bestätigt. |
 
-**BerryBase richtig einordnen:** Das gelesene [CH-Impressum](https://www.berrybase.ch/footer-ch/informationen/impressum/) nennt BerryBase GmbH c/o Sertronics AG in Birmenstorf und eine CH-Steuernummer. Die gelesenen [CH-AGB](https://www.berrybase.ch/agb/) nennen dagegen einen deutschen Vertragspartner. Deshalb weder ausschließlich deutschen noch eindeutig schweizerischen Vertragspartner aus diesen widersprüchlichen Webangaben ableiten. E06/E07/E50 und bedingtes Werkzeug T02 als CH-Shop mit ungeprüftem Versandlager führen; tatsächlichen Vertragspartner/Versandort im Checkout prüfen. Eine Schweizer Adresse allein bestätigt keinen Schweizer Lagerbestand.
+**BerryBase richtig einordnen:** Das gelesene [CH-Impressum](https://www.berrybase.ch/footer-ch/informationen/impressum/) nennt BerryBase GmbH c/o Sertronics AG in Birmenstorf und eine CH-Steuernummer. Die gelesenen [CH-AGB](https://www.berrybase.ch/agb/) nennen dagegen einen deutschen Vertragspartner. Deshalb weder ausschließlich deutschen noch eindeutig schweizerischen Vertragspartner aus diesen widersprüchlichen Webangaben ableiten. E06/E07/E50 als CH-Shop mit ungeprüftem Versandlager führen; tatsächlichen Vertragspartner/Versandort im Checkout prüfen. Eine Schweizer Adresse allein bestätigt keinen Schweizer Lagerbestand.
 
 Amazon wurde als gewünschte Bezugsquelle geprüft, aber ohne verifiziertes konkretes Angebot für die schwierigen Modellpositionen kein Produktlink aufgenommen. Ein Treffer oder deutsches Lieferdatum belegt keine Zustellung an eine Schweizer Adresse. Verkäufer, Variante, Packungsmenge und konkreten CH-Termin vor einer Empfehlung prüfen. Keine Bestellungen oder Lieferantenanfragen ausgelöst.
 

@@ -6,6 +6,7 @@
 
 - Prüfen: DM860T tatsächlich V3.0, montierte Klemmen, S2 5 V und DIP-Stellungen gemäß Plan.
 - U6-Jumper auf 5 V, rote Modulversorgung tatsächlich aus A1/A2, keine externe Shieldversorgung.
+- Vor Anschluss blanker Litzen die Eignung der gelieferten Schraubklemmen an DM860T/FIT0849 prüfen; Leiter vollständig geklemmt und ohne herausstehende Einzeldrähte. Halt spannungsfrei durch leichtes Ziehen prüfen.
 - Alle Verbindungen gegen Tabellen durchmessen, insbesondere U6 +5 V gegenüber X1 +48 V. Keine zusätzliche Verbindung von X2 an Signal-GND.
 - Motor: schwarz/grün bilden eine Wicklung, rot/blau die andere; Farben am tatsächlichen Motor bestätigen. Zwischen Wicklungen kein Durchgang.
 - W3 ist 1:1 und höchstens 3 m; PIR-Pinfolge prüfen. STEMMA-Kabel korrekt eingesteckt, offene Enden isoliert. PUL−/DIR− ausschließlich an die jeweiligen Minus-Ausgänge, keine zusätzliche GND-Brücke.

@@ -1,6 +1,6 @@
 # Elektronik · Revision B
 
-Stand **03.10.2026**. Maßgeblicher Anschlussplan für den Aufbau mit fertigen Modulen. Noch keine Hardwaremessung; die Abnahmekriterien stehen in [Inbetriebnahme](inbetriebnahme.md). Revision A ist [historisch archiviert](archiv/revision-a/README.md).
+Stand **04.10.2026**. Maßgeblicher Anschlussplan für den Aufbau mit fertigen Modulen. Noch keine Hardwaremessung; die Abnahmekriterien stehen in [Inbetriebnahme](inbetriebnahme.md). Revision A ist [historisch archiviert](archiv/revision-a/README.md).
 
 ## Schaltplanblätter
 
@@ -127,7 +127,7 @@ Spannungslos einstellen; [Herstellerhandbuch](https://www.omc-stepperonline.com/
 ## 5. Aufbau ohne Löten
 
 1. Module und Uno isoliert befestigen; trockenen Standort und Lüftung sicherstellen. PS1 bleibt außerhalb der Box. Durchführungen nach tatsächlichen Kabeln wählen.
-2. Header-Kabel aus Bestand verwenden: jeweils nur das benötigte freie Ende abisolieren. Keine Header-Metallstifte in WAGO stecken, sondern nur Leiter mit passendem Querschnitt. Schraubklemmen nach Herstellervorgabe mit passenden Aderendhülsen anschließen; keine verzinnten Litzenenden.
+2. Header-Kabel aus Bestand verwenden: jeweils nur das benötigte freie Ende abisolieren. Keine Header-Metallstifte in WAGO stecken, sondern nur Leiter mit passendem Querschnitt. Aderendhülsen und Crimpzange sind nicht vorgesehen. Vor dem Anschluss an DM860T und FIT0849 prüfen, ob die tatsächlich gelieferten Schraubklemmen blanke Litzen des verwendeten Querschnitts zulassen. Bei geeigneter Klemme alle Einzeldrähte vollständig einführen und den Halt durch leichtes Ziehen prüfen; keine verzinnten Litzenenden.
 3. U6 auf den Uno stecken, Jumper auf 5 V setzen. STEMMA-Kabel und U4/U5 gemäß Tabellen verbinden. X1/X2 mit 11 mm abisolierter Leitung anklemmen.
 4. J1/J2 und PIR verbinden; Patchkabel prüfen und anschließen. alle Verbindungen durchmessen.
 5. W5 ausschließlich an der Verlängerung bearbeiten, Kontakte identifizieren, X1/X2 verdrahten und 48 V separat messen. Netzteilkabel selbst nicht verändern.

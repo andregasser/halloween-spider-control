@@ -1,6 +1,6 @@
 # Material-Stückliste · Elektronik
 
-Stand **03.10.2026 · Revision B · fertige Module, keine selbst gelötete Zusatzplatine**. Noch nicht aufgebaut/getestet, keine Bestellung ausgelöst. Umfang: Elektronik, elektrische Leitungen und Gehäusezubehör sowie ausdrücklich Motorhalterung ST-M7. Keine weitere Konstruktion/Mechanik.
+Stand **04.10.2026 · Revision B · fertige Module, keine selbst gelötete Zusatzplatine**. Noch nicht aufgebaut/getestet, keine Bestellung ausgelöst. Umfang: Elektronik, elektrische Leitungen und Gehäusezubehör sowie ausdrücklich Motorhalterung ST-M7. Keine weitere Konstruktion/Mechanik.
 
 **Bestätigt vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E23 PIR-Anschlussleitung, E24 Uno-Verbindungsleitungen, E26 W4 Steuerkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E29 W1 Netzanschlussleitung, E35 DC-Leistungslitze, E42 Platinen-Abstandshalter, E44 Schrumpfschlauch, T03 Multimeter, T04 Logikanalysator.
 
@@ -76,7 +76,6 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
-| E43 | 1 Satz | Aderendhülsen, Ringkabelschuhe und PE-Schrauben — Aderendhülsen für tatsächliche Schraubklemmen und 0,25/1,5 mm² sowie Motorkabel | Dauerhafte elektrische und mechanische Anschlüsse | Bezugsquelle/Ausführung klären |
 | E46 | 1 Satz | Elektrische Beschriftung — Elektrische Beschriftung für PIR 5V KEIN LAN/PoE, 48V und Gerätekennungen | Kennzeichnet Leitungen und Anschlüsse eindeutig | Bestand/Bedarf prüfen |
 | E44 | 1 Satz | Schrumpfschlauch — Schrumpfschlauch in passenden Durchmessern | Isoliert elektrische Verbindungen | Vorhanden |
 
@@ -84,7 +83,6 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
-| T02 | 1 Stück | Crimpzange für Aderendhülsen — Für Aderendhülsen 0,25–2,5 mm² | Erzeugt zugfeste Klemmanschlüsse | Bestand/Bedarf prüfen |
 | T03 | 1 Stück | Multimeter — Durchgang, Widerstand und DC-Spannung | Prüft Verdrahtung, Wicklungen und Versorgung | Vorhanden |
 | T04 | 1 Stück | Logikanalysator — Für 5-V-Signale und Mikrosekunden-Pulse geeignet | Prüft STEP-Pulsbreite und DIR-Vorlauf | Vorhanden |
 
@@ -93,5 +91,7 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 Motor enthält 1 m Anschlusskabel; Adafruit #5648 wird ohne STEMMA-Kabel geliefert: zwei Kabel #3894 separat bestellen. Treiber-Klemmstecker bei Lieferung prüfen. Kabel W5 ist eine fertige Verlängerung; nur dessen männliches Ende wird zum Klemmen abgeschnitten.
 
 Steuergehäuse E37, zugehörige Montageplatte E53 und PIR-Sensorgehäuse E39 entfallen als festgelegte Projektteile. Für den etwa vierstündigen Aufbau kann bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwendet werden; kein bestimmtes Modell als Bestand bestätigt.
+
+Aderendhülsen E43 und Crimpzange T02 sind auf Nutzerwunsch aus dem Material-/Bestellbedarf entfernt. Die Eignung der tatsächlich gelieferten Schraubklemmen für blanke Litzen ist vor Aufbau zu prüfen, siehe [Anschlussplan](../docs/elektronik.md).
 
 Lochrasterplatinen, HCT-Chip, Sockel, Einzeltransistoren, externe Kondensatoren, Netzsicherungsaufbau und interne 230-V-Verkabelung aus Revision A entfallen. Lötwerkzeug/Lot/Flussmittel sind bestätigt vorhanden, werden für Rev. B aber nicht benötigt und stehen deshalb nicht als Projektbedarf in dieser Liste. Kein Ethernet/PoE, Home-Sensor oder Freigabeschalter im Basisaufbau.

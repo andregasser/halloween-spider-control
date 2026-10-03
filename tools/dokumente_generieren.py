@@ -12,7 +12,7 @@ def quantity(r):return r['Menge']+' '+r['Einheit']
 def supplier(r):
  return f"[{r['Lieferant']} · {r['Linkart']}]({r['Link']})" if r['Link'] else r['Lieferant']+' — Produkt offen'
 inventory=', '.join(r['ID']+' '+r['Teil'] for r in rows if r['Status']=='vorhanden')
-intro='Stand **03.10.2026 · Revision B · fertige Module, keine selbst gelötete Zusatzplatine**. Noch nicht aufgebaut/getestet, keine Bestellung ausgelöst. Umfang: Elektronik, elektrische Leitungen und Gehäusezubehör sowie ausdrücklich Motorhalterung ST-M7. Keine weitere Konstruktion/Mechanik.\n\n'
+intro='Stand **04.10.2026 · Revision B · fertige Module, keine selbst gelötete Zusatzplatine**. Noch nicht aufgebaut/getestet, keine Bestellung ausgelöst. Umfang: Elektronik, elektrische Leitungen und Gehäusezubehör sowie ausdrücklich Motorhalterung ST-M7. Keine weitere Konstruktion/Mechanik.\n\n'
 bom='# Material-Stückliste · Elektronik\n\n'+intro+f'**Bestätigt vorhanden:** {inventory}.\n\nAutomatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) nennt Lieferanten; [Anschlussplan](../docs/elektronik.md) beschreibt die Verdrahtung. Leitungs-/Zubehörmengen sind Planbedarf; Packungsmengen stehen in der Bestellliste.\n\n'
 for group in dict.fromkeys(r['Gruppe'] for r in rows):
  bom+='## '+group+'\n\n'+table(['ID','Menge','Teil / Spezifikation','Warum benötigt?','Status'],[[r['ID'],quantity(r),r['Teil']+' — '+r['Spezifikation'],r['Begruendung'],STATUS[r['Status']]] for r in rows if r['Gruppe']==group])
@@ -22,11 +22,13 @@ Motor enthält 1 m Anschlusskabel; Adafruit #5648 wird ohne STEMMA-Kabel geliefe
 
 Steuergehäuse E37, zugehörige Montageplatte E53 und PIR-Sensorgehäuse E39 entfallen als festgelegte Projektteile. Für den etwa vierstündigen Aufbau kann bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwendet werden; kein bestimmtes Modell als Bestand bestätigt.
 
+Aderendhülsen E43 und Crimpzange T02 sind auf Nutzerwunsch aus dem Material-/Bestellbedarf entfernt. Die Eignung der tatsächlich gelieferten Schraubklemmen für blanke Litzen ist vor Aufbau zu prüfen, siehe [Anschlussplan](../docs/elektronik.md).
+
 Lochrasterplatinen, HCT-Chip, Sockel, Einzeltransistoren, externe Kondensatoren, Netzsicherungsaufbau und interne 230-V-Verkabelung aus Revision A entfallen. Lötwerkzeug/Lot/Flussmittel sind bestätigt vorhanden, werden für Rev. B aber nicht benötigt und stehen deshalb nicht als Projektbedarf in dieser Liste. Kein Ethernet/PoE, Home-Sensor oder Freigabeschalter im Basisaufbau.
 '''
 (ROOT/'bom/material-stueckliste.md').write_text(bom,encoding='utf-8')
 order='# Bestellliste · Elektronik\n\n'+intro+f'**Nicht bestellen, bereits vorhanden:** {inventory}.\n\n'
-order+='''Die festgelegte Elektronik ist unten mit konkreten Artikelmodellen aufgeführt. **Steuergehäuse E37, Montageplatte E53 und PIR-Sensorgehäuse E39 nicht bestellen:** Bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden. Für den temporären Aufbau ist ein **trockener, geschützter Standort** angenommen; tatsächliche Montage und Zugentlastung festlegen. Offene Zubehörpositionen gehören zum vollständigen Aufbau und sind bewusst keine vermeintlich geprüften Kaufartikel.
+order+='''Die festgelegte Elektronik ist unten mit konkreten Artikelmodellen aufgeführt. Aderendhülsen E43 und Crimpzange T02 sind auf Nutzerwunsch gestrichen; die Prüfung der Schraubklemmen für blanke Litzen bleibt im Anschlussplan festgehalten. **Steuergehäuse E37, Montageplatte E53 und PIR-Sensorgehäuse E39 nicht bestellen:** Bei Bedarf vorhandenes Gehäuse-/Abdeckungsmaterial verwenden. Für den temporären Aufbau ist ein **trockener, geschützter Standort** angenommen; tatsächliche Montage und Zugentlastung festlegen. Offene Zubehörpositionen gehören zum vollständigen Aufbau und sind bewusst keine vermeintlich geprüften Kaufartikel.
 
 **Lieferanforderung: Erhalt in der Schweiz binnen 7 Kalendertagen nach Bestellung.** Bei Bestellung am 03.10.2026 bedeutet das spätestens 10.10.2026. Ein angezeigter Lagerbestand plus übliche Versandzeit ist ein Angebot für die kurzfristige Beschaffung, keine garantierte Zustellung. Lieferdatum für die eigene Schweizer Adresse vor Zahlung prüfen. **Antrieb E03/E04/E47, Motornetzteil E05 und Anschlusskabel E49/E55 sind noch nicht mit passendem Liefertermin beschaffbar belegt.** Erst diese Positionen klären, bevor der gesamte Aufbau als rechtzeitig beschaffbar gilt.
 
