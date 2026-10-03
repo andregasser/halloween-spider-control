@@ -32,7 +32,7 @@ Alle Platinen werden fertig bestückt gekauft. Es bleiben Kabelstecken, Ablänge
 
 Für die Gehäuseplanung ist zunächst ein **trockener, geschützter Standort** angenommen; dieser ist noch nicht bestätigt. Kabeldurchführungen und Befestigungsmittel müssen nach den realen Kabelmaßen gewählt werden. Die Bestellung von Gehäuseteilen ist deshalb getrennt von der festgelegten Elektronik geführt.
 
-**Beschaffung:** Die fehlenden Teile sollen binnen einer Woche in der Schweiz eintreffen. Die [Bestellliste](bom/bestellliste.md) nennt Lagerangebote und Lieferalternativen; Motor, Treiber und Halterung sowie der CH-Termin des Power-DIN-Kabels sind noch nicht innerhalb dieser Frist belegt. Die Gesamtlieferung ist deshalb noch offen.
+**Beschaffung:** Schweizer Händler oder Amazon bevorzugt; DigiKey und Farnell ausgeschlossen. Die fehlenden Teile sollen binnen einer Woche in der Schweiz eintreffen. Die [Bestellliste](bom/bestellliste.md) nennt konkrete Angebote und offene Bezugsquellen. Module bei Play-Zone und Shield/RJ45-Adapter bei Bastelgarage sind vorgesehen. Für Antrieb, Motornetzteil und spezielle Anschlusskabel ist die Wochenlieferung noch nicht belegt; die Gesamtbeschaffung bleibt offen.
 
 ## Dokumente
 

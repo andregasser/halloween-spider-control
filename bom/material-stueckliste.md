@@ -17,20 +17,20 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
-| E03 | 1 Stück | M1 NEMA-34-Motor — STEPPERONLINE 34HS46-6004S1, 14-mm-Welle, mit 1-m-Motorkabel | Bewegt den Riemenantrieb | Noch bestellen |
-| E47 | 1 Stück | Motorhalterung für M1 — STEPPERONLINE ST-M7, Stahl-Montagewinkel für NEMA 34 / 86-mm-Motoren | Befestigt den Motor am Träger und hält seine Lage zum Zahnriemen | Noch bestellen |
-| E04 | 1 Stück | U3 Schrittmotortreiber — STEPPERONLINE DM860T V3.0 mit 5/24-V-Wahlschalter | Schaltet die Motorwicklungen stromgeregelt | Noch bestellen |
+| E03 | 1 Stück | M1 NEMA-34-Motor — STEPPERONLINE 34HS46-6004S1, 14-mm-Welle, mit 1-m-Motorkabel | Bewegt den Riemenantrieb | Bezugsquelle/Ausführung klären |
+| E47 | 1 Stück | Motorhalterung für M1 — STEPPERONLINE ST-M7, Stahl-Montagewinkel für NEMA 34 / 86-mm-Motoren | Befestigt den Motor am Träger und hält seine Lage zum Zahnriemen | Bezugsquelle/Ausführung klären |
+| E04 | 1 Stück | U3 Schrittmotortreiber — STEPPERONLINE DM860T V3.0 mit 5/24-V-Wahlschalter | Schaltet die Motorwicklungen stromgeregelt | Bezugsquelle/Ausführung klären |
 
 ## Versorgung
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
-| E05 | 1 Stück | PS1 geschlossenes Motornetzteil — Mean Well GST220A48-R7B, 48 V / 4,6 A / 221 W, IEC-C14 und Power-DIN-R7B | Versorgt den einzelnen Treiber ohne eigene Netzverdrahtung | Noch bestellen |
+| E05 | 1 Stück | PS1 geschlossenes Motornetzteil — Mean Well GST220A48-R7B, 48 V / 4,6 A / 221 W, IEC-C14 und Power-DIN-R7B | Versorgt den einzelnen Treiber ohne eigene Netzverdrahtung | Bezugsquelle/Ausführung klären |
 | E06 | 1 Stück | PS2 USB-Netzteil — Geschlossenes Steckernetzteil, geregelt 5 V / mindestens 1 A, USB-A, CH-Stecker oder flacher Eurostecker | Versorgt Uno und Sensor getrennt vom Motorstrom | Noch bestellen |
 | E07 | 1 Stück | W2 USB-Kabel — USB-2.0-A auf USB-B, Datenkabel; ausgewählte BerryBase-Variante 1,80 m | Versorgung und Programmierung des Uno | Noch bestellen |
 | E28 | 1 Stück | S0 CH-Mehrfachsteckdose/Hauptschalter — Fertige CH-Steckdosenleiste, Typ-13-Buchsen, 10 A gesamt, mindestens 2 Steckplätze, gemeinsamer zweipoliger Schalter, PE durchverbunden | Gemeinsame Abschaltung beider Netzteile | Vorhanden |
 | E29 | 1 Stück | W1 Netzanschlussleitung — Benötigt: fertiges CH-Typ-12-auf-IEC-C13-Netzkabel mit Schutzleiter; passende Länge aus Bestand | Steckfertiger Netzanschluss PS1 an vorhandene CH-Leiste | Vorhanden |
-| E49 | 1 Stück | W5 Power-DIN-Verlängerung — GlobTek KPPX4124641M0KPJX4(R), 1 m, 4×AWG18, Stecker/Buchse | Fertig montierte passende Netzteilbuchse, andere Seite in Treiberklemmen | Noch bestellen |
+| E49 | 1 Stück | W5 Power-DIN-Verlängerung — GlobTek KPPX4124641M0KPJX4(R), 1 m, 4×AWG18, Stecker/Buchse | Fertig montierte passende Netzteilbuchse, andere Seite in Treiberklemmen | Bezugsquelle/Ausführung klären |
 | E35 | 1 m | DC-Leistungslitze — 1,5 mm² Kupfer-Silikonlitze, schwarz, 1 m; zwei kurze Abschnitte | Verbindet X1/X2 mit U3, positive Ader dauerhaft markieren | Noch bestellen |
 | E45 | 1 Stück | RCD-Zwischenstecker bei fehlendem geeignetem RCD — 30 mA, CH-tauglich, zum Aufstellort passend | Fehlerstromschutz der Netzversorgung | Bestand/Bedarf prüfen |
 
@@ -47,7 +47,7 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
 | E48 | 2 Stück | U4/U5 fertige Signalmodule — Adafruit MOSFET Driver #5648, STEMMA-JST-PH und montierte Ausgangs-Federklemmen | Schaltet STEP und DIR ohne Eigenbauplatine oder zusätzliche Einzelbauteile | Noch bestellen |
-| E55 | 2 Stück | STEMMA-Anschlusskabel für U4/U5 — Adafruit #3894, JST PH 2 mm, 3-polig auf einzelne weibliche Header-Buchsen, 200 mm | Steckbare Modulversorgung und Uno-Ansteuerung ohne Löten | Noch bestellen |
+| E55 | 2 Stück | STEMMA-Anschlusskabel für U4/U5 — Adafruit #3894, JST PH 2 mm, 3-polig auf einzelne weibliche Header-Buchsen, 200 mm | Steckbare Modulversorgung und Uno-Ansteuerung ohne Löten | Bezugsquelle/Ausführung klären |
 | E56 | 1 Stück | U6 fertiges Uno-Anschluss-Shield — DFRobot DFR0265, IO Expansion Shield V7.1, fertig bestückt | Stellt genügend steckbare 5-V-/GND-/Signalanschlüsse bereit und spart Steuer-Verteilerklemmen | Noch bestellen |
 
 ## Verbindungsklemmen
@@ -79,7 +79,7 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
-| E43 | 1 Satz | Aderendhülsen, Ringkabelschuhe und PE-Schrauben — Aderendhülsen für tatsächliche Schraubklemmen und 0,25/1,5 mm² sowie Motorkabel | Dauerhafte elektrische und mechanische Anschlüsse | Ausführung klären |
+| E43 | 1 Satz | Aderendhülsen, Ringkabelschuhe und PE-Schrauben — Aderendhülsen für tatsächliche Schraubklemmen und 0,25/1,5 mm² sowie Motorkabel | Dauerhafte elektrische und mechanische Anschlüsse | Bezugsquelle/Ausführung klären |
 | E46 | 1 Satz | Elektrische Beschriftung — Elektrische Beschriftung für PIR 5V KEIN LAN/PoE, 48V und Gerätekennungen | Kennzeichnet Leitungen und Anschlüsse eindeutig | Bestand/Bedarf prüfen |
 | E44 | 1 Satz | Schrumpfschlauch — Schrumpfschlauch in passenden Durchmessern | Isoliert elektrische Verbindungen | Vorhanden |
 

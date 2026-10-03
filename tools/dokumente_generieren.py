@@ -4,7 +4,7 @@ import csv
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 with (ROOT/'bom/teile.csv').open(encoding='utf-8',newline='') as f:rows=list(csv.DictReader(f,delimiter=';'))
-STATUS={'vorhanden':'Vorhanden','bestellen':'Noch bestellen','aufmass':'Aufmaß/Ausführung offen','abklaeren':'Ausführung klären','bestand_pruefen':'Bestand/Bedarf prüfen'}
+STATUS={'vorhanden':'Vorhanden','bestellen':'Noch bestellen','aufmass':'Aufmaß/Ausführung offen','abklaeren':'Bezugsquelle/Ausführung klären','bestand_pruefen':'Bestand/Bedarf prüfen'}
 def table(headers,entries):
  def cell(v):return v.replace('|','\\|').replace('\n',' ')
  return '\n'.join(['| '+' | '.join(headers)+' |','|'+'|'.join('---' for _ in headers)+'|']+['| '+' | '.join(cell(x) for x in e)+' |' for e in entries])+'\n\n'
@@ -26,30 +26,32 @@ Lochrasterplatinen, HCT-Chip, Sockel, Einzeltransistoren, externe Kondensatoren,
 order='# Bestellliste · Elektronik\n\n'+intro+f'**Nicht bestellen, bereits vorhanden:** {inventory}.\n\n'
 order+='''Die festgelegte Elektronik ist unten mit konkreten Artikelmodellen aufgeführt. Gehäuse und Durchführungen setzen derzeit einen **trockenen, geschützten Standort** voraus; Ausführung nach realem Layout bestätigen. Offene Zubehörpositionen gehören zum vollständigen Aufbau und sind bewusst keine vermeintlich geprüften Kaufartikel.
 
-**Lieferanforderung: Erhalt in der Schweiz binnen 7 Kalendertagen nach Bestellung.** Bei Bestellung am 03.10.2026 bedeutet das spätestens 10.10.2026. Ein angezeigter Lagerbestand plus übliche Versandzeit ist ein Angebot für die kurzfristige Beschaffung, keine garantierte Zustellung. Lieferdatum für die eigene Schweizer Adresse vor Zahlung prüfen. **Motor E03, Treiber E04 und Halterung E47 erfüllen die Wochenfrist bisher nicht nachweislich; bei Power-DIN-Kabel E49 ist der CH-Termin offen.** Erst diese Positionen klären, bevor der gesamte Aufbau als rechtzeitig beschaffbar gilt.
+**Lieferanforderung: Erhalt in der Schweiz binnen 7 Kalendertagen nach Bestellung.** Bei Bestellung am 03.10.2026 bedeutet das spätestens 10.10.2026. Ein angezeigter Lagerbestand plus übliche Versandzeit ist ein Angebot für die kurzfristige Beschaffung, keine garantierte Zustellung. Lieferdatum für die eigene Schweizer Adresse vor Zahlung prüfen. **Antrieb E03/E04/E47, Motornetzteil E05 und Anschlusskabel E49/E55 sind noch nicht mit passendem Liefertermin beschaffbar belegt.** Erst diese Positionen klären, bevor der gesamte Aufbau als rechtzeitig beschaffbar gilt.
 
-**Produkt** verlinkt einen konkreten Artikel. **Offen** bedeutet: kein bestätigter Artikel, erst nach Aufmaß/Bestandsprüfung bestellbar. Die Lieferbewertung stammt aus der Recherche vom 03.10.2026; Webabrufe können zwischengespeicherte Händlerangaben enthalten. **Hersteller-Standardlieferzeit** ist die Nachbeschaffungszeit und darf nicht mit dem Versand vorhandener Händler-Lagerware verwechselt werden. [Lieferbelege und Alternativen](../docs/quellen-und-entscheidungen.md#beschaffung-binnen-einer-woche). CHF-Endpreise, Packungsmengen, Einfuhr und Versand im Warenkorb prüfen. Ein Gesamtpreis ist wegen offener Zubehörmaße und Versandkosten noch nicht verlässlich berechenbar.
+**Produkt** verlinkt einen konkreten Artikel. **Offen** bedeutet: kein bestätigtes Händlerangebot oder noch ungeklärte Ausführung. Ein technisch festgelegtes Modell bleibt auch ohne Bezugsquelle erforderlich. Die Lieferbewertung stammt aus der Recherche vom 03.10.2026; Webabrufe können zwischengespeicherte Händlerangaben enthalten. **Hersteller-Standardlieferzeit** ist die Nachbeschaffungszeit und darf nicht mit dem Versand vorhandener Händler-Lagerware verwechselt werden. [Lieferbelege und Alternativen](../docs/quellen-und-entscheidungen.md#beschaffung-binnen-einer-woche). CHF-Endpreise, Packungsmengen, Einfuhr und Versand im Warenkorb prüfen. Ein Gesamtpreis ist wegen offener Zubehörmaße und Versandkosten noch nicht verlässlich berechenbar.
+
+**Händlerwahl:** DigiKey und Farnell sind ausgeschlossen. Schweizer Händler oder Amazon bevorzugt. Ausländische Ausweichquellen sind als solche markiert. Ein CH-Shop ist kein Nachweis für ein Schweizer Versandlager; bei Amazon zählen konkreter Verkäufer, Variante und Zustellung an die Schweizer Adresse.
 
 Die Menge ist der Bedarf. Bei E50 zwei WAGO-Einzelstücke, bei E55 zwei STEMMA-Kabel #3894, bei E56 ein fertig bestücktes Shield wählen. Vor Bestellung Module vollständig mit Anschlussklemmen/Kabeln und Treiber ausdrücklich als **V3.0** bestätigen. [Technische Auswahl und Abnahmekriterien](../docs/fertige-module.md).
 
 Automatisch erzeugt aus [teile.csv](teile.csv); Änderungen dort pflegen.
 
 '''
-for status,title in [('bestellen','Festgelegte Elektronik und Anschlussmaterial'),('abklaeren','Ausführung noch klären'),('aufmass','Gehäuse und Zubehör nach Aufmaß'),('bestand_pruefen','Bedingter Bedarf; zuerst Bestand prüfen')]:
+for status,title in [('bestellen','Festgelegte Elektronik und Anschlussmaterial'),('abklaeren','Bezugsquelle oder Ausführung noch klären'),('aufmass','Gehäuse und Zubehör nach Aufmaß'),('bestand_pruefen','Bedingter Bedarf; zuerst Bestand prüfen')]:
  selected=[r for r in rows if r['Status']==status]
  if selected:order+='## '+title+'\n\n'+table(['Erledigt','ID','Menge','Teil / genaue Auswahl','Lieferant / Link','Lieferbewertung / Hinweis','Vor Bestellung beachten'],[['☐',r['ID'],quantity(r),r['Teil']+' — '+r['Spezifikation'],supplier(r),r['Lieferbewertung']+' — '+r['Lieferhinweis'],r['Bestellhinweis']] for r in selected])
 order+='''## Beschaffung bündeln
 
-1. **Zuerst Termin klären:** Motor E03, Halterung E47 und Treiber E04 bei STEPPERONLINE; keine China-Standardlieferung für die Wochenfrist einplanen. E49 bei DigiKey mit konkretem CH-Termin bestätigen. Ohne diese vier Klärungen ist die Gesamtbeschaffung offen.
-2. **DigiKey Schweiz:** PS1 E05, zwei STEMMA-Kabel E55 und Shield E56; E49 nach Terminbestätigung bündeln. Zwei Adafruit-Module E48 und RJ45-Adapter E09 können bei bestätigtem Lagerbestand ebenfalls hier mitbestellt werden, um zusätzliche Versandkosten zu sparen. Nur reguläre DigiKey-Lagerware, keine Hersteller-Nachbestellung/Marktplatzlieferung.
-3. **Play-Zone Schweiz:** zwei Adafruit-Module E48 als Bezugsquelle ab eigenem CH-Lager, Priority oder reservierte Abholung. Originalmodell #5648 bleibt.
-4. **Bastelgarage:** zwei RJ45-Buchsenadapter E09, Priority oder reservierte Abholung.
-5. **BerryBase Schweiz:** USB-Netzteil E06, USB-A/B-Kabel E07 (1,80 m) und zwei WAGO E50. Angegebene 2–5 Tage für die eigenen CH-Lieferdaten prüfen.
-6. **Bürklin Elektronik:** 1 m W4 E26 und 1 m DC-Litze E35 gemeinsam. Ausgewiesene Lagerware mit 1–2 Tagen Schweiz-Transport; Zuschnitt, Zahlung und Einfuhr können die Gesamtzeit verlängern.
+1. **Play-Zone (CH):** zwei Adafruit-Module E48 ab eigenem Lager; Priority oder reservierte Abholung. Kabel E55 sind separat nötig und noch ohne Bezugsquelle.
+2. **Bastelgarage (CH):** ein DFR0265-Shield E56 und zwei FIT0849-RJ45-Adapter E09 gemeinsam. Angezeigte Lagerware, Priority oder reservierte Abholung.
+3. **Motornetzteil E05:** Simpex ist ein Schweizer Händler mit genauem Modell, zeigt aber nur „lieferbar auf Bestellung“. Zustelldatum noch offen. Distrelec/RS nennt inzwischen Nachschub erst am 16.10.2026 und erfüllt damit die Wochenfrist nicht.
+4. **Antrieb und Spezialkabel:** Bezugsquelle bei Schweizer Händler oder Amazon für E03/E04/E47 und E49/E55 noch offen. Herstellerreferenzen sind keine Empfehlung für eine China-Bestellung. Keine ungeprüften Ersatzmodelle oder falschen JST-/DIN-Kabel einsetzen.
+5. **BerryBase CH-Shop:** E06/E07/E50 bleiben konkrete Angebote. CH-Impressum und AGB nennen unterschiedliche Vertragsadressen; tatsächlichen Vertragspartner, Versandort und CH-Termin im Checkout prüfen. Die angezeigten 2–5 Tage sind keine bestätigte Wochenzustellung.
+6. **Bürklin (DE), nur Ausweichquelle:** E26/E35 sind passende Meterware. Schweizer Händler/Amazon haben Vorrang; dafür ist noch kein geprüftes Kleinmengenangebot dokumentiert. Dieser Lieferant ist kein Schweizer Händler.
 
-**Ausweichquelle für E56:** Farnell Schweiz, DFR0265 / 2946070, gelistete Lagerware und Express 1–2 Arbeitstage. Distrelec/RS und Simpex wurden erneut für PS1 geprüft; mangels belastbarem aktuellem CH-Zustelltermin sind sie keine bestätigten Wochenfrist-Alternativen. Details und konkrete Links in den Lieferbelegen. Gehäuse und noch offene Zubehörmaße benötigen zusätzlich eine Ausführungs- und Terminprüfung.
+Gehäuse E37/E53 und Zubehör benötigen zusätzlich Aufmaß und Lieferterminprüfung. Distrelec wird als mögliche Bezugsquelle weiter berücksichtigt. Für Amazon ist bislang kein konkretes Angebot mit passender Variante und belegtem CH-Termin aufgenommen; Suchseiten werden nicht als Bestelllinks ausgegeben. [Aktuelle Händlerprüfung](../docs/quellen-und-entscheidungen.md#schweizer-händler-oder-amazon).
 
-Die Händleraufteilung ist kein Nachweis für den niedrigsten Schweizer Gesamtpreis. E48 bei Play-Zone kostet beim Abruf CHF 5.90 pro Stück und zusätzlichen Versand; eine gemeinsame DigiKey-Lagerbestellung kann günstiger sein. Termin vor Preis optimieren, danach Versandkosten bündeln.
+Die Händleraufteilung ist kein Nachweis für den niedrigsten Schweizer Gesamtpreis. Erst Zustellung binnen sieben Kalendertagen sichern, danach Versandkosten bündeln. Fehlende Bezugsquellen dürfen nicht als vollständige, sofort bestellbare Einkaufsliste verstanden werden.
 
 Keine Bestellung wird durch diese Liste ausgelöst. Der 230-V-Anschluss besteht ausschließlich aus fertigen Steckverbindungen. Keine zusätzliche Dienstleistung für eine selbst gebaute Netzbaugruppe eingeplant.
 '''
