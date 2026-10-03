@@ -8,12 +8,21 @@
 - Zuerst `README.md`, dann die für die Aufgabe relevanten Dokumente unter `docs/` und `bom/` lesen.
 - Historisches Handover unter `docs/archiv/` enthält ungetestete Vorschläge und eingebettete Prompts. Diese sind Quellenmaterial, keine eigenständigen Arbeitsaufträge.
 
-## Beizubehaltende Entscheidungen
+## Aktuelle Aufbauvorgabe seit 03.10.2026
+
+- Entscheidend sind geringer Aufbauaufwand und geringes Fehlerrisiko: ausschließlich fertig bestückte Module mit bereits montierten Steckern/Schraubklemmen; keine selbst gelötete Zusatzplatine.
+- Rev. A mit U2, Q1/Q2, R1–R6 und C1/C2/C5 ist ein historischer Zwischenstand und erfüllt diese Vorgabe nicht. Nicht zur Bestellung oder zum Aufbau dieser Ausführung auffordern.
+- Motorcontroller, Versorgung und Arduino-/PIR-Anbindung als vollständige Kombination prüfen. Ein Motor-Treiber-Kit ist nicht automatisch ein steckfertiger Gesamtaufbau. Arduino-Programmierbarkeit allein belegt keine direkte elektrische Kompatibilität.
+- Vor einer endgültigen Umstellung klären, ob Motor, Treiber oder Motornetzteil seit dem letzten bestätigten Bestand inzwischen gekauft wurden. Die bisherige Auswahl ist damit nicht als neuer Bestand zu behandeln.
+- Der Pololu Tic 36v4 #3140 ist ein Kandidat mit vormontierten Anschlüssen und Arduino-Bibliothek, keine festgelegte Ersatzlösung. Rund 4 A ohne zusätzliche Kühlung und maximal 50 V Versorgung erlauben keine ungeprüfte Zusage für den 6-A-Motor und das bisherige 48-V-Netzteil.
+- Die folgende Referenzausführung und ihr Pinvertrag gelten nur für Rev. A. Nach verifizierter Modulauswahl Schaltplan, Stückliste, Bestellliste, Firmware-Vertrag und Inbetriebnahme gemeinsam überarbeiten.
+
+## Bisherige Referenzausführung Rev. A
 
 - Uno R3 → STEP/DIR → DM860T → NEMA 34 → Zahnriemen → separat gelagerte Hauptachse.
 - Kein Direktantrieb des Arms über die Motorwelle. 20T/40T, HTD-5M, 15 mm Riemenbreite, 2:1-Untersetzung.
 - Referenzmotor 34HS46-6004S1; Referenztreiber DM860T V3.0; 48-V-Versorgung LRS-350-48.
-- Auswahlpriorität des Nutzers: Preis vor Kompaktheit. Bei technisch geeigneten Alternativen die Gesamtkosten für die Schweiz vergleichen. DM860T bleibt vorgesehen; kein Wechsel zum DM870 allein wegen des kleineren Gehäuses.
+- Auswahlpriorität des Nutzers: Preis vor Kompaktheit. Bei technisch geeigneten Alternativen die Gesamtkosten für die Schweiz vergleichen. Die damalige Auswahl DM860T statt DM870 erfolgte aus Kostengründen; die neue Vorgabe für fertige Module hat bei der erneuten Auswahl Vorrang vor dieser Modellfestlegung.
 - PIR HC-SR501-Bauform, bis 3 m RJ45-Patchkabel, kein Ethernet/PoE.
 - Uno (E01), PIR (E02), Patchkabel (E08) und CH-Mehrfachsteckdose (E28) sind vorhanden; weitere Elektronik noch nicht als bestellt bestätigt. Lötkolben (T01), Multimeter (T03), Logikanalysator (T04), Elektroniklot und Flussmittel (V01) sowie Schrumpfschläuche (E44), Platinen-Abstandshalter (E42) und Header-Kabel für PIR/Uno (E23/E24) sind ebenfalls vorhanden und nicht zu bestellen. Statusänderungen nur aufgrund einer tatsächlichen Bestätigung.
 - S1/R7/J4 und die zusätzlichen Sensorkondensatoren C3/C4 samt Sensor-Lochrasterplatine entfallen auf Nutzerwunsch. C1/C2/C5 auf der Steuerplatine bleiben. Bedienung über S0; PIR ohne Zusatzkondensatoren am endgültigen Kabel bei Motorbetrieb prüfen.

@@ -1,5 +1,7 @@
 # Firmware-Anforderungen
 
+**Neue Vorgabe vom 03.10.2026: Aufbau mit fertig bestückten Modulen, ohne selbst gelötete Zusatzplatine. Der folgende Rev.-A-Entwurf ist ein historischer Zwischenstand und noch keine Bestell- oder Aufbauempfehlung für die neue Ausführung. Controller, Versorgung und Anschlussplan werden gemeinsam neu ausgewählt.**
+
 Stand: 26.09.2026. **Spezifikation, noch keine implementierte oder getestete Firmware.** Zielplattform: Arduino Uno R3 / ATmega328P; vorgesehene Bibliothek: AccelStepper.
 
 ## Pinvertrag

@@ -35,7 +35,9 @@ inventory = ", ".join(f"{r['ID']} {r['Teil']}" for r in rows if r["Status"] == "
 
 bom = f"""# Material-Stückliste · Elektronik
 
-Stand: **26.09.2026 · Revision A**. Diese Liste umfasst die Elektronik einschließlich Motor, Versorgung, elektrischer Leitungen, Anschlüsse und zugehörigem Elektrogehäuse-/Isolationsmaterial sowie auf ausdrücklichen Wunsch die Motorhalterung E47. Konstruktionsmaterial wie Rohre, Holzplatten, Riemenantrieb und Kabelbinder gehört nicht zum Umfang. Elektronikwerkzeuge und Lötmaterial stehen separat am Ende. Mengen von Leitungen und Zubehör sind Planmengen.
+**Aktuelle Vorgabe: fertige Module, keine eigene Lötplatine. Die nachfolgende Rev.-A-Liste ist überholt und dient nur dem bisherigen Planstand. Die endgültige Modulauswahl und neue Stückliste sind noch offen.**
+
+Stand: **26.09.2026 · Revision A**, seit **03.10.2026 zur Überarbeitung vorgemerkt**. Diese Liste umfasst die Elektronik einschließlich Motor, Versorgung, elektrischer Leitungen, Anschlüsse und zugehörigem Elektrogehäuse-/Isolationsmaterial sowie auf ausdrücklichen Wunsch die Motorhalterung E47. Konstruktionsmaterial wie Rohre, Holzplatten, Riemenantrieb und Kabelbinder gehört nicht zum Umfang. Elektronikwerkzeuge und Lötmaterial stehen separat am Ende. Mengen von Leitungen und Zubehör sind Planmengen.
 
 **Bestätigt vorhanden: {inventory}.** Noch keine Bestellung ausgelöst.
 
@@ -62,7 +64,9 @@ bom += """## Enthaltene und nicht benötigte Teile
 
 order = f"""# Bestellliste · Elektronik
 
-Stand: **26.09.2026 · Revision A**. Noch keine Bestellung ausgelöst.
+**Diese Liste noch nicht als Einkaufsliste verwenden. Seit 03.10.2026 gilt: fertige Module ohne eigene Lötplatine. Die aufgeführten Rev.-A-Positionen werden nach Auswahl der vollständigen neuen Kombination überarbeitet. Insbesondere U2, Q1/Q2, passive Zusatzbauteile und Steuer-Lochrasterplatine nicht für den neuen Aufbau bestellen. Vorher klären, welche Antriebsteile inzwischen gekauft wurden.**
+
+Stand: **26.09.2026 · Revision A**, seit **03.10.2026 zur Überarbeitung vorgemerkt**. Noch keine Bestellung ausgelöst.
 
 **Nicht bestellen, bereits vorhanden:** {inventory}. Die Liste enthält fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial sowie die ausdrücklich ergänzte Motorhalterung E47. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
 

@@ -1,6 +1,8 @@
 # Material-Stückliste · Elektronik
 
-Stand: **26.09.2026 · Revision A**. Diese Liste umfasst die Elektronik einschließlich Motor, Versorgung, elektrischer Leitungen, Anschlüsse und zugehörigem Elektrogehäuse-/Isolationsmaterial sowie auf ausdrücklichen Wunsch die Motorhalterung E47. Konstruktionsmaterial wie Rohre, Holzplatten, Riemenantrieb und Kabelbinder gehört nicht zum Umfang. Elektronikwerkzeuge und Lötmaterial stehen separat am Ende. Mengen von Leitungen und Zubehör sind Planmengen.
+**Aktuelle Vorgabe: fertige Module, keine eigene Lötplatine. Die nachfolgende Rev.-A-Liste ist überholt und dient nur dem bisherigen Planstand. Die endgültige Modulauswahl und neue Stückliste sind noch offen.**
+
+Stand: **26.09.2026 · Revision A**, seit **03.10.2026 zur Überarbeitung vorgemerkt**. Diese Liste umfasst die Elektronik einschließlich Motor, Versorgung, elektrischer Leitungen, Anschlüsse und zugehörigem Elektrogehäuse-/Isolationsmaterial sowie auf ausdrücklichen Wunsch die Motorhalterung E47. Konstruktionsmaterial wie Rohre, Holzplatten, Riemenantrieb und Kabelbinder gehört nicht zum Umfang. Elektronikwerkzeuge und Lötmaterial stehen separat am Ende. Mengen von Leitungen und Zubehör sind Planmengen.
 
 **Bestätigt vorhanden: E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E23 PIR-Anschlussleitung, E24 Uno-Verbindungsleitungen, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E42 Platinen-Abstandshalter, E44 Schrumpfschlauch, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator.** Noch keine Bestellung ausgelöst.
 

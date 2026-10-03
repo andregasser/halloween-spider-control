@@ -28,7 +28,7 @@ class Plan:
             '<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#152536} .wire{fill:none;stroke:#253b50;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}</style>',
             f'<rect width="1800" height="{height}" fill="white"/>']
         self.text(35, 46, title, 29, bold=True)
-        self.text(35, 79, 'Halloween-Spinne · Revision A · 26.09.2026 · Entwurf, noch nicht aufgebaut oder geprüft', 18)
+        self.text(35, 79, 'Rev. A · ÜBERHOLT seit 03.10.2026 · Neue Vorgabe: fertige Module ohne Lötplatine', 18)
         self.text(35, 108, 'Gleiche Netznamen sind verbunden. Punkte = Verbindung. Kreuzungen ohne Punkt = keine Verbindung.', 17)
 
     def text(self, x, y, s, size=18, bold=False, color=None):

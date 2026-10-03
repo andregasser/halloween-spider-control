@@ -1,6 +1,6 @@
 # Quellen und Entscheidungen
 
-Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Beschaffungsquellen, keine Garantie für Lagerbestand, Liefertermin oder die tatsächlich gelieferte Revision. Die unten genannten technischen Primärquellen wurden für Rev. A eingesehen. Beschaffungslinks unterscheiden konkrete Produkte, Sortimente und offene Auswahlpositionen. Die Dokumentprüfung prüft lokal das Format und die Konsistenz; sie ist keine Live-Verfügbarkeitsprüfung.
+Aktuelle Aufbauvorgabe: **3. Oktober 2026**. Technischer Stand der bisherigen Rev. A: **26. September 2026**. Produktseiten sind Beschaffungsquellen, keine Garantie für Lagerbestand, Liefertermin oder die tatsächlich gelieferte Revision. Die unten genannten technischen Primärquellen wurden für Rev. A eingesehen. Beschaffungslinks unterscheiden konkrete Produkte, Sortimente und offene Auswahlpositionen. Die Dokumentprüfung prüft lokal das Format und die Konsistenz; sie ist keine Live-Verfügbarkeitsprüfung.
 
 ## Primärquellen
 
@@ -22,6 +22,9 @@ Recherche und Dokumentationsstand: **26. September 2026**. Produktseiten sind Be
 | [ConCar, Gates HTD-5M-Riemen](https://www.concar-shop.de/shop/en/belts/timing-belts/timing-belts/gates-synchronous-belts-powergrip-htd/gates-synchronous-belts-powergrip-htd-dimension-5m.html) | Riemen 450-5M-15, Artikel GT045005015 |
 
 ## Festlegungen aus dem Gespräch
+
+- 03.10.2026: Nutzer bestätigt: fertige Module sind entscheidend; Aufwand und Fehlerrisiko einer selbst gelöteten Zusatzschaltung sind zu groß. Rev. A wird daher als überholt gekennzeichnet. Die bisherige Beschaffung ist keine Empfehlung für die neue Ausführung; Bestandsänderungen sind erst nach Bestätigung einzutragen. Eine konkrete neue Controller-/Netzteilkombination wurde noch nicht festgelegt.
+- Kandidat für unkomplizierte Arduino-Anbindung: [Pololu Tic 36v4 #3140 mit montierten Anschlüssen](https://www.pololu.com/product/3140). [Herstellerhandbuch](https://www.pololu.com/docs/0J71/all): Arduino-Ansteuerung über Serial/I²C, integrierte Bewegungserzeugung; etwa 4 A pro Phase ohne zusätzliche Kühlung, bis 6 A mit ausreichender Kühlung, Versorgung 8–50 V. Deshalb keine pauschale Ersatzempfehlung für M1 mit 6 A oder ungeprüfte Verwendung der bisherigen 48-V-Versorgung. Ein neues Modulkonzept benötigt einen eigenen vollständigen Verbindungsplan und Belastungstest.
 
 - 26.09.2026: Platinen-Abstandshalter E42 und Header-Kabel sind laut Nutzer bereits ausreichend vorhanden. E23 (PIR) und E24 (Uno) verwenden diesen Kabelbestand. Alle drei Positionen bleiben als benötigte Teile in der Materialliste, entfallen aber als Bestellpositionen.
 

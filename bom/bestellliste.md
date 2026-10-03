@@ -1,6 +1,8 @@
 # Bestellliste · Elektronik
 
-Stand: **26.09.2026 · Revision A**. Noch keine Bestellung ausgelöst.
+**Diese Liste noch nicht als Einkaufsliste verwenden. Seit 03.10.2026 gilt: fertige Module ohne eigene Lötplatine. Die aufgeführten Rev.-A-Positionen werden nach Auswahl der vollständigen neuen Kombination überarbeitet. Insbesondere U2, Q1/Q2, passive Zusatzbauteile und Steuer-Lochrasterplatine nicht für den neuen Aufbau bestellen. Vorher klären, welche Antriebsteile inzwischen gekauft wurden.**
+
+Stand: **26.09.2026 · Revision A**, seit **03.10.2026 zur Überarbeitung vorgemerkt**. Noch keine Bestellung ausgelöst.
 
 **Nicht bestellen, bereits vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E23 PIR-Anschlussleitung, E24 Uno-Verbindungsleitungen, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E42 Platinen-Abstandshalter, E44 Schrumpfschlauch, V01 Elektroniklot und Flussmittel, T01 Lötkolben, T03 Multimeter, T04 Logikanalysator. Die Liste enthält fehlende Elektronik und zugehöriges elektrisches Anschluss-/Gehäusematerial sowie die ausdrücklich ergänzte Motorhalterung E47. Weitere Prüf-/Crimpwerkzeuge und gegebenenfalls RCD werden nach Bestandsprüfung beschafft oder geliehen.
 

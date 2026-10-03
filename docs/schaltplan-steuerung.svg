@@ -2,7 +2,7 @@
 <style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#152536} .wire{fill:none;stroke:#253b50;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}</style>
 <rect width="1800" height="2300" fill="white"/>
 <text x="35" y="46" font-size="29" font-weight="bold">Blatt 2 / 2 — Steuerung, STEP/DIR und PIR-Sensor</text>
-<text x="35" y="79" font-size="18">Halloween-Spinne · Revision A · 26.09.2026 · Entwurf, noch nicht aufgebaut oder geprüft</text>
+<text x="35" y="79" font-size="18">Rev. A · ÜBERHOLT seit 03.10.2026 · Neue Vorgabe: fertige Module ohne Lötplatine</text>
 <text x="35" y="108" font-size="17">Gleiche Netznamen sind verbunden. Punkte = Verbindung. Kreuzungen ohne Punkt = keine Verbindung.</text>
 <rect x="30" y="130" width="1740" height="365" rx="6" fill="#f5f8fb" stroke="#8ca0b3" stroke-width="1.5"/>
 <text x="46" y="160" font-size="21" font-weight="bold">A · PIR über RJ45, bis 3 m; U2 · SN74HCT14N (DIP-14), nicht 74HC14</text>

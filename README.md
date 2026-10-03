@@ -2,13 +2,15 @@
 
 Eine große Halloween-Spinne fährt auf einem Wagen mit sechs kugelgelagerten Rollen. Ein ungefähr ein Meter langes Kunststoffrohr zieht und schiebt den Wagen auf einer Kreisbahn. Ein PIR-Bewegungsmelder löst eine langsame, beschleunigte und wieder abgebremste Bewegungssequenz aus.
 
-**Stand: 26. September 2026 · Dokumentationsentwurf Rev. A · noch nicht aufgebaut oder elektrisch getestet.**
+**Stand: 3. Oktober 2026 · Umstellung auf fertige Module · noch nicht aufgebaut oder elektrisch getestet.**
+
+**Neue Vorgabe vom 03.10.2026: Aufbau mit fertig bestückten Modulen, ohne selbst gelötete Zusatzplatine. Der folgende Rev.-A-Entwurf ist ein historischer Zwischenstand und noch keine Bestell- oder Aufbauempfehlung für die neue Ausführung. Controller, Versorgung und Anschlussplan werden gemeinsam neu ausgewählt.**
 
 ## Projektstand
 
 Vorhanden sind laut Bestätigung vom 26.09.2026 **Arduino Uno R3 (E01), PIR-Modul (E02), Patchkabel (E08) und CH-Mehrfachsteckdose (E28)**. Motor, Treiber, Netzteile und weitere Elektronik sind noch zu beschaffen. Der aktuelle Arbeitsumfang sowie die Material- und Bestellliste umfassen die Elektronik sowie die ausdrücklich ergänzte Motorhalterung ST-M7 (E47). Der PIR entspricht optisch einem HC-SR501; die tatsächliche Anschlussbeschriftung ist vor dem Verdrahten zu prüfen.
 
-Die Grundarchitektur steht fest. Diese Dokumentation konkretisiert die Elektronik zu einem durchgängig verdrahtbaren Entwurf. Eine funktionierende Gesamtanlage benötigt zusätzlich die noch zu entwickelnde Firmware und die Inbetriebnahmeprüfungen. Insbesondere ist dies keine bereits erprobte Bauanleitung.
+Die bisherige Rev. A beschreibt den Aufbau mit einer selbst gelöteten Schnittstellenplatine. Sie erfüllt die neue Vorgabe nicht und wird ersetzt. Eine funktionierende Gesamtanlage benötigt zusätzlich die noch zu entwickelnde Firmware und die Inbetriebnahmeprüfungen. Insbesondere ist dies keine bereits erprobte Bauanleitung.
 
 ## Dokumente
 
@@ -25,7 +27,7 @@ Die Grundarchitektur steht fest. Diese Dokumentation konkretisiert die Elektroni
 | [AGENTS.md](AGENTS.md) | Arbeitskontext für Coding-Agents |
 | [Ursprüngliches Handover](docs/archiv/PROJECT_HANDOFF_Halloween_Spider.md) | Unveränderte historische Quelle; neuere Dokumente haben Vorrang |
 
-## Aufbau
+## Bisheriger Aufbau Rev. A
 
 ```mermaid
 flowchart LR
@@ -42,7 +44,7 @@ flowchart LR
 
 Das Gewicht liegt auf den Rollen. Der Motor muss Rollwiderstand und Beschleunigung überwinden; er trägt nicht die Spinne an einem frei schwebenden Hebel. Seine Welle trägt nur die motorseitige Riemenscheibe.
 
-## Festgelegte Basis
+## Bisherige Referenzausführung Rev. A
 
 - Motor: STEPPERONLINE **34HS46-6004S1**, NEMA 34, 14-mm-Welle.
 - Treiber: **DM860T**, dieser Plan bezieht sich ausdrücklich auf **V3.0**.

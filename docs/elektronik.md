@@ -1,5 +1,7 @@
 # Elektronik, Schaltplan und Verdrahtung
 
+**Neue Vorgabe vom 03.10.2026: Aufbau mit fertig bestückten Modulen, ohne selbst gelötete Zusatzplatine. Der folgende Rev.-A-Entwurf ist ein historischer Zwischenstand und noch keine Bestell- oder Aufbauempfehlung für die neue Ausführung. Controller, Versorgung und Anschlussplan werden gemeinsam neu ausgewählt.**
+
 **Revision A · 26.09.2026 · Schaltungsentwurf, noch kein getesteter Aufbau.**
 
 Der Plan gilt für **U1 Arduino Uno R3**, **B1 HC-SR501-kompatiblen PIR**, STEPPERONLINE **DM860T V3.0**, Motor **34HS46-6004S1** und Mean Well **LRS-350-48**. Die gelieferten Typenschilder und Pinbelegungen müssen dazu passen. Besonders DM860T-Nachbauten können abweichen.
