@@ -2,7 +2,7 @@
 
 Stand **03.10.2026 · Revision B · fertige Module, keine selbst gelötete Zusatzplatine**. Noch nicht aufgebaut/getestet, keine Bestellung ausgelöst. Umfang: Elektronik, elektrische Leitungen und Gehäusezubehör sowie ausdrücklich Motorhalterung ST-M7. Keine weitere Konstruktion/Mechanik.
 
-**Bestätigt vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E23 PIR-Anschlussleitung, E24 Uno-Verbindungsleitungen, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E29 W1 Netzanschlussleitung, E42 Platinen-Abstandshalter, E44 Schrumpfschlauch, T03 Multimeter, T04 Logikanalysator.
+**Bestätigt vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E23 PIR-Anschlussleitung, E24 Uno-Verbindungsleitungen, E26 W4 Steuerkabel, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E29 W1 Netzanschlussleitung, E35 DC-Leistungslitze, E42 Platinen-Abstandshalter, E44 Schrumpfschlauch, T03 Multimeter, T04 Logikanalysator.
 
 Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) nennt Lieferanten; [Anschlussplan](../docs/elektronik.md) beschreibt die Verdrahtung. Leitungs-/Zubehörmengen sind Planbedarf; Packungsmengen stehen in der Bestellliste.
 
@@ -31,7 +31,7 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 | E28 | 1 Stück | S0 CH-Mehrfachsteckdose/Hauptschalter — Fertige CH-Steckdosenleiste, Typ-13-Buchsen, 10 A gesamt, mindestens 2 Steckplätze, gemeinsamer zweipoliger Schalter, PE durchverbunden | Gemeinsame Abschaltung beider Netzteile | Vorhanden |
 | E29 | 1 Stück | W1 Netzanschlussleitung — Benötigt: fertiges CH-Typ-12-auf-IEC-C13-Netzkabel mit Schutzleiter; passende Länge aus Bestand | Steckfertiger Netzanschluss PS1 an vorhandene CH-Leiste | Vorhanden |
 | E49 | 1 Stück | W5 Power-DIN-Verlängerung — GlobTek KPPX4124641M0KPJX4(R), 1 m, 4×AWG18, Stecker/Buchse | Fertig montierte passende Netzteilbuchse, andere Seite in Treiberklemmen | Bezugsquelle/Ausführung klären |
-| E35 | 1 m | DC-Leistungslitze — 1,5 mm² Kupfer-Silikonlitze, schwarz, 1 m; zwei kurze Abschnitte | Verbindet X1/X2 mit U3, positive Ader dauerhaft markieren | Noch bestellen |
+| E35 | 1 m | DC-Leistungslitze — 1,5 mm² Kupfer-Silikonlitze, schwarz, 1 m; zwei kurze Abschnitte | Verbindet X1/X2 mit U3, positive Ader dauerhaft markieren | Vorhanden |
 | E45 | 1 Stück | RCD-Zwischenstecker bei fehlendem geeignetem RCD — 30 mA, CH-tauglich, zum Aufstellort passend | Fehlerstromschutz der Netzversorgung | Bestand/Bedarf prüfen |
 
 ## Sensorleitung
@@ -61,7 +61,7 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
 | E24 | 1 Satz | Uno-Verbindungsleitungen — Vier einzelne Buchsen-Header-Leitungen zu U6/PIR-Adapter, etwa 20 cm | Steckt PIR OUT/5V und zwei GND-Leitungen auf U6 und führt sie zu J1 | Vorhanden |
-| E26 | 0,5 m | W4 Steuerkabel — 2 geschirmte verdrillte Paare, etwa 0,25 mm² | Störarme STEP/DIR-Verbindung zum Treiber | Noch bestellen |
+| E26 | 0,5 m | W4 Steuerkabel — 2 geschirmte verdrillte Paare, etwa 0,25 mm² | Störarme STEP/DIR-Verbindung zum Treiber | Vorhanden |
 
 ## Gehäuse
 

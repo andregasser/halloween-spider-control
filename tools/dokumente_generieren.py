@@ -47,7 +47,7 @@ order+='''## Beschaffung bündeln
 3. **Motornetzteil E05:** Simpex ist ein Schweizer Händler mit genauem Modell, zeigt aber nur „lieferbar auf Bestellung“. Zustelldatum noch offen. Distrelec/RS nennt inzwischen Nachschub erst am 16.10.2026 und erfüllt damit die Wochenfrist nicht.
 4. **Antrieb und Spezialkabel:** Bezugsquelle bei Schweizer Händler oder Amazon für E03/E04/E47 und E49/E55 noch offen. Herstellerreferenzen sind keine Empfehlung für eine China-Bestellung. Keine ungeprüften Ersatzmodelle oder falschen JST-/DIN-Kabel einsetzen.
 5. **BerryBase CH-Shop:** E06/E07/E50 bleiben konkrete Angebote. CH-Impressum und AGB nennen unterschiedliche Vertragsadressen; tatsächlichen Vertragspartner, Versandort und CH-Termin im Checkout prüfen. Die angezeigten 2–5 Tage sind keine bestätigte Wochenzustellung.
-6. **Bürklin (DE), nur Ausweichquelle:** E26/E35 sind passende Meterware. Schweizer Händler/Amazon haben Vorrang; dafür ist noch kein geprüftes Kleinmengenangebot dokumentiert. Dieser Lieferant ist kein Schweizer Händler.
+**Zusätzlich bestätigt vorhanden:** E26 Steuerkabel W4 und E35 DC-Leistungslitze. Beide aus Bestand verwenden; dafür entfällt die Beschaffung bei Bürklin.
 
 Gehäuse E37/E53 und Zubehör benötigen zusätzlich Aufmaß und Lieferterminprüfung. Distrelec wird als mögliche Bezugsquelle weiter berücksichtigt. Für Amazon ist bislang kein konkretes Angebot mit passender Variante und belegtem CH-Termin aufgenommen; Suchseiten werden nicht als Bestelllinks ausgegeben. [Aktuelle Händlerprüfung](../docs/quellen-und-entscheidungen.md#schweizer-händler-oder-amazon).
 
