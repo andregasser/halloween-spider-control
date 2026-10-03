@@ -8,7 +8,7 @@ Eine große Halloween-Spinne fährt auf einem Wagen mit sechs kugelgelagerten Ro
 
 ## Projektstand
 
-Vorhanden sind laut Bestätigung vom 26.09.2026 **Arduino Uno R3 (E01), PIR-Modul (E02), Patchkabel (E08) und CH-Mehrfachsteckdose (E28)**. Motor, Treiber, Netzteile und weitere Elektronik sind noch zu beschaffen. Der aktuelle Arbeitsumfang sowie die Material- und Bestellliste umfassen die Elektronik sowie die ausdrücklich ergänzte Motorhalterung ST-M7 (E47). Der PIR entspricht optisch einem HC-SR501; die tatsächliche Anschlussbeschriftung ist vor dem Verdrahten zu prüfen.
+Vorhanden sind laut Bestätigung vom 26.09.2026 **Arduino Uno R3 (E01), PIR-Modul (E02), Patchkabel (E08) und CH-Mehrfachsteckdose (E28)**. Am **03.10.2026** nochmals bestätigt: noch nichts bestellt; Motor, Treiber, Netzteile und weitere Elektronik sind noch zu beschaffen. Der aktuelle Arbeitsumfang sowie die Material- und Bestellliste umfassen die Elektronik sowie die ausdrücklich ergänzte Motorhalterung ST-M7 (E47). Der PIR entspricht optisch einem HC-SR501; die tatsächliche Anschlussbeschriftung ist vor dem Verdrahten zu prüfen.
 
 Die bisherige Rev. A beschreibt den Aufbau mit einer selbst gelöteten Schnittstellenplatine. Sie erfüllt die neue Vorgabe nicht und wird ersetzt. Eine funktionierende Gesamtanlage benötigt zusätzlich die noch zu entwickelnde Firmware und die Inbetriebnahmeprüfungen. Insbesondere ist dies keine bereits erprobte Bauanleitung.
 
@@ -16,6 +16,7 @@ Die bisherige Rev. A beschreibt den Aufbau mit einer selbst gelöteten Schnittst
 
 | Dokument | Inhalt |
 |---|---|
+| [Fertige Module: Vorauswahl](docs/fertige-module.md) | Konkrete Alternativen ohne eigene Lötplatine, Anschlusskonzept, Schweizer Preise und noch offene Punkte |
 | [Elektronik und Schaltplan](docs/elektronik.md) | Zwei grafische Schaltplanblätter, sämtliche Verbindungen, Lötaufbau und Treibereinstellungen |
 | [Material-Stückliste](bom/material-stueckliste.md) | Elektronik, elektrisches Zubehör, Mengen, Begründung und Bestand |
 | [Bestellliste](bom/bestellliste.md) | Fehlende Elektronik mit Lieferanten und konkreten Auswahlmerkmalen |

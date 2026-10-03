@@ -64,7 +64,7 @@ bom += """## Enthaltene und nicht benötigte Teile
 
 order = f"""# Bestellliste · Elektronik
 
-**Diese Liste noch nicht als Einkaufsliste verwenden. Seit 03.10.2026 gilt: fertige Module ohne eigene Lötplatine. Die aufgeführten Rev.-A-Positionen werden nach Auswahl der vollständigen neuen Kombination überarbeitet. Insbesondere U2, Q1/Q2, passive Zusatzbauteile und Steuer-Lochrasterplatine nicht für den neuen Aufbau bestellen. Vorher klären, welche Antriebsteile inzwischen gekauft wurden.**
+**Diese Liste noch nicht als Einkaufsliste verwenden. Seit 03.10.2026 gilt: fertige Module ohne eigene Lötplatine. Die aufgeführten Rev.-A-Positionen werden nach Auswahl der vollständigen neuen Kombination überarbeitet. Insbesondere U2, Q1/Q2, passive Zusatzbauteile und Steuer-Lochrasterplatine nicht für den neuen Aufbau bestellen. Am 03.10.2026 bestätigt: noch keine Teile bestellt. Die neue [Modul-Vorauswahl](../docs/fertige-module.md) ist separat dokumentiert.**
 
 Stand: **26.09.2026 · Revision A**, seit **03.10.2026 zur Überarbeitung vorgemerkt**. Noch keine Bestellung ausgelöst.
 

@@ -13,7 +13,8 @@
 - Entscheidend sind geringer Aufbauaufwand und geringes Fehlerrisiko: ausschließlich fertig bestückte Module mit bereits montierten Steckern/Schraubklemmen; keine selbst gelötete Zusatzplatine.
 - Rev. A mit U2, Q1/Q2, R1–R6 und C1/C2/C5 ist ein historischer Zwischenstand und erfüllt diese Vorgabe nicht. Nicht zur Bestellung oder zum Aufbau dieser Ausführung auffordern.
 - Motorcontroller, Versorgung und Arduino-/PIR-Anbindung als vollständige Kombination prüfen. Ein Motor-Treiber-Kit ist nicht automatisch ein steckfertiger Gesamtaufbau. Arduino-Programmierbarkeit allein belegt keine direkte elektrische Kompatibilität.
-- Vor einer endgültigen Umstellung klären, ob Motor, Treiber oder Motornetzteil seit dem letzten bestätigten Bestand inzwischen gekauft wurden. Die bisherige Auswahl ist damit nicht als neuer Bestand zu behandeln.
+- Am 03.10.2026 erneut bestätigt: noch keine Antriebsteile bestellt. Motor, Treiber und Motornetzteil bleiben zu beschaffen; keine Bindung an bereits gekaufte Modelle.
+- Die Recherche zu fertigen Modulen steht in `docs/fertige-module.md`. DM860T mit zwei DFR0457 und geschlossenem Tischnetzteil ist eine Vorauswahl, noch kein vollständiger Rev.-B-Aufbau. Insbesondere DC-Anschlusskabel, Netzteil-Leistungsreserve und Modul-Ausgangspegel unter Last müssen abschließend geklärt werden. Keine ungeprüfte Bestellfreigabe daraus ableiten.
 - Der Pololu Tic 36v4 #3140 ist ein Kandidat mit vormontierten Anschlüssen und Arduino-Bibliothek, keine festgelegte Ersatzlösung. Rund 4 A ohne zusätzliche Kühlung und maximal 50 V Versorgung erlauben keine ungeprüfte Zusage für den 6-A-Motor und das bisherige 48-V-Netzteil.
 - Die folgende Referenzausführung und ihr Pinvertrag gelten nur für Rev. A. Nach verifizierter Modulauswahl Schaltplan, Stückliste, Bestellliste, Firmware-Vertrag und Inbetriebnahme gemeinsam überarbeiten.
 
