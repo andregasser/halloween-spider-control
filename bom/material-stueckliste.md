@@ -2,7 +2,7 @@
 
 Stand **03.10.2026 · Revision B · fertige Module, keine selbst gelötete Zusatzplatine**. Noch nicht aufgebaut/getestet, keine Bestellung ausgelöst. Umfang: Elektronik, elektrische Leitungen und Gehäusezubehör sowie ausdrücklich Motorhalterung ST-M7. Keine weitere Konstruktion/Mechanik.
 
-**Bestätigt vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E23 PIR-Anschlussleitung, E24 Uno-Verbindungsleitungen, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E42 Platinen-Abstandshalter, E44 Schrumpfschlauch, T03 Multimeter, T04 Logikanalysator.
+**Bestätigt vorhanden:** E01 U1 Arduino Uno R3, E02 B1 PIR-Modul, E08 W3 Patchkabel, E23 PIR-Anschlussleitung, E24 Uno-Verbindungsleitungen, E28 S0 CH-Mehrfachsteckdose/Hauptschalter, E29 W1 Netzanschlussleitung, E42 Platinen-Abstandshalter, E44 Schrumpfschlauch, T03 Multimeter, T04 Logikanalysator.
 
 Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) nennt Lieferanten; [Anschlussplan](../docs/elektronik.md) beschreibt die Verdrahtung. Leitungs-/Zubehörmengen sind Planbedarf; Packungsmengen stehen in der Bestellliste.
 
@@ -29,7 +29,7 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 | E06 | 1 Stück | PS2 USB-Netzteil — Geschlossenes Steckernetzteil, geregelt 5 V / mindestens 1 A, USB-A, CH-Stecker oder flacher Eurostecker | Versorgt Uno und Sensor getrennt vom Motorstrom | Noch bestellen |
 | E07 | 1 Stück | W2 USB-Kabel — USB-A auf USB-B, Datenkabel, etwa 1 m | Versorgung und Programmierung des Uno | Noch bestellen |
 | E28 | 1 Stück | S0 CH-Mehrfachsteckdose/Hauptschalter — Fertige CH-Steckdosenleiste, Typ-13-Buchsen, 10 A gesamt, mindestens 2 Steckplätze, gemeinsamer zweipoliger Schalter, PE durchverbunden | Gemeinsame Abschaltung beider Netzteile | Vorhanden |
-| E29 | 1 Stück | W1 Netzanschlussleitung — Fertiges Typ-12-auf-IEC-C13-Netzkabel mit Schutzleiter, 1,8 m | Steckfertiger Netzanschluss PS1 an vorhandene CH-Leiste | Noch bestellen |
+| E29 | 1 Stück | W1 Netzanschlussleitung — Benötigt: fertiges CH-Typ-12-auf-IEC-C13-Netzkabel mit Schutzleiter; passende Länge aus Bestand | Steckfertiger Netzanschluss PS1 an vorhandene CH-Leiste | Vorhanden |
 | E49 | 1 Stück | W5 Power-DIN-Verlängerung — GlobTek KPPX4124641M0KPJX4(R), 1 m, 4×AWG18, Stecker/Buchse | Fertig montierte passende Netzteilbuchse, andere Seite in Treiberklemmen | Noch bestellen |
 | E35 | 1 m | DC-Leistungslitze — 1,5 mm² Kupfer-Silikonlitze, schwarz, 1 m; zwei kurze Abschnitte | Verbindet X1/X2 mit U3, positive Ader dauerhaft markieren | Noch bestellen |
 | E45 | 1 Stück | RCD-Zwischenstecker bei fehlendem geeignetem RCD — 30 mA, CH-tauglich, zum Aufstellort passend | Fehlerstromschutz der Netzversorgung | Bestand/Bedarf prüfen |
@@ -38,7 +38,7 @@ Automatisch aus [teile.csv](teile.csv) erzeugt. [Bestellliste](bestellliste.md) 
 
 | ID | Menge | Teil / Spezifikation | Warum benötigt? | Status |
 |---|---|---|---|---|
-| E08 | 1 Stück | W3 Patchkabel — Cat5e/Cat6 Vollkupfer, 1:1 T568B, bis 3 m | Überträgt 5 V, Masse und PIR-Signal | Vorhanden |
+| E08 | 1 Stück | W3 Patchkabel — Normales Cat5/Cat5e/Cat6-RJ45-Patchkabel aus Bestand, 1:1, bis 3 m | Überträgt 5 V, Masse und PIR-Signal | Vorhanden |
 | E09 | 2 Stück | J1/J2 RJ45-Klemmenadapter — 8P8C-Buchse auf nummerierte Schraubklemmen, passiv ohne Magnetics | Trennbare Sensorverbindung ohne Crimpen eigener RJ45-Stecker | Noch bestellen |
 | E23 | 1 Satz | PIR-Anschlussleitung — Drei einzelne 2,54-mm-Buchsenleitungen mit freiem Ende, etwa 20 cm | Direkte Verbindung B1 zu J2 | Vorhanden |
 

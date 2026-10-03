@@ -35,6 +35,8 @@ GlobTek und Mean Well verwenden **unterschiedliche Pinnummern**. Maßgeblich ist
 8. **Gehäuseannahme trocken/geschützt**, noch keine Nutzerbestätigung. Vorschlag Hammond 1554YAGY/1554YPL; Auswahl und Durchführungen nach realem Layout. Kein Regen-/IP-Nachweis nach eigenen Bohrungen.
 9. Schaltpläne zeigen nur Geräte, reale Pins, Kabel und Einstellungen. Innere Schaltungen fertiger Geräte werden nicht gezeichnet. Material-/Bestellliste bleibt auf Elektronik plus ausdrücklich ST-M7 beschränkt.
 
+10. Nutzer bestätigt ausreichend vorhandene **230-V-Anschlusskabel** sowie normale **Cat5-/Cat6-Netzwerkkabel**. E29/W1 wird als Bestand geführt und aus den Bestellpositionen entfernt; E08/W3 bleibt vorhanden. Für W1 passende CH-/IEC-C13-Ausführung im Bestand auswählen, genaue Steckerform ist noch nicht bestätigt. Für PIR vorhandenes 1:1-Patchkabel bis 3 m verwenden. Keine elektrische Anschlussänderung.
+
 ## Noch ausstehende Nachweise
 
 - Reale Treiberrevision, PIR-Pinfolge, belastete Modulpegel und Versorgungsspannung.

@@ -42,7 +42,7 @@ order+='''## Beschaffung bündeln
 2. **Bastelgarage:** zwei RJ45-Buchsenadapter E09.
 3. **BerryBase Schweiz:** USB-Netzteil E06, USB-A/B-Kabel E07, Anschluss-Shield E56 und WAGO E50.
 4. **DigiKey Schweiz:** Power-DIN-Kabel E49, zwei Adafruit-Module E48 und zwei STEMMA-Kabel E55; PS1 E05 und gegebenenfalls das gewählte Gehäuse samt Platte mitbestellen. PS1 alternativ Distrelec 300-42-762 oder [Simpex GST220A48-R7B](https://www.simpex.ch/shop/stromversorgungen/netzteile-ac-dc/tischnetzteile/gst220a48-r7b/), jeweils ein Netzteil, keine Großpackung.
-5. **Simpex / Conrad / Elektrobedarf Troller:** W1, W4 und 1 m DC-Litze; zusätzliche Versandkosten mit lokalen Bezugsoptionen vergleichen.
+5. **Conrad / Elektrobedarf Troller:** W4 und 1 m DC-Litze; zusätzliche Versandkosten mit lokalen Bezugsoptionen vergleichen.
 
 Distrelec wurde für PS1 als konkrete Alternative recherchiert. Preise/Lagerbestand waren dort nicht zuverlässig abrufbar. Die Händleraufteilung ist kein Nachweis für den niedrigsten Schweizer Gesamtpreis; Kleinmaterial nach Möglichkeit bei ohnehin verwendeten Lieferanten bündeln und gleiche Spezifikation beibehalten.
 

@@ -29,7 +29,7 @@ def supply():
     s=Sheet('Blatt 1 · Versorgung und Motor',1590)
     s.panel(140,'A · Beide fertigen Netzteile in die vorhandene Schweizer Mehrfachsteckdose stecken')
     s.device('S0',65,225,485,220,['Typ-13-Buchsen · gemeinsamer Schalter','Steckplatz 1 → W1 → PS1','Steckplatz 2 → PS2','Vorhanden; beide Netzteile gemeinsam aus'])
-    s.device('PS1',850,225,870,200,['W1: Typ-12-Stecker ↔ IEC-C13-Buchse, 1,8 m','Netzteileingang: IEC-C14','Ausgang: 48 V / 4,6 A · 4-poliger Power-DIN-R7B'])
+    s.device('PS1',850,225,870,200,['W1: Typ-12-Stecker ↔ IEC-C13-Buchse, aus Bestand','Netzteileingang: IEC-C14','Ausgang: 48 V / 4,6 A · 4-poliger Power-DIN-R7B'])
     s.wire([(550,300),(850,300)]);s.text(585,280,'W1 · fertiges Netzkabel','small')
     s.device('PS2',65,520,670,155,['Steckt direkt in Steckplatz 2 von S0','USB-A-Ausgang: nominal 5 V'])
     s.wire([(290,445),(290,520)])

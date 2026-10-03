@@ -24,15 +24,15 @@ Die Bauteilnummer bleibt auf beiden Blättern gleich. Jeder Gerätekasten enthä
 | S0 | Vorhandene geschaltete CH-Mehrfachsteckdose |
 | J1 / J2 | DFRobot FIT0849, RJ45-Buchse auf Schraubklemmen; Steuerbox / Sensor |
 | X1 / X2 | WAGO 221-413, je 3 Anschlüsse für +48 V / 48-V-Rückleiter |
-| W1 | Fertiges CH-Typ-12-auf-IEC-C13-Netzkabel |
+| W1 | Vorhandenes 230-V-Anschlusskabel; für PS1 CH-Stecker auf IEC-C13-Buchse auswählen |
 | W2 | USB-A-auf-USB-B-Datenkabel zum Uno |
-| W3 | Vorhandenes 1:1-RJ45-Patchkabel, bis 3 m |
+| W3 | Vorhandenes normales Cat5-/Cat6-RJ45-Patchkabel, 1:1, bis 3 m |
 | W4 | 2 × 2 × 0,25 mm², paarverseilte Signalleitung zum Treiber, höchstens 0,5 m |
 | W5 | GlobTek KPPX4124641M0KPJX4(R), 1-m-Power-DIN-Verlängerung, treiberseitig gekürzt |
 
 ## 1. Netzanschluss und Motorversorgung
 
-**Keine offenen 230-V-Anschlüsse im Aufbau.** W1 in Steckplatz 1 von S0 und in den IEC-C14-Eingang von PS1 stecken. PS2 in Steckplatz 2, W2 von PS2 zum Uno-USB-B-Anschluss. Das Netzteil PS1 bleibt außerhalb der Steuerbox, trocken, belüftet und zugentlastet. Keine Änderung an Netzsteckern oder Netzteilgehäusen.
+**Keine offenen 230-V-Anschlüsse im Aufbau.** W1 aus dem bestätigten Kabelbestand auswählen; passende IEC-C13-Buchse für PS1 und Schutzleiter prüfen. W1 in Steckplatz 1 von S0 und in den IEC-C14-Eingang von PS1 stecken. PS2 in Steckplatz 2, W2 von PS2 zum Uno-USB-B-Anschluss. Das Netzteil PS1 bleibt außerhalb der Steuerbox, trocken, belüftet und zugentlastet. Keine Änderung an Netzsteckern oder Netzteilgehäusen.
 
 W5 hat einen passenden vierpoligen Power-DIN-Buchsenstecker für PS1. **Nur den männlichen Stecker am anderen Ende der Verlängerung abschneiden**, nicht das Kabel von PS1. W5 hat vier AWG-18-Adern, zwei pro Versorgungsschiene. Alle vier werden verwendet.
 
