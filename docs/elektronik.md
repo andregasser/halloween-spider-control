@@ -7,7 +7,11 @@ Stand **04.10.2026**. Maßgeblicher Anschlussplan für den Aufbau mit fertigen M
 - [Blatt 1: Versorgung und Motor](schaltplan-versorgung.svg)
 - [Blatt 2: Arduino, Signalmodule und PIR](schaltplan-steuerung.svg)
 
-Die Bauteilnummer bleibt auf beiden Blättern gleich. Jeder Gerätekasten enthält Nummer und Modell. Gleichnamige Anschlüsse auf getrennten Feldern sind dieselben realen Anschlüsse. **X-Klemmen sind fertige WAGO-Verbindungsklemmen, keine Platinen.** Innerhalb einer einzelnen WAGO sind alle Anschlüsse verbunden; verschiedene WAGO müssen bei Bedarf ausdrücklich über ein Kabel verbunden werden.
+Jede gezeichnete Leitung beginnt und endet an einem **Kreis mit Anschlussbeschriftung** direkt am Gerätekasten. Die Blätter zeigen Anschlussbereiche desselben Aufbaus; eine wiederholte Geräte-Nummer bezeichnet immer dasselbe reale Gerät, keine zusätzliche Platine. Pins wie **D2, In, V+, GND, PUL+/PUL−, DIR+/DIR−, AC, A+/A− und B+/B−** stehen am jeweiligen Leitungsende. Fertige Netz-/USB-/Power-DIN-Stecker werden als Steckverbindungen gezeigt; sie werden nicht in einzelne Innenadern zerlegt.
+
+Die Anschlüsse sind für übersichtliche Leitungen angeordnet; ihre Lage am realen Gerät nach Beschriftung bestimmen. Bei den Adafruit-Modulen bezeichnen In/V+/GND die weiße/rote/schwarze Leitung des gesteckten STEMMA-Kabels, keine zusätzlichen Lötanschlüsse. Beim vorhandenen PIR ist die physische Reihenfolge OUT/GND/VCC noch zu prüfen.
+
+**X-Klemmen sind fertige WAGO-Verbindungsklemmen, keine Platinen.** Die gezeichnete Verbindung mit Abzweigpunkten innerhalb einer WAGO zeigt: alle Plätze sind elektrisch verbunden. Verschiedene WAGO sind getrennt. Die in den Plänen vergebenen Platznummern **1–3 bzw. 1–5 selbst von links nach rechts beschriften**; sie sind keine aufgedruckten WAGO-Pinnummern. Die beiden AC-Klemmen am DM860T sind beide mit AC beschriftet; „1. Klemme“ und „2. Klemme“ unterscheiden sie hier im Plan.
 
 ## Geräte und Leitungen
 
