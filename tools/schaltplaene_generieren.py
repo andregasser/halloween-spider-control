@@ -10,7 +10,7 @@ DEVICES = {
     'U4': 'Adafruit MOSFET #5648', 'U5': 'Adafruit MOSFET #5648',
     'B1': 'PIR · HC-SR501-Bauform', 'M1': '34HS46-6004S1',
     'PS1': 'Mean Well GST220A48-R7B', 'PS2': 'Goobay 44952 · USB-Netzteil',
-    'S0': 'CH-Mehrfachsteckdose', 'J1': 'DFRobot FIT0849', 'J2': 'DFRobot FIT0849',
+    'S0': 'CH-Mehrfachsteckdose', 'J1': 'RJ45-Adapter FIT0849', 'J2': 'RJ45-Adapter FIT0849',
     'X1': 'WAGO 221-413', 'X2': 'WAGO 221-413',
     'X3': 'WAGO 221-415', 'X4': 'WAGO 221-415',
     'W5': 'GlobTek KPPX4124641M0KPJX4(R)',

@@ -64,7 +64,7 @@
 </g>
 <polyline points="1210,515 1440,515" fill="none" stroke="#bd2734" stroke-width="4" stroke-linejoin="round" data-from="X3.3" data-to="U5.V+" data-kind="wire"/>
 <rect x="1440" y="555" width="700" height="115" rx="10" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="1456" y="593" class="head" text-anchor="start" style="font-size:26px">J1 · DFRobot FIT0849</text>
+<text x="1456" y="593" class="head" text-anchor="start" style="font-size:26px">J1 · RJ45-Adapter FIT0849</text>
 <g data-pin="J1.5" data-x="1440" data-y="645">
 <text x="1457" y="633" class="pinlabel" text-anchor="start">Schraubklemme 5 · PIR-Versorgung</text>
 <circle cx="1440" cy="645" r="7" fill="white" stroke="#152331" stroke-width="3"/>
@@ -133,7 +133,7 @@
 </g>
 <polyline points="1210,1375 1440,1375" fill="none" stroke="#48596b" stroke-width="4" stroke-linejoin="round" data-from="X4.3" data-to="U5.GND" data-kind="wire"/>
 <rect x="1440" y="1415" width="700" height="115" rx="10" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="1456" y="1453" class="head" text-anchor="start" style="font-size:26px">J1 · DFRobot FIT0849</text>
+<text x="1456" y="1453" class="head" text-anchor="start" style="font-size:26px">J1 · RJ45-Adapter FIT0849</text>
 <g data-pin="J1.2" data-x="1440" data-y="1505">
 <text x="1457" y="1493" class="pinlabel" text-anchor="start">Schraubklemme 2 · Sensor-Masse</text>
 <circle cx="1440" cy="1505" r="7" fill="white" stroke="#152331" stroke-width="3"/>
@@ -243,9 +243,9 @@
 <circle cx="480" cy="3275" r="7" fill="white" stroke="#152331" stroke-width="3"/>
 </g>
 <rect x="690" y="2670" width="300" height="690" rx="10" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="706" y="2708" class="head" text-anchor="start" style="font-size:23px">J1 · DFRobot FIT0849</text>
+<text x="706" y="2708" class="head" text-anchor="start" style="font-size:19px">J1 · RJ45-Adapter FIT0849</text>
 <rect x="1260" y="2670" width="300" height="690" rx="10" fill="#f4f7fa" stroke="#354b60" stroke-width="2"/>
-<text x="1276" y="2708" class="head" text-anchor="start" style="font-size:23px">J2 · DFRobot FIT0849</text>
+<text x="1276" y="2708" class="head" text-anchor="start" style="font-size:19px">J2 · RJ45-Adapter FIT0849</text>
 <text x="706" y="2740" class="note" text-anchor="start">Klemme</text>
 <text x="974" y="2740" class="note" text-anchor="end">RJ45</text>
 <text x="1276" y="2740" class="note" text-anchor="start">RJ45</text>

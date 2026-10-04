@@ -25,7 +25,7 @@ Die Anschlüsse sind für übersichtliche Leitungen angeordnet; ihre Lage am rea
 | PS1 | Mean Well GST220A48-R7B, geschlossenes Tischnetzteil |
 | PS2 | Goobay 44952, USB-Netzteil, nominal 5 V |
 | S0 | Vorhandene geschaltete CH-Mehrfachsteckdose |
-| J1 / J2 | DFRobot FIT0849, RJ45-Buchse auf Schraubklemmen; Steuerung / Sensor |
+| J1 / J2 | RJ45-Adapter FIT0849 von DFRobot, Buchse auf Schraubklemmen; Steuerung / Sensor |
 | X1 / X2 | WAGO 221-413, je 3 Anschlüsse für +48 V / 48-V-Rückleiter |
 | X3 / X4 | WAGO 221-415, je 5 Anschlüsse für Uno +5 V / Signal-GND |
 | W1 | Vorhandenes 230-V-Anschlusskabel; für PS1 CH-Stecker auf IEC-C13-Buchse auswählen |
